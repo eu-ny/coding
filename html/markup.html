@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMl</title>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        /* 리셋 */
+        * {
+            margin: 0;
+            padding: 0;   
+            font-family: 'GmarketSans';
+        }
+        
+        #header nav ul li a:hover {
+            background-color: #000;
+            color: #fff
+        }
+        #header {
+            padding: 2vw;
+            border-bottom:1px dashed #8a7e6f ;
+        }
+        #header h1 {
+            font-size: 4vw;
+            margin-bottom: 2vw;
+        }
+        #header nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #header nav ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.3vw 1vw;
+            display: inline-block;
+        }
+          /* 컨텐츠 */
+          #contents {
+            padding: 2vw;
+          }
+          #contents .menu {
+            border-bottom:1px dashed #8a7e6f ;
+            padding-bottom: 2vw; 
+          }
+          #contents .menu ul {}
+          #contents .menu ul li {
+            list-style: none;
+            display: inline;
+
+          }
+          #contents .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            padding: 0.3vw 1vw 0.3vw 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+          }
+          .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+          }
+          .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+          }
+          .article h3 {
+            font-weight: normal;
+            margin-bottom: 10px;
+          }
+          .article .box {
+            background-color: #f5f5f5;
+            padding: 15px;
+          }
+
+          /* 미디어 쿼리 */
+          @media (max-width: 800px){
+            #header h1 {
+                padding: 16px;
+                font-size: 40px;
+            }
+            #header h1 ul li a {
+                padding: 5px 10px;
+                font-size: 18px;
+            }
+            #contents {
+                padding: 16px;
+            }
+          }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="#">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="basic.html">기본 문서</a></li>
+                <li><a href="markup.html">기본 규칙</a></li>
+                <li><a href="#">WS3 validator</a></li>
+                <li><a href="#">시멘틱 마크업</a></li>
+                <li><a href="#">블록/인라인 요소</a></li>
+            </ul>
+        </nav>
+        <article class="article">
+            <h2>HTML 기본 규칙</h2>
+            <p>마크업을 할 때 기본적으로 알고 있어야 할 문법들</p>
+
+            <h3>1. 요소는 시작태그와 종료 태그가 있어야 합니다.</h3>
+            <p class="box"> &lt;&gt; 요소는 시작 태그와 종료 태그가 있어야 한다.<br>
+            요소는 시작 태그와 종료 태그가 있어야 한다. (X)</p>
+            <p class="box"> &lt;&gt; 태그 중에는 종료 태그가 없는 요소들도 있습니다. 이런 요쇼를 빈 요소(empty element) 라고 하는데, 자주 사용되는 빈 요소에는 br, hr, img, input, meta, link 등이 있다.</p>
+
+            <h3>2. 요소는 제대로 중첩되어야 합니다.</h3>
+            <p class="box">&lt;p&gt; 중첩된 요소가 있을 때는 &lt;strong&gt; 바르게 &lt;/strong&gt; 표현해야 한다.&lt;p&gt; <br>
+           &lt;p&gt; 중첩된 요소가 있을 때는 &lt;strong&gt; 바르게 &lt;/p&gt; 표현해야 한다.&lt;/strong&gt; (X) </p>
+           <p class="box">마지막에 정의한 태그를 가장 먼저 닫아야 한다. 이렇게 중첩되는  관계를 부모 자식 관계라고 하며 예시에서는 p가 부모, strong이 자식 태그가 된다.</p>
+
+           <h3>3. img 태그에는 alt 속성이 있어야 한다.</h3>
+            <p class="box">&lt;img src="images/today.gif" alt="오늘"&gt; <br>&lt; img src="images/today.gif" &gt; (X) </p>
+           <p class="box">img 태그에 alt속성을 지정하는 이유는 이미지를 볼 수 없는 환경(장애, 기기 고장 등)에서도 이미지에 대한 정보를 충분히 제공해 주어야 하기 때문이다.</p>
+
+           <h3>4. 권장하는 사항도 있습니다.</h3>
+           <p class="box">&lt;p&gt; 태그나 속성은 소문자로 마크업 하는 것을 권장한다.&lt;/p&gt; <br> &lt;p title="속성 값"&gt; 속성의 값에는 따옴표 처리를 권장한다.</p>
+
+          <h3>5. 주석처리 방법</h3>
+          <p class="box">&lt;!-- header --!&gt; <br> &lt;!-- 여기서부터 공지사항입니다. --!&gt;</p>
+         <p class="box">주석은 협업시 다음 작업자가 쉽게 작업 내용을 알아볼 수 있도록 도와주는 설명문, 브라우저 화면에는 출력되지 않는다.</p>
+        </article>
+    </section>
+</body>
+</html>
