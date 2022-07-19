@@ -10,35 +10,103 @@
     <link rel="stylesheet" href="assets/css/deracula.css">
 
     <style>
-    h2{
-        font-weight: normal;
-        margin-bottom: 10px;
-        font-size: 24px;
+        #contents {
+    padding: 2vw;
+    border-bottom: 1px dashed #cdcdcd;
+}
+#contents h2 {
+    margin-bottom: 10px;
+}
+#contents .numList {}
+#contents .numList {
+    margin-left: 30px;
+}
+#contents .numList li {
+    line-height: 1.6;
+    list-style: decimal-leading-zero;
+} 
+#contents .numList .box {
+    background-color: #f5f5f5;
+    padding: 15px;
+}
+.article {
+    padding: 2vw 0;
+    line-height: 1.6;
+}
+.article .table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+.article .table tr th {
+    border: 1px solid #dedede;
+    padding: 10px;
+    font-weight: normal;
+    background-color: #f5f5f5;
+}
+.article .table tr td {
+    border: 1px solid #dedede;
+    padding: 10px;
+}
+.article .table .center {
+    text-align: center;
+}
+/* 컨텐츠 영역 */
+#contents {
+    padding: 2vw;
+    border-bottom: 1px dashed #cdcdcd;
+}
+#contents h2 {
+    margin-bottom: 10px;
+}
+#contents .numList {}
+#contents .numList {
+    margin-left: 30px;
+}
+#contents .numList li {
+    line-height: 1.6;
+    list-style: decimal-leading-zero;
+} 
+#contents .numList .box {
+    background-color: #f5f5f5;
+    padding: 15px;
+}
+.article {
+    padding: 2vw 0;
+    line-height: 1.6;
+}
+.article .table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+.article .table tr th {
+    border: 1px solid #dedede;
+    padding: 10px;
+    font-weight: normal;
+    background-color: #f5f5f5;
+}
+.article .table tr td {
+    border: 1px solid #dedede;
+    padding: 10px;
+}
+.article .table .center {
+    text-align: center;
+}
+
+/* 모바일용 미디어쿼리 */
+@media (max-width: 800px){
+    #header h1 {
+        font-size: 40px;
     }
-    .table {
-        width: 100%;
-        border-spacing: 0;
-        border-collapse: collapse;
-        margin-bottom: 10px;
+    #header nav ul li a {
+        padding: 5px 10px;
+        font-size: 18px;
     }
-    .table tr th{
-        border: 1px solid #dedede;
-        padding: 10px;
-        font-weight: normal;
-        background: #f5f5f5;
-    }
-    .table tr td{
-        border: 1px solid #dedede;
-        padding: 10px;
-    }
-    .table .center {
-        text-align: center;
-    }
-    .box {
-        background-color: #f5f5f5;
-        padding: 15px;
-    }
-    </style>
+}
+</style>
 </head>
 <body>
     <header id="header">
@@ -62,7 +130,7 @@
             <ul class="study">
                 <li><a href="basic.html">기본 규칙</a></li>                
                 <li><a href="basic2.html">기본 명령어</a></li>                
-                <li><a href="basic3.html">기본 명령어</a></li>                
+                <li><a href="basic3.html">연산자</a></li>                
             </ul>
         </nav>
     </header>
@@ -74,13 +142,17 @@
                 <li>하나의 실행문이 끝나면 마지막에 세미콜론(;)를 붙여줍니다.</li>
                     세미클론(;)을 붙여주지 않아도 상관은 없으나, 자바스크립트를 처음 학습하는 경우에는 하나의 실행문을 확인하고 넘어가는 차원에서 세미콜론(;) 붙여서 코딩하는 것이 좋습니다.
                 <li>대소문자를 구분합니다.</li>
-                    var num = 5; <br>
+                <p class="box">
+                    var num = 5;<br> 
                     document.write(num) <br>
                     document.write(Num) (x)
+                </p>
                 <li>가독성을 위해 들여쓰기를 사용합니다.</li>
                 <li>주석처리 방법에는 한 줄 주석처리와 여러 줄 주석처리가 있습니다.</li>
-                // 한 줄 주석처리 방법 <br>
-                / * 여러 줄 주석처리 방법
+                <p class="box">
+                    // 한 줄 주석처리 방법 <br>
+                    / * 여러 줄 주석처리 방법
+                </p>
             </ol>
         </article>
     </section>
