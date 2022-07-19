@@ -77,10 +77,8 @@
                 <div class="result">
                     <details>
                         <summary>결과 보기</summary>
-                        <div>
-                            100<br>
-                            200<br>
-                            Javascript
+                        <div class="sample01_result">
+                           
                         </div>
                     </details>
                 </div>
@@ -96,5 +94,19 @@
 
     <script src="assets/js/highlight.min.js"> </script>
     <script>hljs.highlightAll();</script>
+    <script>
+        {
+            var x = 100;           
+            var y = 200;           
+            var z = "Javascript";
+            
+            document.write(x);
+            document.write(y);
+            document.write(z);
+
+            document.querySelector(".sample01_result").innerHTML = x + "<br>" + y + "<br>" + z;
+            //요소객체
+        }
+    </script>
 </body>
 </html>
