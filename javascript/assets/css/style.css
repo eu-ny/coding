@@ -35,10 +35,11 @@ body {
 
 }
 #footer {
-    padding-bottom: 1px dached #dcdcdc;
+    border-bottom: 1px dashed #dcdcdc;
+    padding: 40px 0;
     text-align: center;
 }
-#footer a {
+#footer a:hover {
     text-decoration: underline;
 }
 
