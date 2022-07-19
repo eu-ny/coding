@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시멘틱 마크업</title>
+
+    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
+    <style>
+        /* 리셋 */
+        * {
+            margin: 0;
+            padding: 0;   
+            font-family: 'GmarketSans';
+        }
+        
+        #header nav ul li a:hover {
+            background-color: #000;
+            color: #fff
+        }
+        #header {
+            padding: 2vw;
+            border-bottom:1px dashed #8a7e6f ;
+        }
+        #header h1 {
+            font-size: 4vw;
+            margin-bottom: 2vw;
+        }
+        #header nav ul li {
+            list-style: none;
+            display: inline;
+        }
+        #header nav ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            padding: 0.3vw 1vw;
+            display: inline-block;
+        }
+        /* 컨텐츠 */
+        #contents {
+            padding: 2vw;
+        }
+        #contents .menu {
+            border-bottom:1px dashed #8a7e6f ;
+            padding-bottom: 2vw; 
+        }
+        #contents .menu ul {}
+          #contents .menu ul li {
+            list-style: none;
+            display: inline;
+
+        }
+        #contents .menu ul li a {
+            text-decoration: none;
+            color: #000;
+            border: 1px solid #000;
+            background-color: #000;
+            color: #fff;
+            padding: 0.3vw 1vw 0.3vw 1vw;
+            word-break: keep-all;
+            margin-top: 0.7vw;
+            margin-bottom: 0.7vw;
+            display: inline-block;
+        }
+        .article {
+            padding: 2vw 0;
+            line-height: 1.6;
+        }
+        .article h2 {
+            font-weight: normal;
+            margin-bottom: 10px;
+        }
+        .article .box {
+            background-color: #f5f5f5;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+
+
+
+        /* 미디어 쿼리 */
+        @media (max-width: 800px){
+        #header h1 {
+            padding: 16px;
+            font-size: 40px;
+        }
+        #header h1 ul li a {
+            padding: 5px 10px;
+            font-size: 18px;
+        }
+        #contents {
+            padding: 16px;
+        }
+    }
+    </style>
+</head>
+<body>
+     <header id="header">
+        <h1>HTML</h1>
+        <nav>
+            <ul>
+                <li><a href="#">기초</a></li>
+                <li><a href="#">주제</a></li>
+                <li><a href="#">알파벳</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="contents">
+        <nav class="menu">
+            <ul>
+                <li><a href="basic.html">기본 문서</a></li>
+                <li><a href="markup.html">기본 규칙</a></li>
+                <li><a href="#">WS3 validator</a></li>
+                <li><a href="semantic.html">시멘틱 마크업</a></li>
+                <li><a href="block_inline.html">블록/인라인 요소</a></li>
+            </ul>
+        </nav>
+        <article class="article">
+            <h2>시멘틱 마크업</h2>
+                <p class="box">시멘틱(semantic)의 사전적 뜻은 '의미론적인' 정도로 해석할 수 있으며, 마크업을 할 때 의미에 부합하는 태그를 사용하라는 뜻이다.<br>
+                    시멘틱하게 마크업하는 것이 중요한 이유는 HTML문서들은 보통 시각적으로 정보를 전달하지만, 모든 사람이 동일한 환경이 아니기 때문이다.<br>
+                    ex)시각 장애인에겐 음성으로 정보를 전달해야하기 때문에 전달하려는 태그의 의미가 적절해야함.
+                </p>
+                <p class="box">&lt;body&gt;<br>반응형 웹<br>&lt;/body&gt;</p> 
+                <p class="box">
+                    위 예시처럼 마크업을 하면, 스크린 리더(음성낭독프로그램)는 그냥 반응형 웹이라고만 읽기 때문에 제목인지 메뉴인지 콘텐츠 내용인지 구분할 수 없다.
+                    <br>때문에 &lt;h1&gt;와 같이 정보가 담긴 태그를 사용해주어 반응형 웹이 문서의 첫 제목인 헤딩 1이구나를 알 수 있게 해준다.
+                </p>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

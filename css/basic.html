@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTMl</title>
+    <title>CSS</title>
 
     <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
     <style>
@@ -72,6 +72,10 @@
             font-weight: normal;
             margin-bottom: 10px;
           }
+          .article h3 {
+            font-weight: normal;
+            margin-bottom: 10px;
+          }
           .article p {
             margin-bottom: 10px;
           }
@@ -118,66 +122,29 @@
 </head>
 <body>
     <header id="header">
-        <h1>HTML</h1>
+        <h1>CSS</h1>
         <nav>
             <ul>
                 <li><a href="#">기초</a></li>
                 <li><a href="#">주제</a></li>
                 <li><a href="#">알파벳</a></li>
+                <li><a href="basic.html">단위</a></li>
             </ul>
         </nav>
     </header>
     <section id="contents">
-        <nav class="menu">
-            <ul>
-                <li><a href="basic.html">기본 문서</a></li>
-                <li><a href="markup.html">기본 규칙</a></li>
-                <li><a href="#">WS3 validator</a></li>
-                <li><a href="semantic.html">시멘틱 마크업</a></li>
-                <li><a href="block_inline.html">블록/인라인 요소</a></li>
-            </ul>
-        </nav>
         <article class="article">
-            <h2>HTML 기본 문서</h2>
-            <!-- 쉬프트 + 7 -->
-            <p>html 요소는 &lt;head&gt;요소와 body요소(=태그)로 구성되어 있으며, head 요소 안에는 meta, title, link, style, script 등의 요소들이 올 수 있습니다.</p>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>요소명</th>
-                        <th>설명</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="center">&lt;meta&gt;</td>
-                        <td class="center">HTM 문서의 설명, 키워드, 문서의 작성자 등을 지정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;title&gt;</td>
-                        <td class="center">HTML 문서의 제목을 지정합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;link&gt;</td>
-                        <td class="center">외부의 CSS파일을 HTML문서에 연결할 때 사용됩니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;style&gt;</td>
-                        <td class="center">HTML 문서내에서 스타일(CSS)을 정의합니다.</td>
-                    </tr>
-                    <tr>
-                        <td class="center">&lt;script&gt;</td>
-                        <td class="center">자바스크립트를 HTML 문서 내부에서 정의하거나 외부에서 자바스크립트 파일을 불러올 때 사용합니다. </td>
-                    </tr>
-                </tbody>
-            </table>
-            <p></p>
-            <p class="box">
-                meta charset="UTF-8" <br>
-                &lt;meta name = "viewport" &gt; <br>
-                content="width=device-width, initial-scale, minimum-scale=1.0, uer-scalable=no"
-            </p>
-            <p class="box">뷰포트라고 하며, name과 content는 문서를 모바일 해상도(가로보기, 세로보기)에 맞게 HTML 문서를 조절해주는 속성들이다. </p>
+            <h2>CSS 단위</h2>
+            <h3>px</h3>
+            <p class="box">해상도에 따라 상대적으로 달라지는 기본 단위</p>
+            <h3>%</h3>
+            <p class="box">부모 요소의 글자 크기를 100%기준으로 계산한 % 단위 <br>특별한 설정이 없다면 16px = 100% / 24px = 150%가 된다.</p>
+            <h3>em</h3>
+            <p class="box">부모 요소의 글자 크기를 100%기준으로 계산한 100분의 1단위 <br>특별한 설정이 없다면 16px = 1em / 24px(16px x 1.5 = 24px) = 1.5em가 된다.</p>
+            <h3>rem</h3>
+            <p class="box">em과 비슷하지만 부모 요소가 아닌 최상위 요소의 크기를 100%기준으로 계산한다.<br>r = root 즉 html요소를 뜻하므로 html 요소에서 지정한 글자 크기가 1rem이 된다.</p>
+            <h3>vw, vh</h3>
+            <p class="box">vw : 뷰포트의 너비값의 100분의 1 단위 <br>vh : 뷰포트의 높이값의 100분의 1 단위</p>
         </article>
     </section>
 </body>
