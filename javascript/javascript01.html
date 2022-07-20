@@ -11,27 +11,27 @@
 </head>
 <body>
     <header id="header">
-        <h1>Javascript</h1>
+        <h1><a href="index.html">Javascript</a></h1>
         <nav class="header_nav">
             <ul>
-                <li><a href="javascript01.html">데이터 저장하기</a></li>
+                <li class="active"><a href="javascript01.html">데이터 저장하기</a></li>
                 <li><a href="javascript02.html">데이터 불러오기</a></li>
                 <li><a href="javascript03.html">데이터 실행하기</a></li>
                 <li><a href="javascript04.html">데이터 제어하기</a></li>
             </ul>
             <ul>
-                <li><a href="#">문자열 객체</a></li>
-                <li><a href="#">배열 객체</a></li>
-                <li><a href="#">수학 객체</a></li>
-                <li><a href="#">숫자 객체</a></li>
-                <li><a href="#">브라우저 객체</a></li>
-                <li><a href="#">요소 객체</a></li>
-                <li><a href="#">이벤트 객체</a></li>
+                <li><a href="javascript05.html">문자열 객체</a></li>
+                <li><a href="javascript06.html">배열 객체</a></li>
+                <li><a href="javascript07.html">수학 객체</a></li>
+                <li><a href="javascript08.html">숫자 객체</a></li>
+                <li><a href="javascript09.html">브라우저 객체</a></li>
+                <li><a href="javascript10.html">요소 객체</a></li>
+                <li><a href="javascript11.html">이벤트 객체</a></li>
             </ul>
             <ul class="study">
-                <li><a href="basic.html">기본 규칙</a></li>                
-                <li><a href="basic2.html">기본 명령어</a></li> 
-                <li><a href="basic3.html">연산자</a></li>                
+                <li><a href="study/basic.html">기본 규칙</a></li>
+                <li><a href="study/operator.html">연산자</a></li>
+            </ul>            
             </ul>
         </nav>
     </header>
@@ -453,8 +453,8 @@ document.write(obj[1].c);
             </div>
             <!-- //sample14 -->
             <div id="sample15" class="sample">
-                <h3>15. 객체 : 객체 속의 배열</h3>
-                <p></p>
+                <h3>15. 객체 : 객체 속의 배열 ***중요***</h3>
+                <p>실무에서 가장 많이 사용</p>
                 <div class="script"></div>
 <pre><code class="language-js"> {
 const obj = {
@@ -484,6 +484,82 @@ document.write(obj.d);
                 </div>
             </div>
             <!-- //sample15 -->
+            <div id="sample16" class="sample">
+                <h3>16. 객체 : 객체 속의 변수</h3>
+                <p>react에서 많이 사용</p>
+                <div class="script"></div>
+<pre><code class="language-js"> {
+const a = 100;
+const b = 200;
+const c = "javascript";
+
+const obj = {a, b, c}  //객체를 만들어서 변수를 객체에 넣었다고 볼 수 있다.
+
+document.write(obj.a);
+document.write(obj.b);
+document.write(obj.c);
+}
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample16_result">
+                        
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample16 -->
+            <div id="sample17" class="sample">
+                <h3>17. 객체 : 객체 속에 함수 ***중요***</h3>
+                <p>객체 = object</p>
+                <div class="script"></div>
+<pre><code class="language-js"> {
+const obj = {
+    a : 100,
+    b : [200, 300],
+    c : {x:400, y:500}, //배열은 나오지만 객체를 정확히 명시하지 않아 값이 object가 뜸. 즉 c의 값이 x인지 y인지 또다른 값인지를 인식하지 못함.
+    d : "javascript",
+    e : function(){
+        document.write("자바스크립트가 실행되었습니다.");
+    },
+    f : function(){
+        document.write(obj.d + "가 실행되었습니다.");
+    },
+    g : function(){
+        document.write(this.d + "가 실행되었습니다.");
+    }
+}
+
+document.write(obj.a);
+document.write(obj.b[0]);
+document.write(obj.b[1]);
+document.write(obj.b);
+document.write(obj.c.x);
+document.write(obj.c.y);
+document.write(obj.c);
+document.write(obj.d);
+obj.e();  //이미 위에 함수에서 출력을 실행시켰기 때문에 document.write()를 빼야 한다.
+obj.f();
+obj.g();
+}
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample17_result">
+                        </div>
+                        <div>
+                            자바스크립트가 실행되었습니다.<br>
+                            javascript가 실행되었습니다.<br>
+                            javascript가 실행되었습니다.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample17 -->
+
+
         </div>        
     </main>
     <!-- //main -->
@@ -692,20 +768,20 @@ document.write(obj.d);
 
             document.querySelector(".sample13_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
-        //14. 객체 : 배열 속에 객체
+        //14. 객체 : 배열 속에 객체 ***중요***
         {
             const obj = [
                 {a:100, b:200},
                 {c:"javascript"}
             ];
 
-            document.write(obj[0].a);
-            document.write(obj[0].b);
-            document.write(obj[1].c);
+            //document.write(obj[0].a);
+            //document.write(obj[0].b);
+            //document.write(obj[1].c);
 
             document.querySelector(".sample14_result").innerHTML = obj[0].a + "<br>" + obj[0].b + "<br>" + obj[1].c;
         }
-        //15. 객체 : 객체 속에 배열
+        //15 객체 : 객체 속에 배열 ***중요***
         {
             const obj = {
                 a:100,
@@ -714,15 +790,70 @@ document.write(obj.d);
                 d:"javascript"
             };
 
-            document.write(obj.a);
-            document.write(obj.b[0]);
-            document.write(obj.b[1]);
-            document.write(obj.c.x);
-            document.write(obj.c.y);
-            document.write(obj.d);
+            //document.write(obj.a);
+            //document.write(obj.b[0]);
+            //document.write(obj.b[1]);
+            //document.write(obj.c.x);
+            //document.write(obj.c.y);
+            //document.write(obj.d);
 
             document.querySelector(".sample15_result").innerHTML = 
             obj.a + "<br>" + obj.b[0] + "<br>" + obj.b[1] + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>" + obj.d;
+        }
+
+        //16 객체 : 객체 속에 변수  -> ***react에서 많이 사용하는 방법***
+        {
+            const a = 100;
+            const b = 200;
+            const c = "javascript";
+
+            const obj = {a, b, c}  //객체를 만들어서 변수를 객체에 넣었다고 볼 수 있다.
+
+            //document.write(obj.a);
+            //document.write(obj.b);
+            //document.write(obj.c);
+
+            document.querySelector(".sample16_result").innerHTML = 
+            obj.a + "<br>" + obj.b + "<br>" + obj.c;
+        }
+
+        // 17 객체=object : 객체 속에 함수 ***중요***
+        {
+            const obj = {
+                a : 100,
+                b : [200, 300],
+                c : {x:400, y:500}, //배열은 나오지만 객체를 정확히 명시하지 않아 값이 object가 뜸. 즉 c의 값이 x인지 y인지 또다른 값인지를 인식하지 못함.
+                d : "javascript",
+                e : function(){
+                    document.write("자바스크립트가 실행되었습니다.");
+                },
+                f : function(){
+                    document.write(obj.d + "가 실행되었습니다.");
+                },
+                g : function(){
+                    document.write(this.d + "가 실행되었습니다.");
+                }
+            }
+            
+                //document.write(obj.a);
+                //document.write(obj.b[0]);
+                //document.write(obj.b[1]);
+                //document.write(obj.b);
+                //document.write(obj.c.x);
+                //document.write(obj.c.y);
+                //document.write(obj.c);
+                //document.write(obj.d);
+                //obj.e();  //이미 위에 함수에서 출력을 실행시켰기 때문에 document.write()를 빼야 한다.
+                //obj.f();
+                //obj.g();
+
+                document.querySelector(".sample17_result").innerHTML = obj.a + "<br>" + obj.b[0] + "<br>" +obj.b[1] + "<br>" + obj.b + "<br>" + obj.c.x + "<br>" + obj.c.y + "<br>" + obj.c + "<br>" + obj.d
+
+        }
+
+        // 18
+        {
+            
         }
     </script>
 </body>
