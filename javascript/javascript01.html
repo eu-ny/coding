@@ -261,7 +261,7 @@
             <div id="sample07" class="sample">
                 <h3>07. 배열 : 데이터 저장(여러개) : 표현방법2</h3>
                 <p>
-                    arr[]을 각각 선언하지 않고 ()안에 한 번에 선언해주어 표현방법1보다 더 편리하게 발전된 방법이다.
+                    ()안에 한 번에 값을 선언해주는 약식 방법이다.
                 </p>
                 <div class="script"></div>
 <pre><code class="language-js">{
@@ -329,7 +329,10 @@
             <!-- //sample09 -->
             <div id="sample10" class="sample">
                 <h3>10. 객체 : 데이터 저장(키와 값) : 표현방법1</h3>
-                <p>상수 obj의 데이터들(100,200,"javascript")의 값</p>
+                <p>
+                    객체는 키와 값으로 구성된 데이터 값을 저장한다.<br>
+                    객체의 데이터는 '이름 : 값'의 쌍으로 이루어져 있으며 이를 속성(properties)이라 칭한다.
+                </p>
                 <div class="script"></div>
 <pre><code class="language-js">{
     const obj = new Objext();
@@ -422,7 +425,8 @@
             </div>
             <!-- //sample13 -->
             <div id="sample14" class="sample">
-                <h3>14. 객체 : 배열 속에 객체</h3>
+                <h3>14. 객체 : 데이터 저장(키와 값) : 표현방법5 - 배열 속에 객체</h3>
+                <p>객체는 키와 값으로 구성된 데이터 값을 저장한다. 객체 안에 배열과 객체를 저장할 수 있다.</p>
                 <div class="script"></div>
 <pre><code class="language-js">{
 const obj = [
@@ -446,8 +450,8 @@ document.write(obj[1].c);
             </div>
             <!-- //sample14 -->
             <div id="sample15" class="sample">
-                <h3>15. 객체 : 객체 속의 배열 ***중요***</h3>
-                <p>실무에서 가장 많이 사용</p>
+                <h3>15. 객체 : 데이터 저장(키와 값) : 표현방법6 - 객체 속의 배열 **</h3>
+                <p>가장 많이 사용하는 표현 방법으로 객체 안에 배열을 저정할 수 있다.</p>
                 <div class="script"></div>
 <pre><code class="language-js">{
     const obj = {
@@ -477,15 +481,15 @@ document.write(obj[1].c);
             </div>
             <!-- //sample15 -->
             <div id="sample16" class="sample">
-                <h3>16. 객체 : 객체 속의 변수</h3>
-                <p>react에서 많이 사용</p>
+                <h3>16. 객체 : 데이터 저장(키와 값) : 표현방법7 - 객체 속의 변수</h3>
+                <p>react에서 많이 사용하며 객체 속에 변수를 저장할 수 있다.</p>
                 <div class="script"></div>
 <pre><code class="language-js">{
     const a = 100;
     const b = 200;
     const c = "javascript";
 
-    const obj = {a, b, c}  //객체를 만들어서 변수를 객체에 넣었다고 볼 수 있다.
+    const obj = {a, b, c}  //즉 객체를 만들어서 변수를 객체에 넣었다고 볼 수 있다.
 
     document.write(obj.a);
     document.write(obj.b);
@@ -503,7 +507,7 @@ document.write(obj[1].c);
             </div>
             <!-- //sample16 -->
             <div id="sample17" class="sample">
-                <h3>17. 객체 : 객체 속에 함수 ***중요***</h3>
+                <h3>17. 객체 : 데이터 저장(키와 값) : 표현방법8 - 객체 속에 함수 **</h3>
                 <p>객체 = object</p>
                 <div class="script"></div>
 <pre><code class="language-js">{
