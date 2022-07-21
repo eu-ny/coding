@@ -160,20 +160,12 @@ body {
 .main_rafer .table table {
     min-width: 900px;
 }
+.main_rafer .table table tr th,
+.main_rafer .table table tr td {
+    font-size: 14px;
+}
 
 /* 미디어 쿼리 */
-@media (max-width: 900px){
-    #header {
-        display: none;
-    }
-    .main_header h2 {
-        font-size: 40px;
-        padding: 40px;
-    }
-    .main_header h2 em {
-        font-size: 40px;
-    }
-}
 @media (max-width: 460px){
     .main_header h2 {
         font-size: 30px;
