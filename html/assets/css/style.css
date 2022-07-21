@@ -49,11 +49,28 @@ body {
     justify-content: space-between;
     align-items: center;
 }
-#main {}
-#footer {}
+#main {
+    padding: 20px;
+    max-width: 1300px;
+    margin: 0 auto;   /*가운데 정렬*/
+}
+#footer {
+    padding: 40px;
+    text-align: center;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
 
 /* 헤더 영역 */
 #header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    backdrop-filter: blur(10px);
+    box-sizing: border-box;
     padding: 14px 20px 5px 20px;
 }
 #header h1 {}
@@ -80,6 +97,23 @@ body {
     font-family: 'Tmon';
 }
 .main_menu {}
+.main_menu ul {
+    margin-bottom: 20px;
+}
+.main_menu li {
+    display: inline;
+}
+.main_menu li a {
+    background-color: #00db72;
+    padding: 5px 15px;
+    display: inline-block;
+    color: #fff;
+
+}
+.main_menu li.active a {
+    background-color: #000;
+    color: #fff;
+}
 .main_table {}
 .main_rafer {
     border: 1px solid #000;
@@ -96,6 +130,7 @@ body {
 }
 .main_rafer .table table tr th {
     background-color: #f5f5f5;
+    font-weight: normal;
 }
 .main_rafer .table table tr th,
 .main_rafer .table table tr td {
@@ -110,4 +145,8 @@ body {
 }
 .main_rafer .table table tr a:hover {
     text-decoration: underline;
+}
+.main_rafer .table table tr td span {
+    font-size: 16px;
+    line-height: 1.6;
 }
