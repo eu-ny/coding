@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃01 flex</title>
+    <title>레이아웃01 flex반응형</title>
 
     <style> 
     * {
@@ -52,7 +52,29 @@
         background-color: #FF9800;
     }
 
-</style>
+    /* 미디어쿼리 - 반응형(모바일)설정 */
+    @media(max-width: 1220px){
+        #wrap {
+            width: 96%;
+        }
+    }
+    @media(max-width: 768px){
+        #wrap {
+            width: 100%;
+        }
+    }
+    @media(max-width: 480px){
+        #aside {
+            width: 100%;
+            height: 300px;
+        }
+        #section {
+            width: 100%;
+            height: 480px;
+        }
+        
+    }
+    </style>
 </head>
 <body>
     <div id="wrap">  <!--그룹핑해주는 거라서 wrap은 의미 없는 div태그로 사용-->
