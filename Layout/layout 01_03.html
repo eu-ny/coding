@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>레이아웃01 flex반응형</title>
+    <title>레이아웃01 grid반응형</title>
 
     <style> 
     * {
@@ -52,6 +52,9 @@
         background-color: #FF9800;
     }
 
+    /* 미디어쿼리 -반응형 설정- */
+
+    /* 데스크탑 및 태블릿 화면 */
     @media(max-width: 1220px){
         #wrap {
             width: 96%;
@@ -62,6 +65,7 @@
             width: 100%;
         }
     }
+    /* 모바일화면 */
     @media(max-width: 480px){
         #wrap {
             grid-template-areas: 
@@ -73,6 +77,7 @@
         ;
         grid-template-columns: 100% ;
         grid-template-rows: 100px 100px 300px 400px 100px ;
+        /* 모바일은 레이아웃이 1단으로 바뀌기 때문에 따로 부모 속성을 넣어주어야 한다. */
         }
         
     }
