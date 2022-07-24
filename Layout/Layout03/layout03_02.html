@@ -29,37 +29,45 @@
             background-color: #81D4FA;
         }
         #main {
-            display: flex;
-            flex-wrap: wrap;
-            flex-direction: column;
-            height: 780px;
-        }
+            width: 100%;
+                }
         #aside {
             width: 30%;
             height: 780px;
             background-color: #4FC3F7;
+            float: left;
         }
         #section {
             width: 70%;
             height: 260px;
             background-color: #29B6F6;
+            float: left;
 
         }
         #article01 {
             width: 70%;
             height: 260px;
             background-color: #03A9F4;
+            float: left;
 
         }
         #article02 {
             width: 70%;
             height: 260px;
             background-color: #039BE5;
+            float: left;
         }
         #footer {
             width: 100%;
             height: 100px;
             background-color: #0288D1;
+        }
+
+        /* clearfix */
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
         }
 
         /* mediaqurey */
@@ -111,14 +119,14 @@
 </head>
 <body>
     <div id="wrap">
-        <header id="header"></header>
-        <nav id="nav"></nav>
-        <div id="main">
-            <aside id="aside"></aside>
-            <section id="section"></section>
-            <article01 id="article01"></article01>
-            <article02 id="article02"></article02>
+        <div id="header"></div>
+        <div id="nav"></div>
+        <div id="main" class="clearfix">
+            <div id="aside"></div>
+            <div id="section"></div>
+            <div id="article01"></div>
+            <div id="article02"></div>
         </div>
-        <footer id="footer"></footer>
+        <div id="footer"></div>
 </body>
 </html>
