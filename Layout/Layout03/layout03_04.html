@@ -29,45 +29,34 @@
             background-color: #81D4FA;
         }
         #main {
-            width: 100%;
-                }
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            height: 780px;
+        }
         #aside {
             width: 30%;
             height: 780px;
             background-color: #4FC3F7;
-            float: left;
         }
         #section {
             width: 70%;
             height: 260px;
             background-color: #29B6F6;
-            float: left;
-
         }
-        #article01 {
-            width: 70%;
+        #article1_01 {
+            width: 100%;
             height: 260px;
             background-color: #03A9F4;
-            float: left;
-
         }
-        #article02 {
-            width: 70%;
+        #article1_02 {
+            width: 100%;
             height: 260px;
             background-color: #039BE5;
-            float: left;
         }
         #footer {
-            width: 100%;
             height: 100px;
             background-color: #0288D1;
-        }
-
-        /* clearfix */
-        .clearfix::after {
-            content: "";
-            display: block;
-            clear: both;
         }
 
         /* mediaqurey */
@@ -75,31 +64,36 @@
             #wrap {
                 width: 96%;
             }
-            #article01 {
-                width: 35%;
+            #article1 {
+                display: flex;
+            }
+            #article1_01 {
+                width: 50%;
                 height: 520px;
             }
-            #article02 {
-                width: 35%;
+            #article1_02 {
+                width: 50%;
                 height: 520px;
             }
+            /* 레이아웃이 다르기 때문에 한번 더 세분화 시켜주는 것 */
         }
-        @media (max-width: 780px){
+        @media (max-width: 768px){ 
             #wrap {
                 width: 100%;
             }
             #section {
-                width: 70%;
                 height: 390px;
             }
-            #article01 {
-                width: 70%;
+            #article1 {
+                display: flex;
+            }
+            #article1_01 {
+                width: 100%;
                 height: 390px;
             }
-            #article02 {
-               display: none;
+            #article1_02 {
+                display: none;
             }
-            /* 레이아웃이 사라져야 할 땐 display: none을 사용해주어야 한다. */
         }
         @media (max-width: 480px){
             #aside {
@@ -110,24 +104,26 @@
                 width: 100%;
                 height: 430px;
             }
-            #article01 {
-                width: 100%;
+            #article1_01 {
                 height: 150px;
             }
         }
+
     </style>
 </head>
 <body>
     <div id="wrap">
-        <div id="header"></div>
-        <div id="nav"></div>
-        <div id="main" class="clearfix">
-            <div id="aside"></div>
+        <header id="header"></header>
+        <nav id="nav"></nav>
+        <div id="main">
+            <aside id="aside"></aside>
             <div id="section"></div>
-            <div id="article01"></div>
-            <div id="article02"></div>
+            <div id="article1">
+                <div id="article1_01"></div>
+                <div id="article1_02"></div>
+            </div>
         </div>
-        <div id="footer"></div>
+        <footer id="footer"></footer>
     </div>
 </body>
 </html>
