@@ -34,6 +34,7 @@
                 <li><a href="operator.html">연산자</a></li>
                 <li><a href="for.html">반복문</a></li>
                 <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
             </ul>               
             </ul>
         </nav>
@@ -301,7 +302,7 @@
             }
 
             document.write("<br>","<br>");
-
+            
             for( let i=6; i<=6; i++){
                 for( let j=1; j<=9; j++){
                     let sum = i * j;
@@ -310,15 +311,43 @@
                 }
             }
         }
+
+        document.write("<br>","<br>");
+
         //for문을 이용해서 테이블 만들기
         {
-            //데이터 타입(자료형) 원시형데이터 / 객체 데이터 총 2가지
-            let table = 1; //숫자가 들어간 것
-            let table2 = "1"; //문자가 들어간 것
-            let table3 = true; //불린(true, false이 들어간 것
-            let table4 = []; //배열이 들어간 것
-            let table5 = {}; //객체가 들어간 것
-            let table6; //특수값(null, undeifned)이 들어간 것
+            // let table = "<table class='testTable'>";
+
+            // for( let i=1; i<=10; i++){
+            //     table += "<tr>";
+            //     for( let j=1; j<=10; j++){
+            //         table += "<td>"+j+"</td>"; //1부터 10까지 출력
+            //     }
+            //     table += "</tr>";
+            // }
+
+            // table += "</table>";
+
+            // document.write(table)
+
+            //1부터 100까지 출력하기
+
+            let table = "<table class='testTable'>";
+            
+            z = 0;
+            for( let i=1; i<=10; i++){
+                table += "<tr>";
+                for( let j=1; j<=10; j++){
+                    z++;
+                    table += "<td>"+z+"</td>";
+                }
+                table += "</tr>";
+            }
+
+            table += "</table>";
+
+            document.write(table)
+
         }
     </script>
 </body>
