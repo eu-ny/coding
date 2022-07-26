@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>자바스크립트 : if문</title>
+    <title>자바스크립트 : 제어문</title>
 
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/deracula.css">
@@ -41,19 +41,147 @@
     <!-- //header --> 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">if문</h2>
+            <h2 class="t_tit">조건문</h2>
             <p class="t_desc">
-                반복문은 프로그램에서 필요한 결과 값을 도출하기 위해 실행문의 순서를 반복적으로 실행시키는 문법이다.<br>
-                반복문 : while문, do while문, for문이 있으며, for문을 가장 많이 사용한다.
+                조건문은 조건식이 참과 거짓인지에 따라 코드를 제어한다.
             </p>
+
+            <h3 class=t_tit2>if문</h3>
+            <p class="t_box">
+                if문의 형식 : if ( 조건식 ) { 실행문; }
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    var age = 10;
+    var admissionFee = "";
+    if (age &lt; 13) {
+        admissionFee = "2000원";
+    }
+
+    document.write(admissionFee);
+}
+</code></pre>
+             <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample01_result">
+                            2000원
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h3 class=t_tit2>중첩 if문</h3>
+            <p class="t_desc">
+                중첩 for문과 비슷하며 매우 많이 사용한다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    var html = Number(prompt('html 점수입력',''));
+    var css = Number(prompt('css 점수입력',''));
+    var javascript = Number(prompt('javascript 점수입력',''));
+    var avg = (html + scc + javascript) / 3;
+    var comment;
+    if (avg &gt;= 60) {
+        if (html &lt; 40) {
+            comment = 'html' + '40점 미만 불합격';
+        } else if (css &lt; 40) {
+            comment = 'css' + '40점 미만 불합격';
+        } else if (javascript &lt; 40) {
+            comment = 'JAVASCRIPT' + '40점 미만 불합격';
+        } else {
+            comment = '평균' + avg + '점 합격';
+        }
+    } else {
+        comment = '평균' + avg + '점 불합격';
+    }
+    
+    document.write(comment);
+}
+</code></pre>
+             <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample01_result">
+                            평균 90점 합격 <br>
+                            평균 95점 합격
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <h3 class=t_tit2>switch문</h3>
+            <p class="t_box">
+                if문과는 달리 특정 조건에 만족했을 때 블록{}을 스스로 빠져나가지 못한다. 때문에 break 명령어를 주어서 블록을 빠져나가게 한다.<br>
+                default는 switch의 값과 일치하는 값이 없을 때 실행한다.
+            </p>
+            <div class="t_code">
+<pre><code class="language-js">{
+    swich (값) {
+        case 값1 :
+        실행문;
+        case 값2 :
+        실행문;
+        case 값3 :
+        실행문;
+    }
+}
+</code></pre>
+            </div>
+            <div class="t_code">
+<pre><code class="language-js">{
+    var classification = prompt('아동, 청소년, 성인 중 선택 입력','');
+    switch (classification) {
+        case '아동':
+            classification += ': 입장료 무료';
+            break;
+        case '청소년':
+            classification += ': 입장료 2,000원';
+            break;
+        case '성인':
+            classification += ': 입장료 5,000원';
+            break;
+        default:
+            classification = '입력 값을 다시 확인하세요';
+    }
+    document.write(classification)
+}
+</code></pre>
+             <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample01_result">
+                            아동 : 입장료 무로 <br>
+                            청소년 : 입장료 200원 <br>
+                            성인 : 입장료 5000원
+                            <script>
+                                {
+                                    // var classification = prompt('아동, 청소년, 성인 중 선택 입력','');
+                                    // switch (classification) {
+                                    //     case '아동':
+                                    //         classification += ': 입장료 무료';
+                                    //         break;
+                                    //     case '청소년':
+                                    //         classification += ': 입장료 2,000원';
+                                    //         break;
+                                    //     case '성인':
+                                    //         classification += ': 입장료 5,000원';
+                                    //         break;
+                                    //     default:
+                                    //         classification = '입력 값을 다시 확인하세요';
+                                    // }
+                                    // document.write(classification)
+                                }
+                            </script>
+                        </div>
+                    </details>
+                </div>
+            </div>
             
-            <p class="codepen" data-height="300" data-default-tab="js,result" data-slug-hash="mdxMOoq" data-user="eu-ny" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
-                <span>See the Pen <a href="https://codepen.io/eu-ny/pen/mdxMOoq">
-                if문</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
-                on <a href="https://codepen.io">CodePen</a>.</span>
-              </p>
-              <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        
         </div>
     </main>
+    <script src="../assets/js/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>

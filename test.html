@@ -58,6 +58,48 @@
         table += "</table>";
 
         document.write(table);
+
+        document.write("<br>","<br>")
+
+        //0~99
+        {
+            for( let i=0; i<100; i++){
+        document.write(i);
+    }
+}
+document.write("<br>","<br>")
+
+//10~50
+for(let i=10; i<=50; i++){
+     document.write(i, "<br>")
+}
+document.write("<br>","<br>")
+
+//5배수
+for(let i=10; i<=50; i++){
+                // if( i % 5 == 0){
+                //     document.write("<span style='color: blue'>"+ i + "</span>");
+                // }
+                if(i % 7 == 0) {
+               document.write("<span style='color: red'>"+ i + "</span>");
+                 }
+            }
+
+            document.write("<br>","<br>")
+
+
+
+{
+    for(let i=1; i<=2; i++){
+                document.write(i + "실행");
+                for(let j=1; j<=5; j++){
+                    document.write(j + "실행");
+                }
+            }
+}
+
+
+
     </script>
 </body>
 </html>
