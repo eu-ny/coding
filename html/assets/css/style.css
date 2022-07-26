@@ -253,6 +253,12 @@ body {
 }
 
 /* 미디어 쿼리 */
+@media (max-width: 800px){
+    body {
+        padding: 20px;
+        
+    }
+}
 @media (max-width: 460px){
     .main_header h2 {
         font-size: 30px;

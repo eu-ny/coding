@@ -50,7 +50,7 @@
 
             <hr>
 
-            <h3 class="t_tit2">#1. 선언적 함수</h3>
+            <h3 class="t_tit2">01. 선언적 함수</h3>
             <p class="t_desc">
                 선언적 함수는 가장 일반적인 형식의 함수로 함수를 선언할 때 이름을 붙여준다.
             </p>
@@ -77,11 +77,12 @@
                         </div>
                     </details>
                 </div>
-            </div>
+            </div>          
+            <!-- //sample01 -->
 
             <hr>
 
-            <h3 class="t_tit2">#2. 익명 함수</h3>
+            <h3 class="t_tit2">02. 익명 함수</h3>
             <p class="t_desc">
                 함수명 대신 <i>변수명에 함수코드를 저장</i>하는 방식이다.<br>
                 즉 함수명에 이름을 지정하지 않는다. 대신 변수명을 지정해준다.
@@ -109,10 +110,11 @@
                     </details>
                 </div>
             </div>
+            <!-- //sample02 -->
 
             <hr>
 
-            <h3 class="t_tit2">#3. 매개변수 함수</h3>
+            <h3 class="t_tit2">03. 매개변수 함수</h3>
             <img src="/tstory/03.jpg" width="300px;">
             <p class="t_desc">
                 함수의 매개변수(parameter)란 함수를 호출할 때 <i>인수로 전달된 값을 함수 내부에서 사용</i>할 수 있게 해주는 변수이다.<br>
@@ -135,10 +137,11 @@
                     </details>
                 </div>
             </div>
+            <!-- //sample03 --> 
 
             <hr>
 
-            <h3 class="t_tit2">#4. 리턴값(return) 함수 </h3>
+            <h3 class="t_tit2">04. 리턴값(return) 함수 </h3>
             <p class="t_desc">
                 함수가 어떠한 기능을 수행하고 그 <i>결과를 호출한 곳으로 돌려주는 값</i>을 리턴값이라고 한다.<br>
                 또한 출력 명령어를 사용하지 않고 출력하기 위해서는 리턴값 함수를 사용해주면 된다.
@@ -163,6 +166,128 @@
                     </details>
                 </div>
             </div>
+            <!-- //sample04 -->
+
+            <hr>
+
+
+            <h3 class="t_tit2">05.  화살표 함수 (선언적 함수)</h3>
+            <p class="t_desc">
+                ECMAscript6(es6)에 추가된 내용으로 <i>" =&gt;"를 이용하여 함수를 간결하게 표현</i>할 때 사용한다.<br>
+                function 키워드를 생략할 수 있으며 항상 <i>익명 함수 형식</i>으로 표현해야 한다. 이때 단일 명령문이라면 함수의 중괄호 {}와 return의 생략이 가능하다.
+            </p>
+            <div class="script"></div>
+<pre><code class="language-js">{
+//화살표 함수(선언적 함수) 기본표현
+func = () =&gt; {
+document.write("함수가 실행되었습니다.5<br>");
+}
+func();
+
+//화살표 함수(선언적 함수) 한줄 표현
+func = () =&gt; document.write("함수가 실행되었습니다.5<br>"); //{}가 생략되어도 읽는다.
+
+func();
+}
+</code></pre>
+            <div class="result">
+                <details>
+                    <summary>결과 보기</summary>
+                    <div class="sample05_result">
+                        함수가 실행되었습니다.5
+                    </div>
+                </details>
+            </div>
+            <p class="t_box">
+               자투리 지식 :  ECMAscript6(es6)의 문법에는 화살표 함수, let, const가 있다.
+            </p>
+            <!-- //sample05 -->
+
+            <hr>
+
+            <h3 class="t_tit2">06. 화살표 함수 (익명 함수)</h3>
+            <p class="t_desc">
+                화살표 함수에서 익명 함수는 const를 사용하여 표현해야 한다.
+            </p>
+            <div class="script"></div>
+<pre><code class="language-js">{
+//화살표 함수 익명함수 기본 표현
+const func = () =&gt; {
+document.write("함수가 실행되었습니다.6<br>");
+}
+
+//화살표 함수 익명함수 단일 표현
+const func = () =&gt;  document.write("함수가 실행되었습니다.6<br>");
+
+func();
+}
+</code></pre>
+            <div class="result">
+                <details>
+                    <summary>결과 보기</summary>
+                    <div class="sample06_result">
+                        함수가 실행되었습니다.6
+                    </div>
+                </details>
+            </div>
+            <!-- //sample06 -->
+
+            <hr>
+
+            <div id="sample07" class="sample">
+                <h3 class="t_tit2">07. 화살표 함수 (매개변수 함수)</h3>
+                <p class="t_desc">
+                    화살표 함수에서 변수 선언을 해주어야 하지만 생략이 가능하다.
+                </p>
+                <div class="script"></div>
+<pre><code class="language-js">{
+//화살표 함수 익명함수 기본 표현
+const func = () =&gt; {
+    document.write("함수가 실행되었습니다.6<br>");
+}
+
+//화살표 함수 익명함수 단일 표현
+const func = () =&gt;  document.write("함수가 실행되었습니다.6<br>");
+
+func();
+}
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample07_result">
+                            함수가 실행되었습니다.7
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample07 -->
+
+            <hr>
+
+            <div id="sample07" class="sample">
+                <h3 class="t_tit2">08. 화살표 함수 (리턴값 함수)</h3>
+                <div class="script"></div>
+<pre><code class="language-js">{
+func = () =&gt; {
+    const str = "함수가 실행되었습니다.8<br>";
+    return str;
+}
+document.write(func());
+}
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample08_result">
+                            함수가 실행되었습니다.8
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample08 -->
+
+
 
         </div>
     </main>
