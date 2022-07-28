@@ -161,38 +161,164 @@
             <div id="sample03" class="sample">
                 <h2 class="t_tit">함수 레벨 스코프와 블록 레벨 스코프</h2>
                 <p class="t_desc2">
-                    <i>const</i> func(){<br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.write("실행문");<br>
-                }<br>
-                func();
+                  var는 함수 블록 {} 안에서만 지역 변수가 존재하며 블록 {}이나 제어문 블록 {}에서는 지역 변수를 선언하지 못한다.<br>
+                  그러나 es6에서 새로 추가된 <i>let과 const는 블록 {}이나 제어문 블록 {}에서도 지역 변수를 선언</i>할 수 있다.
                 </p>
             <div class="t_code">
 <pre><code class="language-js">{
-    var kor = 90;
-    function getScore() {
-       var kor = 100; //지역변수
-       console.log(kor);
+    var num = 10;
+    {
+        var num = 20;   //num은 전역 변수
+        console.log(num);
     }
-    getScore();
-    console.log(kor);
+    console.log(num);
 }
 </pre></code>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
                             <div class="sample03_result">
-                                100<br>
-                                90
+                                20<br>
+                                20
                             </div>
                         </details>
                     </div>
                 </div>
             </div>
+            <div class="t_box">
+                함수 블록{}이 아니라서 지역변수로 인식하지 못한다.
+            </div>
             <!-- //sample03 -->
 
-        
+          <div class="t_code">
+<pre><code class="language-js">{
+    //let으로 선언한 경우
+    let num = 10;
+    {
+        let num = 20;   // 지역 변수
+        console.log(num);
+    }
+    console.log(num);
 
+    // const로 선언한 경우
+    const num = 10;
+    {
+        const num = 20;   // 지역 변수
+        console.log(num);
+    }
+    console.log(num);
+}
+</pre></code>
+                  <div class="result">
+                      <details>
+                          <summary>결과 보기</summary>
+                          <div class="sample04_result">
+                              20<br>
+                              10
+                          </div>
+                      </details>
+                  </div>
+              </div>
+              
+              <p class="t_box">
+                  이처럼 블록{} 안에서 let과 const로 선언된 변수는 <i>지역 변수로 인식</i>된다.<br>
+                  마찬가지로 제어문 블록{}일 경우에도 var는 전역변수이기 때문에 제어문 {} 밖에서도 호출이 가능하지만 <i>let과 const는 지역변수라서 제어문 {} 밖에서는 호출이 불가</i>하다.
+                </p>    
+                <!-- //sample04 -->
 
+                <div id="sample05" class="sample">
+                    <h3 class="t_tit2">전역변수와 지역변수 예시 문제</h3>
+                    <p class="t_desc">
+                        함수 블록{}과 블록{}의 변수를 출력하시오
+                    </p>
+                    <div class="t_code">
+<pre><code class="language-js">{
+    //함수의 전역변수
+    var sum1 = 10;
+    function add1() {
+        var sum1 = 20;
+    }
+    add1();
+    console.log('전역'+ sum1);
+
+    //함수의 지역변수
+    var sum2 = 30;
+    function add2() {
+        var sum2 = 40; 
+        console.log('지역' + sum2)
+    }
+    add2();
+    console.log('전역'+ sum2);
+
+    //블록의 지역변수
+    var num1 = 50;
+    if( num1 === 50) {
+        var num1 = 60;
+    }
+    console.log('전역' + num1);
+
+    let num2 = 70;
+    if( num2 === 70) {
+        let num2 = 80;
+        console.log('지역' + num2);
+    }
+    console.log('전역' + num2);
+}
+</pre></code>
+                        <div class="result">
+                            <details>
+                                <summary>결과 보기</summary>
+                                <div class="sample05_result">
+                                    전역10<br>
+                                    지역40<br>
+                                    전역30<br>
+                                    전역60<br>
+                                    지역80<br>
+                                    전역70<br>
+                                    console.log()는 크롬 개발자 도구를 통해 값을 확인할 수 있다.
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+                <!-- //sample05 -->
+                
+                <hr>
+
+                <h2 class="t_tit">var, let, const 비교 </h2>
+
+                <table class="t_table">
+                    <thead>
+                        <tr>
+                            <th class="ce">변수 범위</th>
+                            <th class="ce">변수 선언</th>
+                            <th class="ce">특징</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="ce">함수 레벨 스코프</td>
+                            <td class="ce">var</td>
+                            <td>변수를 중복해서 선언할 수 있다. <br>
+                            함수 블록{} 내에서만 지역변수가 존재한다.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td  class="ce" rowspan="2">블록 레벨 스코프</td>
+                            <td class="ce">let</td>
+                            <td>같은 블록{}에서는 <i>이미 선언한 변수를 중복해서 선언할 수 없다.</i><br>
+                            <strong>블록{}, 제어문 블록{}에서도 지역 변수가 존재한다.</strong>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="ce">const</td>
+                            <td>같은 블록{}에서 <i>이미 선언한 변수를 중복해서 선언할 수 없고, 저장 된 값을 변경할 수 없다.</i> <br>
+                            블록{}, 제어문 블록{}에서도 지역 변수가 존재한다.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
         </div>
     </main>
     <!-- //main -->

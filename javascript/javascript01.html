@@ -346,9 +346,9 @@
     obj[1] = 200;
     obj[2] = "javascript";
 
-    document.write(obj[a]);
-    document.write(obj[b]);
-    document.write(obj[c]);
+    document.write(obj[0]);
+    document.write(obj[1]);
+    document.write(obj[2]);
 }
 </code></pre>
                 <div class="result">
@@ -370,9 +370,9 @@
     obj.b = 200;
     obj.c = "javascript";
 
-    document.write(obj[a]);
-    document.write(obj[b]);
-    document.write(obj[c]);
+    document.write(obj.a);
+    document.write(obj.b]);
+    document.write(obj.c);
 }
 </code></pre>
                 <div class="result">
@@ -394,9 +394,9 @@
     obj.b = 200;
     obj.c = "javascript";
 
-    document.write(obj[a]);
-    document.write(obj[b]);
-    document.write(obj[c]);
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
 }
 </code></pre>
                 <div class="result">
@@ -415,9 +415,9 @@
                 <pre><code class="language-js">{
     const obj = {a:100, b:200, c:"javascript"};
 
-    document.write(obj[a]);
-    document.write(obj[b]);
-    document.write(obj[c]);
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
 }
 </code></pre>
                 <div class="result">
@@ -725,9 +725,9 @@ document.write(obj[1].c);
             obj[1] = 200;
             obj[2] = "javascript";
 
-            //document.write(obj[a]);
-            //document.write(obj[b]);
-            //document.write(obj[c]);
+            //document.write(obj[0]);
+            //document.write(obj[1]);
+            //document.write(obj[2]);
 
             document.querySelector(".sample10_result").innerHTML = obj[0] + "<br>" + obj[1] + "<br>" + obj[2];
         }
@@ -739,9 +739,9 @@ document.write(obj[1].c);
             obj.b = 100;
             obj.c = "javascript";
 
-            //document.write(obj[a]);
-            //document.write(obj[b]);
-            //document.write(obj[c]);
+            //document.write(obj.a);
+            //document.write(obj.b);
+            //document.write(obj.c);
 
             document.querySelector(".sample11_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
@@ -753,9 +753,6 @@ document.write(obj[1].c);
             obj.b = 100;
             obj.c = "javascript";
 
-            //document.write(obj[a]);
-            //document.write(obj[b]);
-            //document.write(obj[c]);
 
             document.querySelector(".sample12_result").innerHTML = obj.a + "<br>" + obj.b + "<br>" + obj.c;
         }
