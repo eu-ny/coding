@@ -8,14 +8,15 @@
 </head>
 <body>
     <script>
-        for (let i = 1; i<=20; i++) {
-                if (i == 10){
-                    continue; 
-                }
-                //처음부터 시작 break는 끝내기를 의미 continue 10번 부터 시작
-                //continue는 출력 명령을 if문 뒤에 선언해준다.
-                document.write(i); // 10이 사라진다. // 죽은 문법으로 실무에서 거의 사용x
-            }
+     let str1 = 20;
+     function getScore() {
+        let str = 200
+        str = 100; //지역변수
+        str1 += 300; //지역변수
+        console.log(str1);
+     }
+     getScore();
+     console.log(str);
     </script>
 </body>
 </html>
