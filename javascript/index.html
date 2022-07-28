@@ -18,6 +18,7 @@
             margin: 0;
             padding: 0;
         }
+
         main {
             display: flex;
             align-items: center;
@@ -32,6 +33,7 @@
             border-radius: 20px;
             position: relative;
         }
+
         main::before {
             content: "";
             border: 8px solid #50B5F9;
@@ -43,6 +45,7 @@
             border-radius: 12px;
             z-index: -1;
         }
+
         h1 {
             font-size: 8vw;
             color: #0243F1;
@@ -50,10 +53,12 @@
             text-transform: capitalize;
             /*앞글자 대문자*/
         }
+
         nav ul li {
             display: inline;
             list-style: none;
         }
+
         nav ul li a {
             text-decoration: none;
             border: 1px dashed #0243F1;
@@ -65,13 +70,13 @@
             font-size: 18px;
             transition: all 0.3s;
         }
+
         nav ul li a:hover {
             background-color: #0243F1;
             color: #fff;
         }
 
         /* dog */
-
         .dog .wrap {
             width: 300px;
             height: 300px;
@@ -444,10 +449,20 @@
             border-radius: 50%;
         }
 
-        @media (max-width: 480px){
-            h1{
+        @media (max-width: 700px) {
+            main::before {
+                display: none;
+            }
+        }
+
+        @media(max-width : 800px) {
+            main {
+                min-height: 700px;
+            }
+            h1 {
                 font-size: 40px;
             }
+
             nav ul:nth-child(2) {
                 display: none;
             }
@@ -520,6 +535,8 @@
                 <li><a href="javascript02.html">데이터 불러오기</a></li>
                 <li><a href="javascript03.html">데이터 실행하기</a></li>
                 <li><a href="javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
                 <li><a href="javascript05.html">문자열 객체</a></li>
                 <li><a href="javascript06.html">배열 객체</a></li>
                 <li><a href="javascript07.html">수학 객체</a></li>
