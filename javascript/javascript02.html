@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/deracula.css">
 </head>
+
 <body>
     <header id="header">
         <h1><a href="index.html">Javascript</a></h1>
@@ -35,11 +37,12 @@
                 <li><a href="study/if.html">조건문</a></li>
                 <li><a href="study/type.html">데이터 타입</a></li>
                 <li><a href="study/function.html">함수</a></li>
-            </ul>         
+                <li><a href="study/var.html">지역변수/전역변수</a></li>
+            </ul>
             </ul>
         </nav>
     </header>
-    <!-- //header --> 
+    <!-- //header -->
     <main id="main">
         <div class="main_menu">
             <ul>
@@ -96,17 +99,18 @@
                     <details>
                         <summary>결과 보기</summary>
                         <div class="sample01_result">
-                           100 <br>
-                           200 <br>
-                           "javascript"<br>
+                            100 <br>
+                            200 <br>
+                            "javascript"<br>
                         </div>
                     </details>
                 </div>
             </div>
             <!-- //sample01 -->
+
             <div id="sample02" class="sample">
                 <h3>02. 상수 : 데이터 불러오기</h3>
-                 <p>상수에 값 불러오기 이때 상수는 const라고 표기한다.</p>
+                <p>상수에 값 불러오기 이때 상수는 const라고 표기한다.</p>
                 <div class="script"></div>
 <pre><code class="language-js">{
     const x = 100,
@@ -117,13 +121,12 @@
     document.write(y);
     document.write(z);
 }
-
 </code></pre>
                 <div class="result">
                     <details>
                         <summary>결과 보기</summary>
                         <div class="sample02_result">
-                           #1.<br>
+                            #1.<br>
                             100<br>
                             200<br>
                             "javascript"<br>
@@ -132,6 +135,7 @@
                 </div>
             </div>
             <!-- //sample02 -->
+
             <div id="sample03" class="sample">
                 <h3>03. 배열 : 데이터 불러오기</h3>
                 <p>
@@ -223,6 +227,7 @@
                 </div>
             </div>
             <!-- //sample03 -->
+
             <div id="sample04" class="sample">
                 <h3>04. 배열 : 데이터 불러오기 : 2차 배열</h3>
                 <p>배열 속에 배열이 있는 2차 구조에서 데이터를 불러오는 방법</p>
@@ -252,6 +257,7 @@
                 </div>
             </div>
             <!-- //sample04 -->
+            
             <div id="sample05" class="sample">
                 <h3>05. 배열 : 데이터 불러오기 : 갯수 구하기</h3>
                 <p>
@@ -270,12 +276,13 @@
                     <details>
                         <summary>결과 보기</summary>
                         <div class="sample05_result">
-                           3
+                            3
                         </div>
                     </details>
                 </div>
             </div>
             <!-- //sample05 -->
+
             <div id="sample06" class="sample">
                 <h3>06. 배열 : 데이터 불러오기 : for()문</h3>
                 <p>
@@ -355,11 +362,12 @@
                 </div>
             </div>
             <!-- //sample06 -->
+
             <div id="sample07" class="sample">
                 <h3>07. 배열 : 데이터 불러오기 : forEach()</h3>
                 <p>
                     forEach는 for문을 변형해서 더 쉽게 하고자 만들었다.<br>
-                    forEach() 기본 문법 : num(변수).forEach(function(){}); 
+                    forEach() 기본 문법 : num(변수).forEach(function(){});
                 </p>
                 <div class="script"></div>
 <pre><code class="language-js">{
@@ -450,6 +458,7 @@
                 </div>
             </div>
             <!-- //sample07 -->
+
             <div id="sample08" class="sample">
                 <h3>08. 배열 : 데이터 불러오기 : for of</h3>
                 <p>
@@ -478,6 +487,7 @@
                 </div>
             </div>
             <!-- //sample08 -->
+
             <div id="sample09" class="sample">
                 <h3>09. 배열 : 데이터 불러오기 : for in</h3>
                 <p>
@@ -512,6 +522,7 @@
                 </div>
             </div>
             <!-- //sample09 -->
+
             <div id="sample10" class="sample">
                 <h3>10 배열 데이터 불러오기 : map()</h3>
                 <p>
@@ -589,7 +600,8 @@
                 </div>
             </div>
             <!-- //sample10 -->
-        </div>        
+
+        </div>
     </main>
     <!-- //main -->
 
@@ -600,7 +612,7 @@
 
     <script src="assets/js/highlight.min.js"> </script>
     <script>hljs.highlightAll();</script>
-    <script>
+    <!-- <script>
         //01
         {
             // let x = 100;
@@ -736,6 +748,52 @@
             //     document.write(array);
             // });
         }
+    </script> -->
+    <script>
+        //for문 이용해서 하나씩 출력하시오!
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            for (let i = 0; i < 9; i++) {
+                document.write(arr[i]);
+            }
+        }
+        //forEach 이용해서 하니씩 출력
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            arr.forEach(function (el) {
+                document.write(el);
+            });
+        }
+        //map()
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            arr.map(function (el) {
+                document.write(el+ "<br>");
+            });
+
+        }
+        //for in
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            for (let i in arr) {
+                // document.write(i + "<br>");
+                document.write(arr[i]);
+            }
+        }
+        //for of
+        {
+            const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            for (let i of arr) {
+                // document.write(i);
+                document.write(i);
+            }
+        }
     </script>
 </body>
+
 </html>
