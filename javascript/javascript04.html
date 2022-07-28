@@ -367,6 +367,62 @@
                 </div>
             </div>
             <!-- //sample10 -->
+
+            <div id="sample11" class="sample">
+                <h3>11. break문</h3>
+                <p class="t_desc"> 특별한 조건을 만나면 for문 (or while문)의 반복을 종료, 끝내기를 의미한다. + 죽은 문법으로 거의 사용x</p>
+                <div class="script"></div>
+<pre><code class="language-js">{
+    for (let i=1; i &lt;= 20; i++) {
+        document.write(i);
+        if (i === 10){
+            break;
+        }
+        // 조건이 i가 10이랑 완전히 같을 때 break를 실행시키기 때문에 10에서 끝난다.
+        // if( i == 10 ) //성질이 같다.같다. - 겉모습만 검사
+        // if (i === 10) // 완전 비교 - 유전자 까지 검사
+    }
+}
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample11_result">
+                           12345678910
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample11 -->
+
+            <div id="sample12" class="sample">
+                <h3>12. continue문</h3>
+                <p class="t_desc"> 특별한 조건을 만났을 경우 continue는 반복을 끝내지 않으며, 특별한 조건을 실행하지 않고 그 조건의 다음 반복을 시작. </p>
+                <div class="script"></div>
+<pre><code class="language-js">{
+    for (let i = 1; i &lt;= 20; i++) {
+        if (i === 10){
+            continue; 
+        }
+        //처음부터 시작 break는 끝내기를 의미 continue 10번 부터 시작
+        //continue는 출력 명령을 if문 뒤에 선언해준다.
+        document.write(i); // 특별한 조건이었던 10이 사라진다. // 죽은 문법으로 실무에서 거의 사용x
+    }
+}
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample12_result">
+                            12345678911121314151617181920
+                        </div>
+                    </details>
+                </div>
+            </div>
+            <!-- //sample12 -->
+
+
+
         </div>
         </div>
     </main>
@@ -539,20 +595,24 @@
         {
             for (let i = 1; i <= 20; i++) {
                 document.write(i);
-                // if( i == 10 ) //성질이 같다.같다. - 겉모습만 검사
-                if (i === 10) // 완전 비교 - 유전자 까지 검사
+                if (i === 10){
                     break; //처음부터 시작 break는 끝내기를 의미 continue 10번 부터 시작
-                //break는 10에서 끝난다. // 죽은 문법으로 실무에서 거의 사용x
+                } 
+                // if( i == 10 ) //성질이 같다.같다. - 겉모습만 검사
+                // if (i === 10)완전 비교 - 유전자 까지 검사
+                // break는 10에서 끝난다. // 죽은 문법으로 실무에서 거의 사용x
             }
         }
         //출력할 땐 변수이름인 i를 써주는 것 잊지 않기!!
         {
             for (let i = 1; i <= 20; i++) {
-                if (i === 10) // 완전 비교 - 유전자 까지 검사
-                    continue; //처음부터 시작 break는 끝내기를 의미 continue 10번 부터 시작
-                //continue는 10에서 끝나며 출력 명령을 if문 뒤에 선언해준다.
+                if (i === 10){
+                    continue; 
+                }
+                //처음부터 시작 break는 끝내기를 의미 continue 10번 부터 시작
+                //continue는 출력 명령을 if문 뒤에 선언해준다.
+                document.write(i); // 10이 사라진다. // 죽은 문법으로 실무에서 거의 사용x
             }
-            document.write(i); // 10이 사라진다. // 죽은 문법으로 실무에서 거의 사용x
         }
     </script>
 </body>

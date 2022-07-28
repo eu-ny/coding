@@ -1,0 +1,138 @@
+/* 웹폰트 */
+/* 웹폰트 */
+@import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+@import url('https://webfontworld.github.io/ok/OKDdung.css');
+@import url('https://webfontworld.github.io/utoImagetree/UtoImageTree.css');
+
+
+/* 여백 초기화 */
+* {
+    margin: 0;
+    padding: 0; 
+}
+
+/* 링크 초기화 */
+a {
+    text-decoration: none;
+    color: #222;
+}
+
+/* 목록 초기화 */
+li {
+    list-style: none;;
+}
+
+/* 제목 초기화 */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+/* 볼드체 초기화 */
+strong {
+    font-weight: normal;
+}
+
+/* 이탤릭체 초기화 */
+em , i { 
+    font-style: normal;
+}
+
+/* 테이블 초기화 */
+table { 
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+/* 기본 셋팅 */
+:root {
+    font-size: 22px;
+    --fontTitle: 'OKDdung';
+    --fontSub: 'UtoImageTree';
+    --white: #fff;
+    --black: #000;
+    --orange: #e5774f;
+    --orange2:#eb943a;
+    --bgMain: #f4b861;  /*css의 변수 기능*/
+    --bgSub: #fef2e0;
+    --brown: #762917;
+}
+
+/* 레이아웃 초기화 */
+body {
+    background-color: var(--bgMain);
+}
+#header {}
+#main {}
+#footer {
+    padding: 40px;
+    text-align: center;
+}
+#footer a:hover {
+    text-decoration: underline;
+}
+
+/* container */
+.container {
+    max-width: 1400px; /*미디어쿼리와 같은 형태로 훨씬 효율적으로 모바일 및 반응형 설정을 할 수 있다.*/
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* main__title */
+.main__title {
+    margin: 200px 20px;
+    border: 4px solid var(--brown);
+    background-color: var(--bgSub);
+    padding: 80px;
+    text-align: center;
+}
+.main__title h1 {
+    font-family: var(--fontTitle);
+    font-size: 8vw;
+    color: var(--orange);
+    /* -webkit-text-stroke: 1px var(--brown); */
+}
+.main__title h1 strong {
+    color: var(--orange2);
+}
+.main__title em {
+    font-family: var(--fontSub);
+    font-size: 100px;
+    color: var(--brown);
+}
+.main__title p {
+    font-family: var(--fontSub);
+    font-size: 30px;
+    color: var(--brown);
+    margin-top: 50px;
+}
+
+ /* main__desc */
+ .main__desc {
+    margin: 200px 20px;
+    border: 4px solid var(--brown);
+    background-color: var(--bgSub);
+    padding: 80px;
+ }
+ .main__desc .title {
+    display: flex; 
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+ .main__desc .title h2 {
+    width: 30%;
+    height: 30px;
+    border: 4px solid var(--brown);
+    font-size: 2rem; /* =44px */
+    padding: 0.5rem 1rem;
+
+ }
+ .main__desc .title p {
+    width: 60%;
+    font-family: var(--fontSub);
+    font-size: 1.3rem;
+    line-height: 1.3;
+    color: var(--brown);
+ }
