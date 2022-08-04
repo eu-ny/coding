@@ -50,14 +50,21 @@
                     <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCRivhLLSq7nlNlC0LEAhe5%2FUntitled%3Fnode-id%3D473%253A123" allowfullscreen></iframe>
                 </div>
 
-                <h3 class="t_tit2">float을 이용한 반응형 레이아웃</h3>
-                <p class="t_desc2">
-                    clearfix를 이용하여 레이아웃을 고치기 위해서는 고치려는 요소의 부모요소에게 clearfix를 선언해주면 된다.<br>
-                    div class="container <i>clearfix</i>"<br>
-                    또한 이러한 속성을 효율적으로 주기 위해서는 html 마크업을 깔끔하게 선언할 줄 알아야 한다. 때문에 먼저 레이아웃 분석 및 요소의 이름을 잘 선언하는 것이 중요하다.
-                </p>
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">float을 이용한 반응형 레이아웃</h3>
+                    <p class="t_desc">
+                        clearfix를 이용하여 레이아웃을 고치기 위해서는 고치려는 요소의 부모요소에게 clearfix를 선언해주면 된다.<br>
+                        div class="container <i>clearfix</i>"<br>
+                        또한 이러한 속성을 효율적으로 주기 위해서는 html 마크업을 깔끔하게 선언할 줄 알아야 한다. 때문에 먼저 레이아웃 분석 및 요소의 이름을 잘 선언하는 것이 중요하다.
+                    </p>
+                    <p class="t_desc2">
+                        <strong>float으로 인한 영역 깨짐 방지법</strong><br>
+                        1. 깨지는 영역에 clear:both를 설정한다.<br>
+                        2. 부모 박스 영역에 overflowf: hidden을 설정한다. - 애니메이션 효과가 적용되지 않는다.<br>
+                        3. clearfix를 설정한다. - 망가진 레이아웃 부모박스에 클래스로 이름을 설정해준다.<br>
+                    </p>
 
-                <div class="t_code">
+                    <div class="t_code">
 <pre><code class="language-css">
     * {
         margin: 0;
@@ -131,11 +138,6 @@
         float: left;
     }
 
-    /* float으로 인한 영역 깨짐 방지법 
-    1. 깨지는 영역에 clear:both를 설정한다.
-    2. 부모 박스 영역에 overflowf: hidden을 설정한다. - 애니메이션 효과가 적용되지 않는다.
-    3. clearfix를 설정한다. - 망가진 레이아웃 부모박스에 클래스로 이름을 설정해준다.
-    */
     /* clearfix  */
     .clearfix::before {
         zoom: 1;
@@ -225,18 +227,212 @@
         }
     }
 </pre></code>
-                </div>
+                    </div>
 
-                <h4 class=".t_tit">결과</h4>
-                <div class="t_iframe">
-                    <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/eu-ny/embed/jOzzmBP?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                        See the Pen <a href="https://codepen.io/eu-ny/pen/jOzzmBP">
-                        Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
-                        on <a href="https://codepen.io">CodePen</a>.
-                      </iframe>
-                      </iframe>
+                    <h4 class=".t_tit">결과</h4>
+                    <div class="t_iframe">
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/eu-ny/embed/jOzzmBP?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/eu-ny/pen/jOzzmBP">
+                            Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                        </iframe>
+                    </div>
                 </div>
-            </div>
+                <!-- //sample01 -->
+
+                <div id="sample01" class="sample">
+                    <h3 class="t_tit2">flex를 이용한 반응형 레이아웃</h3>
+                    <p class="t_desc">
+                        clearfix를 이용하여 레이아웃을 고치기 위해서는 고치려는 요소의 부모요소에게 clearfix를 선언해주면 된다.<br>
+                        div class="container <i>clearfix</i>"<br>
+                        또한 이러한 속성을 효율적으로 주기 위해서는 html 마크업을 깔끔하게 선언할 줄 알아야 한다. 때문에 먼저 레이아웃 분석 및 요소의 이름을 잘 선언하는 것이 중요하다.
+                    </p>
+                    <p class="t_desc2">
+                        <strong>float으로 인한 영역 깨짐 방지법</strong><br>
+                       
+                    </p>
+
+                    <div class="t_code">
+<pre><code class="language-css"> 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {}
+
+#header {
+    height: 100px;
+    background-color: #EEEBE9;
+}
+
+#nav {
+    height: 100px;
+    background-color: #B9AAA5;
+}
+
+#main {
+    height: 780px;
+    background-color: #886F65;
+}
+
+#footer {
+    height: 100px;
+    background-color: #4E342E;
+}
+
+/* 컨테이너 */
+.container {
+    width: 1200px;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0 auto;
+}
+
+/* 메인박스 구조 */
+.contents {}
+
+.contents .left {}
+
+.contents .left .cont1 {
+    width: 100%;
+    height: 100px;
+    background-color: #74574A;
+}
+
+/* contents 구조 flex 설정 */
+.contents .right {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contents .right .cont2 {
+    width: 100%;
+    height: 200px;
+    background-color: #684D43;
+}
+
+.contents .right .cont3 {
+    width: 50%;
+    height: 480px;
+    background-color: #594139;
+}
+
+.contents .right .cont4 {
+    width: 50%;
+    height: 480px;
+    background-color: #4A352F;
+}
+
+/* 미디어쿼리 설정 */
+@media (max-width: 1220px) {
+    .container {
+        width: 96%;
+    }
+    .contents {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .contents .left {
+        width: 30%;
+    }
+
+    .contents .left .cont1 {
+        width: 100%;
+        height: 780px;
+    }
+
+    .contents .right {
+        width: 70%;
+    }
+
+    .contents .right .cont2 {
+        width: 100%;
+        height: 390px;
+    }
+
+    .contents .right .cont3 {
+        width: 50%;
+        height: 390px;
+    }
+
+    .contents .right .cont4 {
+        width: 50%;
+        height: 390px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .contents .right .cont2 {
+        width: 100%;
+        height: 260px;
+    }
+
+    .contents .right .cont3 {
+        width: 100%;
+        height: 260px;
+    }
+
+    .contents .right .cont4 {
+        width: 100%;
+        height: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contents {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .contents .left {
+        width: 100%;
+        height: 150px;
+    }
+
+    .contents .left .cont1 {
+        height: 150x;
+    }
+
+    .contents .right {
+        width: 100%;
+        height: 630px;
+    }
+    .contents .right .cont2 {
+        height: 210px;
+    }
+
+    .contents .right .cont3 {
+        height: 210px;
+    }
+
+    .contents .right .cont4 {
+        height: 210px;
+    }
+}
+</pre></code>
+                    </div>
+
+                    <h4 class=".t_tit">결과</h4>
+                    <div class="t_iframe">
+                        <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/eu-ny/embed/jOzzmBP?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+                            See the Pen <a href="https://codepen.io/eu-ny/pen/jOzzmBP">
+                            Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
+                            on <a href="https://codepen.io">CodePen</a>.
+                        </iframe>
+                        </iframe>
+                    </div>
+                </div>
+                <!-- //sample01 -->
+
+
         </div>
     </main>
     <!-- /main -->

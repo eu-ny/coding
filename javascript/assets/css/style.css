@@ -81,6 +81,10 @@ body {
     background-color: #000;
     color: #fff;
 }
+.header_nav .effect {
+    margin-top: 10px;
+}
+
 .header_nav .effect li a {
     border-radius: 40px;
 }
