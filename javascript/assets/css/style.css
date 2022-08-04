@@ -81,6 +81,9 @@ body {
     background-color: #000;
     color: #fff;
 }
+.header_nav .effect li a {
+    border-radius: 40px;
+}
 
 /* 메인 샘플 */
 .main_sample {

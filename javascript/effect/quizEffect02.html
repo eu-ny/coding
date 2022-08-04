@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>퀴즈 이펙트</title>
 
+    <link href="https://webfontworld.github.io/NanumSquare/NanumSquare.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
     <link href="https://webfontworld.github.io/Cafe24Danjunghae/Cafe24Danjunghae.css" rel="stylesheet">
     <style>
@@ -16,8 +17,9 @@
             box-sizing: border-box;
         }
 
-        *:before, *:after {
-            box-sizing:border-box;
+        *:before,
+        *:after {
+            box-sizing: border-box;
         }
 
         a {
@@ -47,8 +49,8 @@
             align-items: center;
             padding: 10px;
             position: relative;
-            /*포지션 앱솔루트 속성을 줄 때는 기준점을 꼭 설정해주어야 한다.*/
             z-index: 10;
+            /*포지션 앱솔루트 속성을 줄 때는 기준점을 꼭 설정해주어야 한다.*/
         }
 
         #header::before {
@@ -104,9 +106,9 @@
             background: #fff;
             text-align: center;
             padding: 20px;
-            margin-top: 150px;
             width: 100%;
             box-sizing: border-box;
+            margin-top: 150px;
         }
 
         #footer a {
@@ -167,6 +169,17 @@
             background-color: #f5f5f5;
         }
 
+        .quiz__answer .input {
+            width: 100%;
+            border: 6px ridge #cacaca;
+            font-size: 22px;
+            padding: 13px 20px;
+            background-color: #fff;
+            font-family: "Cafe24Danjunghae";
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
         .quiz__answer .confirm {
             border: 6px ridge #cacaca;
             width: 100%;
@@ -185,11 +198,81 @@
             box-sizing: border-box;
             text-align: center;
             font-family: "Cafe24Danjunghae";
-            display: none;
         }
 
         .quiz__view {
             background-color: #f5f5f5;
+            font-family: "Cafe24Danjunghae";
+            position: relative;
+        }
+
+        .quiz__view .true {
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            /*한 줄 일 때 가운데로 오게해줌*/
+            background-color: #eaa000;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            position: absolute;
+            left: 70%;
+            top: 100px;
+            opacity: 0;
+        }
+
+        .quiz__view .false {
+            width: 120px;
+            height: 120px;
+            line-height: 120px;
+            background-color: rgb(126, 48, 48);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            position: absolute;
+            right: 70%;
+            top: 100px;
+            opacity: 0;
+        }
+
+        .quiz__view.like .true {
+            opacity: 1;
+            animation: wobble 0.6s;
+        }
+
+        .quiz__view.dislike .false {
+            opacity: 1;
+            animation: wobble 0.6s;
+        }
+
+        @keyframes wobble {
+            0% {
+                transform: translateX(0) rotate(0deg);
+            }
+
+            15% {
+                transform: translateX(-25%) rotate(-5deg);
+            }
+
+            30% {
+                transform: translateX(20%) rotate(3deg);
+            }
+
+            45% {
+                transform: translateX(-15%) rotate(-3deg);
+            }
+
+            60% {
+                transform: translateX(10%) rotate(2deg);
+            }
+
+            75% {
+                transform: translateX(-5%) rotate(-1deg);
+            }
+
+            100% {
+                transform: translateX(0) rotate(0deg);
+            }
         }
 
         /* dog */
@@ -476,20 +559,20 @@
             border-radius: 20px 20px 35px 35px;
         }
 
-        .dog.like .face::before {
+        .like .dog .face::before {
             margin-top: 10px;
         }
 
-        .dog.like .face::after {
+        .like .dog .face::after {
             height: 85px;
         }
 
-        .dog.like .eyes {
+        .like .dog .eyes {
             top: 13%;
         }
 
-        .dog.like .eyes::before,
-        .dog.like .eyes::after {
+        .like .dog .eyes::before,
+        .like .dog .eyes::after {
             width: 18px;
             height: 5px;
             margin: 0px 12.5%;
@@ -497,57 +580,57 @@
             border-radius: 20px;
         }
 
-        .dog.like .eyes::after {
+        .like .dog .eyes::after {
             transform: rotate(37.5deg);
         }
 
-        .dog.like .nose {
+        .like .dog .nose {
             top: 18%;
         }
 
-        .dog.like .mouth {
+        .like .dog .mouth {
             top: 16.5%;
         }
 
-        .dog.like .tongue::before {
+        .like .dog .tongue::before {
             height: 12px;
         }
 
-        .dog.like .tongue::after {
+        .like .dog .tongue::after {
             height: 24px;
             animation: movetongue 0.1s linear 0.35s infinite alternate forwards;
         }
 
-        .dog.like .chin {
+        .like .dog .chin {
             top: 34%;
         }
 
-        .dog.like .tail {
+        .like .dog .tail {
             animation: movetail 0.1s linear infinite alternate forwards;
         }
 
-        .dog.dislike .ears::before {
+        .dislike .dog .ears::before {
             transform: rotate(-50deg) translate(-7px, 2px);
         }
 
-        .dog.dislike .ears::after {
+        .dislike .dog .ears::after {
             transform: rotate(50deg) translate(7px, 2px);
         }
 
-        .dog.dislike .face::before {
+        .dislike .dog .face::before {
             margin-top: 28px;
         }
 
-        .dog.dislike .face::after {
+        .dislike .dog .face::after {
             height: 55px;
         }
 
-        .dog.dislike .eyes {
+        .dislike .dog .eyes {
             top: 38%;
         }
 
-        .dog.dislike .eyes::before,
-        .dog.dislike .eyes::after {
+        .dislike .dog .eyes::before,
+        .dislike .dog .eyes::after {
             width: 18px;
             height: 5px;
             margin: 0px 14.5%;
@@ -555,27 +638,27 @@
             border-radius: 20px;
         }
 
-        .dog.dislike .eyes::after {
+        .dislike .dog .eyes::after {
             transform: rotate(37.5deg);
         }
 
-        .dog.dislike .teardrop {
+        .dislike .dog .teardrop {
             animation: cry 0.1s ease-in 0.25s forwards;
         }
 
-        .dog.dislike .nose {
+        .dislike .dog .nose {
             top: 44%;
         }
 
-        .dog.dislike .mouth {
+        .dislike .dog .mouth {
             top: 42%;
         }
 
-        .dog.dislike .chin {
+        .dislike .dog .chin {
             top: 52%;
         }
 
-        .dog.dislike .tail {
+        .dislike .dog .tail {
             transform: rotate(0);
             animation: none;
         }
@@ -606,11 +689,11 @@
 
 <body>
     <header id="header">
-        <h1>Quiz <em>정답 확인하기 유형</em></h1>
+        <h1>Quiz <em>주관식 유형</em></h1>
         <nav>
             <ul>
-                <li class="active"><a href="quizEffect01.html">1</a></li>
-                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li class="active"><a href="quizEffect02.html">2</a></li>
                 <li><a href="quizEffect03.html">3</a></li>
                 <li><a href="quizEffect04.html">4</a></li>
                 <li><a href="quizEffect05.html">5</a></li>
@@ -629,6 +712,8 @@
                     <div class="ask"></div>
                 </h2>
                 <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">오답입니다!</div>
                     <div class="dog">
                         <div class="head">
                             <div class="ears"></div>
@@ -649,6 +734,7 @@
                     </div>
                 </div>
                 <div class="quiz__answer">
+                    <input type="text" class="input" placeholder="정답을 적어주세요!">
                     <button class="confirm">정답 확인</button>
                     <div class="result"></div>
                 </div>
@@ -669,31 +755,51 @@
         const quizAsk = document.querySelector(".quiz__question .ask"); //퀴즈 질문
         const quizConfirm = document.querySelector(".quiz__answer .confirm"); //퀴즈 확인 버튼
         const quizResult = document.querySelector(".quiz__answer .result"); //정답 결과
-        const quizDog = document.querySelector(".quiz__view .dog"); //강아지
+        const quizInput = document.querySelector(".quiz__answer .input"); //사용자 정답
+        const quizView = document.querySelector(".quiz__view"); //강아지
 
         //문제정보
         const answerType = "웹디자인기능사";
-        const answerNum = "1";
-        const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
-        const answerResult = "연변대비";
+        const answerNum = "2";
+        const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업 이미지 통합 전략은?";
+        let answerResult = "CIP";
 
-        // 데이터 저장 //
-
-        //문제 출력
+        //문제출력
         quizType.innerText = answerType;
         quizNumber.innerText = answerNum + ". ";
-        quizAsk.innerText = answerAsk;
-        quizResult.innerText = answerResult;
+        quizAsk.textContent = answerAsk; // textContent와 innerText는 같은 실행문이다. 
+        quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
 
-        //정답확인 버튼
-        //버튼을 클릭하면 확인 버튼을 안보이게 하고 숨겨진 정답을 보이게 해준다.
-        //정답을 확인하면 강아지가 웃고 있어야 한다. // 클래스 like를 추가했기 때문
-        quizConfirm.addEventListener("click", function(){ //= 버튼을 클릭하면 펑션(실행)해라. 
-            quizConfirm.style.display = "none"; //css 스타일
+        //정답 숨기기
+        quizResult.style.display = "none";
+
+        //정답확인
+        // quizConfirm.addEventListener("click", () => {}); 꼭 한문장으로 먼저 쓴 뒤 선언해주기 //정답을 클릭했을 때 정답 실행
+        quizConfirm.addEventListener("click", () => {
+            quizInput.style.display = "none"; // 인풋박스를 숨기기
             quizResult.style.display = "block";
-            quizDog.classList.add("like");
+            quizConfirm.style.display = "none";
+
+            //사용자 정답
+            const userWord = quizInput.value.toLowerCase().trim(); //소문자() //여백() 
+            //value값을 적으면 사용자가 작성한 답을 확인할 수 있다.
+            answerResult = answerResult.toLowerCase().trim();
+
+            // console.log(userWord);
+            // console.log(answerResult);
+
+            //사용자 정답 == 문제정답
+            if (userWord == answerResult) {
+                //정답일 때
+                // alert("정답입니다.")
+                quizView.classList.add("like");
+            } else {
+                //오답일 때
+                // alert("오답입니다.")
+                quizView.classList.add("dislike");
+            }
         });
-   </script>
+    </script>
 </body>
 
 </html>
