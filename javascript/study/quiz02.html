@@ -44,17 +44,17 @@
     <!-- //header --> 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">퀴즈 이펙트01</h2>
+            <h2 class="t_tit">퀴즈 이펙트02</h2>
             <p class="t_desc">
-                자바스크립트를 이용하여 웹디자인기능사 버튼형식 퀴즈 사이트 제작해보기!
+                자바스크립트를 이용하여 웹디자인기능사 주관식 유형 퀴즈 사이트 제작해보기!
             </p>
 
             <hr>
 
-            <h3 class="t_tit2">정답확인 버튼형식으로 제작한 자바스크립트 소스</h3>
+            <h3 class="t_tit2">정답확인 주관식 유형으로 제작한 자바스크립트 소스</h3>
             <p class="t_desc">
                퀴즈박스의 번호, 퀴즈 문제, 답 등을 모두 자바스크립트를 통해 보여준다. <br>
-               정답확인버튼을 눌렀을 경우 깔끔하게 답만 보일 수 있게 정답확인 버튼을 없애준다. 
+               정답을 작성할 경우 오답 및 정답 이벤트가 작동되도록 한다.
             </p>
             <div class="t_code">
 <pre><code class="language-js">//선택자
@@ -63,58 +63,69 @@ const quizNumber = document.querySelector(".quiz__question .number"); //퀴즈 �
 const quizAsk = document.querySelector(".quiz__question .ask"); //퀴즈 질문
 const quizConfirm = document.querySelector(".quiz__answer .confirm"); //퀴즈 확인 버튼
 const quizResult = document.querySelector(".quiz__answer .result"); //정답 결과
+const quizInput = document.querySelector(".quiz__answer .input"); //사용자 정답
 const quizView = document.querySelector(".quiz__view"); //강아지
 
 //문제정보
 const answerType = "웹디자인기능사";
-const answerNum = "1";
-const answerAsk = "인접하는 두 색의 경계 부분에 색상, 명도, 채도의 대비가 더욱 강하게 일어나는 현상을 무엇이라고 하는가?";
-const answerResult = "연변대비";
+const answerNum = "2";
+const answerAsk = "기업의 새로운 이념 구축에 필요한 이미지와 커뮤니케이션 시스템을 의도적, 계획적으로 만들어내는 기업 이미지 통합 전략은?";
+let answerResult = "CIP";
 
-// 데이터 저장 //
-
-//문제 출력
+//문제출력
 quizType.innerText = answerType;
 quizNumber.innerText = answerNum + ". ";
-quizAsk.innerText = answerAsk;
-quizResult.innerText = answerResult;
+quizAsk.textContent = answerAsk; // textContent와 innerText는 같은 실행문이다. 
+quizResult.textContent = "정답은 : " + answerResult + " 입니다.";
 
-//정답숨기기
-quizResult.style.display = "none"
+//정답 숨기기
+quizResult.style.display = "none";
 
-//정답확인 버튼
-//버튼을 클릭하면 확인 버튼을 안보이게 하고 숨겨진 정답을 보이게 해준다.
-//정답을 확인하면 강아지가 웃고 있어야 한다. // 클래스 like를 추가했기 때문
-quizConfirm.addEventListener("click", function(){ 
-    quizConfirm.style.display = "none"; //css 스타일
+//정답확인
+// quizConfirm.addEventListener("click", () =&gt; {}); 꼭 한문장으로 먼저 쓴 뒤 선언해주기 //정답을 클릭했을 때 정답 실행 화살표 함수로!
+quizConfirm.addEventListener("click", () =&gt; {
+    quizInput.style.display = "none"; // 인풋박스를 숨기기
     quizResult.style.display = "block";
-    quizView.classList.add("like");
+    quizConfirm.style.display = "none";
+
+    //사용자 정답
+    const userWord = quizInput.value.toLowerCase().trim(); //value값을 적으면 사용자가 작성한 답을 확인할 수 있다. //소문자로 변환 및 여백을 없애준다. 
+    answerResult = answerResult.toLowerCase().trim();
+
+    // console.log(userWord);
+    // console.log(answerResult);
+
+    //사용자 정답 == 문제정답
+    if (userWord == answerResult) {
+        //정답일 때
+        // alert("정답입니다.")
+        quizView.classList.add("like");
+    } else {
+        //오답일 때
+        // alert("오답입니다.")
+        quizView.classList.add("dislike");
+    }
 });
 </code></pre>
             </div>
 
             <h3 class="t_tit2">!기억해야 할 문법!</h3>
-            <p class="t_desc">버튼을 클릭할 때 정답을 보이게 해준다.</p>
             <div class="t_code">
-<pre><code class="language-js">quizResult.style.display = "block";
+<pre><code class="language-js">const userWord = quizInput.value.toLowerCase().trim();
+//= 소문자 및 여백을 포함 작성해도 정답처리가 될 수 있도록 해준다.
+</code></pre>
+            <div class="t_code">
+<pre><code class="language-js">quizConfirm.addEventListener("click", function(){} 
+//= 버튼을 클릭했을 때 이벤트를 실행해준다.   
 </code></pre>
             </div>
-            <!-- 1 -->
-            <p class="t_desc">버튼을 클릭했을 때 이벤트를 실행해준다.</p>
             <div class="t_code">
-<pre><code class="language-js">quizConfirm.addEventListener("click", function(){}    
+<pre><code class="language-js">quizResult.style.display = "none"
+//= 버튼을 클릭했을 때 정답확인버튼을 숨겨준다. (자바스크립트로 CSS스타일 선언하기) 
 </code></pre>
             </div>
-            <!-- 2 -->
-            <p class="t_desc">버튼을 클릭했을 때 정답확인버튼을 숨겨준다. (자바스크립트로 CSS스타일 선언하는 방법)</p>
             <div class="t_code">
-<pre><code class="language-js">quizResult.style.display = "none" 
-</code></pre>
-            </div>
-            <!-- 3 -->
-            <p class="t_desc">요소에 텍스트 설정하기</p>
-            <div class="t_code">
-<pre><code class="language-js">innerText()
+<pre><code class="language-js">innerText() //요소에 텍스트 설정하기
 </code></pre>
             </div>
             

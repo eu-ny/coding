@@ -82,7 +82,7 @@
             <div id="sample01" class="sample">
                 <h3 class="t_tit2">01. for문을 이용하여 0부터 99까지 출력하기</h3>
                 <div class="t_code">
-<pre><code class="language-js">{
+                    <pre><code class="language-js">{
     for( let i=0; i&lt;100; i++){
         document.write(i);
     }
@@ -145,7 +145,7 @@
                     짝수로 출력할 때는 증가값을 2로 해주면 된다.
                 </p>
                 <div class="t_code">
-<pre><code class="language-js">{
+                    <pre><code class="language-js">{
     //1부터 100까지 출력(짝수)
     //i = i + 2 => 오른쪽 값을 왼쪽 i에 대입한다.(=는 같다라는 의미 X)
     for( let i=2; i&lt;101; i+=2 ){
@@ -181,7 +181,7 @@
                     중첩 for문을 이용해서 테이블을 만들 수 있다.
                 </p>
                 <div class="t_code">
-<pre class="language-js"><code>{
+                    <pre class="language-js"><code>{
     //데이터를 저장, 변경, 추가할 수 있다. 
     //let table = "&lt;table&gt;";
     // table += "&lt;tr&gt;"; //table란 변수를 만들어거 추가한 것.
@@ -259,7 +259,7 @@
             <div id="sample05" class="sample">
                 <h3 class="t_tit2">05. for문을 이용해서 10부터 50까지 출력하기</h3>
                 <div class="t_code">
-<pre><code class="language-js">{
+                    <pre><code class="language-js">{
     for(let i=10; i&lt;=50; i++){
         document.write(i)
    }
@@ -320,7 +320,7 @@
                 <div id="sample06" class="sample">
                     <h3 class="t_tit2">06. for문과 if문을 이용해서 5의 배수만 출력하기 - 제어하기 실행</h3>
                     <div class="t_code">
-<pre><code class="language-js">{
+                        <pre><code class="language-js">{
     for(let i=10; i&lt;=50; i++){
         if( i % 5 == 0){
          document.write(i);
@@ -344,7 +344,7 @@
                 <div id="sample07" class="sample">
                     <h3 class="t_tit2">07. for문과 if문을 이용하여 1~100까지 중 5와 7의 배수만 실행</h3>
                     <div class="t_code">
-<pre><code class="language-js">{
+                        <pre><code class="language-js">{
     for( let i=1; i&lt;=100; i++){
         if(i % 5 == 0) {
             document.write("&lt;span style='color: blue'&gt;"+ i + "&lt;/span&gt;"); 
@@ -372,7 +372,7 @@
                 <div id="sample08" class="sample">
                     <h3 class="t_tit2">08. for문을 이용해서 1~100까지 출력하기 - 조건부 삼항자로 작성(짝수 = red, 홀수 = blue)</h3>
                     <div class="t_code">
-<pre><code class="language-js">{
+                        <pre><code class="language-js">{
     for( let i=0; i&lt;=100; i++){
         (i % 2 == 0) ? document.write("&lt;span style='color: red'&gt;" + i + "&lt;/span&gt;") : document.write("&lt;span style='color: blue'&gt;"+ i + "&lt;/span&gt;");
     }
@@ -400,13 +400,12 @@
                 <div id="sample09" class="sample">
                     <h3 class="t_tit2">09. for문을 이용해서 구구단 출력하기</h3>
                     <div class="t_code">
-<pre><code class="language-js">{
+                        <pre><code class="language-js">{
     //2단 ~ 9단
 
     for( let i=2; i&lt;=9; i++){           // 2 ~ 9 까지의 숫자를 출력한다.
         for( let j=1; j&lt;=9; j++){        //위 조건이 1번 실행 될 때 마다 9번 실행한다. - 1 ~ 9 까지 출력한다.
             document.write(i  + " * " + j + " = "); // i 곱하기 j로 결과값이 나타난다. 
-            document.write("<br>");
         }
     }
 
@@ -416,7 +415,6 @@
         for( let j=1; j&lt;=9; j++){
             let sum = i * j;
             document.write(i  + " * " + j + " = " + sum);
-            document.write("<br>");
         }
     }
 }
@@ -454,20 +452,20 @@
                 <div id="sample10" class="sample">
                     <h3 class="t_tit2">10. for문을 이용해서 테이블 출력하기</h3>
                     <div class="t_code">
-<pre><code class="language-js">{
+                        <pre><code class="language-js">{
     //1부터 100까지 출력하기
 
-    let table = "<table class='testTable'>";
+    let table = "&lt;table class='testTable'&gt;";
             
         for( let i=1; i&lt;=10; i++){
-            table += "<tr>";
+            table += "&lt;tr&gt;";
             for( let j=1; j&lt;=10; j++){
-                table += "<td>"+j+"</td>";
+                table += "&lt;td&gt;"+j+"&lt;/td&gt;";
             }
-            table += "</tr>";
+            table += "&lt;/tr&gt;";
         }
 
-        table += "</table>";
+        table += "&lt;/table&gt;";
 
         document.write(table)
 
@@ -504,8 +502,8 @@
                 <div id="sample11" class="sample">
                     <h3 class="t_tit2">11. for문에서 break문 사용하기</h3>
                     <p class="t_desc"> 특별한 조건을 만나면 for문 (or while문)의 반복을 종료, 끝내기를 의미한다. + 죽은 문법으로 거의 사용x</p>
-                    <div class="script">
-<pre><code class="language-js">{
+                    <div class="t_code">
+                        <pre><code class="language-js">{
     for (let i=1; i &lt;= 20; i++) {
         document.write(i);
         if (i === 10){
@@ -530,10 +528,10 @@
                 <!-- //sample11 -->
 
                 <div id="sample12" class="sample">
-                    <h3>12. continue문</h3>
+                    <h3 class="t_tit2">12. continue문</h3>
                     <p class="t_desc"> 특별한 조건을 만났을 경우 continue는 반복을 끝내지 않으며, 특별한 조건을 실행하지 않고 그 조건의 다음 반복을 시작. </p>
-                    <div class="script">
-<pre><code class="language-js">{
+                    <div class="t_code">
+                        <pre><code class="language-js">{
     for (let i = 1; i &lt;= 20; i++) {
         if (i === 10){
             continue; 
@@ -556,8 +554,8 @@
                 </div>
                 <!-- //sample12 -->
 
-
             </div>
+        </div>
     </main>
     <!-- //main -->
 
