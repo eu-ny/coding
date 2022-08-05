@@ -122,6 +122,8 @@ body {
     justify-content: center;
     margin-top: 50px;
     margin-bottom: 150px;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .quiz {
