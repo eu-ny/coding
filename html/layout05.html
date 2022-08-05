@@ -44,29 +44,28 @@
             <div class="document">
                 <h2 class="t_tit">레이아웃05</h2>
                 <p class="t_desc">
-                   부모<i>컨테이너</i>를 만들어서 <i>가운데 영역</i>을 설정한다.
+                   전체 영역이 들어간 구조로 세부적인 요소들은 부모<i>컨테이너</i>를 만들어서 <i>가운데 영역</i>으로 레이아웃을 설정한다.<br>
+                   이번 레이아웃은 좀 더 심화과정으로 들어간다.
                 </p>
                 <div class="t_iframe">
                     <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2FCRivhLLSq7nlNlC0LEAhe5%2FUntitled%3Fnode-id%3D473%253A123" allowfullscreen></iframe>
                 </div>
 
-                <div id="sample01" class="sample">
+                <div id="float" class="sample">
                     <h3 class="t_tit2">float을 이용한 반응형 레이아웃</h3>
                     <p class="t_desc">
-                        clearfix를 이용하여 레이아웃을 고치기 위해서는 고치려는 요소의 부모요소에게 clearfix를 선언해주면 된다.<br>
-                        div class="container <i>clearfix</i>"<br>
-                        또한 이러한 속성을 효율적으로 주기 위해서는 html 마크업을 깔끔하게 선언할 줄 알아야 한다. 때문에 먼저 레이아웃 분석 및 요소의 이름을 잘 선언하는 것이 중요하다.
+                        CSS 스타일을 효율적으로 주기 위해서는 html 마크업을 깔끔하게 선언할 줄 알아야 한다. 때문에 먼저 레이아웃 분석 및 요소의 이름을 잘 선언하는 것이 중요하다.
                     </p>
                     <p class="t_desc2">
-                        <strong>float으로 인한 영역 깨짐 방지법</strong><br>
+                        <strong>clearfix를 이용한 float의 영역깨짐 방지</strong><br>
                         1. 깨지는 영역에 clear:both를 설정한다.<br>
                         2. 부모 박스 영역에 overflowf: hidden을 설정한다. - 애니메이션 효과가 적용되지 않는다.<br>
-                        3. clearfix를 설정한다. - 망가진 레이아웃 부모박스에 클래스로 이름을 설정해준다.<br>
+                        3. clearfix를 설정한다. - 깨진 레이아웃 요소의 부모요소에게 클래스로 이름을 선언해준다.<br>
+                        div class="container <i>clearfix</i>"
                     </p>
 
                     <div class="t_code">
-<pre><code class="language-css">
-    * {
+<pre><code class="language-css">* {
         margin: 0;
         padding: 0;
     }
@@ -229,22 +228,13 @@
 </pre></code>
                     </div>
 
-                    <h4 class=".t_tit">결과</h4>
-                    <div class="t_iframe">
-                        <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/eu-ny/embed/jOzzmBP?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                            See the Pen <a href="https://codepen.io/eu-ny/pen/jOzzmBP">
-                            Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
-                            on <a href="https://codepen.io">CodePen</a>.
-                        </iframe>
-                        </iframe>
-                    </div>
                 </div>
-                <!-- //sample01 -->
+                <!-- //float -->
 
-                <div id="sample02" class="sample">
+                <div id="flex" class="sample">
                     <h3 class="t_tit2">flex를 이용한 반응형 레이아웃</h3>
                     <p class="t_desc">
-        
+                        각 요소에게 명칭과 선택자를 잘 선언해주는 것이 중요하다. 특히 시멘틱 마크업에 대한 중요성을 놓치면 안되며 의미있는 마크업을 할 줄 알아야 한다.
                     </p>
     
                     <div class="t_code">
@@ -414,22 +404,14 @@
 </pre></code>
                     </div>
 
-                    <h4 class=".t_tit">결과</h4>
-                    <div class="t_iframe">
-                        <iframe height="300" style="width: 100%;" scrolling="no" title="Untitled" src="https://codepen.io/eu-ny/embed/jOzzmBP?default-tab=result&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-                            See the Pen <a href="https://codepen.io/eu-ny/pen/jOzzmBP">
-                            Untitled</a> by eu-ny (<a href="https://codepen.io/eu-ny">@eu-ny</a>)
-                            on <a href="https://codepen.io">CodePen</a>.
-                        </iframe>
-                        </iframe>
-                    </div>
                 </div>
-                <!-- //sample01 -->
+                <!-- //flex -->
 
-                <div id="sample02" class="sample">
+                <div id="gird" class="sample">
                     <h3 class="t_tit2">gird를 이용한 반응형 레이아웃</h3>
                     <p class="t_desc">
-        
+                        세부적인 요소들이 복잡하게 들어가 있는 경우 효율적인 마크업과 시멘틱 마크업에 대한 중요도가 높아진다.<br>
+                        각 요소에 대한 부모요소와 자식요소들을 효율적으로 분석하고 나눌 줄 알아야 한다.
                     </p>
     
                     <div class="t_code">
@@ -563,7 +545,7 @@
                         </iframe>
                     </div>
                 </div>
-                <!-- //sample01 -->
+                <!-- //gird -->
 
 
 
