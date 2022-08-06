@@ -76,7 +76,7 @@ const quizView = document.querySelectorAll(".quiz__view"); //강아지
             </div>
 
             <h3 class="t_tit3">&lt;결과 보기&gt;</h3>
-            <img src="../assets/_image/quiz01.jpg" alt="선택자" style="width: 500px;">
+            <img src="https://user-images.githubusercontent.com/106949433/183258081-8efafd90-df19-470b-b067-3acbe50d1e14.jpg" alt="선택자" style="width: 500px;">
             <!-- //선택자 -->
 
             <hr>
@@ -131,7 +131,7 @@ const quizInfo = [
                     그리고 실제 웹에서 반복문이 어떻게 활용되고 응용되는지 살펴보자.
                 </p>
                 <div class="t_code">
-<pre><code class="language-js">// 일반 문제 출력
+<pre><code class="language-js">// 하드 출력
  quizType[0].textContent = quizInfo[0].answerType;
  quizType[1].textContent = quizInfo[1].answerType;
  quizType[2].textContent = quizInfo[2].answerType;
@@ -152,24 +152,29 @@ const quizInfo = [
  quizResult[2].textContent = quizInfo[2].answerResult;
  quizResult[3].textContent = quizInfo[3].answerResult;
   // quizResult
+</code></pre>
+                </div>
 
-
-
-// for문으로 문제 출력하기
-// 반복적인 것들은 반복문인 for문을 이용하여 효율적으로 text 삽입이 가능하다.
-for(let i=0; i&lt;4; i++ ){
+                <h3 class="t_tit3">&lt;for문으로 문제 출력하기&gt;</h3>
+                <p class="t_desc">반복적인 것들은 반복문인 for문을 이용하여 효율적으로 text 삽입이 가능하다.</p>
+                <div class="t_code">
+<pre><code class="language-js">for(let i=0; i&lt;4; i++ ){
     quizType[i].textContent = quizInfo[i].answerType; //객체라서 키를 구체적으로 선언해주어야 오류 안난다.
     quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
     quizAsk[i].textContent = quizInfo[i].answerAsk;
     quizResult[i].textContent = quizInfo[i].answerResult;
 }
+</code></pre>
+                </div>
+                <div class="t_box"><strong>for문 정리</strong>
+                    1. quizType 상수에 선언한 태그에 quizInfo 상수의 배열안에 넣은 키와 값을 삽입하여 출력한다.<br />
+                    2. quizType[i].textContent = quizInfo[i].answerType; 즉 오른쪽의 값을 왼쪽에 대입하는 것.<br />
+                    =&gt; quizInfo[i] 값인 <i>answerType</i>을 quizType[i] 값에 textContent를 이용하여 텍스트를 대입한다.
+                    </div>
 
-// for문 정리
-// quizType 상수에 선언한 태그에 quizInfo 상수의 배열안에 넣은 키와 값을 삽입하여 출력한다.
-// quizType[i].textContent = quizInfo[i].answerType; 즉 오른쪽의 값을 왼쪽에 대입하는 것. 
-
-
-// forEach()로 출력하기  =  arr.forEach(function(){});
+                <h3 class="t_tit3">&lt;forEach문으로 문제 출력하기&gt;</h3>
+                <div class="t_code">
+<pre><code class="language-js">// forEach()로 출력하기  =  arr.forEach(function(){});
 // 반복문 (4번 반복해준다.)
 // quizInfo가 문제 정보를 저장했기 때문에 공식에서의 arr과 같다.
 quizInfo.forEach(function(el, i){
