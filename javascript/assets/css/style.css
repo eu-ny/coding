@@ -150,10 +150,10 @@ body {
     font-weight: 400;
 }
 .document .t_tit3 {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.6;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-weight: 400;
 }
 .document .t_desc {
@@ -227,7 +227,10 @@ body {
 }
 .document .t_link a:hover {
 	color: #fff;
-    background-color: #ffa600;
+    background-color: #ffa800;
+    border-radius: 30px;
+    transition : 0.3s;
+    text-decoration: none;
 }
 
 @media (max-width: 800px) {
