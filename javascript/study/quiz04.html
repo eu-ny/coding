@@ -79,12 +79,11 @@ const quizSelect = quizSelects.querySelectorAll(".select"); //객관식 선택
                 <p class="t_desc" style="margin-bottom: 50px !important;">
                     =&gt; document 대신 quizSelects를 선언한 이유는 만약 문제가 100개 이상이 되면 선택과 보기는 400개 이상이 되기 때문에 document에서 찾는 것 보단 요소가 소속되어 있는 부모 요소를 써주어야 더 빠르게 찾을 수 있기 때문이다.
                 </p>
+                <details>
+                    <summary>결과 보기</summary>
+                    <img src="https://user-images.githubusercontent.com/106949433/183391595-3ee7d321-99e9-4033-9f95-539bfe7e684e.jpg" alt="quiz02">
+                </details>
             </div>
-
-            <details>
-                <summary>결과 보기</summary>
-                
-            </details>
             <!-- //선택자 -->
 
             <hr>
@@ -174,7 +173,7 @@ updateQuiz(); // = 함수실행문
                 <h3 class="t_tit3">&lt;forEach문으로 객관식 보기 출력&gt;</h3>
                 <p class="t_desc">
                     마찬가지로 객관식 보기 출력이기 때문에 반복되어야 하는 quizChoice로 forEach문을 작성해야 한다.<br />
-                    4번을 반복하여  quizChoice에 answerChoice를 순서대로 대입하여 구현시킨다.
+                    4번을 반복하여 quizChoice에 answerChoice를 순서대로 대입하여 구현시킨다.
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">quizChoice.forEach(function (e, i){
@@ -192,14 +191,14 @@ updateQuiz(); // = 함수실행문
             <div>
                 <h3 class="t_tit2">#4. 정답 확인하기 자바스크립트 소스</h3>
                 <p class="t_box">
-                    함수를 이용하여 forEach문으로 작성한 정답 확인 스크립트를 묶어보자. <br />
+                    <i>함수</i>를 이용하여 for문으로 작성한 정답 확인 스크립트를 묶어보자. <br />
                     그리고 마지막 함수 실행문에서 addEventListener를 통해 구현되는 이벤트로 정답을 확인해보자!
                 </p>
                 <div class="t_code">
 <pre><code class="language-js">//정답 확인
 function answerQuiz(){
     //사용자가 선택한 정답이 문제정답과 같은지 확인하기 (사용자답 == 문제 정답)
-    //사용자가 클릭한 input --> css의 checked 속성을 선택하여 확인할 수 있다.
+    //사용자가 선택한 input에서 css 속성인 checked 스타일이 나타날때 정답을 확인할 수 있다.
 
     for( let i=0; i&lt;quizSelect.length; i++){
         if(quizSelect[i].checked == true){ //보기에 체크가 되어있는 상태일 경우 
@@ -217,11 +216,16 @@ function answerQuiz(){
     }
 }
 quizConfirm.addEventListener("click", answerQuiz); //함수실행문
+
+//기존 함수실행문인 answerQuiz();대신 addEventListener를 사용하여 실행시킬 수도 있다.
 </code></pre>
                 </div>
 
-                <p class="t_desc2"><strong>forEach문 정리</strong><br />
-                    //
+                <p class="t_desc2"><strong>for문 정리</strong><br />
+                    i가 0일 때, quizSelect의 길이만큼 반환해라. <br />
+                    그리고 총 4개의 quizSelect들 중 한가지를 체크를 했을 때 true일 경우, 또 만약 그 체크한 값이 정답 값과 같을 때 classList.add()를 구현하라.<br />
+                    false일 경우에도 해당하는 classList.add()를 구현해라.
+                    그리고 이 모든 이벤트는 quizConfirm을 클릭했을 때 실행되도록 하여라.
                 </p>
             </div>
             <!-- //정답 확인하기 -->
@@ -231,65 +235,28 @@ quizConfirm.addEventListener("click", answerQuiz); //함수실행문
             <div>
                 <h3 class="t_tit2">!기억해야 할 문법!</h3>
                 <p class="t_desc">
-                    데이터 저장 방법 : 배열 속 객체 타입<br />
-                    각 다른 여러개의 데이터를 저장할 때 효율젹인 방법이다.
+                    <i>함수를 이용한 스크립트 묶기</i><br />
+                    여러개의 스크립트(데이터 저장과 출력, 반복문 등)가 충돌되지 않도록 한 덩어리 씩 함수로 묶어준다. 
                 </p>
                 <div class="t_code">
-<pre><code class="language-js">const quizInfo = [
-    {키1 : 값1},{키2 : 값2},{키3 : 값3},{키4 : 값4}
-];
-//객체는 항상 키와 값(key-value pair)으로 값을 넣어야 하며 그 값들은 속성(Property)라고 부른다.
-//객체 한쌍의 구분은 쉼표(comma)로 해준다.
+<pre><code class="language-js">function answerQuiz(){
+    for(){}
+};
+answerQuiz();
 </code></pre>
                 </div>
                 <!-- 1 -->
 
                 <p class="t_desc">
-                    for문을 통한 출력 방법<br />
-                    출력할 때 주의할 점은 데이터를 불러올 경우 저장 방법이 객체이기 때문에 불러오려는 <i>데이터값의 키를 구체적으로 선언</i>해주어야 한다.<br />
-                    즉 <i>.answerType</i>과 같은 키를 선택하지 않은 채로 출력하게 되면 무엇을 출력하라는 건지 인식하지 못하여 <i>object로 값이 출력되는 오류</i>가 난다.
+                    <i>if문에서 css속성 가져오기</i><br />
+                    css와 마찬가지로 속성을 가져오기 위해서는 .클래스 명을 선언해주면 된다.
                 </p>
                 <div class="t_code">
-<pre><code class="language-js">for(let i=0; i&lt;4; i++ ){
-    quizType[i].textContent = quizInfo[i].answerType; 
-}
+<pre><code class="language-js">if(quizSelect[i].checked == true){}
 </code></pre>
                 </div>
                 <!-- 2 -->
-                <p class="t_desc">
-                    forEach을 통한 출력 방법<br>
-                    객체의 인덱스 별로 들어있는 해당 데이터를 뽑기 위한 것이기 때문에 <i>e와 i</i>를 선언해주어야 하며, <i>상수</i>에도 똑같이 <i>인덱스</i>를 붙여주어야 오류가 생기지 않는다.
-                </p>
-                <div class="t_code">
-<pre><code class="language-js">quizInfo.forEach(function(e, i){
-    quizType[i].textContent = quizInfo[i].answerType;
-});
-</code></pre>
-                </div>
-                <!-- 3 -->
 
-                <p class="t_desc">quizConfirm를 <i>클릭</i>할 시 <i>이벤트</i>가 실행되도록한다.</p>
-                <div class="t_code">
-<pre><code class="language-js">quizConfirm.addEventListener("click",function(){});
-</code></pre>
-                </div>
-                <!-- 4 -->
-
-                <p class="t_desc"><i>4개</i>의 quizConfirm가 있음을 알려주고 버튼들의 이벤트가 실행될 수 있도록 한다.</p>
-                <div class="t_code">
-<pre><code class="language-js">quizConfirm.forEach((btn, num)=>{
-    btn.addEventListener("click", ()=>{});
-});
-</code></pre>
-                </div>
-                <!-- 5 -->
-
-                <p class="t_desc">클래스를 하나 <i>추가</i>시킨다.</p>
-                <div class="t_code">
-<pre><code class="language-js">.classList.add("클래스명");
-</code></pre>
-                </div>
-                <!-- 6 -->
             </div>
             <!-- //기억 -->
 
@@ -297,15 +264,15 @@ quizConfirm.addEventListener("click", answerQuiz); //함수실행문
 
             <h3 class="t_tit2">결과보기</h3>
             <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
-                <iframe src="https://eu-ny.github.io/coding/javascript/effect/quizEffect03.html" frameborder="0"></iframe>
+                <iframe src="https://eu-ny.github.io/coding/javascript/effect/quizEffect04.html" frameborder="0"></iframe>
             </div>
 
             <div class="t_link">
-                <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/quizEffect03.html">원본 사이트 보기</a>
+                <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/quizEffect04.html">원본 사이트 보기</a>
             </div>
 
 
-
+            
         </div> 
     </main>
     <!-- //main -->

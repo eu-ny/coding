@@ -285,6 +285,8 @@ body {
 .quiz__selects label input:checked + span {
     background-color: #e2e1de;
 } 
+/* input박스를 checked 한 상태일 때 스타일이 나타나도록 함. */
+/* 즉 input이 checked일 때 형제인 span과 함께 스타일을 적용시키는 것. */
 
 .quiz__selects label input:checked + span::before {
     box-shadow: inset 0px 0px 0px 10px #ffae00;
