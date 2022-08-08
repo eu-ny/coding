@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/quiz.css">
+
+    <link href="https://webfontworld.github.io/NanumSquare/NanumSquare.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/DungGeunMo/DungGeunMo.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/Cafe24Danjunghae/Cafe24Danjunghae.css" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="../javascript01.html">Quiz</a> <em>주관식(여러문제) 유형</em></h1>
+        <nav>
+            <ul>
+                <li><a href="quizEffect01.html">1</a></li>
+                <li><a href="quizEffect02.html">2</a></li>
+                <li><a href="quizEffect03.html">3</a></li>
+                <li class="active"><a href="quizEffect04.html">4</a></li>
+                <li><a href="quizEffect05.html">5</a></li>
+                <li><a href="quizEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="quiz__wrap">
+            <div class="quiz">
+                <span class="quiz__type"></span>
+                <h2 class="quiz__question">
+                    <span class="number"></span>
+                    <div class="ask"></div>
+                </h2>
+                <div class="quiz__view">
+                    <div class="true">정답입니다!</div>
+                    <div class="false">오답입니다!</div>
+                    <div class="dog">
+                        <div class="head">
+                            <div class="ears"></div>
+                            <div class="face"></div>
+                            <div class="eyes">
+                                <div class="teardrop"></div>
+                            </div>
+                            <div class="nose"></div>
+                            <div class="mouth">
+                                <div class="tongue"></div>
+                            </div>
+                            <div class="chin"></div>
+                        </div>
+                        <div class="body">
+                            <div class="tail"></div>
+                            <div class="legs"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__answer">
+                    <div class="quiz__selects">
+                        <label for="select1"> 
+                            <input type="radio" id="select1" name="select" value="1">
+                            <span class="choice"></span>
+                        </label>
+                        <!-- 1 -->
+
+                        <label for="select2">
+                            <input type="radio" id="select2" name="select" value="2">
+                            <span class="choice"></span>
+                        </label>
+                        <!-- 2 -->
+                        
+                        <label for="select3">
+                            <input type="radio" id="select3" name="select" value="3">
+                            <span class="choice"></span>
+                        </label>
+                        <!-- 3 -->
+                        
+                        <label for="select4">
+                            <input type="radio" id="select4" name="select" value="4">
+                            <span class="choice"></span>
+                        </label>
+                        <!-- 4 -->
+                    </div>
+                </div>
+            </div>
+            <!-- quiz01 -->
+
+        </div>
+    </main>
+    <!-- main -->
+
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+
+    <script>
+       //선택자
+        const quizType = document.querySelectorAll(".quiz__type"); //퀴즈종류
+        //변수 퀴즈타입의 내용을 쿼리셀랙터(태그, 아이디, 클래스 선택할 수 있는 것)로 선택한 요소 안에 넣겠다.
+        const quizNumber = document.querySelectorAll(".quiz__question .number"); //퀴즈 번호
+        const quizAsk = document.querySelectorAll(".quiz__question .ask"); //퀴즈 질문
+        const quizConfirm = document.querySelectorAll(".quiz__answer .confirm"); //퀴즈 확인 버튼
+        const quizResult = document.querySelectorAll(".quiz__answer .result"); //정답 결과
+        const quizInput = document.querySelectorAll(".quiz__answer .input"); //사용자 정답
+        const quizView = document.querySelectorAll(".quiz__view"); //강아지
+
+        //색을 보고 맛과 냄새 음과 촉감 등을 느낄 수 있어 톡 쏘는 듯 한 냄새가 연상되는 색은?
+
+        const quizInfo = [
+            {
+                answerType : "웹디자인기능사 2010년 01회",
+                answerNum : "1",
+                answerAsk : "분신, 화신이라는 의미로 채팅, 온라인 게임 등 네크워크 환경에서 자신을 대신하여 커뮤니케이션에 참여하는 가상의 그림 또는 아이콘을 뜻하는 인터넷 용어는 무엇인가?",
+                answerChoice : ["아바타", "쿠키", "포털", "허브"],
+                answerResult : "1",
+                answerEx : "분신, 화신이라는 의미로 채팅, 온라인 게임 등 네크워크 환경에서 자신을 대신하여 커뮤니케이션에 참여하는 가상의 그림 또는 아이콘을 뜻하는 인터넷 용어이다.",
+            }
+        ]
+
+    </script>
+</body>
+
+</html>

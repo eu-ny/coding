@@ -199,25 +199,25 @@
         //배열안 객체로 키와 값으로 데이터를 저장한다.
         const quizInfo = [
             {
-                answerType : "웹디자인기능사 2016년01월24일",
+                answerType : "웹디자인기능사 2016년 01회",
                 answerNum : "1",
                 answerAsk : "한국산업표준(KS)에 따른 색의 3속성은 무엇인가?",
                 answerResult : "Hue(색상),Value(명도),Chroma(채도)"
             }, //0
             {
-                answerType : "웹디자인기능사 2016년01월24일",
+                answerType : "웹디자인기능사 2016년 01회",
                 answerNum : "2",
                 answerAsk : "미적 대상을 구상하는 부분과 부분의 사이에 질적으로나 양적으로 모순되는 일 없이 질서가 잡혀 어울리는 것은 무엇인가?",
                 answerResult : "조화"
             },//1
             {
-                answerType : "웹디자인기능사 2016년01월24일",
+                answerType : "웹디자인기능사 2016년 01회",
                 answerNum : "3",
                 answerAsk : "같은 크기의 형을 상, 하로 겹칠 때 위쪽의 것이 크게 보이는 착시현상은 무엇인가?",
                 answerResult : "상방 거리의 과대착시"
             },//2
             {
-                answerType : "웹디자인기능사 2016년01월24일",
+                answerType : "웹디자인기능사 2016년 01회",
                 answerNum : "4",
                 answerAsk : "색광의 혼합에서 색을 혼합하면 할수록 높아지는 색의 속성은 무엇인가?",
                 answerResult : "명도"
@@ -306,7 +306,7 @@
             btn.addEventListener("click", ()=>{
                 
                 //사용자 정답
-                const userWord = quizInput[num].value.toLowerCase().trim(); //사용자의 정답을 소문자로 변환시키고 여백을 없애준다.
+                const userWord = quizInput[num].value;
                 
                 //사용자 정답 = 문제 정답
                 if(userWord == quizInfo[num].answerResult){ //num = 특별한 기능으로 넣은 것이 아니라 인덱스를 표현하기 위한 명칭으로 이해하면 된다. 1번 객체의 퀴즈 2번 객체의 퀴즈 등등
