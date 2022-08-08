@@ -245,7 +245,7 @@ body {
 }
 
 .quiz__selects {
-
+    margin: 5px 0;
 }
 
 .quiz__selects label {

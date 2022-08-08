@@ -63,29 +63,32 @@
                 <div class="quiz__answer">
                     <div class="quiz__selects">
                         <label for="select1"> 
-                            <input type="radio" id="select1" name="select" value="1">
+                            <input type="radio" id="select1" class="select" name="select" value="1">
                             <span class="choice"></span>
                         </label>
                         <!-- 1 -->
 
                         <label for="select2">
-                            <input type="radio" id="select2" name="select" value="2">
+                            <input type="radio" id="select2" class="select" name="select" value="2">
                             <span class="choice"></span>
                         </label>
                         <!-- 2 -->
                         
                         <label for="select3">
-                            <input type="radio" id="select3" name="select" value="3">
+                            <input type="radio" id="select3" class="select" name="select" value="3">
                             <span class="choice"></span>
                         </label>
                         <!-- 3 -->
                         
                         <label for="select4">
-                            <input type="radio" id="select4" name="select" value="4">
+                            <input type="radio" id="select4" class="select" name="select" value="4">
                             <span class="choice"></span>
                         </label>
                         <!-- 4 -->
                     </div>
+
+                    <button class="confirm">정답 확인하기</button>
+                    <div class="result"></div>
                 </div>
             </div>
             <!-- quiz01 -->
@@ -101,16 +104,17 @@
 
     <script>
        //선택자
-        const quizType = document.querySelectorAll(".quiz__type"); //퀴즈종류
-        //변수 퀴즈타입의 내용을 쿼리셀랙터(태그, 아이디, 클래스 선택할 수 있는 것)로 선택한 요소 안에 넣겠다.
-        const quizNumber = document.querySelectorAll(".quiz__question .number"); //퀴즈 번호
-        const quizAsk = document.querySelectorAll(".quiz__question .ask"); //퀴즈 질문
-        const quizConfirm = document.querySelectorAll(".quiz__answer .confirm"); //퀴즈 확인 버튼
-        const quizResult = document.querySelectorAll(".quiz__answer .result"); //정답 결과
-        const quizInput = document.querySelectorAll(".quiz__answer .input"); //사용자 정답
-        const quizView = document.querySelectorAll(".quiz__view"); //강아지
-
-        //색을 보고 맛과 냄새 음과 촉감 등을 느낄 수 있어 톡 쏘는 듯 한 냄새가 연상되는 색은?
+        const quizType = document.querySelector(".quiz__type"); //퀴즈종류
+        const quizNumber = document.querySelector(".quiz__question .number"); //퀴즈 번호
+        const quizAsk = document.querySelector(".quiz__question .ask"); //퀴즈 질문
+        const quizConfirm = document.querySelector(".quiz__answer .confirm"); //퀴즈 확인 버튼
+        const quizResult = document.querySelector(".quiz__answer .result"); //정답 결과
+        const quizView = document.querySelector(".quiz__view"); //강아지
+        const quizSelects = document.querySelector(".quiz__selects"); //객관식 보기
+        const quizChoice = quizSelects.querySelectorAll(".choice"); //객관식 보기
+        const quizSelect = quizSelects.querySelectorAll(".select"); //객관식 선택
+        //quizSelects.querySelectorAll(".select") = 퀴즈 셀렉터 안에 셀렉터를 찾게 해준다. 만약 문제가 100개 이상이 되면 보기는 400개 이상이 되기 때문에 document에서 찾는 것 보단 요소가 소속되어 있는 부모 요소를 대신 써주면 더 빠르게 찾을 수 있게 된다.
+        //choice와 select는 복수로 구현되어야 하기 때문에 querySelectorAll을 사용하여 모두 선택해준다.
 
         const quizInfo = [
             {
@@ -119,10 +123,62 @@
                 answerAsk : "분신, 화신이라는 의미로 채팅, 온라인 게임 등 네크워크 환경에서 자신을 대신하여 커뮤니케이션에 참여하는 가상의 그림 또는 아이콘을 뜻하는 인터넷 용어는 무엇인가?",
                 answerChoice : ["아바타", "쿠키", "포털", "허브"],
                 answerResult : "1",
-                answerEx : "분신, 화신이라는 의미로 채팅, 온라인 게임 등 네크워크 환경에서 자신을 대신하여 커뮤니케이션에 참여하는 가상의 그림 또는 아이콘을 뜻하는 인터넷 용어이다.",
+                answerEx : "정답은 아바타이다. 분신, 화신이라는 의미로 채팅, 온라인 게임 등 네크워크 환경에서 자신을 대신하여 커뮤니케이션에 참여하는 가상의 그림 또는 아이콘을 뜻하는 인터넷 용어를 아바타라고 한다.",
             }
         ]
+        
+        //함수를 사용하여 각 식(출력 등)을 묶어주어서 충돌 및 오류의 가능성을 없애준다.
+        function updateQuiz(){
+            //문제 출력
+            quizType.textContent = quizInfo[0].answerType;
+            quizNumber.textContent = quizInfo[0].answerNum + ". ";
+            quizAsk.textContent = quizInfo[0].answerAsk;
+            quizResult.textContent = quizInfo[0].answerEx;
 
+            //객관식 보기 출력
+            //for문
+            //단수일 때 length를 사용하면 1번밖에 반복이 되지 않아서 오류가 난다. 때문에 배열에 맞게 인덱스를 선언해주어야 제대로 구현해주어야 한다.
+            //i < quizInfo[0].answerChoice[i].length; 로 표현하면 answerChoice의 길이만큼 반복하기 때문에 오류는 나지 않는다.
+            // for( let i=0; i<4; i++){
+            //     quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+            // }
+
+            //forEach문
+            quizChoice.forEach(function (e, i){
+                quizChoice[i].textContent = quizInfo[0].answerChoice[i];
+            });
+
+            // 해설 숨기기
+            quizResult.style.display = "none";
+            
+       }
+       updateQuiz();
+
+       //정답 확인
+       function answerQuiz(){
+        //사용자가 선택한 정답이 문제정답과 같은지 확인하기 (사용자답 == 문제 정답)
+        //사용자가 클릭한 input --> css의 checked 속성을 선택하여 확인할 수 있다.
+
+            for( let i=0; i<quizSelect.length; i++){
+                if(quizSelect[i].checked == true){ //보기에 체크가 되어있는 상태일 경우 
+                    //체크된 번호와 정답 번호가 같을 경우 true
+                    if(quizSelect[i].value == quizInfo[0].answerResult){
+                        // alert("정답");
+                        quizView.classList.add("like");
+                    } else {
+                        // alert("오답");
+                        quizView.classList.add("dislike");
+                        quizResult.style.display = "block";
+                        quizConfirm.style.display = "none";
+                    }
+                } else {
+                    // alert("정답을 체크하지 않았습니다!"); - 다음예제에서 사용
+                }
+            }
+       }
+       quizConfirm.addEventListener("click", answerQuiz);
+       //addEventListener("click", function(){});에서 함수 안에 answerQuiz를 적으면 위에 함수로 작성한 answerQuiz를 불러오는 것과 같다.
+       //사용자가 클릭하면 answerQuiz이라는 함수가 실행되도록 한다.
     </script>
 </body>
 

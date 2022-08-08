@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 유형01</title>
+    <style>
+        /* fonts */
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
+
+        .nexon {
+            font-family: 'NexonLv1Gothic';
+            font-weight: 400;
+        }
+
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        img {
+            width: 100%;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: normal;
+        }
+
+        /* common */
+        .container {
+            width: 1160px;
+            padding: 0 20px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 120px 0;
+        }
+        .section > h2 {
+            font-size: 50px;
+            line-height: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section > p {
+            font-size: 22px;
+            font-weight: 300;
+            color: #666;
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        /* cardType */
+        .card__inner {
+            display: flex;
+            justify-content: space-around; /* 정렬에 맞게 배치되도록 한다. */
+        }
+        .card {
+            width: 32%;
+            background: #f5f5f5;
+        }
+        .card__body {
+            padding: 24px;
+        }
+        .card__body .tit {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .card__body .desc {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        .card__body .btn {}
+    </style>
+</head>
+<body>
+    <section id="cardType" class="card__wrap nexon section">
+        <h2>전시회 리스트</h2>
+        <p>전시를 좋아하는 사람들을 위한 전시 리스트</p>
+        <div class="card__inner container">
+            <article class="card">
+                <figure class__header>
+                    <img src="img/card_bg01.jpg" alt="상업 전시">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">상업 전시를 찾고 계신가요?</h3>
+                    <p class="desc">
+                        상업적인 성격을 띄는 전시회로 대표적으로는 디자인아트페어, 키아프 등등이 있습니다. 이 전시회에서는 관람 뿐만 아니라 현장에서 바로 구매할 수 있습니다.
+                    </p>
+                    <a class="btn" href="#">더 자세히 보기</a>
+                </div>
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="img/card_bg02.jpg" alt="미술 전시">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">미술 전시를 찾고 계신가요?</h3>
+                    <p class="desc">
+                        순수미술과 같은 예술 분야를 주로 전시하며 가벼운 상업 전시와는 달리 좀더 깊은 문화 예술을 관람할 수 있습니다. 전문적인기관에서 운영하는 경우가 대부분 입니다.
+                    </p>
+                    <a class="btn" href="#">더 자세히 보기</a>
+                </div>  
+            </article>
+            <article class="card">
+                <figure>
+                    <img src="img/card_bg03.jpg" alt="사진 전시">
+                </figure>
+                <div class="card__body">
+                    <h3 class="tit">사진 전시를 찾고 계신가요?</h3>
+                    <p class="desc">
+                        사진을 주제로 하여 일상의 모습 또는 그 이상을 보여주는 작품들을 감상할 수 있습니다. 최근 사진전의 수요가 오르는 추세이며, 가볍게 관람하기에도 좋습니다. 
+                    </p>
+                    <a class="btn" href="#">더 자세히 보기</a>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+</html>
