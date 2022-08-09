@@ -38,8 +38,7 @@
                 <li><a href="layout05.html">레이아웃05</a></li>
             </ul>
         </nav>
-    </main>
-    <!-- //header -->
+        <!-- //nav -->
 
     <div class="main_rafer">
         <div class="document">
@@ -53,14 +52,16 @@
 
             <hr>
 
-            <div id="float" class="sample">
-                <h3 class="t_tit2">html 소스 : 레아아웃 구조 파악하기</h3>
+            <div id="html" class="sample">
+                <h3 class="t_tit2">&lt; HTML 소스 : 레아아웃 구조 파악하기 &gt;</h3>
                 <p class="t_desc">
-                    피그마를 통해 원하는 카드 유형을 디자인 합니다. 그 후 페이지 구조를 파악하여 시멘틱 마크업을 해줍니다. 
+                    피그마를 통해 원하는 카드 유형을 디자인 합니다. 그 후 페이지 구조를 파악하여 <i>웹 표준성과 접근성</i>에 맞는<i>시멘틱한 마크업</i>을 해줍니다. 
                 </p>
                 <p class="t_desc2">
-                    <strong>마크업의 중요성</strong><br>
-                    
+                    <strong>구조 파악하기</strong><br />
+                    1. 카드 레이아웃은 보통 웹 메인 페이지의 섹션 부분에 위치한다. 때문에 시멘틱 태그인 &lt;section&GT;을 사용해주어 카드 영역에 해당하는 모든 요소를 묶어준다.<br />
+                    2. 카드영역은 총 3개이기 때문에 3개의 &lt;article&GT;을 사용해주어 묶어준다.<br />
+                    3. article의 헤더 부분에는 &lt;figure&GT;를 사용하여 이미지를 삽입해준다. 마친가지로 바디 부분에는 해당하는 텍스트를 작성하면 된다.
                 </p>
 
                 <div class="t_code">
@@ -69,7 +70,7 @@
 &lt;p&gt;전시를 좋아하는 사람들을 위한 전시 리스트&lt;/p&gt;
 &lt;div class="card__inner container"&gt;
     &lt;article class="card"&gt;
-        &lt;figure class__header&gt;
+        &lt;figure class="card__header"&gt;
             &lt;img src="img/card_bg01.jpg" alt="상업 전시"&gt;
         &lt;/figure&gt;
         &lt;div class="card__body"&gt;
@@ -81,7 +82,7 @@
         &lt;/div&gt;
     &lt;/article&gt;
     &lt;article class="card"&gt;
-        &lt;figure&gt;
+        &lt;figure class="card__header"&gt;
             &lt;img src="img/card_bg02.jpg" alt="미술 전시"&gt;
         &lt;/figure&gt;
         &lt;div class="card__body"&gt;
@@ -93,7 +94,7 @@
         &lt;/div&gt;  
     &lt;/article&gt;
     &lt;article class="card"&gt;
-        &lt;figure&gt;
+        &lt;figure class="card__header"&gt;
             &lt;img src="img/card_bg03.jpg" alt="사진 전시"&gt;
         &lt;/figure&gt;
         &lt;div class="card__body"&gt;
@@ -114,10 +115,10 @@
 
             <hr>
 
-            <div id="flex" class="sample">
-                <h3 class="t_tit2">css 소스</h3>
+            <div id="css" class="sample">
+                <h3 class="t_tit2">&lt; CSS 소스 &gt;</h3>
                 <p class="t_desc">
-                    각 요소에게 명칭과 선택자를 잘 선언해주는 것이 중요하다. 특히 시멘틱 마크업에 대한 중요성을 놓치면 안되며 의미있는 마크업을 할 줄 알아야 한다.
+                    구조 짜임의 순서대로 css 스타일을 적용시켜보자. css 스타일을 적용시킬 땐 <i>선택자의 위치와 관계를 주의</i>해서 선언해야 한다!
                 </p>
 
                 <div class="t_code">
@@ -135,7 +136,7 @@
     padding: 0;
 }
 a {
-    text-decoration: none;
+    text-decoration: none; /* 텍스트를 초기화. */
     color: #000;
 }
 img {
@@ -154,13 +155,14 @@ h1, h2, h3, h4, h5, h6 {
 .section {
     padding: 120px 0;
 }
-.section > h2 {
+.section &gt; h2 { 
     font-size: 50px;
     line-height: 1;
-    text-align: center;
+    text-align: center;     /* 텍스트를 가운데로 정렬한다. */
     margin-bottom: 20px;
 }
-.section > p {
+/* 요소 &gt; 요소는 부모와 자식의 관계를 나타낸다. 마찬가지로 요소 + 요소는 형제 관계를 나타낸다.*/
+.section &gt; p {
     font-size: 22px;
     font-weight: 300;
     color: #666;
@@ -198,6 +200,55 @@ h1, h2, h3, h4, h5, h6 {
             </div>
             <!-- //css -->
 
+            <hr>
+
+            <div>
+                <h3 class="t_tit2">!오늘의 포인트!</h3>
+                <p class="t_desc">
+                    <i>figure 태그</i><br />
+                    이미지 또는 그래프 등의 도표 자료들을 의미하는 시멘틱 태그이다.<br />
+                    때문에 img와 같은 태그를 사용할 때에는 꼭 함꼐 사용해주어야 한다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;figure&gt;&lt;/figure&gt;
+
+&lt;!-- 예시 --&gt;
+&lt;figure&gt;
+    &lt;img src="" alt=""&gt;
+&lt;/figure&gt;
+</code></pre>
+                </div>
+                <!-- 1 -->
+
+                <p class="t_desc">
+                    <i>css속성 선택자(요소)의 우선순위</i><br />
+                    위치를 더 자세히 선언해줄 수록 우선순위가 높아진다. 또한 오류의 가능성도 낮아지기 때문에 구조가 복잡할 수 록 위치와 선택자 명칭을 중요하게 선언해주어야 한다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">.card .card__body .btn {} //1
+.card__body .btn {} //2
+</code></pre> 
+                </div>
+                <!-- 2 -->
+
+                <p class="t_desc">
+                    <i>css속성 선택자(요소)간의 관계</i><br />
+                    요소 &gt; 요소는 부모와 자식의 관계를 나타낸다. 마찬가지로 요소 + 요소는 형제 관계를 나타낸다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-css">.section &gt; h2 /*section안에 h2라는 자식요소를 의미*/
+.section &gt; h2 + p /*section안에 자식요소와 h2와 h2의 형제 요소인 p를 의미*/
+</code></pre>
+                </div>
+                <!-- 2 -->
+
+            </div>
+            <!-- //포인트 -->
+
+
+        </div>
+    </div>
+    </main>
 
     <footer id="footer">
         <a href="meilto:praise1109@gmail.com">praise1109@gmail.com</a>
