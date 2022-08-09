@@ -46,8 +46,19 @@
             <p class="t_desc">
                웹페이지 실습을 위한 <i>카드타입</i> 페이지 기초 실습하기!
             </p>
-            <div class="t_iframe">
-                <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F778jh9iS8foSwnYrgOxjui%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0---%25EA%25B5%25AC%25EC%25A1%25B0%3Fnode-id%3D1%253A70" allowfullscreen></iframe>
+
+            <hr>
+
+            <div id="figma" class="sample">
+                <h3 class="t_tit2">&lt; figma : 디자인 하기 &gt;</h3>
+                <p class="t_desc">
+                    피그마를 통해 원하는 카드 유형을 디자인 합니다. 디자인을 할 땐 만들고자 하는 <i>페이지의 성격</i>을 잘 파악하여 <i>그리드</i>를 만들어주는 것이 중요합니다.<br />
+                    그리드 작업이 완벽해야 후에 코딩을 하는 데 있어서도 오류 및 오차가 생기지 않아 불편해지지 않습니다!
+                </p>
+                <img src="https://user-images.githubusercontent.com/106949433/183720238-0b7b02df-2951-4db9-b0d2-cac83305f544.jpg" alt="site__layout" aria-hidden="true">
+                <div class="t_iframe">
+                    <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F778jh9iS8foSwnYrgOxjui%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0---%25EA%25B5%25AC%25EC%25A1%25B0%3Fnode-id%3D1%253A70" allowfullscreen></iframe>
+                </div>
             </div>
 
             <hr>
@@ -55,13 +66,14 @@
             <div id="html" class="sample">
                 <h3 class="t_tit2">&lt; HTML 소스 : 레아아웃 구조 파악하기 &gt;</h3>
                 <p class="t_desc">
-                    피그마를 통해 원하는 카드 유형을 디자인 합니다. 그 후 페이지 구조를 파악하여 <i>웹 표준성과 접근성</i>에 맞는<i>시멘틱한 마크업</i>을 해줍니다. 
+                    디자인한 웹 페이지 시안을 보며 페이지 구조를 파악한 후 <i>웹 표준성과 접근성</i>에 맞는<i>시멘틱한 마크업</i>을 해줍니다. 
                 </p>
                 <p class="t_desc2">
                     <strong>구조 파악하기</strong><br />
                     1. 카드 레이아웃은 보통 웹 메인 페이지의 섹션 부분에 위치한다. 때문에 시멘틱 태그인 &lt;section&GT;을 사용해주어 카드 영역에 해당하는 모든 요소를 묶어준다.<br />
                     2. 카드영역은 총 3개이기 때문에 3개의 &lt;article&GT;을 사용해주어 묶어준다.<br />
-                    3. article의 헤더 부분에는 &lt;figure&GT;를 사용하여 이미지를 삽입해준다. 마친가지로 바디 부분에는 해당하는 텍스트를 작성하면 된다.
+                    3. article의 헤더 부분에는 &lt;figure&GT;를 사용하여 이미지를 삽입해준다. 마친가지로 바디 부분에는 해당하는 텍스트를 작성하면 된다.<br />
+                    4. 웹 접근성에 맞춰 btn을 나타내는 span 태그에게 <i>aria-hidden="true"</i>라는 속성을 주어 스크린리더 프로그램이 내용과 관련이 없는 <i>svg파일을 읽지 않고</i> 지나가도록 해준다.
                 </p>
 
                 <div class="t_code">
@@ -78,7 +90,14 @@
             &lt;p class="desc"&gt;
                 상업적인 성격을 띄는 전시회로 대표적으로는 디자인아트페어, 키아프 등등이 있습니다. 이 전시회에서는 관람 뿐만 아니라 현장에서 바로 구매할 수 있습니다.
             &lt;/p&gt;
-            &lt;a class="btn" href="#"&gt;더 자세히 보기&lt;/a&gt;
+            &lt;a class="btn" href="#"&gt;
+                더 자세히 보기
+                &lt;span aria-hidden="true"&gt; 
+                    &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                        &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                        &lt;/svg&gt;                                
+                &lt;/span&gt;
+            &lt;/a&gt;
         &lt;/div&gt;
     &lt;/article&gt;
     &lt;article class="card"&gt;
@@ -90,7 +109,14 @@
             &lt;p class="desc"&gt;
                 순수미술과 같은 예술 분야를 주로 전시하며 가벼운 상업 전시와는 달리 좀더 깊은 문화 예술을 관람할 수 있습니다. 전문적인기관에서 운영하는 경우가 대부분 입니다.
             &lt;/p&gt;
-            &lt;a class="btn" href="#"&gt;더 자세히 보기&lt;/a&gt;
+            &lt;a class="btn" href="#"&gt;
+                더 자세히 보기
+                &lt;span aria-hidden="true"&gt; 
+                    &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                        &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                        &lt;/svg&gt;                                
+                &lt;/span&gt;
+            &lt;/a&gt;
         &lt;/div&gt;  
     &lt;/article&gt;
     &lt;article class="card"&gt;
@@ -102,7 +128,14 @@
             &lt;p class="desc"&gt;
                 사진을 주제로 하여 일상의 모습 또는 그 이상을 보여주는 작품들을 감상할 수 있습니다. 최근 사진전의 수요가 오르는 추세이며, 가볍게 관람하기에도 좋습니다. 
             &lt;/p&gt;
-            &lt;a class="btn" href="#"&gt;더 자세히 보기&lt;/a&gt;
+            &lt;a class="btn" href="#"&gt;
+            더 자세히 보기
+            &lt;span aria-hidden="true"&gt; 
+                &lt;svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg"&gt;
+                    &lt;path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/&gt;
+                    &lt;/svg&gt;                                
+            &lt;/span&gt;
+        &lt;/a&gt;
         &lt;/div&gt;
     &lt;/article&gt;
 &lt;/div&gt;
@@ -147,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* common */
-.container {
+.container {                /* 부모 컨테이너 박스를 만들어 가로 값을 고정시킨다. */
     width: 1160px;
     padding: 0 20px;
     margin: 0 auto;
@@ -173,7 +206,7 @@ h1, h2, h3, h4, h5, h6 {
 /* cardType */
 .card__inner {
     display: flex;
-    justify-content: space-around; /* 정렬에 맞게 배치되도록 한다. */
+    justify-content: space-around; /* 중심을 기준으로 정렬하여 모아준다.*/
 }
 .card {
     width: 32%;
@@ -221,6 +254,18 @@ h1, h2, h3, h4, h5, h6 {
                 <!-- 1 -->
 
                 <p class="t_desc">
+                    <i>aria-hidden="true" 속성</i><br />
+                    웹 접근성을 위해 스크린리더 프로그램이 <i>내용과 관련이 없는 파일</i>을 읽지 않고 지나가도록 해준다.
+                </p>
+                <div class="t_code">
+<pre><code class="language-html">&lt;span aria-hidden="true"&gt;
+    &lt;svg&gt;svg소스&lt;/svg&gt;
+&lt;/span&gt;
+</code></pre>
+                </div>
+                <!-- 2 -->
+
+                <p class="t_desc">
                     <i>css속성 선택자(요소)의 우선순위</i><br />
                     위치를 더 자세히 선언해줄 수록 우선순위가 높아진다. 또한 오류의 가능성도 낮아지기 때문에 구조가 복잡할 수 록 위치와 선택자 명칭을 중요하게 선언해주어야 한다.
                 </p>
@@ -229,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
 .card__body .btn {} //2
 </code></pre> 
                 </div>
-                <!-- 2 -->
+                <!-- 3 -->
 
                 <p class="t_desc">
                     <i>css속성 선택자(요소)간의 관계</i><br />
@@ -240,10 +285,25 @@ h1, h2, h3, h4, h5, h6 {
 .section &gt; h2 + p /*section안에 자식요소와 h2와 h2의 형제 요소인 p를 의미*/
 </code></pre>
                 </div>
-                <!-- 2 -->
+                <!-- 4 -->
 
             </div>
             <!-- //포인트 -->
+
+            <hr>
+
+            <h3 class="t_tit2">결과보기</h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/site/cardType/cardType01.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/site/cardType/cardType01.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/site/cardType/cardType01.html">원본 페이지 보기</a>
+            </div>
 
 
         </div>

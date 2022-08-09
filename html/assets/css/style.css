@@ -158,7 +158,10 @@ body {
 }
 
 /* 티스토리용 문서 */
-
+.document img {
+    width: 100%;
+    margin: 20px 0 50px 0;
+}
 .document i {
     font-style: normal;
     position: relative;
@@ -201,13 +204,13 @@ body {
 }
 .document .t_desc {
     font-size: 16px;
-    line-height: 1.6;
     color: #666;
     margin-top: 10px !important;
     margin-bottom: 10px !important;
 }
 .document .t_desc2 {
     font-size: 16px;
+
     color: #666;
     margin-bottom: 10px !important;
     padding: 15px 20px !important;

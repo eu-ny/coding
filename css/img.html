@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS : 벡터 방식과 비트맵</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈1</a></li>
+                <li><a href="quiz02.html">퀴즈2</a></li>
+                <li><a href="quiz03.html">퀴즈3</a></li>
+                <li><a href="quiz04.html">퀴즈4</a></li>
+                <li><a href="element.html">요소선택</a></li>
+            </ul>               
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">퀴즈 객관식 유형</h2>
+            <p class="t_desc2">
+                자바스크립트를 이용하여 웹디자인기능사 필기문제를 객관식 유형 퀴즈로 여러개 제작해보기<br>
+                하나의 객관식 문제를 자바스크립트를 이용하여 만들어보자!
+            </p>
+
+            <hr>
+            <div>
+                <h3 class="t_tit2">#1. 선택자 자바스크립트 소스</h3>
+                <p class="t_box">
+                    상수에게 해당명칭(ex: quizType)을 선언해주고 쿼리셀랙터(태그, 아이디, 클래스를 선택할 수 있는 것)로 선택한 요소를 찾아서 넣어보자!<br>
+                </p>
+                <div class="t_code">
+<pre><code class="language-js"> //선택자
+const quizType = document.querySelector(".quiz__type"); //퀴즈종류
+const quizNumber = document.querySelector(".quiz__question .number"); //퀴즈 번호
+const quizAsk = document.querySelector(".quiz__question .ask"); //퀴즈 질문
+const quizConfirm = document.querySelector(".quiz__answer .confirm"); //퀴즈 확인 버튼
+const quizResult = document.querySelector(".quiz__answer .result"); //정답 결과
+const quizView = document.querySelector(".quiz__view"); //강아지
+const quizSelects = document.querySelector(".quiz__selects"); //객관식 보기
+const quizChoice = quizSelects.querySelectorAll(".choice"); //객관식 보기
+const quizSelect = quizSelects.querySelectorAll(".select"); //객관식 선택
+
+//quizSelects.querySelectorAll(".select") = 퀴즈 셀렉터 안에 셀렉터를 찾게 해준다.
+//choice와 select는 복수로 구현되어야 하기 때문에 querySelectorAll을 사용하여 모두 선택해준다.
+</code></pre>
+                </div>
+                <p class="t_desc" style="margin-bottom: 50px !important;">
+                    =&gt; document 대신 quizSelects를 선언한 이유는 만약 문제가 100개 이상이 되면 선택과 보기는 400개 이상이 되기 때문에 document에서 찾는 것 보단 요소가 소속되어 있는 부모 요소를 써주어야 더 빠르게 찾을 수 있기 때문이다.
+                </p>
+                <details>
+                    <summary>결과 보기</summary>
+                    <img src="https://user-images.githubusercontent.com/106949433/183391595-3ee7d321-99e9-4033-9f95-539bfe7e684e.jpg" alt="quiz02">
+                </details>
+            </div>
+            <!-- //선택자 -->
+
+            
+        </div> 
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+</body>
+</html>
