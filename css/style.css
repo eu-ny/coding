@@ -132,20 +132,52 @@ body {
     margin: 200px 20px;
     border: 4px solid var(--brown);
     background-color: var(--bgSub);
-    padding: 80px;
+    padding: 120px 80px 80px 80px ;
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.main__desc .deco {
+    width: 89%;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    padding-top: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.main__desc .deco span {
+    width: 30px;
+    height: 30px;
+    margin: 0 1%;
+    border: 10px solid var(--brown);
+    border-radius: 50%;
+    background-color: var(--bgMain);
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+}
+.main__desc .deco span::after {
+    content: '';
+    width: 10px;
+    height: 13px;
+    background-color: var(--brown);
+    position: absolute;
+    left: 0;
+    top: -20px;
 }
 
+
 .main__desc .title {
-    display: flex;
-    justify-content: space-around;
     margin-bottom: 2rem;
 }
 
 .main__desc .title h2 {
-    width: 30%;
+    display: inline-block;
     border: 4px solid var(--brown);
     font-size: 2rem; /* =44px */
-    padding: 0.5rem 1rem 0.5rem 80px;
+    padding: 0.7rem 1rem 0.5rem 80px;
     font-family: var(--fontDocs);
     font-weight: 900;
     color: var(--brown);
@@ -167,15 +199,38 @@ body {
 }
 
 .main__desc .title p {
-    width: 60%;
     font-family: var(--fontSub);
     font-size: 1.3rem;
     line-height: 1.3;
     color: var(--brown);
 }
 
-.main__desc .table {
+.main__desc .subTitle {
+
+}
+.main__desc .subTitle ul {
+    overflow: hidden;
+}
+.main__desc .subTitle li {
+   float: left;
+   margin-right: -4px;
+   margin-bottom: -4px; /* 마진 값만 -px로 줄 수 있다. */
+}
+.main__desc .subTitle li a {
+    font-family: var(--fontDocs);
+    font-size: 0.8rem;
     border: 4px solid var(--brown);
+    padding: 0.5em 1em; 
+    display: inline-block;
+}
+.main__desc .subTitle li.active a {
+    background-color: var(--brown);
+    color: var(--white);
+
+}
+
+.main__desc .table {
+    border: 3px solid var(--brown);
     font-family: var(--fontDocs);
     font-size: 0.7rem;
 }
@@ -190,6 +245,7 @@ body {
     padding: 10px;
     text-align: center;
 }
+.main__desc .table tr td:nth-child(2),
 .main__desc .table tr td:nth-child(3) {
     text-align: left;
 }
@@ -198,132 +254,15 @@ body {
     padding-top: 4px;
 }
 
-/* 티스토리용 문서 */
-.document {
-    /* word-break: keep-all; */
-}
-/* 형광펜 효과 */
-.document i {
-    font-style: normal;
-    position: relative;
-}
-.document i::before {
-    content: ''; 
-    background-color: #f19d0236;
-    width: 100%;
-    height: 10px;
-    position: absolute;  
-    left: 0;
-    bottom: 0;
-    border-radius: 20px;
-}
-/* 본문 효과 */
-.document hr {
-    border: 0;
-    border-top: 1px dashed #dcdcdc;
-    margin-top: 45px;
-    margin-bottom: 45px;
-}
-.document .t_tit {
-    font-size: 30px;
-    line-height: 1.6;
-    margin-bottom: 5px !important;
-    font-weight: 400;
-}
-.document .t_tit2 {
-    font-size: 22px;
-    line-height: 1.6;
-    margin-top: 50px !important;
-    margin-bottom: 5px;
-    font-weight: 400;
-}
-.document .t_tit3 {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-top: 30px;
-    margin-bottom: 10px;
-    font-weight: 400;
-}
-.document .t_desc {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #666;
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
-}
-.document .t_desc2 {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #666;
-    margin-bottom: 20px !important;
-    padding: 15px 20px !important;
-    border-left: 4px solid #ffa600;
-    background-color: #f9f9f9;
-}
-.document .t_box {
-    padding: 20px !important;
-    background-color: #f9f9f9;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    color: #999;
-}
-.document .t_table {
-    width: 100%;
-    border: 1px solid #dcdcdc;
-    /* 보더 초기화 */
-    border-spacing: 0;
-    border-collapse: collapse;
-}
-.document .t_table tr th {
-    background-color: #f9f9f9;
-}
-.document .t_table tr th,
-.document .t_table tr td {
-    border: 1px solid #dcdcdc;
-    font-weight: normal;
-    padding: 8px 10px;
-    color: #666;
-}
-.document .t_table .ce {
+.main__desc .table .rowTable {
     text-align: center;
 }
 
-.document .t_iframe {
-    position: relative;
-    padding-top: 56%;
-    width: 100%;
-    height: 0;
-}
-.document .t_iframe iframe{
-    border: 1px solid rgba(0,0,0,0.1);
-    position: absolute;
-    top : 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.document .t_link a {
-    display: block;
-    width: 200px;
-    background: #f8b705;
-    color: #fff;
-    margin: 40px auto;
-    border-radius: 5px;
+.main__desc .table.rowTable tr td:nth-child(2),
+.main__desc .table.rowTable tr td:nth-child(3) {
     text-align: center;
-    padding: 10px;
 }
-.document .t_link a:hover {
-	color: #fff;
-    background-color: #ffa800;
-    border-radius: 30px;
-    transition : 0.3s;
-    text-decoration: none;
+.main__desc .table.rowTable .left {
+    text-align: left !important;
 }
 
-@media (max-width: 800px) {
-    body {
-        padding: 20px;
-        
-    }
-}

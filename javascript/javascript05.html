@@ -55,22 +55,240 @@
     </header>
     <!-- //header -->
     <main id="main">
-
-        <div class="main_sample">
-
-            //
-
+        <div class="main_menu">
+            <ul>
+                <li><a href="#sample01">01. 문자열 : 문자열 결합 / 템플릿 문자열</a></li>
+                <li><a href="#sample02">02. 문자열</a></li>
+                <li><a href="#sample03">03. 문자열</a></li>
+                <li><a href="#sample04">04. 문자열</a></li>
+                <li><a href="#sample05">05. 문자열</a></li>
+                <li><a href="#sample06">06. 문자열</a></li>
+                <li><a href="#sample07">07. 문자열</a></li>
+                <li><a href="#sample08">08. 문자열</a></li>
+                <li><a href="#sample09">09. 문자열</a></li>
+                <li><a href="#sample10">10. 문자열</a></li>
+            </ul>
         </div>
-        <div class="main_script"></div>
-        <div class="main_desc"></div>
     </main>
-    <!-- //main -->
+    <!-- //main_menu-->
+
+    <div class="main_sample">
+        <div id="sample01" class="sample">
+            <h3>01. 문자열 : 문자열 결합 / 템플릿 문자열</h3>
+            <p>
+                문자열 결합은.....
+            </p>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 5%">
+                        <col style="width: 32%">   
+                        <col style="width: 22%">
+                        <col style="width: 42%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>기본값</th>
+                            <th>메서드</th>
+                            <th>리턴값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sample01_N1"></td>
+                            <td class="sample01_Q1"></td>
+                            <td class="sample01_M1"></td>
+                            <td class="sample01_P1"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample01_N2"></td>
+                            <td class="sample01_Q2"></td>
+                            <td class="sample01_M2"></td>
+                            <td class="sample01_P2"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample01_N3"></td>
+                            <td class="sample01_Q3"></td>
+                            <td class="sample01_M3"></td>
+                            <td class="sample01_P3"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample01_N4"></td>
+                            <td class="sample01_Q4"></td>
+                            <td class="sample01_M4"></td>
+                            <td class="sample01_P4"></td>
+                        </tr>
+                    </tbody>    
+                </table>
+            </div>
+            <div class="script">
+<pre><code class="language-js">
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample01_result">
+
+                        </div>
+                    </details>
+                </div>
+            </div>
+         </div>
+    </div>
+    <!-- //sample01 -->
+
+    <div class="main_sample">
+        <div id="sample02" class="sample">
+            <h3>02. 문자열 : 문자열 결합 / 템플릿 문자열</h3>
+            <p>
+                문자열 결합은.....
+            </p>
+            <div class="table">
+                <table>
+                    <colgroup>
+                        <col style="width: 5%">
+                        <col style="width: 32%">   
+                        <col style="width: 22%">
+                        <col style="width: 42%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>기본값</th>
+                            <th>메서드</th>
+                            <th>리턴값</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="sample02_N1"></td>
+                            <td class="sample02_Q1"></td>
+                            <td class="sample02_M1"></td>
+                            <td class="sample02_P1"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample02_N2"></td>
+                            <td class="sample02_Q2"></td>
+                            <td class="sample02_M2"></td>
+                            <td class="sample02_P2"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample02_N3"></td>
+                            <td class="sample02_Q3"></td>
+                            <td class="sample02_M3"></td>
+                            <td class="sample02_P3"></td>
+                        </tr>
+                        <tr>
+                            <td class="sample02_N4"></td>
+                            <td class="sample02_Q4"></td>
+                            <td class="sample02_M4"></td>
+                            <td class="sample02_P4"></td>
+                        </tr>
+                    </tbody>    
+                </table>
+            </div>
+            <div class="script">
+<pre><code class="language-js">
+</code></pre>
+                <div class="result">
+                    <details>
+                        <summary>결과 보기</summary>
+                        <div class="sample02_result">
+
+                        </div>
+                    </details>
+                </div>
+            </div>
+         </div>
+    </div>
+    <!-- //sample01 -->
+
+
+
+
     <footer id="footer">
         <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
     </footer>
     <!-- //footer -->
     <script src="assets/js/highlight.min.js"> </script>
     <script>hljs.highlightAll();</script>
+
+    <script>
+        //01.
+        {
+            const str1 = "자바스크립트";
+            const str2 = "제이퀘리";
+
+            document.querySelector(".sample01_N1").innerHTML = "1";
+            document.querySelector(".sample01_Q1").innerHTML = "자바스크립트, 제이쿼리";
+            document.querySelector(".sample01_M1").innerHTML = "문자열(string) 결합";
+            document.querySelector(".sample01_P1").innerHTML = str1 + str2;
+
+            const num1 = 100;
+            const num2 = 200;
+
+            document.querySelector(".sample01_N2").innerHTML = "2";
+            document.querySelector(".sample01_Q2").innerHTML = "100, 200";
+            document.querySelector(".sample01_M2").innerHTML = "숫자(number) 결합";
+            document.querySelector(".sample01_P2").innerHTML = num1 + num2;
+
+            // document.write(str1 + str2);
+        }
+    </script>
+
+    <!-- <script>
+        //자바스크립트 언어 = 객체지향언어
+        //변수보단 배열을 많이 쓰고 배열보단 객체를 많이 사용한다.
+        //함수 유형 4가지
+
+            function func1(){
+                document.write("함수실행01");
+            }
+            func1();
+       
+            const func2 = function(){
+                document.write("함수실행02");
+            }
+            func2();
+       
+            const func3 = function(str){
+                document.write(str);
+            }
+            func3("함수실행03");
+
+            function func3_1(str){
+                document.write(str);
+            }
+            func3_1("함수실행03");
+        
+            function func4(){
+                const str = "함수실행04";
+                return str; //결과값
+            }
+            document.write(func4());
+
+            func5 = () => {
+                document.write("함수실행01-1");
+            }
+            func5();
+       
+            const func6 = () => {
+                document.write("함수실행02-1");
+            }
+            func6();
+        
+            func7 = (str) => {
+                document.write(str);
+            }
+            func7("함수실행03-1");
+       
+            func8 = () => {
+                const str = "함수실행04-1";
+                return str;
+            }
+           document.write(func8());
+    </script> -->
 </body>
 
 </html>

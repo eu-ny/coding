@@ -69,6 +69,11 @@
         .card__body .tit {
             font-size: 24px;
             margin-bottom: 10px;
+            /* 한줄 효과 - 텍스트가 한줄을 넘어가면 자동으로 ...처리 */
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 20px;
         }
         .card__body .desc {
             font-size: 18px;
@@ -76,18 +81,24 @@
             color: #666;
             margin-bottom: 20px;
             font-weight: 300;
+            /* 세줄 효과 */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
         }
         .card__body .btn {}
     </style>
 </head>
 <body>
-    <section id="cardType" class="card__wrap nexon section">
+    <section id="cardType01" class="card__wrap nexon section">
         <h2>전시회 리스트</h2>
         <p>전시를 좋아하는 사람들을 위한 전시 리스트</p>
         <div class="card__inner container">
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card_bg01.jpg" alt="상업 전시">
+                    <img src="img/card_bg01_01.jpg" alt="상업 전시">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">상업 전시를 찾고 계신가요?</h3>
@@ -106,7 +117,7 @@
             </article>
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card_bg02.jpg" alt="미술 전시">
+                    <img src="img/card_bg01_02.jpg" alt="미술 전시">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">미술 전시를 찾고 계신가요?</h3>
@@ -125,7 +136,7 @@
             </article>
             <article class="card">
                 <figure class="card__header">
-                    <img src="img/card_bg03.jpg" alt="사진 전시">
+                    <img src="img/card_bg01_03.jpg" alt="사진 전시">
                 </figure>
                 <div class="card__body">
                     <h3 class="tit">사진 전시를 찾고 계신가요?</h3>
