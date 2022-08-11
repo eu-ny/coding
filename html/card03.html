@@ -78,51 +78,62 @@
                 <p class="t_desc2">
                     <strong>TIP !</strong>
                     구조를 먼저 꼼꼼하게 파악하여 시멘틱한 마크업을 하는 것이 가장 중요하다. 때문에 복잡한 구조일 수록 구조를 잘 짜주어야 스타일이나 스크립트를 구현할 때 효율적으로 작업할 수 있다.
-                    구조가 복잡할 수록 큰 덩어리부터 천천히 마크업하는 것이 좋다. 큰덩어리 구조가 잡히면 그 후 세부적인 구조를 마크업 해준다. (css 속성도 마찬가지!)
+                    구조가 복잡할 수록 큰 덩어리부터 천천히 마크업하는 것이 좋다.(css 속성도 마찬가지!)<br />
+                    =&gt; 순서는 컨테이너 부분까지 마크업한 다음 css 속성을 주어서 먼저 큰 레이아웃을 완성한다. 그 다음으로 큰 덩어리(+css)를 작업하는 것이 중요하다.
                 </p>
 
                 <div class="t_code">
-<pre><code class="language-html">&lt;section id="cardType03"&nbsp;class="card__wrap section score"&gt;
+<pre><code class="language-html">&lt;section id="cardType03" class="card__wrap score section"&gt;
+    &lt;h2 class="blind"&gt;인테리어 알아가기&lt;/h2&gt;
     &lt;div class="card__inner container"&gt;
-        &lt;artcle class="card"&gt;
-            &lt;figure class="image"&gt;
+        &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
                 &lt;img src="img/card_bg03_01.jpg" alt="인테리어"&gt;
+                &lt;figcaption&gt;Keyword&lt;/figcaption&gt;
             &lt;/figure&gt;
-            &lt;div class="card__Key"&gt;Keyword&lt;/div&gt;
-            &lt;h2 class="tit"&gt;감성적인 인테리어를 해보고 다른 사람들과 경험을 공유하세요.&lt;/h2&gt;
-            &lt;p class="desc"&gt;감성적이고 따뜻한 room 인테리어를 만나보세요. 그리고 다른 사람들과 공유해보세요. 우리는 깔끔하고 심플한 당신의 room의 변화를 기다리고 있습니다.&lt;/p&gt;
-            &lt;div class="profile"&gt;
-                &lt;span class="user01 ir"&gt;userphoto&lt;/span&gt;
-                &lt;p class="userName"&gt;SAM KIM&lt;/p&gt;
-                &lt;p class="Resources"&gt;9 Resources&lt;/p&gt;
+            &lt;div class="card__contents"&gt;
+                &lt;h3&gt;감성적인 인테리어를 해보고 다른 사람들과 경험을 공유해봐요.&lt;/h3&gt;
+                &lt;p&gt;감성적이고 따뜻한 room 인테리어를 만나보세요. 그리고 다른 사람들과 공유해보세요. 우리는 깔끔하고 심플한 당신의 room의 변화를 기다리고 있습니다.&lt;/p&gt;    
             &lt;/div&gt;
-        &lt;/artcle&gt;
-        &lt;artcle class="card"&gt;
-            &lt;figure class="image"&gt;
+            &lt;div class="card__footer"&gt;
+                &lt;h4&gt;SAM KIM&lt;em&gt;SAM KIM&lt;/em&gt;&lt;/h4&gt;
+                &lt;span&gt;
+                    &lt;img src="img/card_bg03_02.jpg" alt=""&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
                 &lt;img src="img/card_bg03_01.jpg" alt="인테리어"&gt;
+                &lt;figcaption&gt;Keyword&lt;/figcaption&gt;
             &lt;/figure&gt;
-            &lt;div class="card__Key"&gt;Keyword&lt;/div&gt;
-            &lt;h2 class="tit"&gt;감성적인 인테리어를 해보고 다른 사람들과 경험을 공유하세요.&lt;/h2&gt;
-            &lt;p class="desc"&gt;감성적이고 따뜻한 room 인테리어를 만나보세요. 그리고 다른 사람들과 공유해보세요. 우리는 깔끔하고 심플한 당신의 room의 변화를 기다리고 있습니다.&lt;/p&gt;
-            &lt;div class="profile"&gt;
-                &lt;span class="user01 ir"&gt;userphoto&lt;/span&gt;
-                &lt;p class="userName"&gt;SAM KIM&lt;/p&gt;
-                &lt;p class="Resources"&gt;9 Resources&lt;/p&gt;
+            &lt;div class="card__contents"&gt;
+                &lt;h3&gt;톡톡 튀는 인테리어를 해보고 다른 사람들과 경험을 공유하세요.&lt;/h3&gt;
+                &lt;p&gt;톡톡 튀는 독특한 room 인테리어를 만나보세요. 그리고 다른 사람들과 공유해보세요. 우리는 특별하고 유니크한 당신의 room의 변화를 기다리고 있습니다.&lt;/p&gt;    
             &lt;/div&gt;
-        &lt;/artcle&gt;
-        &lt;artcle class="card"&gt;
-            &lt;figure class="image"&gt;
+            &lt;div class="card__footer"&gt;
+                &lt;h4&gt;SAM KIM&lt;em&gt;SAM KIM&lt;/em&gt;&lt;/h4&gt;
+                &lt;span&gt;
+                    &lt;img src="img/card_bg03_02.jpg" alt=""&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+        &lt;article class="card"&gt;
+            &lt;figure class="card__header"&gt;
                 &lt;img src="img/card_bg03_01.jpg" alt="인테리어"&gt;
+                &lt;figcaption&gt;Keyword&lt;/figcaption&gt;
             &lt;/figure&gt;
-            &lt;div class="card__Key"&gt;Keyword&lt;/div&gt;
-            &lt;h2 class="tit"&gt;감성적인 인테리어를 해보고 다른 사람들과 경험을 공유하세요.&lt;/h2&gt;
-            &lt;p class="desc"&gt;홈 오피스같은 room 인테리어를 만나보세요. 그리고 다른 사람들과 공유해보세요. 우리는 깔끔하고 모던한 당신의 room의 변화를 기다리고 있습니다.&lt;/p&gt;
-            &lt;div class="profile"&gt;
-                &lt;span class="user01 ir"&gt;userphoto&lt;/span&gt;
-                &lt;p class="userName"&gt;SAM KIM&lt;/p&gt;
-                &lt;p class="Resources"&gt;9 Resources&lt;/p&gt;
+            &lt;div class="card__contents"&gt;
+                &lt;h3&gt;홈 오피스 인테리어를 해보고 다른 사람들과 경험을 공유하세요.&lt;/h3&gt;
+                &lt;p&gt;홈 오피스같은 room 인테리어를 만나보세요. 그리고 다른 사람들과 공유해보세요. 우리는 깔끔하고 모던한 당신의 room의 변화를 기다리고 있습니다.&lt;/p&gt;    
             &lt;/div&gt;
-        &lt;/artcle&gt;
+            &lt;div class="card__footer"&gt;
+                &lt;h4&gt;SAM KIM&lt;em&gt;SAM KIM&lt;/em&gt;&lt;/h4&gt;
+                &lt;span&gt;
+                    &lt;img src="img/card_bg03_02.jpg" alt=""&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
     &lt;/div&gt;
 &lt;/section&gt;
 </pre></code>
@@ -143,7 +154,7 @@
             <div id="css" class="sample">
                 <h3 class="t_tit2">&lt; CSS 소스 : 스타일 적용하기 &gt;</h3>
                 <p class="t_desc">
-                    구조 짜임의 순서대로 css 스타일을 적용시켜 봅시다. 이 때 디자인 시안을 보며 마크업 된 요소를 <i>큰 덩어리 부터 스타일을 적용</i>시켜 나가는 것이 중요합니다.<br />
+                    구조 짜임의 순서대로 css 스타일을 적용시켜 봅시다. 이 때 디자인 시안을 참고하면서 html와 번갈아가며 <i>큰 덩어리 부터 스타일을 적용</i>시켜 나가는 것이 중요합니다.<br />
                     속성에 대한 내용은 코드와 주석을 보면서 이해해봅시다!
                 </p>
                 <p class="t_desc2">
@@ -158,7 +169,7 @@
 
 .score {
     font-family: 'SCoreDream';
-    font-weight: 500;
+    font-weight: 300;
 }
 
 /* reset */
@@ -180,7 +191,7 @@ h1, h2, h3, h4, h5, h6 {
 /* common */
 .container {     /* 부모 컨테이너 박스를 만들어 가로 값을 고정시킨다. */
     width: 1160px;
-    padding: 26px;
+    padding: 0 20px;
     margin: 0 auto;
     min-width: 1160px;
     background-color: #fff;
@@ -201,102 +212,98 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     margin-bottom: 70px;
 }
-
-/* ir 효과 (이미지 대체 텍스트 효과 == alt) */ 
-/*텍스트로 작성한 더보기는 스크린리더에 읽히지만 페이지 화면에서 시각적으로 보이지 않는다. */
-/* EX) 현 페이지 기준 가상요소를 두어서 background-image로 넣은 이미지에게 alt 속성을 선언하여 웹 표준을 준수시켜야 한다.*/
-.ir {
-    display: block;
+ /* blind */
+ /* 웹 접근성 준수를 위해 사용하는 속성으로 텍스트를 눈에 보이지 않게 작업하지만, 스크린 리더기에서는 읽히게끔 만듦 */
+ .blind {
+    position:absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
     overflow: hidden;
-    font-size: 0;
-    line-height: 0;
-    text-indent: -9999px;
 }
-
-/* cardType */
+/* cardType03 */
 body {
-    background: #e4e4e4;
+    background-color: #2254C3;
 }
 .card__inner {
-    display: flex;    /* 플렉스를 통해서 카드를 나란히 배열시킨다.*/
-    flex-wrap: wrap;  /*가능한 영역 내에서 벗어나지 않고 여러행으로 나누어 표현 할 것인지 결정하는 속성*/
-    justify-content: space-between;    /* 중심을 기준으로 간격을 떨어뜨린다.*/
+    display: flex;  /* 플렉스를 통해서 카드를 나란히 배열시킨다.*/
 }
-.card {
-    width: 30%;
-    position: relative;    /* 포지션의 기준이 된다.*/
+.card__inner .card {
+    padding: 26px;
+    width: 33.3333%;
+    background-color: #fff;
 }
-
-/* 가상요소 사용하여 라인 넣기 */
-.card::after {
-    content: '';
-    width: 1px;
-    height: 530px;
-    background: #e4e4e4;
-    position: absolute;
-    right: -30px;
-    top: -20px;
-
+.card__inner .card:nth-child(1) {
+    border-right: 1px solid #eee;
 }
-.card__inner .card img {
-    border-radius: 20px;
+.card__inner .card:nth-child(2) {
+    border-right: 1px solid #eee;
+}
+.card__header {
+    position: relative;
+}
+.card__header img {
+    border-radius: 10px;
     box-shadow: 4px 4px 5px 0 rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
 }
-.card__inner .card .card__Key {
-    width: 50px;
-    height: 15px;
-    line-height: 15px;
-    padding: 6px 18px 6px 18px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 200;
-    color: #7b7b7b;
-    background: #f5f5f5;
-    position: absolute;   /* 기준(현재 기준점은 .card)에 맞춰서 방향을 잡아준다.*/
+.card__header figcaption { 
+    position: absolute;
     right: 10px;
     top: 10px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    background-color: #fff;
+    text-align: center;
+    font-size: 14px;
+    color: #7B7B7B;
 }
-.card__inner .tit {
+.card__contents h3 {
     font-size: 20px;
     line-height: 1.4;
-    margin: 20px 0 10px 0;
-}
-.card__inner .card .desc {
-    margin-bottom: 30px;
-    line-height: 1.4;
-    font-size: 16px;
-    font-weight: 300;
-    color: #666;
-    /* 세줄 효과 - 텍스트가 세줄을 넘어가면 자동으로 ...처리 */
+    margin-bottom: 10px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
 }
-
-/* card profile */
-.card .profile {
-    text-align: right;  /* 텍스트를 오른쪽으로 정렬해준다.*/
-    margin-right: 50px;
+.card__contents p {
+    color: #666;
     font-size: 16px;
-    font-weight: 300;
+    line-height: 1.7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-bottom: 30px;
 }
-.card .user01 {
+.card__footer {
+    display: flex;
+    justify-content: flex-end;
+}
+.card__footer h4 {
+    text-align: right;
+    color: #DD2A2A;
+}
+.card__footer em {
+    display: block;
+    color: #666;
+    font-style: normal;
+}
+.card__footer span {
     width: 40px;
     height: 40px;
+    background: #000;
     border-radius: 50%;
+    /* 세줄 효과 - 텍스트가 세줄을 넘어가면 자동으로 ...처리 */
+    overflow: hidden;
+    display: block;
+    margin-left: 10px;
+    margin-top: -3px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
-    background-image: url(img/card_bg03_02.jpg);   /* 요소안에 이미지 넣기 */
-    position: absolute;   /* 기준(현재 기준점은 .card)에 맞춰서 방향을 잡아준다.*/
-    right: 0;
-    top: 426px;
-}
-.card .userName {
-    color: #dd2a2a;
-}
-.card .Resources {
-    color: #666;
 }
 </pre></code>
                 </div>
