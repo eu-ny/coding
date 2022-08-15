@@ -26,7 +26,7 @@
             <div class="document">
                 <h2 class="t_tit">CSS 기본 문법 4가지</h2>
                 <p class="t_desc2">
-                    
+                    지금부터 CSS 기본 문법 4가지를 알아보도록 하겠습니다!😀
                 </p>
 
                 <hr>
@@ -52,17 +52,17 @@
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
+                        </div>
                     </div>
-                </div>
-                <!-- //sample01 -->
+                    <!-- //sample01 -->
 
-                <hr>
+                    <hr>
 
-                <div id="samle02" class="sample">
-                    <h3 class="t_tit2">#2. 외부 스타일시트</h3>
-                    <div class="t_desc">스타일 속성을 따로 저장하여 HTML문서와 연결할 수 있습니다. <br />
-                        파일의 확장명은 '.css'로 저장해주어야 하며 HTML문서에서는 &lt;link&gt; 태그를 사용하여 선언 합니다.</div>
-                    <div class="t_code">
+                    <div id="samle02" class="sample">
+                        <h3 class="t_tit2">#2. 외부 스타일시트</h3>
+                        <p class="t_desc">스타일 속성을 따로 저장하여 HTML문서와 연결할 수 있습니다. <br />
+                            파일의 확장명은 '.css'로 저장해주어야 하며 HTML문서에서는 &lt;link&gt; 태그를 사용하여 선언 합니다.</p>
+                        <div class="t_code">
 <pre><code class="language-html">&lt;!DOCUMENT html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
@@ -75,25 +75,26 @@
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h3 class="t_tit3">style.css - 외부 경로</h3>
+                        <h3 class="t_tit3">style.css - 외부 경로</h3>
 <pre><code class="language-css">@charset "UTF-8";
 p {
     color: red;
 }
 </code></pre>
-                </div>
-                <div class="t_desc2">이처럼 내부 스타일시트와는 달리 외부 스타일시트는 html문서에 경로 선언만 해준다면 모든 페이지에서 동일한 시트를 적용할 수 있다.</div>
-            </div>
-            <!-- //sample02 -->
+                        </div>
+                        <p class="t_desc2">이처럼 내부 스타일시트와는 달리 외부 스타일시트는 html문서에 경로 선언만 해준다면 모든 페이지에서 동일한 시트를 적용할 수 있다.</p>
+                    </div>
+                    <!-- //sample02 -->
 
-            <hr>
-                
-            <div id="samle03" class="sample">
-                <h3 class="t_tit2">#3. @import</h3>
-                <div class="t_desc">
-                    css안으로 다른 css 파일을 불러올 수 있습니다. 
-                <div class="t_code">
-                    <div class="t_desc2">여러개를 사용하면 복잡해져서 오히려 유지보수가 어렵기 때문에 되도록이면 하나 정도만 사용하는 것이 좋습니다.<br /> 또한 사용할 경우 css 가장 첫번째 줄에서 선언해주어야 합니다.</div>
+                    <hr>
+                        
+                    <div id="samle03" class="sample">
+                        <h3 class="t_tit2">#3. @import</h3>
+                        <p class="t_desc">
+                            css안으로 다른 css 파일을 불러올 수 있습니다. 
+                        </p>
+                        <p class="t_desc2">여러개를 사용하면 복잡해져서 오히려 유지보수가 어렵기 때문에 되도록이면 하나 정도만 사용하는 것이 좋습니다.<br /> 또한 사용할 경우 css 가장 첫번째 줄에서 선언해주어야 합니다.</p>
+                        <div class="t_code">
 <pre><code class="language-html">&lt;!DOCUMENT html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
@@ -108,23 +109,23 @@ p {
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                    <h3 class="t_tit3">style.css - @import</h3>
+                        <h3 class="t_tit3">style.css - @import</h3>
 <pre><code class="language-css">@charset "UTF-8";
 @import url("common.css");
 </code></pre>
-                </div>
-            </div>
-        </div>
-        <!-- //sample03 -->
+                        </div>
+                    </div>
+                    <!-- //sample03 -->
 
-        <hr>
+                    <hr>
 
-        <div id="samle03" class="sample">
-            <h3 class="t_tit2">#4. 인라인 스타일 (inline-style)</h3>
-            <div class="t_desc">
-                해당 태그에 직접 style속성을 부여하여 css를 정의해주는 방법이다. 
-            <div class="t_code">
-                <div class="t_desc2"><strong>! 주의 !</strong>우선순위가 절대적으로 높아야 할 경우 사용해야 합니다.</div>
+                    <div id="samle03" class="sample">
+                        <h3 class="t_tit2">#4. 인라인 스타일 (inline-style)</h3>
+                        <p class="t_desc">
+                            해당 태그에 직접 style속성을 부여하여 css를 정의해주는 방법이다. 
+                        </p>
+                        <p class="t_desc2"><strong>! 주의 !</strong>우선순위가 절대적으로 높아야 할 경우 사용해야 합니다.</p>
+                        <div class="t_code">
 <pre><code class="language-html">&lt;!DOCUMENT html&gt;
 &lt;html lang="ko"&gt;
 &lt;head&gt;
@@ -136,13 +137,12 @@ p {
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-                </div>
-            </div>
-        </div>
-    <!-- //sample04 -->
+                        </div>
+                    </div>
+                    <!-- //sample04 -->
 
             </div>
-        </div>
+            </div>
     </main>
     <!-- //main -->
     <footer id="footer">
