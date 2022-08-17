@@ -71,8 +71,11 @@
 
                 <li><a href="#sample06">06. 문자열 메서드 : 변경 : replace() : 문자열 변경 :  반환(문자열)★</a></li>
                 <li><a href="#sample06">06. 문자열 메서드 : 변경 : replaceAll() : 문자열 변경 :  반환(문자열)</a></li>
+
                 <li><a href="#sample07">07. 문자열 메서드 : 변경 : concat() : 문자열 결합 :  반환(문자열)</a></li>
+
                 <li><a href="#sample08">08. 문자열 메서드 : 변경 : repeat() : 문자열 반복 :  반환(문자열)</a></li>
+
                 <li><a href="#sample09">09. 문자열 메서드 : 변경 : padStart() : 앞에 문자열 추가 :  반환(문자열)</a></li>
                 <li><a href="#sample09">09. 문자열 메서드 : 변경 : padEnd() : 뒤에 문자열 추가 :  반환(문자열)</a></li>
 
@@ -80,6 +83,7 @@
                 <li><a href="#sample10">10. 문자열 메서드 : 검색 : lastIndexOf() : 문자열에서 특정 문자의 위치를 찾아냄(뒤에서부터) : 반환(숫자)</a></li>
 
                 <li><a href="#sample11">11. 문자열 메서드 : 검색 : includes() : 문자열 포함 여부를 검색해서 알려줌 : 반환(불린)★</a></li>
+
                 <li><a href="#sample12">12. 문자열 메서드 : 검색 : search() : 문자열을 검색(정규식도 지원) : 반환(숫자)★</a></li>
                 <li><a href="#sample12">12. 문자열 메서드 : 검색 : match() : 문자열을 검색해줌(정규식 지원) : 반환(배열)</a></li>
                 <li><a href="#sampl13">13. 문자열 메서드 : 검색 : charAt() : 지정한 인덱스의 문자를 추출 : 반환(불린)</a></li>
@@ -92,7 +96,7 @@
 
     <div class="main_sample">
         <div id="sample01" class="sample">
-            <h3>01. 문자열 : 문자열 결합 / 템플릿 문자열</h3>
+            <h3>01. 템플릿 문자열</h3>
             <p>
                 템플릿 문자열은 내장된 표현식을 허용하는 문자열 리터럴입니다.<br />
                 따옴표 대신 ``(backtick)을 사용합니다.
@@ -460,7 +464,7 @@ const cirrentStr13 = str3.replaceAll(/[1-9]/g, "★"); //0★0-★000-★000 : 0
          <div id="sample07" class="sample">
             <h3>07. concat() </h3>
             <p>
-                둘 이상의 문자열을 결합하여, 새로운 문자열을 반환합니다.
+                concat() 메서드는 둘 이상의 문자열을 결합하여, 새로운 문자열을 반환합니다.
             </p>
             <div class="box">
                 ! 사용 방법 ! <br />
@@ -484,10 +488,14 @@ const cirrentStr5= str1.concat(",", ["refer", "book"]); //javascript,refer,book
          <div id="sample08" class="sample">
             <h3>08. repeat() </h3>
             <p>
-                repeat() 메서드는 문자열을 복사하며, 복사한 문자열로 새로운 문자열을 반환합니다.
+                repeat() 메서드는 특정 위치의 문자열을 복사하며, 복사한 문자열로 새로운 문자열을 반환합니다.
             </p>
             <div class="script">
-<pre><code class="language-js">
+<pre><code class="language-js">const str1 = "javascript";
+
+const cirrentStr1 = str1.repeat(0);     // ''
+const cirrentStr2 = str1.repeat(1);     // javascript
+const cirrentStr3 = str1.repeat(2);     // javascriptjavascript
 </code></pre>
             </div>
          </div>
