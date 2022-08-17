@@ -159,8 +159,8 @@
     <script>
         //선택자
         const searchBox = document.querySelector(".search__box input");       //검색 영역
-        const searchList = document.querySelectorAll(".search__list ul li");     //목록 리스트
-        const searchInfo = document.querySelector(".search__info .num");        //갯수
+        const searchList = document.querySelectorAll(".search__list ul li");  //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num");      //갯수
 
         //전체 갯수 구하기
         searchInfo.textContent = searchList.length;
@@ -181,8 +181,8 @@
             const searchWord = searchBox.value;     // 사용자가 입력한 키워드
 
             searchList.forEach(el => {
-                const cssName = el.dataset.name; //css속성 데이터 값을 모두 가져옴 CSS 속성의 모든 값
-                const cssType = el.dataset.type; //CSS 속성의 타입 값
+                const cssName = el.dataset.name; //css속성 데이터 값을 모두 가져옴 CSS 속성의 모든 갯수값
+                const cssType = el.dataset.type; //CSS 속성의 타입별 갯수값을 가져옴
                 // console.log(cssName);
 
                 if(cssName.includes(searchWord)){ //사용자가 입력한 값이 true일 때 show false면 숨기기
