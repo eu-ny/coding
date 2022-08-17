@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/search.css">
+    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="searchEffect01.html">1</a></li>
+                <li class="active"><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="search__wrap">
+            <span>includes()를 이용하여 검색하기</span>
+            <h1>CSS 속성 검색하기</h1>
+            <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!">
+            </div>
+            <div class="search__info">
+                <div class="type">플렉스, 애니메이션, 백그라운드, 기타 등등 키워드 유형 별로 검색해보세요!</div>
+                <div>CSS 속성 갯수 : <span class="num">0</span></div>
+            </div>
+            <div class="search__list">
+                <div class="css">
+                    <ul>
+                        <li data-name="accent-color" data-type="요소"><strong>accent-color</strong> : accent-color는 요소의 강조 색상을 지정합니다.</li>
+                        <li data-name="align-content" data-type="플렉스"><strong>align-content</strong> : align-content는 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다.</li>
+                        <li data-name="align-items" data-type="플렉스"><strong>align-items</strong> : align-item은 콘텐츠 아이템의 내부 상하관계 정렬 상태를 설정합니다.</li>
+                        <li data-name="align-self" data-type="플렉스"><strong>align-self</strong> : align-self는 개별적 콘텐츠 아이템의 정렬 상태를 설정합니다.</li>
+                        <li data-name="allr" data-type="기타"><strong>all</strong> : all은 요소의 모든 속성을 초기화합니다. 또는 상속을 설정합니다.</li>
+                        <li data-name="animation" data-type="애니메이션"><strong>animation</strong> : animation은 애니메이션과 관련된 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="animation-delay" data-type="애니메이션"><strong>animation-delay</strong> : animation-delay는 애니메이션 지연 시간을 설정합니다.</li>
+                        <li data-name="animation-direction" data-type="애니메이션"><strong>animation-direction</strong> : animation-direction는 애니메이션 움직임 방향을 설정합니다.</li>
+                        <li data-name="animation-duration" data-type="애니메이션"><strong>animation-duration</strong> : animation-duration는 애니메이션 움직임 시간을 설정합니다.</li>
+                        <li data-name="animation-fill-mode" data-type="애니메이션"><strong>animation-fill-mode</strong> : animation-fill-mode는 애니메이션이 끝난 후의 상태를 설정합니다.</li>
+                        <li data-name="animation-iteration-count" data-type="애니메이션"> data-type="animation"<strong>animation-iteration-count</strong> : animation-iteration-count는 애니메이션의 반복 횟수를 설정합니다.</li>
+                        <li data-name="animation-name" data-type="애니메이션"><strong>animation-name</strong> : animation-name은 애니메이션 Keyframe 이름을 설정합니다.</li>
+                        <li data-name="animation-play-state" data-type="애니메이션"><strong>animation-play-state</strong> : animation-play-state는 애니메이션의 진행 상태를 설정합니다.</li>
+                        <li data-name="animation-timeline" data-type="애니메이션"><strong>animation-timeline</strong> : animation-timeline은 요소에 적용할 스크롤 애니메이션을 설명하는 하나 이상의 @scroll-timeline at-rules 이름을 지정합니다.</li>
+                        <li data-name="animation-timing-function" data-type="애니메이션"><strong>animation-timing-function</strong> : animation-timing-function은 애니메이션 움직임의 속도를 설정합니다.</li>
+                        <li data-name="appearance" data-type="기타"><strong>appearance</strong> : appearance는 webit 계열의 브라우저의 type="search" 필드의 둥근 테두리 값이나 reset 효과를 나타내는 버튼을 삭제하는 데 사용할 수 있습니다.</li>
+                        <li data-name="aspect-ratio" data-type="요소"><strong>aspect-ratio</strong> : aspect-ratio는 요소의 크기를 비율대로 조정할 수 있게 합니다.</li>
+                        
+                        <li data-name="backdrop-filter" data-type="요소"><strong>backdrop-filter</strong> : backdrop-filter는 요소 뒤 영역에 흐림이나 색상 시프트 등 그래픽 효과를 적용할 수 있는 속성입니다.</li>
+                        <li data-name="backface-visibility"  data-type="요소"><strong>backface-visibility</strong> : backface-visibility는 요소를 입체적으로 볼 때 요소의 뒷면이 사용자에게 보이도록 하는 속성입니다.</li>
+                        <li data-name="background"  data-type="백그라운드"><strong>background</strong> : background는 백그라운드 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="background-attachment" data-type="백그라운드"><strong>background-attachment</strong> : background-attachment는 배경 이미지의 고정 여부를 설정합니다.</li>
+                        <li data-name="background-blend-mode" data-type="백그라운드"><strong>background-blend-mode</strong> : background-blend-mode는 백배경을 혼합했을 때 그래픽 효과를 설정합니다.</li>
+                        <li data-name="background-clip" data-type="백그라운드"><strong>background-clip</strong> : background-clip은 백그라운드 이미지의 위치 기준점을 설정합니다.</li>
+                        <li data-name="background-color" data-type="백그라운드"><strong>background-color</strong> : background-color는 백그라운드 색을 설정합니다.</li>
+                        <li data-name="background-image" data-type="백그라운드"><strong>background-image</strong> : background-image는 백그라운드 이미지 속성을 설정합니다.</li>
+                        <li data-name="background-origin" data-type="백그라운드"><strong>background-origin</strong> : background-origin는 백그라운드 이미지의 위치 기준점을 설정하기 위한 속성입니다.</li>
+                        <li data-name="background-position" data-type="백그라운드"><strong>background-position</strong> : background-position은 백그라운드 이미지의 위치 영역을 설정합니다.</li>
+                        <li data-name="background-position-x" data-type="백그라운드"><strong>background-position-x</strong> : background-position-x는 백그라운드 이미지의 X축 위치 영역을 설정합니다.</li>
+                        <li data-name="background-position-y" data-type="백그라운드"><strong>background-position-y</strong> : background-position-y는 백그라운드 이미지의 y축 위치 영역을 설정합니다.</li>
+                        <li data-name="background-repeat" data-type="백그라운드"><strong>background-repeat</strong> : background-repeat는 백그라운드 이미지의 반복 여부를 설정합니다.</li>
+                        <li data-name="background-size" data-type="백그라운드"><strong>background-size</strong> : background-size는 백그라운드 이미지 사이즈를 설정합니다.</li>
+                        <li data-name="block-size" data-type="블록"><strong>block-size</strong> : block-size는 쓰기 모드에 따라 요소 블록의 가로 또는 세로 크기를 정의합니다.</li>
+                        <li data-name="border" data-type="테두리"><strong>border</strong> : border는 테두리 속성을 일괄적으로 설정합니다.</li>
+                        <li data-name="background"><strong>background</strong> : background는 백그라운드 속성을 일괄적으로 설정합니다</li>
+                        <li data-name="background"><strong>background</strong> : background는 백그라운드 속성을 일괄적으로 설정합니다</li>    
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+     <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>
+        //선택자
+        const searchBox = document.querySelector(".search__box input");       //검색 영역
+        const searchList = document.querySelectorAll(".search__list ul li");     //목록 리스트
+        const searchInfo = document.querySelector(".search__info .num");        //갯수
+
+        //전체 갯수 구하기
+        searchInfo.textContent = searchList.length;
+        
+        // //속성 갯수 설정하기 : 숙제 for()문 사용
+        // for(let i=0; i<=searchList.length; i++){
+        //     document.querySelector(".search__info .num").innerText = i;
+        // }
+        // //속성 갯수 설정하기  forEach()
+        // searchList.forEach((el, i) => {
+        //     el.classList.add("show");
+        //     // document.querySelector(".search__info .num").innerText = i + 1; // : 갯수 보여주기 
+        // });
+
+
+        //searchBox 검색 영역
+        searchBox.addEventListener("keyup",()=>{
+            const searchWord = searchBox.value;     // 사용자가 입력한 키워드
+
+            searchList.forEach(el => {
+                const cssName = el.dataset.name; //css속성 데이터 값을 모두 가져옴
+                // console.log(cssName);
+
+                if(cssName.includes(searchWord)){ //사용자가 입력한 값이 true일 때 show false면 숨기기
+                    el.classList.remove("hide");
+                } else {
+                    el.classList.add("hide");
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>
