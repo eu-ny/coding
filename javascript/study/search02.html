@@ -345,6 +345,13 @@ searchBox.addEventListener("keyup",()=>{
         }
     });
 });
+if(cssName.includes(searchWord) | cssType.includes(searchWord)){ 
+    el.classList.remove("hide");
+} else {
+    el.classList.add("hide");
+}
+});
+});
 </code></pre>
                     <p class="t_desc2">
                         <strong>! 검색 영역이 작동되는 과정 알아보기 !</strong><br />
