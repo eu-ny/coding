@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSS</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="deracula.css">
+</head>
+
+<body>
+    <header id="header">
+        <h1><a href="index.html">CSS</a></h1>
+        <nav class="header_nav">
+            <ul class="study">
+                <li><a href="img.html">이미지 표현 방식</a></li>
+                <li><a href="dog.html">Dog</a></li>
+                <li><a href="SCSS.html">SCSS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="main__desc">
+            <div class="document">
+                <h2 class="t_tit">CSS : SCSS </h2>
+                <p class="t_desc">
+                    이번 시간에는 css 종류 중 하나인 <strong>SCSS</strong>에 대해 알아보겠습니다!😄
+                </p>
+
+                <hr>
+
+                 <div id="sample01" class="sample">
+                    <h3 class="t_tit2">#1. SCSS </h3>
+                    <p class="t_desc2">
+                        코딩이 복잡해지게 되면 CSS는 유지보수가 어려워지고 가독성 또한 떨어지게 됩니다. <br />
+                        이러한 단점을 보완하고자 등장한 개념이 SCSS라고 합니다. 때문에 SCSS는 코드의 재활용성을 높이고, 가독성 증가시켜 개발의 효율성을 높여주는 장점을 가지고 있습니다!
+                    </p>
+                    <div class="t_code">
+                      <h3 class="t_tit3">✏️ SCSS</h3>
+<pre><code class="language-Scss">$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+</code></pre>
+                      <p class="t_desc">
+                        SCSS에서 $는 변수를 뜻하는 기호 입니다. 때문에 반복적으로 사용할 속성은 변수($)로 속성 값을 지정해주어 재활용을 쉽게 할 수 있습니다.
+                      </p>
+                      <h3 class="t_tit3">✏️ CSS</h3>
+<pre><code class="language-css">body {
+font: 100% Helvetica, sans-serif;
+color: #333;
+}
+</code></pre>
+                    </div>
+                    <p class="t_box">
+                        <strong>! $ 사용법 ! </strong><br />
+                        $변수명: 속성값;
+                    </p>
+                </div>
+                <!-- //sample01 -->
+
+
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="js/highlight.min.js"> </script>
+    <script>hljs.highlightAll();</script>
+
+
+</body>
+
+</html>

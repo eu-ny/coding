@@ -55,7 +55,7 @@
     <main id="main">
         <div class="document">
             <h2 class="t_tit">includes()를 통해 검색 사이트 제작하기</h2>
-            <p class="t_desc2">
+            <p class="t_desc">
                이번 시간에는 문자열 메서드 중 하나인 includes() 메서드를 통해 검색 사이트를 제작해보겠습니다!<br />
                먼저 <strong>includes()</strong> 메서드에 대해 짧게 알아보고 사이트 실습에 들어가보겠습니다!
             </p>
@@ -332,25 +332,12 @@ searchBox.addEventListener("keyup",()=>{
         const cssName = el.dataset.name; //css속성 데이터가 들어간 요소를 모두 가져옴 = CSS 속성의 모든 갯수값 출력
         const cssType = el.dataset.type; //CSS 속성의 타입별 갯수값을 가져옴
 
-        if(cssName.includes(searchWord)){ //사용자가 입력한 값이 true일 때 show false면 숨기기
-            el.classList.remove("hide");
-        } else {
-            el.classList.add("hide");
-        }
-
-        if(cssType.includes(searchWord)){ //사용자가 입력한 값이 true일 때 show false면 숨기기
+        if(cssName.includes(searchWord) | cssType.includes(searchWord)){  //사용자가 입력한 값이 true일 때 show false면 숨기기
             el.classList.remove("hide");
         } else {
             el.classList.add("hide");
         }
     });
-});
-if(cssName.includes(searchWord) | cssType.includes(searchWord)){ 
-    el.classList.remove("hide");
-} else {
-    el.classList.add("hide");
-}
-});
 });
 </code></pre>
                     <p class="t_desc2">
