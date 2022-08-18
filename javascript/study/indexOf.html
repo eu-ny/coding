@@ -36,12 +36,14 @@
                 <li><a href="if.html">조건문</a></li>
                 <li><a href="type.html">데이터 타입</a></li>
                 <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
                 <li><a href="var.html">지역변수/전역변수</a></li>
                 <li><a href="quiz01.html">퀴즈</a></li>
                 <li><a href="element.html">요소선택</a></li>
                 <li><a href="array.html">배열 메서드</a></li>
                 <li><a href="regexp.html">정규 표현식</a></li>
-                <li><a href="slice.html">문자열 메서드</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
                 <li><a href="indexOf.html">indexOf()</a></li>
                 <li><a href="search.html">search</a></li>
             </ul>                  
@@ -93,10 +95,50 @@ const currentStr13 = str1.indexOf("reference", 12);  // -1
                     • 만약 선택한 문자가 여러개일 경우 가장 첫번째 문자만 출력합니다.  <br>
                     • 찾는 문자열이 없을 경우 음수인 -1을 반환합니다. <br>
                     • 문자열을 찾을 때 대소문자를 구별합니다.
-
                 </p>
             </div>
             <!-- //sample01 -->
+
+            <hr>
+
+
+            <div id="sample02" class="sample">
+                <h3 class="t_tit2">#2. lastIndexOf( )</h3>
+                <p class="t_desc">
+                    <strong>lastIndexOf()</strong> 메서드는 문자열에서 추출하고 싶은 문자의 <i>위치</i>를 뒤에서 부터 찾은 후 숫자로 해당 문자열을 반환합니다.
+                </p>
+                <p class="t_desc2">
+                    <strong>! lastIndexOf() 사용법 !</strong><br>
+                    "문자열".lastIndexOf(검색값)<br> : indexOf와 문법은 똑같지만 뒤에서 검색한다는 점이 차이점이 있습니다.
+                    "문자열".lastIndexOf(검색값, 위치값)
+                </p>
+                <h3 class="t_tit3">✏️예제 코드</h3>
+                <div class="t_code">
+<pre><code class="language-js">const str1 = "javascript reference"
+
+const currentStr1 = str1.lastIndexOf("javascript");      // 0
+const currentStr2 = str1.lastIndexOf("reference");       // 11
+const currentStr3 = str1.lastIndexOf("j");               // 0
+const currentStr4 = str1.lastIndexOf("a");               // 3 (여러개일 때 마지막 a의 위치를 출력)
+const currentStr5 = str1.lastIndexOf("v");               // 2
+const currentStr6 = str1.lastIndexOf("jquery");          // -1
+const currentStr7 = str1.lastIndexOf("b");               // -1
+const currentStr8 = str1.lastIndexOf("javascript", 0);   // 0
+const currentStr9 = str1.lastIndexOf("javascript", 1);   // 0
+const currentStr10 = str1.lastIndexOf("reference", 0);    // -1
+const currentStr11 = str1.lastIndexOf("reference", 1);    // -1
+const currentStr12 = str1.lastIndexOf("reference", 11);   // 11
+const currentStr13 = str1.lastIndexOf("reference", 12);   // 11
+</code></pre>
+                </div>
+                <p class="t_desc2">
+                    <strong>! point !</strong> <br>
+                    • 만약 선택한 문자가 여러개일 경우 가장 마지막 문자만 출력합니다.  <br>
+                    • 찾는 문자열이 없을 경우 음수인 -1을 반환합니다. <br>
+                    • 문자열을 찾을 때 대소문자를 구별합니다.
+                </p>
+            </div>
+            <!-- //sample02 -->
 
             <hr>
 
