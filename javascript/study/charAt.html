@@ -53,6 +53,10 @@
                 <li><a href="padStart.html">replace</a></li>
                 <li><a href="includes.html">replace</a></li>
                 <li><a href="concat.html">replace</a></li>
+                <li><a href="search().html">replace</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+                <li><a href="function03.html">함수의 유형</a></li>
             </ul>                  
             </ul>
         </nav>
@@ -60,36 +64,33 @@
     <!-- //header --> 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">자바스크립트 : 문자열 메서드 : concat()</h2>
+            <h2 class="t_tit">자바스크립트 : 문자열 메서드 : charAt()</h2>
             <p class="t_desc">
-               이번 시간에는 문자열 메서드인 <strong>concat()</strong>에 대해 알아보겠습니다! 😁
+               이번 시간에는 문자열 메서드인 <strong>charAt()</strong>에 대해 알아보겠습니다! 😁
             </p>
 
             <hr>
 
             <div id="sample01" class="sample">
-                <h3 class="t_tit2">#1. concat( )</h3>
+                <h3 class="t_tit2">#1. charAt( )</h3>
                 <p class="t_desc">
-                    concat() 메서드는 둘 이상의 문자열을 결합하여, 새로운 문자열을 반환합니다. 즉 여러개의 문자열을 하나로 합친다고 볼 수 있습니다.
+                    charAt() 메서드는 지정한 인덱스의 문자를 추출하여 문자열을 반환합니다.
                 </p>
                 <p class="t_desc2">
-                    <strong>! replace( ) 사용 방법 !</strong><br />
-                    "문자열".concat("추가할 문자열");<br />
-                    "문자열".concat("추가할 문자열", "추가할 문자열"....); : 여러개 사용 가능<br />
-                    "문자열".concat("추가할 문자열", ["추가할 문자열"]); : 배열 사용 가능
+                    <strong>! charAt( ) 사용 방법 !</strong><br />
+                    "문자열".charAt(숫자);
                 </p>
                 <div class="t_code">
-<pre><code class="language-js">const str1 = "javascript";
-
-const cirrentStr1 = str1.concat("reference");                    // javascriptreference
-const cirrentStr2 = str1.concat(" ", "reference");               // javascript reference
-const cirrentStr3 = str1.concat(", ", "reference");              // javascript, reference
-const cirrentStr4= str1.concat(", ", "reference", ", ", "book"); // javascript, reference, book
-const cirrentStr5= str1.concat(",", ["refer", "book"]);          // javascript,refer,book
+<pre><code class="language-js">const str1 = "javascript reference";
+    
+const currentStr1 = str1.charAt();       // j
+const currentStr2 = str1.charAt("0");    // j
+const currentStr3 = str1.charAt("1");    // a
+const currentStr4 = str1.charAt("2");    // v
 </code></pre>
                 </div>
                 <p class="t_box">
-                    <strong>! point !</strong> 문자열을 결합할 땐 문자열의 뒤에 추가 문자열이 들어가며 문자열 뿐만아니라 배열도 결합이 가능합니다!
+                    <strong>! point !</strong> 대소문자를 구분하며 위치값을 작성하지 않을 땐 자동으로 0번째 값을 반환한다.
                 </p>
             </div>
             <!-- //sample01 -->

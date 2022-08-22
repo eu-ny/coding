@@ -473,9 +473,9 @@
                 // console.log("searchWord");
 
                 searchList.forEach(el => {
-                    const cssName = el.querySelector("strong").innerText; //속성 테스트
+                    const cssName = el.querySelector("strong").innerText;  //CSS 속성 텍스트
 
-                    //알파벳 첫글자와 css속성의 첫글자
+                    //알파벳 첫글자와 css속성의 첫글자가 같은 것만 출력된다.
                     if(searchWord.charAt(0) === cssName.charAt(0)){
                         el.classList.remove("hide");
                     }else {
@@ -484,7 +484,6 @@
                 });
             });
         });
-
     </script>
 </body>
 </html>

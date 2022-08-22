@@ -447,7 +447,7 @@ func(youNum3, youStr3, youCom1);
             <div id="sample15" class="sample">
                 <h3>15. 함수 유형 : 함수와 배열 , 객체를 이용한 형태 </h3>
                 <p class="t_desc">객체를 사용하여 데이터를 전달시킨다.</p>
-                <div class="script"></div>
+                <div class="script">
 <pre><code class="language-js">function func(num, str1, str2){
     document.write(num + ". " + str1 + "가 " + str2 + "되었습니다.15");
 }
@@ -473,6 +473,7 @@ func(info[0].num, info[0].name, info[0].com);
 func(info[1].num, info[1].name, info[1].com);
 func(info[2].num, info[2].name, info[2].com);
 </code></pre>
+                </div>
                 <div class="result">
                     <details>
                         <summary>결과 보기</summary>
@@ -542,7 +543,6 @@ info.result3();
                     1.this. : 이것을 저장하시오. 라는 의미로 재사용을 가능하게 해준다.
                     2,객체 생성자를 출력하려면 꼭 인스턴트를 생성 한뒤 실행문을 써주어야 한다.
                 </p>
-                <div class="script"></div>
 <pre><code class="language-js">function func(num, name, word){ //저장한 데이터를 변수에게 데이터 전달
     this.num = num; //재사용울 위해 const를 생략하고 this.를 붙인다.
     this.name = name;

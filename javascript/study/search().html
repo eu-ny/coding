@@ -53,6 +53,9 @@
                 <li><a href="padStart.html">replace</a></li>
                 <li><a href="includes.html">replace</a></li>
                 <li><a href="concat.html">replace</a></li>
+                <li><a href="search().html">replace</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
             </ul>                  
             </ul>
         </nav>
@@ -60,36 +63,38 @@
     <!-- //header --> 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">자바스크립트 : 문자열 메서드 : concat()</h2>
+            <h2 class="t_tit">자바스크립트 : 문자열 메서드 : search()</h2>
             <p class="t_desc">
-               이번 시간에는 문자열 메서드인 <strong>concat()</strong>에 대해 알아보겠습니다! 😁
+               이번 시간에는 문자열 메서드인 <strong>search()</strong>에 대해 알아보겠습니다! 😁
             </p>
 
             <hr>
 
             <div id="sample01" class="sample">
-                <h3 class="t_tit2">#1. concat( )</h3>
+                <h3 class="t_tit2">#1. search( )</h3>
                 <p class="t_desc">
-                    concat() 메서드는 둘 이상의 문자열을 결합하여, 새로운 문자열을 반환합니다. 즉 여러개의 문자열을 하나로 합친다고 볼 수 있습니다.
+                    search() 메서드는 문자열을 주어진 횟수만큼 반복해 붙인 새로운 문자열을 반환합니다.
                 </p>
                 <p class="t_desc2">
-                    <strong>! replace( ) 사용 방법 !</strong><br />
-                    "문자열".concat("추가할 문자열");<br />
-                    "문자열".concat("추가할 문자열", "추가할 문자열"....); : 여러개 사용 가능<br />
-                    "문자열".concat("추가할 문자열", ["추가할 문자열"]); : 배열 사용 가능
+                    <strong>! search( ) 사용 방법 !</strong><br />
+                    "문자열".search(검색값); <br />
+                    "문자열".search(정규식 표현);
                 </p>
                 <div class="t_code">
-<pre><code class="language-js">const str1 = "javascript";
+<pre><code class="language-js">const str1 = "javascript reference";
 
-const cirrentStr1 = str1.concat("reference");                    // javascriptreference
-const cirrentStr2 = str1.concat(" ", "reference");               // javascript reference
-const cirrentStr3 = str1.concat(", ", "reference");              // javascript, reference
-const cirrentStr4= str1.concat(", ", "reference", ", ", "book"); // javascript, reference, book
-const cirrentStr5= str1.concat(",", ["refer", "book"]);          // javascript,refer,book
+const currentStr1 = str1.search("javascript");      // 0
+const currentStr2 = str1.search("reference");       // 11 (11번째 자리 : 위치 값 출력)
+const currentStr3 = str1.search("j");               // 0
+const currentStr4 = str1.search("a");               // 1 (중복일 때 가장 처음 것만 출력)
+const currentStr5 = str1.search("v");               // 2
+const currentStr6 = str1.search("jquery");          // -1 (문자열에 없을 경우 음수 -1이 나옴)
+const currentStr7 = str1.search("b");               // -1
+const currentStr8 = str1.search(/[a-z]/g);          // 0 //j가 a부터 z까지 포함되어 있으므로 가장 첫번째 값의 위치만 출력
 </code></pre>
                 </div>
                 <p class="t_box">
-                    <strong>! point !</strong> 문자열을 결합할 땐 문자열의 뒤에 추가 문자열이 들어가며 문자열 뿐만아니라 배열도 결합이 가능합니다!
+                    <strong>! point !</strong> indexOF()보다 search()를 더 많이 사용하기 때문에 잘 알아두자!
                 </p>
             </div>
             <!-- //sample01 -->
