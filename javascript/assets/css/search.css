@@ -141,14 +141,14 @@ li {
     margin-bottom: 10px;
 }
 
-.search__info .keyword .span {
-    border-bottom: 2px dashed var(--htmlColor);
+.search__info .keyword span {
+    border: 1px solid var(--htmlColor);
     border-radius: 50px;
     padding: 10px;
     display: inline-block;
     margin-bottom: 4px;
 }
-.search__info .keyword .span:hover {
+.search__info .keyword span:hover {
     background-color: var(--htmlColor);
     color: #fff;
     cursor: pointer;
