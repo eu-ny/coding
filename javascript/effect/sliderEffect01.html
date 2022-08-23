@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>슬라이드 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/slider.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body class="img04">
+    <header id="header">
+        <h1>Javascript Slider Effect01</h1>
+        <p>슬라이드 이펙트 - 트렌지션 효과</p>
+        <ul>
+            <li class="active"><a href="sliderEffect01">1</a></li>
+            <li><a href="sliderEffect02">2</a></li>
+            <li><a href="sliderEffect03">3</a></li>
+            <li><a href="sliderEffect04">4</a></li>
+            <li><a href="sliderEffect05">5</a></li>
+            <li><a href="sliderEffect06">6</a></li>
+            <li><a href="sliderEffect07">7</a></li>
+        </ul>
+    </header>
+    <!-- //header -->
+
+    <main id="main"></main>
+    <!-- //main -->
+
+    <footer id="footer" >
+        <div class="modal__wrap">
+            <div class="modal__btn">
+                <label for="btn">Source</label> 
+                <input class="btn" type="checkbox" id="btn" name="btn" />
+            </div>
+            <div class="modal__cont">
+                <div class="modal__box">
+                    <div class="title">
+                        <span class="dot" aria-label="ture"></span>
+                        <div class="tabs">
+                            <div class="active">
+                                <span class="favicon" aria-label="ture">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>JAVASCRIPT</em>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="ture">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>HTML</em>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div>
+                                <span class="favicon" aria-label="ture">
+                                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                        <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                        <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                        <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                    </svg>
+                                </span>
+                                <em>CSS</em>
+                                <span class="close">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                        <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                        <span class="plus" aria-label="ture">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="cont">
+                        <div class="active">
+<pre><code class="language-js"> const tabBtn = document.querySelectorAll(".modal__box .tabs > div"); 
+const tabCont = document.querySelectorAll(".modal__box .cont > div");
+
+tabBtn.forEach((element, index) => {
+    //엘리먼트 요소인 버튼을 클릭함
+    element.addEventListener("click", (event) => {  //클릭한 값이 이벤트에 저장된다.
+        event.preventDefault();   //클릭을 해도 반응되지 않도록 함. (기본값은 맨 위로 이동)
+
+        //클래스의 active를 모두 제거시킨다.
+        tabBtn.forEach(li => {
+            li.classList.remove("active");  //엑티브를 지워준다.
+        });
+        //내가 클릭한 버튼에 active 추가하기
+        element.classList.add("active");
+        
+        //버튼을 클릭하면 모든 자식 박스(컨텐츠)를 숨긴다.
+        tabCont.forEach(div => {
+            div.style.display = "none";
+        });
+
+        //클릭한 버튼과 관련된 콘텐츠 박스(div)를 보이게 한다.
+        //[i]클릭한 버튼과 [i]콘텐츠 박스를 보이게 한다. (첫번째 버튼 - 첫번째 콘텐츠)
+        tabCont[index].style.display = "block";
+    });
+});
+</code></pre>
+                        </div>
+                        <div>
+<pre><code class="language-html">for(let i=0; i&lt;4; i++ ){
+    quizType[i].textContent = quizInfo[i].answerType; 
+    quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
+    quizAsk[i].textContent = quizInfo[i].answerAsk;
+    quizResult[i].textContent = quizInfo[i].answerResult;
+}
+</code></pre>
+                        </div>
+                        <div>
+<pre><code class="language-css">@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;   /* 100%하면 스크롤바가 생기지 않는다 */
+    height: 100vh;
+    font-family: 'Pretendard';
+    background: url(../img/effect_bg04-2.jpg) no-repeat center / cover;
+}
+
+/* 배경 이미지 */
+body.img01 {
+    background: url(../img/effect_bg01-2.jpg) no-repeat center / cover;
+}
+body.img02 {
+    background: url(../img/effect_bg02-2.jpg) no-repeat center / cover;
+}
+body.img03 {
+    background: url(../img/effect_bg03-2.jpg) no-repeat center / cover;
+}
+body.img04 {
+    background: url(../img/effect_bg04-2.jpg) no-repeat center / cover;
+}
+body.img05 {
+    background: url(../img/effect_bg05-2.jpg) no-repeat center / cover;
+}
+body.img06 {
+    background: url(../img/effect_bg06-2.jpg) no-repeat center / cover;
+}
+body.img07 {
+    background: url(../img/effect_bg07-2.jpg) no-repeat center / cover;
+}
+body.img08 {
+    background: url(../img/effect_bg08-2.jpg) no-repeat center / cover;
+}
+body.img09 {
+    background: url(../img/effect_bg09-2.jpg) no-repeat center / cover;
+}
+body.img10 {
+    background: url(../img/effect_bg10-2.jpg) no-repeat center / cover;
+}
+
+
+body::after {       /* 가상 요소 : 배경 전체 불투명도 씌우기 */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(23, 20, 88, 0.386);
+    z-index: -1;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;    /* 이미지 정렬 */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* header */
+#header {
+    color: #fff;
+    padding: 20px;
+}
+#header h1 {
+    display: inline-block;
+    font-weight: 300;
+    margin-bottom: 10px;
+    border-bottom: 0.5px solid #fff;
+}
+#header p {
+    font-weight: 200;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#header li {
+    display: inline-block;
+}
+#header li a {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+/* footer */
+#footer .source {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-size: 14px;
+}
+
+/* modal__wrap */
+.modal__wrap {}
+.modal__btn {}
+.modal__btn {}
+.modal__btn .btn {}
+.modal__cont {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;     /* X축으로는 스크롤 바가 생기지 않게 해준다. */
+    display: flex;
+    align-items: center;    /* 가운데 정렬 aic */
+    justify-content: center;    /* 가운데 정렬 jcc */
+}
+.modal__box {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    background-color: #fff; 
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%); /* 스크립트를 사용할 때 편한 컬러 설정 단위! */
+}
+.modal__box .title {
+    padding-inline: 1rem;
+    background-color: hsl(252 24% 10%);
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 50px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.modal__box .title .dot {
+    width: 15px;
+    height: 15px;
+    background-color: hsl(180 2% 50%);
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 30px;
+}
+.modal__box .title .dot::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: hsl(180 2% 50%);
+    border-radius: 50%;
+}
+.modal__box .title .dot::after {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: hsl(180 2% 50%);
+    border-radius: 50%;
+}
+.modal__box .title .plus {
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+    background: #ccc;
+    border-radius: 0.5rem;
+}
+.modal__box .title .tabs {
+    display: flex;
+    margin-left: 50px;
+}
+.modal__box .title .tabs > div {
+    color: hsl(39 50% 59%);
+    background-color: hsl(242 19% 21%);
+    padding: 0.35rem 0.8rem 0.25rem 0.8rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.modal__box .title .tabs > div.active {
+    background-color: black;
+}
+.modal__box .title .tabs > div em {
+        font-style: normal;
+}
+.modal__box .title .tabs > div .favicon {
+    margin-right: 0.4rem;
+    margin-top: 0.2rem;
+}
+.modal__box .title .tabs > div .close {
+    margin-left: 5rem;
+}
+.modal__box .cont {
+    background-color: #282936; /* cont 배경색 */
+    height: calc(550px);
+    box-sizing: border-box;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.modal__box .cont > div {
+    display: none;
+}
+.modal__box .cont > div.active {
+    display: block;
+}
+</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"> </script>
+    <script>
+        hljs.highlightAll();
+
+        const tabBtn = document.querySelectorAll(".modal__box .tabs > div"); 
+        const tabCont = document.querySelectorAll(".modal__box .cont > div");
+
+        tabBtn.forEach((element, index) => {
+            //엘리먼트 요소인 버튼을 클릭함
+            element.addEventListener("click", (event) => {  //클릭한 값이 이벤트에 저장된다.
+                event.preventDefault();   //클릭을 해도 반응되지 않도록 함. (기본값은 맨 위로 이동)
+
+                //클래스의 active를 모두 제거시킨다.
+                tabBtn.forEach(li => {
+                    li.classList.remove("active");  //엑티브를 지워준다.
+                });
+                //내가 클릭한 버튼에 active 추가하기
+                element.classList.add("active");
+                
+                //버튼을 클릭하면 모든 자식 박스(컨텐츠)를 숨긴다.
+                tabCont.forEach(div => {
+                    div.style.display = "none";
+                });
+
+                //클릭한 버튼과 관련된 콘텐츠 박스(div)를 보이게 한다.
+                //[i]클릭한 버튼과 [i]콘텐츠 박스를 보이게 한다. (첫번째 버튼 - 첫번째 콘텐츠)
+                tabCont[index].style.display = "block";
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;   /* 100%하면 스크롤바가 생기지 않는다 */
+    height: 100vh;
+    font-family: 'Pretendard';
+    background: url(../img/effect_bg04-2.jpg) no-repeat center / cover;
+}
+
+/* 배경 이미지 */
+body.img01 {
+    background: url(../img/effect_bg01-2.jpg) no-repeat center / cover;
+}
+body.img02 {
+    background: url(../img/effect_bg02-2.jpg) no-repeat center / cover;
+}
+body.img03 {
+    background: url(../img/effect_bg03-2.jpg) no-repeat center / cover;
+}
+body.img04 {
+    background: url(../img/effect_bg04-2.jpg) no-repeat center / cover;
+}
+body.img05 {
+    background: url(../img/effect_bg05-2.jpg) no-repeat center / cover;
+}
+body.img06 {
+    background: url(../img/effect_bg06-2.jpg) no-repeat center / cover;
+}
+body.img07 {
+    background: url(../img/effect_bg07-2.jpg) no-repeat center / cover;
+}
+body.img08 {
+    background: url(../img/effect_bg08-2.jpg) no-repeat center / cover;
+}
+body.img09 {
+    background: url(../img/effect_bg09-2.jpg) no-repeat center / cover;
+}
+body.img10 {
+    background: url(../img/effect_bg10-2.jpg) no-repeat center / cover;
+}
+
+
+body::after {       /* 가상 요소 : 배경 전체 불투명도 씌우기 */
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(23, 20, 88, 0.386);
+    z-index: -1;
+}
+
+img {
+    width: 100%;
+    vertical-align: top;    /* 이미지 정렬 */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* header */
+#header {
+    color: #fff;
+    padding: 20px;
+}
+#header h1 {
+    display: inline-block;
+    font-weight: 300;
+    margin-bottom: 10px;
+    border-bottom: 0.5px solid #fff;
+}
+#header p {
+    font-weight: 200;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+#header li {
+    display: inline-block;
+}
+#header li a {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+/* footer */
+#footer .source {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    padding: 10px 30px;
+    font-size: 14px;
+}
+
+/* modal__wrap */
+.modal__wrap {}
+.modal__btn {}
+.modal__btn {}
+.modal__btn .btn {}
+.modal__cont {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;     /* X축으로는 스크롤 바가 생기지 않게 해준다. */
+    display: flex;
+    align-items: center;    /* 가운데 정렬 aic */
+    justify-content: center;    /* 가운데 정렬 jcc */
+}
+.modal__box {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    background-color: #fff; 
+    box-shadow: 0 10px 20px -5px hsl(180deg 2% 10%); /* 스크립트를 사용할 때 편한 컬러 설정 단위! */
+}
+.modal__box .title {
+    padding-inline: 1rem;
+    background-color: hsl(252 24% 10%);
+    display: flex;
+    align-items: center;
+    color: #fff;
+    height: 50px;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    
+}
+.modal__box .title .dot {
+    width: 15px;
+    height: 15px;
+    background-color: hsl(180 2% 50%);
+    display: inline-block;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 30px;
+}
+.modal__box .title .dot::before {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: hsl(180 2% 50%);
+    border-radius: 50%;
+}
+.modal__box .title .dot::after {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: hsl(180 2% 50%);
+    border-radius: 50%;
+}
+.modal__box .title .plus {
+    padding: 0.5rem 0.5rem 0.3rem 0.5rem;
+    background: #ccc;
+    border-radius: 0.5rem;
+}
+.modal__box .title .tabs {
+    display: flex;
+    margin-left: 50px;
+}
+.modal__box .title .tabs > div {
+    color: hsl(39 50% 59%);
+    background-color: hsl(242 19% 21%);
+    padding: 0.35rem 0.8rem 0.25rem 0.8rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.modal__box .title .tabs > div.active {
+    background-color: black;
+}
+.modal__box .title .tabs > div em {
+        font-style: normal;
+}
+.modal__box .title .tabs > div .favicon {
+    margin-right: 0.4rem;
+    margin-top: 0.2rem;
+}
+.modal__box .title .tabs > div .close {
+    margin-left: 5rem;
+}
+.modal__box .cont {
+    background-color: #282936; /* cont 배경색 */
+    height: 550px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.modal__box .cont > div {
+    display: none;
+}
+.modal__box .cont > div.active {
+    display: block;
+}
