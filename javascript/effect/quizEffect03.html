@@ -271,6 +271,7 @@
         //     quizResult[i].textContent = quizInfo[i].answerResult;
         // });
 
+        //for, forEach문을 사용해서 한 번에 작성.
         quizInfo.forEach((el, i) => {
             quizType[i].textContent = quizInfo[i].answerType; //객체라서 키를 구체적으로 선언해주어야 오류 안난다.
             quizNumber[i].textContent = quizInfo[i].answerNum + ". ";
