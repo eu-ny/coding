@@ -957,17 +957,16 @@
         }
         updateQuiz();
 
-        //정답확인
+        //정답 확인하기
         const answerQuiz = () => {
             const quizSelects = document.querySelectorAll(".quiz__selects"); //객관식보기
         
 
             //사용자가 체크한 보기와 문제 정답이 같은지 확인하기 (사용자가 체크한 보기 == 문제 정답)
-            //첫번째 문제가 0이면 number에 0이 들어간다.
             quizInfo.forEach((question, number) => {
                 const userSelector = `input[name=select${number}]:checked`; //사용자가 체크한 것
-                const quizSelectsWrap = quizSelects[number];  //문제 번호
-                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value; //사용자가 선택한 것을 찾기
+                const quizSelectsWrap = quizSelects[number];  //문제 번호  : number(index)가 0일 땐 첫 번째 문제, 1이면 두 번째 문제라는 것을 quizSelectsWrap으로 설정한 것 입니다.
+                const userAnswer = (quizSelectsWrap.querySelector(userSelector) || {}).value; //정답 체크를 하지 않은 경우를 생각하여 or을 이용해 빈 공백도 답처리가 될 수 있도록 한다. (사용자 체크 찾기)
                 const quizView = document.querySelectorAll(".quiz__view"); //강아지
 
                 if(userAnswer == question.answerResult){
@@ -984,23 +983,15 @@
                 }
             });
 
-            //전체 문제수
-            quizInfo.textContent = quizInfo.length;
-            console.log(quizInfo.length);
+            //전체 문제수와 사용자가 맞힌 갯수 확인하기
+            let scoreSet = Math.floor(quizScore / quizInfo.length * 100); //Math.floor : 소숫점을 없애준다. || 맞힌 개수 나누기 퀴즈 총 갯수 x 100
 
-            //사용자가 맞힌 수
-            console.log(quizScore);
-
-            //ex
-            document.querySelector(".ex").innerHTML = `당신은 ${quizInfo.length} 문제 중 ${quizScore}을 맞추셨습니다. 합격`
-
-            if(quizScore >= 40){
-                document.querySelector(".ex").innerHTML = `당신은 ${quizInfo.length} 문제 중 ${quizScore}을 맞추셨습니다.`
+            if(quizScore >= 60){
+                document.querySelector(".quiz__confirm .ex").innerHTML = `당신은 ${quizInfo.length} 문제 중 ${quizScore}을 맞추셨습니다. ! 합격 !`
             } else {
-                document.querySelector(".ex").innerHTML = `당신은 ${quizInfo.length} 문제 중 ${quizScore}을 맞추셨습니다. 불합격`
+                document.querySelector(".quiz__confirm .ex").innerHTML = `당신은 ${quizInfo.length} 문제 중 ${quizScore}을 맞추셨습니다. ! 불합격 !`
             }
         }
-
         //정답클릭
         document.querySelector(".quiz__confirm .check").addEventListener("click", answerQuiz); //정답을 클릭했을 때 앤써 퀴즈를 실행시켜라.
     
