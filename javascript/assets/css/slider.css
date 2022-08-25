@@ -356,7 +356,7 @@ a {
 /* 요소를 안보이게 하는 방법 
     1. display : none;   애니메이션이 되지 않고 영역이 남지 않는다.
     2. opacity: 0;       애니메이션이 작동 되고 영역이 남는다.
-    3. visibility: hidden;       애니메이션이 작동되지 않고 영역이 남지 않는다.
-    4. width: 0; height: 0;      애니메이션이 작동되지 않고 영역이 남지 않는다.  = blind효과 
+    3. visibility: hidden;       애니메이션이 작동되지 않고 영역이 남는다.
+    4. width: 0; height: 0;      애니메이션이 작동되고 영역이 남지 않는다.  = blind효과 
     5. transform : scale(0)      애니메이션은 작동되고 영역은 남지 않는다. 
 */   
