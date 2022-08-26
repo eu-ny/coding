@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>퀴즈 이펙트</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #11E8BB; /* Old browsers */
+            background: linear-gradient(to bottom,  #11E8BB 0%,#8200C9 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r77/three.min.js"></script>
+    <script>
+        let render, scene, camera, composer, circle, skelet, particle;
+
+        //렌더링 설정
+        render = new THREE.WebGLRenderer({ antialias: true, alpha: true }); 
+        //threejs소스 antialias = 굴곡 / alpha = 투명도 설정
+        renderer.setPixelRatio((window.devicePixelRatio) ? window.devicePixelRatio : 1); //캔버스는 비율 설정이 중요하므로 비율을 설정해준다.
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.autoClear = false;
+        renderer.setClearColor(0x000000, 0.0); //검은색 즉 색상을 설정하는 것
+        document.getElementById('canvas').appendChild(renderer.domElement); //랜더를 뒤에 넣어 준다는 뜻.
+    
+        //화면 설정 - 
+        scene = new THREE.Scene();
+
+        //카메라 설정 - 카메라 각도 기본 설정
+        camera = 
+    </script>
+</body>
+</html>
