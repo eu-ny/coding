@@ -64,6 +64,8 @@ body {
     text-align: center;
 }
 #header h1 a {
+    display: block;
+    margin-bottom: 20px;
     font-size: 60px;
     font-weight: 700;
     color: rgb(0, 85, 255);
@@ -75,18 +77,18 @@ body {
      display: inline-block;
      color: rgb(0, 85, 255);
      border: 1px solid rgb(0, 85, 255);
-     padding: 8px 25px;
+     padding: 8px 15px;
      margin-bottom: 7px;
      border-radius: 10px;
 }
 
 .header_nav ul li.active a {
-    transition: all 0.3s;
     background-color: rgb(0, 85, 255);
     color: #fff
 }
 
 .header_nav ul li a:hover {   
+    transition: all 0.3s;
     background-color: rgb(0, 85, 255);
     color: #fff;
 }
@@ -129,6 +131,49 @@ body {
     background: #dfe5ff;
     padding: 10px;
     border-radius: 5px;
+}
+
+/* intro_menu */
+.intro_menu {
+    width: 50vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(3px);
+    background: rgba(229, 252, 255, 0.154);
+    padding: 3vw;
+    border-radius: 1vw;
+    font-size: 1vw;
+    text-align: center;
+}
+.intro_menu li{
+    color : #00159c;
+    padding: 5px;
+    font-size: 20px;
+    margin-right: 5px;
+}
+.intro_menu li a {
+    border-radius: 10px;
+    padding: 5px;
+    background: #9f00f4;
+    color : #fff;
+}
+.intro_menu li a:hover {
+    background: #9f00f4;
+    color : #fff;
+}
+@media (max-width : 600px){
+    .intro_menu {
+        width: 90%;
+        padding: 14px;
+    }
+    .intro_menu li {
+        font-size: 16px;
+    }
+    .intro_menu li a {
+        font-size: 16px;
+    }
 }
 
 /* sample */
