@@ -658,6 +658,87 @@
                 </div>
                 <!-- //sample19 -->
 
+                <div id="sample20" class="sample">
+                    <h3>20. 함수 유형 : 즉시 실행 함수</h3>
+                    <p class="t_desc">함수를 더 간편하게 만든 식으로 func();(실행문)을 생략합니다. </p>
+                    <div class="script"></div>
+<pre><code class="language-js">{
+//즉시실행 함수
+(function func (){
+    document.write("1. 함수가 실행되었습니다.20")
+})();
+
+//즉시실행 함수 화살표 함수
+(() =&gt; {
+    document.write("2. 함수가 실행되었습니다.20")
+})();
+}
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                            <div class="sample13_result">
+                                1. 함수가 실행되었습니다.20
+                                2. 함수가 실행되었습니다.20
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample20 -->
+
+                <div id="sample21" class="sample">
+                    <h3>21. 함수 유형 : 파라미터 함수</h3>
+                    <p class="t_desc"></p>
+                    <div class="script"></div>
+<pre><code class="language-js">{
+//매개변수 함수
+function fun(str){
+    document.write(str);
+}
+func("1. 함수가 실행되었습니다.21");
+
+//파라미터 함수 : 매개변수 함수를 파라미터 함수로 바꾸기.
+function func(str = "2. 함수가 실행되었습니다.21"){
+    document.write(str);
+}
+func();
+}
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                            <div class="sample13_result">
+                                1. 함수가 실행되었습니다.21
+                                2. 함수가 실행되었습니다.21
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample21 -->
+
+                <div id="sample22" class="sample">
+                    <h3>22. 함수 유형 : 아규먼트 함수</h3>
+                    <div class="script"></div>
+<pre><code class="language-js">{
+    function func(a,b){
+        document.write(argyments[0]);   //a
+        document.write(argyments[1]);   //b
+    }
+    func("1.함수가 실행되었습니다.22","2.함수가 실행되었습니다.22");
+}
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                            <div class="sample13_result">
+                                1. 함수가 실행되었습니다.22
+                                2. 함수가 실행되었습니다.22
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample21 -->
+
 
             </div>
         </div>
@@ -1023,10 +1104,39 @@
             info2.result2();
             info3.result3();
         }
-        //20. 클래스 : 함수의 집합체 --> 함수형(요즘 트렌드 *) / 클래스형 (함수형에 클래스 장점을 추가시켜 리액트 훅이 생김))
+        // 클래스 : 함수의 집합체 --> 함수형(요즘 트렌드 *) / 클래스형 (함수형에 클래스 장점을 추가시켜 리액트 훅이 생김))
         // 자바와 자바스크립트 구분 // css클래스와 자바스크립트의 클래스 구분하기!! 
+        //20. 즉시실행함수 - func() 생략
         {
+            //즉시실행 함수
+            (function func (){
+                document.write("즉시 실행 함수가 실행되었습니다.")
+            })();
 
+            //즉시실행 함수 화살표 함수
+            (() => {
+                document.write("즉시 실행 함수가 실행되었습니다.2")
+            })();
+        }
+        //21. 파라미터 함수
+        {
+            function fun(str){
+                document.write(str);
+            }
+            func("1. 함수가 실행되었습니다.21");
+
+            function func(str = "2. 함수가 실행되었습니다.21"){
+                document.write(str);
+            }
+            func();
+        }
+        //22. 아규먼트 함수
+        {
+            function func(a,b){
+                document.write(argyments[0]);   //a
+                document.write(argyments[1]);   //b
+            }
+            func("1.함수가 실행되었습니다.22","2.함수가 실행되었습니다.22");
         }
     </script>
 
