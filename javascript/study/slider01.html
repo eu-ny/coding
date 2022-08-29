@@ -122,7 +122,6 @@
                     <i>setInterval()</i>을 통해 스크립트를 완성해보자! <br>
                     코드의 주석과 함께 스크립트를 이해해보도록 합니다:)
                 </p>
-                <h3 class="t_tit3">✏️ 스크립트 보기 : 선택자</h3>
                 <details style="margin-bottom: 10px;">
                     <summary> 💡 전체 스크립트 보기</summary>
                     <div class="t_code" style="margin-bottom: 30px;">
@@ -167,9 +166,11 @@ setInterval(() => {
 </code></pre>
                     </div>
                 </details>
+                <h3 class="t_tit3">✏️ 스크립트 보기 : 선택자</h3>
                 <div class="t_code">
-<pre><code class="language-js">
-    asda
+<pre><code class="language-js"> const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = sliderWrap.querySelector(".slider__img"); //부모 요소에서 찾는 것이 더 정확
+const slider = sliderWrap.querySelectorAll(".slider");
 </code></pre>
                     <p class="t_desc2">
                         <strong>! 검색 영역이 작동되는 과정 알아보기 !</strong><br />

@@ -37,17 +37,18 @@
             color: #fff;
             padding: 5px 10px;
         }
+        
         .slider:nth-child(1)::before {content: '이미지1';}
         .slider:nth-child(2)::before {content: '이미지2';}
         .slider:nth-child(3)::before {content: '이미지3';}
         .slider:nth-child(4)::before {content: '이미지4';}
         .slider:nth-child(5)::before {content: '이미지5';}
         /* 슬라이더가 포지션으로 고정되어 있기 때문에 위치 바꿔주기 */
-        .slider:nth-child(1) {z-index: 5};
-        .slider:nth-child(2) {z-index: 4};
-        .slider:nth-child(3) {z-index: 3};
-        .slider:nth-child(4) {z-index: 2};
-        .slider:nth-child(5) {z-index: 1};
+        .slider:nth-child(1) {z-index: 5;}
+        .slider:nth-child(2) {z-index: 4;}
+        .slider:nth-child(3) {z-index: 3;}
+        .slider:nth-child(4) {z-index: 2;}
+        .slider:nth-child(5) {z-index: 1;}
 
         @media(max-width : 800px){
             .slider__img {
@@ -256,19 +257,19 @@ setInterval(() => {
     color: #fff;
     padding: 5px 10px;
 }
+
 .slider:nth-child(1)::before {content: '이미지1';}
 .slider:nth-child(2)::before {content: '이미지2';}
 .slider:nth-child(3)::before {content: '이미지3';}
 .slider:nth-child(4)::before {content: '이미지4';}
 .slider:nth-child(5)::before {content: '이미지5';}
-/* 슬라이더가 포지션으로 고정되어 있기 때문에 순서가 반대이므로 위치(순서) 바꿔주기 */
-.slider:nth-child(1) {z-index: 5};
-.slider:nth-child(2) {z-index: 4};
-.slider:nth-child(3) {z-index: 3};
-.slider:nth-child(4) {z-index: 2};
-.slider:nth-child(5) {z-index: 1};
+/* 슬라이더가 포지션으로 고정되어 있기 때문에 위치 바꿔주기 */
+.slider:nth-child(1) {z-index: 5;}
+.slider:nth-child(2) {z-index: 4;}
+.slider:nth-child(3) {z-index: 3;}
+.slider:nth-child(4) {z-index: 2;}
+.slider:nth-child(5) {z-index: 1;}
 
-/* 미디어쿼리 */
 @media(max-width : 800px){
     .slider__img {
         width: 400px;
@@ -312,6 +313,7 @@ setInterval(() => {
             slider[nextIndex].style.opacity = "1"; //두번째 이미지를 보이게
 
             currentIndex = nextIndex;
+            console.log(currentIndex);
             
 
             // slider[0].style.opacity = "0"; //첫번째 이미지를 안보이게
