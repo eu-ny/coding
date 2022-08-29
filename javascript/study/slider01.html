@@ -122,10 +122,10 @@
                     <i>setInterval()</i>을 통해 스크립트를 완성해보자! <br>
                     코드의 주석과 함께 스크립트를 이해해보도록 합니다:)
                 </p>
-                <h3 class="t_tit3">✏️ 스크립트 보기</h3>
-                <details>
+                <h3 class="t_tit3">✏️ 스크립트 보기 : 선택자</h3>
+                <details style="margin-bottom: 10px;">
                     <summary> 💡 전체 스크립트 보기</summary>
-                    <div class="t_code">
+                    <div class="t_code" style="margin-bottom: 30px;">
 <pre><code class="language-js"> const sliderWrap = document.querySelector(".slider__wrap");
 const sliderImg = sliderWrap.querySelector(".slider__img"); //부모 요소에서 찾는 것이 더 정확
 const slider = sliderWrap.querySelectorAll(".slider");
@@ -137,7 +137,7 @@ setInterval(() => {
 
     let nextIndex = (currentIndex + 1) % sliderCount; //다음 이미지
     //1,2,3,4,5,6,7,8,9...........
-    //*5 의 경우 : 1,2,3,4,0,1,2,3,4,0.........
+    //*5 의 경우 : 1,5.....
     //%의 경우 : 1,2,3,4,5,1,2,3,4,5.......(sliderCount의 값이 5이므로!)
 
     //currentIndex가 0일 때 slider[nextIndex]는 +1 돼서 1 
@@ -169,6 +169,7 @@ setInterval(() => {
                 </details>
                 <div class="t_code">
 <pre><code class="language-js">
+    asda
 </code></pre>
                     <p class="t_desc2">
                         <strong>! 검색 영역이 작동되는 과정 알아보기 !</strong><br />
