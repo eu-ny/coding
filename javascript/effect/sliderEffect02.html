@@ -48,11 +48,11 @@
         .slider:nth-child(4)::before {content: '이미지9';}
         .slider:nth-child(5)::before {content: '이미지10';}
         /* 슬라이더가 포지션으로 고정되어 있기 때문에 위치 바꿔주기 */
-        .slider:nth-child(1) {z-index: 5};
-        .slider:nth-child(2) {z-index: 4};
-        .slider:nth-child(3) {z-index: 3};
-        .slider:nth-child(4) {z-index: 2};
-        .slider:nth-child(5) {z-index: 1};
+        .slider:nth-child(1) {z-index: 5;}
+        .slider:nth-child(2) {z-index: 4;}
+        .slider:nth-child(3) {z-index: 3;}
+        .slider:nth-child(4) {z-index: 2;}
+        .slider:nth-child(5) {z-index: 1;}
 
         @media(max-width : 800px){
             .slider__img {
@@ -312,20 +312,20 @@ setInterval(()=&gt; {
         //sliderInner.style.transform += "translateX(-3200px)";     -800 * 4 : 800은 이미지의 width값이다.        
 
         // //이미지 움직이기 조건문 ver.------------------------------------------------------------------
-        // setInterval(()=> {
-        //     if(currentIndex < slider.length -1){ //움직이는 영역인 sliderInner는 영역이 한개이기 때문에 각각의 이미지가 움직이도록 슬라이드의 총 길이를 식에 써주어야 한다.
-        //         //슬라이드의 길이가 4이고 currentIndex가 4보다 작을 때 하나씩 올리기 (인덱스라 0부터 세기 때문에 0~4 = 5개의 이미지가 되기 때문.)
-        //         currentIndex ++;
-        //         //아닌 경우 다시 0으로 돌아오도록 한다.
-        //     } else { 
-        //         currentIndex = 0;
-        //     }
-        //     //조건문을 통해 currentIndex가 마지막 이미지에서 처음 이미지로 다시 돌아오도록 설정해준 뒤 css속성을 사용하여 계속 반복되도록 설정한다.
-        //        sliderInner.style.transform = "translateX("+ -800 * currentIndex + "px)";
-        // },2000);
+        setInterval(()=> {
+            if(currentIndex < slider.length -1){ //움직이는 영역인 sliderInner는 영역이 한개이기 때문에 각각의 이미지가 움직이도록 슬라이드의 총 길이를 식에 써주어야 한다.
+                //슬라이드의 길이가 4이고 currentIndex가 4보다 작을 때 하나씩 올리기 (인덱스라 0부터 세기 때문에 0~4 = 5개의 이미지가 되기 때문.)
+                currentIndex ++;
+                //아닌 경우 다시 0으로 돌아오도록 한다.
+            } else { 
+                currentIndex = 0;
+            }
+            //조건문을 통해 currentIndex가 마지막 이미지에서 처음 이미지로 다시 돌아오도록 설정해준 뒤 css속성을 사용하여 계속 반복되도록 설정한다.
+               sliderInner.style.transform = "translateX("+ -800 * currentIndex + "px)";
+        },2000);
 
         // //조건문 한줄로 : 추천하진 않는 방법이지만 사용해도 무관----------------------------------------------
-        // // (currentIndex < 4) ? currentIndex ++ : currentIndex = 0;
+        // (currentIndex < 4) ? currentIndex ++ : currentIndex = 0;
 
         // //이미지 움직이기 나눗셈 ver. : 제일 효율적인 방법
         // setInterval(()=> {
@@ -340,8 +340,9 @@ setInterval(()=&gt; {
 
                sliderInner.style.transform = "translateX("+ -800 * currentIndex + "px)";
         },2000);
-    </script> -->
-
+    </script>
+ -->
+    
     <!-- GASP : 웹 소스를 이용한 작업 : 간단 방법 -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
     <script>

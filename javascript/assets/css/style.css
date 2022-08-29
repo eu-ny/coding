@@ -8,7 +8,6 @@
     margin: 0;
     padding: 0;
     font-family: 'GmarketSans';
-    font-weight: 300;
     font-size: 16px;
     line-height: 1.6;
 }
@@ -27,6 +26,11 @@ li {
 /* 제목 초기화 */
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
+}
+
+/* p 폰트 굵기 초기화 */
+p {
+    font-weight: 300;
 }
 
 /* 모든 페이지 레이아웃 */
