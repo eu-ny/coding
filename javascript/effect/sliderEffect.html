@@ -5,16 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>슬라이드 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+
     <style>
         body,
         html,
         #app {
+            padding: 0;
             margin: 0;
             width: 100%;
             height: 100%;
         }
         .intro_menu {
-            z-index: 10;
+            z-index: 10000;
+            background: rgba(255,255,255,0.1);
+        }
+        .intro_menu li {
+            color: #fff;
         }
 
     </style>
@@ -23,8 +31,9 @@
     <main>
         <div class="intro_menu">
             <ul>
-                <li>01. 슬라이드 이펙트 : 이미지 슬라이드 <a href="sliderEffect01.html">GO</a></li>
-                <li>02. 슬라이드 이펙트 : 테이블 출력하기 <a href="sliderEffect02.html">GO</a></li>
+                <li>01. 슬라이드 이펙트 : 트랜지션 효과<a href="sliderEffect01.html">GO</a></li>
+                <li>02. 슬라이드 이펙트 : 좌로 움직이기<a href="sliderEffect02.html">GO</a></li>
+                <li>02. 슬라이드 이펙트 : 좌측으로 연속적으로 움직이기<a href="sliderEffect03.html">GO</a></li>
             </ul>
         </div>
     </main>
@@ -43,12 +52,13 @@
             radius1: 5,
             radius2: 30,
             velocityTreshold: 10,
-            sleepRadiusX: 100,
-            sleepRadiusY: 100,
+            sleepRadiusX: 200,
+            sleepRadiusY: 200,
             sleepTimeCoefX: 0.0025,
             sleepTimeCoefY: 0.0025
         })
     </script>
+
     
 </body>
 </html>

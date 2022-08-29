@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트 : 이미지 트렌지션 효과</title>
+
+    <script src="../assets/js/highlight.min.js"> </script>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+</head>
+<body>
+    <header id="header">
+        <h1><a href="../index.html">Javascript</a></h1>
+        <nav class="header_nav">
+            <ul>
+                <li><a href="../javascript01.html">데이터 저장하기</a></li>
+                <li><a href="../javascript02.html">데이터 불러오기</a></li>
+                <li><a href="../javascript03.html">데이터 실행하기</a></li>
+                <li><a href="../javascript04.html">데이터 제어하기</a></li>
+            </ul>
+            <ul>
+                <li><a href="../javascript05.html">문자열 객체</a></li>
+                <li><a href="../javascript06.html">배열 객체</a></li>
+                <li><a href="../javascript07.html">수학 객체</a></li>
+                <li><a href="../javascript08.html">숫자 객체</a></li>
+                <li><a href="../javascript09.html">브라우저 객체</a></li>
+                <li><a href="../javascript10.html">요소 객체</a></li>
+                <li><a href="../javascript11.html">이벤트 객체</a></li>
+            </ul>
+            <ul class="study">
+                <li><a href="basic.html">기본 규칙</a></li>
+                <li><a href="operator.html">연산자</a></li>
+                <li><a href="for.html">반복문</a></li>
+                <li><a href="if.html">조건문</a></li>
+                <li><a href="type.html">데이터 타입</a></li>
+                <li><a href="function.html">함수</a></li>
+                <li><a href="function02.html">내장함수</a></li>
+                <li><a href="var.html">지역변수/전역변수</a></li>
+                <li><a href="quiz01.html">퀴즈</a></li>
+                <li><a href="element.html">요소선택</a></li>
+                <li><a href="array.html">배열 메서드</a></li>
+                <li><a href="regexp.html">정규 표현식</a></li>
+                <li><a href="string.html">문자열 메서드</a></li>
+                <li><a href="slice.html">slice()</a></li>
+                <li><a href="indexOf.html">indexOf()</a></li>
+                <li><a href="search.html">search</a></li>
+                <li><a href="toLowerCase.html">대소문자/공백</a></li>
+                <li><a href="split.html">split</a></li>
+                <li><a href="repeat.html">repeat</a></li>
+                <li><a href="replace.html">replace</a></li>
+                <li><a href="padStart.html">padStart</a></li>
+                <li><a href="includes.html">includes</a></li>
+                <li><a href="concat.html">concat</a></li>
+                <li><a href="slider01.html">슬라이드 효과</a></li>
+                <li><a href="search().html">search()</a></li>
+                <li><a href="match.html">match</a></li>
+                <li><a href="charAt.html">charAt</a></li>
+            </ul>                  
+            </ul>
+        </nav>
+    </header>
+    <!-- //header --> 
+    <main id="main">
+        <div class="document">
+            <h2 class="t_tit">이미지 슬라이드 : 트렌지션 효과 주기 </h2>
+            <p class="t_desc">
+               이번 시간에는 이미지 슬라이드 형식의 페이지를 작업해보겠습니다.😀 이미지 슬리이드 작업은 이미지가 1초 지날 때 마다 바뀌는 형식으로 
+            </p>
+
+            <hr>
+
+            <div id="sample01" class="sample">
+                <h3 class="t_tit2">#1. HTML : 구조 짜기 </h3>
+                <p class="t_box">
+                    <strong>! point !</strong> <br />
+                    버튼을 위한 알파벳 마크업을 작업해줍니다. 스크립트와 css속성을 위해 인포 안에 keyword 부모 요소를 만들어 줍니다.<br>
+                </p>
+                <h3 class="t_tit3">✏️코드 보기</h3>
+                <div class="t_code">
+<pre><code class="language-html">
+</code></pre>
+                </div>
+                <p class="t_desc">
+                    알파벳 버튼 작업이 끝나면 속성 리스트를 작업해줍니다.
+                </p>
+                <details>
+                    <summary> ✏️ 리스트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-html">
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample02 -->
+
+            <hr>
+
+            <div id="sample03" class="sample">
+                <h3 class="t_tit2">#3. CSS : 스타일주기 </h3>
+                <p class="t_box">
+                    <strong>! point !</strong> <br />
+                    마크업을 참고하여 스타일 속성을 설정해보자! <br>
+                    💡 스타일 속성은 정해진 것이 아니니 실습하실 분들은 직접 속성을 알아보고 스타일을 설정하는 것도 좋은 방법입니다!
+                </p>
+                <details>
+                    <summary> ✏️ 속성 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-css">
+</code></pre>
+                    </div>
+                </details>
+            </div>
+            <!-- //sample03 -->
+
+            <hr>
+
+            <div id="sample04" class="sample">
+                <h3 class="t_tit2">#4. JAVASCRIPT : 스크립트 짜기 </h3>
+                <p class="t_desc">
+                    <i>setInterval()</i>을 통해 스크립트를 완성해보자! <br>
+                    코드의 주석과 함께 스크립트를 이해해보도록 합니다:)
+                </p>
+                <h3 class="t_tit3">✏️ 스크립트 보기</h3>
+                <details>
+                    <summary> 💡 전체 스크립트 보기</summary>
+                    <div class="t_code">
+<pre><code class="language-js"> const sliderWrap = document.querySelector(".slider__wrap");
+const sliderImg = sliderWrap.querySelector(".slider__img"); //부모 요소에서 찾는 것이 더 정확
+const slider = sliderWrap.querySelectorAll(".slider");
+
+let currentIndex = 0;               //현재 보이는 이미지
+let sliderCount = slider.length;    //이미지 총 갯수
+
+setInterval(() => {
+
+    let nextIndex = (currentIndex + 1) % sliderCount; //다음 이미지
+    //1,2,3,4,5,6,7,8,9...........
+    //*5 의 경우 : 1,2,3,4,0,1,2,3,4,0.........
+    //%의 경우 : 1,2,3,4,5,1,2,3,4,5.......(sliderCount의 값이 5이므로!)
+
+    //currentIndex가 0일 때 slider[nextIndex]는 +1 돼서 1 
+    //slider[currentIndex]가 1일 떈  slider[nextIndex]는 +1 돼서 2 이런식으로 반복됨. 아래처럼 번거롭게 쓸 필요 없다!
+    slider[currentIndex].style.opacity = "0"; //첫번째 이미지를 안보이게
+    slider[nextIndex].style.opacity = "1"; //두번째 이미지를 보이게
+
+    currentIndex = nextIndex;
+    
+
+    // slider[0].style.opacity = "0"; //첫번째 이미지를 안보이게
+    // slider[1].style.opacity = "1"; //두번째 이미지를 보이게
+
+    // slider[1].style.opacity = "0"; //두번째 이미지를 안보이게
+    // slider[2].style.opacity = "1"; //세번째 이미지를 보이게
+
+    // slider[2].style.opacity = "0"; //세번째 이미지를 안보이게
+    // slider[3].style.opacity = "1"; //네번째 이미지를 보이게
+
+    // slider[3].style.opacity = "0"; //네번째 이미지를 안보이게
+    // slider[4].style.opacity = "1"; //다섯번째 이미지를 보이게
+
+    // slider[4].style.opacity = "0"; //다섯번째 이미지를 안보이게
+    // slider[0].style.opacity = "1"; //첫번째 이미지를 보이게
+
+},3000) //3초마다 바뀜
+</code></pre>
+                    </div>
+                </details>
+                <div class="t_code">
+<pre><code class="language-js">
+</code></pre>
+                    <p class="t_desc2">
+                        <strong>! 검색 영역이 작동되는 과정 알아보기 !</strong><br />
+                        ***charAt(검색값) 메서드는 사용자가 검색한 문자열이 상수에 저장한 데이터 내에 포함되었을 때 숫자를 반환하게 됩니다.*** <br />
+                        1. forEach문을 통해 사용자가 알파벳을 클릭한 경우 반복문과 조건문을 실행시킵니다. <br />
+                        2. classList를 통해 hide라는 클래스를 추가해주고 charAt()을 이용하여 css속성의 첫글자와 알파벳이 동일한 리스트는 hide가 지워져 출력되도록 합니다.<br />
+                        (→ css 속성값으로 hide에게 display: none;을 주었기 때문에 값이 동일하지 않은 경우 보이지 않게 된다!)
+                    </p>
+                </div>
+            </div>
+            <!-- //sample04 -->
+
+            <hr />
+
+
+            <h3 class="t_tit2">#4. 결과 보기 </h3>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/javascript/effect/sliderEffect01.html" frameborder="0"></iframe>
+            </div>
+
+            <div class="t_link">
+                <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/sliderEffect01.html">원본 소스 보기</a>
+            </div>
+
+            <div class="t_link">
+                <a href="https://eu-ny.github.io/coding/javascript/effect/sliderEffect01.html">원본 페이지 보기</a>
+            </div>
+
+        </div>
+    </main>
+    <!-- //main -->
+    <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
