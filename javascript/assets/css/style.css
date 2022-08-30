@@ -216,6 +216,7 @@ body {
     color: #666;
 
 }
+
 /* 모바일 작업 */
 @media (max-width: 800px){
     /* 화면이 780px보다 작으면 스크롤이 생가게 한다. */
@@ -278,6 +279,9 @@ body {
     margin-bottom: 10px;
     font-weight: 400;
 }
+.document strong {
+    font-weight: 400;
+}
 .document .t_desc {
     font-size: 16px;
     line-height: 1.6;
@@ -307,6 +311,7 @@ body {
     /* 보더 초기화 */
     border-spacing: 0;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 .document .t_table tr th {
     background-color: #f9f9f9;
