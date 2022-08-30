@@ -59,6 +59,9 @@
                     이번 유형은 이미지가 들어가지 않고 대신 아이콘이 들어가게 됩니다. 텍스르로만 이루어진 만큼 더 신경써서 작업해줍니다!
                 </p>
                 <img src="https://user-images.githubusercontent.com/106949433/187553883-222bae38-2550-42bb-8b78-a9c95680511d.png" alt="site__layout">
+                <p class="t_box">
+                    아래의 피그마는 하나의 섹션을 만들어서 component하여 배치했습니다! 또한 이미지스프라이트 기능을 위하여 프레임을 하나 더 만들어 아이콘을 60px씩 배치시켰습니다 😇
+                </p>
                 <div class="t_iframe">
                     <iframe src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F778jh9iS8foSwnYrgOxjui%2F%25EC%2582%25AC%25EC%259D%25B4%25ED%258A%25B8-%25EB%25A7%258C%25EB%2593%25A4%25EA%25B8%25B0---%25EA%25B5%25AC%25EC%25A1%25B0%3Fnode-id%3D821%253A233" allowfullscreen></iframe>
                 </div>
@@ -71,8 +74,10 @@
                     디자인한 웹 페이지 시안을 보며 페이지 구조를 파악한 후 <i>웹 표준성과 접근성</i>에 맞는<i>시멘틱한 마크업</i>을 해줍니다.
                 </p>
                 <p class="t_desc2">
-                    <strong>TIP !</strong>
-                    구조를 먼저 꼼꼼하게 파악하여 큰 덩어리부터 마크업을 하는 것이 가장 중요하다.
+                    <strong>TIP !</strong><br>
+                    • 구조를 먼저 꼼꼼하게 파악하여 큰 덩어리부터 마크업을 하는 것이 가장 중요합니다.<br>
+                    • 웹표준과 웹 접근성, 호환성을 놓치지 않도록 합니다.<br>
+                    • 공용 선택자와 각각의 선택자를 필요한 곳에 잘 구별하여 넣도록 합니다.
                 </p>
 
                 <div class="t_code">
@@ -132,13 +137,6 @@
 &lt;/section&gt;
 </pre></code>
                 </div>
-
-                <div class="t_box">
-                    <strong>! html 주의사항 !</strong><br />
-                    • 웹표준과 웹 접근성, 호환성을 놓치지 않도록 합니다.<br>
-                    • 공용 선택자와 각각의 선택자를 필요한 곳에 잘 구별하여 넣도록 합니다.
-                </div>
-
             </div>
             <!-- //html -->
 
@@ -152,9 +150,10 @@
                 </p>
                 <p class="t_desc2">
                     <strong>TIP !</strong><br />
-                    1. 먼저 전체 초기화(Reset)와 폰트 디폴트 설정을 해주는 것이 좋다. <br />
-                    2. 컨테이너 설정을 통해 메인 화면 크기와 여백을 설정해준 뒤 메인 콘텐츠인 섹션에게 스타일을 적용시킨다.<br />
-                    3. 카드 스타일은 동일하기 때문에 같은 클래스명을 넣어서 한 번에 속성을 설정해준다.
+                    • 먼저 전체 초기화(Reset)와 폰트 디폴트 설정을 해주는 것이 좋습니다. <br />
+                    • 컨테이너 설정을 통해 메인 화면 크기와 여백을 설정해준 뒤 메인 콘텐츠인 섹션에게 스타일을 적용시킵니다.<br />
+                    • 이미지 스트라이프를 사용할 경우 공통 선택자와 각각의 선택자를 부여합니다.<br>
+                    • 그 뒤 공통 선택자에게는 url()속성, 각각 선택자에게는 background-position 속성을 사용하여 위치를 조정해줍니다.
                 </p>
                 <div class="t_code">
 <pre><code class="language-css">/* font */
