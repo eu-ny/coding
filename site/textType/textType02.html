@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>textType</title>
 
-    <link href="https://webfontworld.github.io/gmarket/GmarketSans.css" rel="stylesheet">
-
     <style>
-        .gmak {
-            font-family: 'GmarketSans';
+        @import url('https://webfontworld.github.io/NexonLv1GothicLow/NexonLv1GothicLow.css');
+
+        .nexon {
+            font-family: 'NexonLv1GothicLow';
             font-size: 18px;
             font-weight: 300;
         }
@@ -29,10 +29,6 @@
         h6 {
             font-weight: normal;
         }
-        img {
-            width: 100%;
-            vertical-align: top;
-        }
 
         /* common : 공통 요소(재활용) */
         .container {
@@ -40,30 +36,29 @@
             padding: 0 20px;
             margin: 0 auto;
             min-width: 1160px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between ;
         }
-        .container-fluid {
-            width: 100%;
-            padding: 0 100px;
-            box-sizing: border-box;
-        }
-
         .section {
+            width: 30%;
             padding: 120px 0;
         }
 
-        .section > h2 {
+        #header > h2 {
             font-size: 50px;
+            font-weight: 800;
             margin-bottom: 30px;
             text-align: left;
         }
 
-        .section > p {
+        #header > p {
             font-size: 18px;
             font-weight: 400;
             text-align: left;
         }
 
-        .section > .CAT {
+        #header > .CAT {
             width: 145px;
             height: 25px;
             font-size: 16px;
@@ -72,11 +67,20 @@
             border-radius: 50px;
             color: #fff;
             margin-bottom: 15px;
+            text-align: center;
+        }
+        .ir {
+            display: block;
+            overflow: hidden;
+            font-size: 0;
+            line-height: 0;
+            text-indent: -9999px;
         }
 
         /* main */
-        main {
-        }
+        .main {}
+        .text{}
+        .text .text__box{}
 
 
 
@@ -84,40 +88,19 @@
 </head>
 <body>
     <section id="textType02" class="section gmak container">
-        <div class="CAT">CUTECAT</div>
-        <h2>딩동댕<br> 야옹유치원 !</h2>
-        <p>고양이를 좋아하는 사람들을 위한<br>리스트 입니다. 🐱🐾 <br> 여러분들도 함께 구경해보세요!</p>
+        <div id="header">
+            <div class="CAT">CUTECAT</div>
+            <h2>딩동댕<br> 야옹유치원 !</h2>
+            <p>고양이를 좋아하는 사람들을 위한<br>리스트 입니다. 🐱🐾 <br> 여러분들도 함께 구경해보세요!</p>    
+        </div>
         <main class="main">
-            <div class="main__left">
-                <article class="text__desc">
-                    <figure class="icon__box">
-                        <img src="img/img_bg03_07.jpg" alt="cat">
-                    </figure>
-                    <h2 class="desc__header"></h2>
-                    <p class="desc"></h2>
-                </article>
-                <article class="text__desc">
-                    <figure class="icon__box">
-                        <img src="img/img_bg03_07.jpg" alt="cat">
-                    </figure>
-                    <h2 class="desc__header"></h2>
-                    <p class="desc"></h2>
-                </article>
-            </div>
-            <div class="main__right">
-                <article class="text__desc">
-                    <figure class="icon__box">
-                        <img src="img/img_bg03_07.jpg" alt="cat">
-                    </figure>
-                    <h2 class="desc__header"></h2>
-                    <p class="desc"></h2>
-                </article>
-                <article class="text__desc">
-                    <figure class="icon__box">
-                        <img src="img/img_bg03_07.jpg" alt="cat">
-                    </figure>
-                    <h2 class="desc__header"></h2>
-                    <p class="desc"></h2>
+            <div class="text">
+                <article class="text__box">
+                    <span class="icons icon1 ir">button</span>
+                    <div class="text_desc">
+                        <h2 class="desc__header">야옹유치원</h2>
+                        <p class="desc">야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.</h2>
+                    </div>
                 </article>
             </div>
         </main>
