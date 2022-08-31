@@ -7,10 +7,10 @@
     <title>textType</title>
 
     <style>
-        @import url('https://webfontworld.github.io/NexonLv1GothicLow/NexonLv1GothicLow.css');
+        @import url('https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css');
 
         .nexon {
-            font-family: 'NexonLv1GothicLow';
+            font-family: 'NexonLv1Gothic';
             font-size: 18px;
             font-weight: 300;
         }
@@ -36,13 +36,11 @@
             padding: 0 20px;
             margin: 0 auto;
             min-width: 1160px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between ;
         }
         .section {
-            width: 30%;
             padding: 120px 0;
+            display: flex;
+            justify-content: space-between ;
         }
 
         #header > h2 {
@@ -78,11 +76,41 @@
         }
 
         /* main */
-        .main {}
-        .text{}
-        .text .text__box{}
-
-
+        /* text_top과 bottom으로 섹션을 나눠줬으니 그 안에서 플렉스를 주어야 2개의 text__box가 가로로 나란히 정렬된다. */
+        .text_top {
+            margin-bottom: 50px;
+            display: flex;
+        }
+        .text_bottom {
+            display: flex;
+        }
+        .text__box{
+            width: 373px;
+            padding: 20px;
+        }
+        .text__box:hover {
+            background: #f5f5f5;
+            border-radius: 10px;
+        }
+        .text_desc .desc__header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .text_desc .desc {
+            font-weight: 300;
+            line-height: 1.4;
+        } 
+        .icons {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+            background: #000;
+            background: url(img/text_icons02.svg);
+        }
+        .icons.icon2 {background-position: -60px;}
+        .icons.icon3 {background-position: -120px;}
+        .icons.icon4 {background-position: -180px;}
+        
 
     </style>
 </head>
@@ -93,8 +121,8 @@
             <h2>딩동댕<br> 야옹유치원 !</h2>
             <p>고양이를 좋아하는 사람들을 위한<br>리스트 입니다. 🐱🐾 <br> 여러분들도 함께 구경해보세요!</p>    
         </div>
-        <main class="main">
-            <div class="text">
+        <div class="text">
+            <div class="text_top">
                 <article class="text__box">
                     <span class="icons icon1 ir">button</span>
                     <div class="text_desc">
@@ -102,8 +130,31 @@
                         <p class="desc">야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.</h2>
                     </div>
                 </article>
+                <article class="text__box">
+                    <span class="icons icon2 ir">button</span>
+                    <div class="text_desc">
+                        <h2 class="desc__header">공지사항</h2>
+                        <p class="desc">야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.</h2>
+                    </div>
+                </article>
             </div>
-        </main>
+            <div class="text_bottom">
+                <article class="text__box">
+                    <span class="icons icon3 ir">button</span>
+                    <div class="text_desc">
+                        <h2 class="desc__header">칭찬해요</h2>
+                        <p class="desc">야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.</h2>
+                    </div>
+                </article>
+                <article class="text__box">
+                    <span class="icons icon4 ir">button</span>
+                    <div class="text_desc">
+                        <h2 class="desc__header">서운해요</h2>
+                        <p class="desc">야옹 유치원 2기 김냥냥 입니다. 냥냥이는 똑똑하고 아주 귀엽습니다. 야옹 반장으로서 최선을 다하는 모범적인 학생입니다.</h2>
+                    </div>
+                </article>
+            </div>
+        </div>
     </section>
 </body>
 </html>
