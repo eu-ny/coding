@@ -119,8 +119,7 @@
                     • 먼저 전체 초기화(Reset)와 폰트 디폴트 설정을 해주는 것이 좋습니다. <br />
                     • 각 영역과 섹션에 반복적으로 들어가는 속성들은 공통 속성으로 따로 설정하는 것이 좋습니다.<br />
                     • 컨테이너 설정을 통해 메인 화면 크기와 여백을 설정해준 뒤 메인 콘텐츠인 섹션에게 스타일을 적용시킵니다.<br />
-                    • span 태그는 display: block를 먼저 설정하여 작업하는 것이 편리합니다.<br>
-                    • 그 뒤 공통 선택자에게는 url()속성, 각각 선택자에게는 background-position 속성을 사용하여 위치를 조정해줍니다.
+                    • inner영역에 position: fixed를 주어서 스크롤을 내려도 헤더(메뉴바)가 보이도록 합니다.<br />
                 </p>
                 <div class="t_code">
 <pre><code class="language-css">/* font */
@@ -193,7 +192,7 @@ em, i, address {
     width: 20%;
     font-size: 30px;
     font-weight: 700;
-    text-transform: uppercase;
+    text-transform: uppercase; /* 모든 문자를 대문자로 변경한다. */
 }
 .header__logo em {
     font-size: 18px;
@@ -240,7 +239,7 @@ em, i, address {
             <hr>
 
             <h3 class="t_tit2">🎉 결과보기 🎉</h3>
-            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+            <div class="t_iframe" style="min-height: 400px; padding-top: 0;">
                 <iframe src="https://eu-ny.github.io/coding/site/headerType/headerType01.html" frameborder="0"></iframe>
             </div>
 
