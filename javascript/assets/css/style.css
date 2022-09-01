@@ -9,6 +9,7 @@
     padding: 0;
     font-family: 'GmarketSans';
     font-size: 16px;
+    font-weight: 300;
     line-height: 1.6;
 }
 
@@ -72,28 +73,33 @@ body {
     margin-bottom: 20px;
     font-size: 60px;
     font-weight: 700;
-    color: rgb(0, 85, 255);
+    /* color: rgb(0, 85, 255); */
+    color: #ff9009;
 }
 .header_nav ul li {
     display: inline;
 }
 .header_nav ul li a {   
      display: inline-block;
-     color: rgb(0, 85, 255);
-     border: 0.5px dashed rgb(0, 85, 255);
+     /* color: rgb(0, 85, 255);
+     border: 0.5px dashed rgb(0, 85, 255); */
+     color: #ff9009;
+     border: 0.5px dashed #ff9009;
      padding: 8px 15px;
      margin-bottom: 7px;
      border-radius: 10px;
 }
 
 .header_nav ul li.active a {
-    background-color: rgb(0, 85, 255);
+    /* background-color: rgb(0, 85, 255); */
+    background-color: #ff9009;
     color: #fff
 }
 
 .header_nav ul li a:hover {   
     transition: all 0.3s;
-    background-color: rgb(0, 85, 255);
+    background-color: #ff9009;
+    /* background-color: rgb(0, 85, 255); */
     color: #fff;
 }
 .header_nav .study {
@@ -102,7 +108,8 @@ body {
 .header_nav .study li a {
     padding: 6px 40px;
     border-radius: 50px;
-    background-color: rgb(0, 85, 255);
+    background-color: #ff9009;
+    /* background-color: rgb(0, 85, 255); */
     color: #fff;
 }
 .header_nav .effect {
@@ -208,13 +215,83 @@ body {
     color: #000;
     cursor: help;
 }
+.sample .table.left tr td {
+    text-align: left;
+}
+.sample .table.left .ce {
+    text-align: center;
+}
 .sample .box {
     background: #f5f5f5;
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 10px;
     color: #666;
-
+}
+.sample .view {
+    border: 1px solid #e6e6e6;
+    padding: 30px 20px 20px 20px;
+}
+.sample .orange {
+    background-color: #ffe9bc;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    color: #7e4909;
+}
+.sample  .sbox {
+    width: 400px;
+    height: 200px;
+    background-color: #fbad10;
+    border: 1px solid #f68700;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 20px auto;
+    color: #fff;
+}
+.sbox::after {
+    content: '';
+    width: 480px;
+    height: 280px;
+    border: 1px dashed #f68700;
+    position: absolute;
+    left: -21px;
+    top: -21px;
+}
+.sample .sbox::before {
+    content: '';
+    width: 398px;
+    height: 198px;
+    border: 1px dashed #ffd6a5;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+.sample .sResult {
+    text-align: center;
+    padding-top: 10px;
+}
+.sample .button {
+    border: 1px solid #e6e6e6;
+    border-top: 0;
+    padding: 20px;
+    text-align: center; 
+}
+.sample .button a {
+    border: 1px solid #f68700;
+    color: #f68700;
+    border-radius: 40px;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+} 
+.sample .button a:hover {
+    background-color: #f68700;
+    color: #fff;
 }
 
 /* 모바일 작업 */
