@@ -47,15 +47,20 @@
     border-radius: 5px;
 }
 
-.header__memder {
+.header__member {
     width: 20%;
     text-align: right;
 }
 
-.header__memder a {
+.header__member a {
     font-size: 16px;
     border: 1px solid #000;
     padding: 10px 30px;
     border-radius: 50px;
     transition: all 0.3s;
+}
+
+.header__member a:hover {
+    background-color: #000;
+    color: #fff;
 }
