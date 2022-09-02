@@ -46,6 +46,40 @@
             z-index: -1;
         }
 
+        .link {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            z-index: 10000;
+        }
+        .link li {
+            list-style: none;
+            display: inline;
+        }
+
+        .link li a {
+            font-family: "GmarketSans";
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #0066FF;
+            display: inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            padding-top: 1px;
+            transition: all 0.3s;
+            background: #0066FF;
+            color: #fff;
+        }
+
+        .link li a:hover {
+            background: #fff;
+            color: #0066FF;
+        }
+
         h1 {
             font-size: 8vw;
             color: #0243F1;
@@ -472,6 +506,13 @@
 
 <body>
     <main>
+        <div class="link">
+            <ul>
+                <li><a href="https://enny.tistory.com/">t</a></li>
+                <li><a href="https://github.com/eu-ny/coding">g</a></li>
+                <li><a href="https://eu-ny.github.io/coding/javascript/index.html">h</a></li>
+            </ul>
+        </div>
         <div class="dog">
             <div class='wrap'>
                 <div class='body'>
