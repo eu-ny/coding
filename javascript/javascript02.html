@@ -78,25 +78,25 @@
                     <h3>01. 변수 : 데이터 불러오기</h3>
                     <p>변수에 값을 불러오기</p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        let x = 100, 
-            y = 200,
-            z = "javascript";
+<pre><code class="language-js">{
+    let x = 100, 
+        y = 200,
+        z = "javascript";
 
-        document.write(x);
-        document.write(y);
-        document.write(z);
+    document.write(x);
+    document.write(y);
+    document.write(z);
 
-        //다른 출력 방법 2가지
-        alert(x);
-        alert(y);
-        alert(z);
+    //다른 출력 방법 2가지
+    alert(x);
+    alert(y);
+    alert(z);
 
-        console.log(x);
-        console.log(y);
-        console.log(z);  // console은 브라우저에 직접적으로 출력되지 않는다. 대신 개발자 도구에 들어가서 console를 눌러서 값을 확인할 수 있다.
-    }
-    </code></pre>
+    console.log(x);
+    console.log(y);
+    console.log(z);  // console은 브라우저에 직접적으로 출력되지 않는다. 대신 개발자 도구에 들어가서 console를 눌러서 값을 확인할 수 있다.
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -114,16 +114,16 @@
                     <h3>02. 상수 : 데이터 불러오기</h3>
                     <p>상수에 값 불러오기 이때 상수는 const라고 표기한다.</p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const x = 100,
-                y = 200,
-                z = "javascript";
+<pre><code class="language-js">{
+    const x = 100,
+            y = 200,
+            z = "javascript";
 
-        document.write(x);
-        document.write(y);
-        document.write(z);
-    }
-    </code></pre>
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -144,55 +144,55 @@
                         배열에 데이터 값(배열, 2차배열, 함수)을 불러오는 방법
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = [100, 200, "javascript"];
+<pre><code class="language-js">{
+    const arr = [100, 200, "javascript"];
 
-        document.write(arr[0]);
-        document.write(arr[1]);
-        document.write(arr[2]);
-        //arr뒤 [] 꼭 붙이기!
-    }
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+    //arr뒤 [] 꼭 붙이기!
+}
 
-    {
-        const arr = [100, 500, 1000, "배열"];
-        
-        //출력방법1
-        document.write(arr[0]);
-        document.write(arr[1]);
-        document.write(arr[2]);
-        document.write(arr[3]);
-        
-        //출력방법2 - 갯수
-        document.write(arr.length);
-        
-        //출력방법3 - for()
-        for(let i=0; i &lt; arr.length; i++){
-            document.write(arr[i]);
-        }
-        //i = 인덱스 = 자연수 정수형
-        //for() = 조건식
+{
+    const arr = [100, 500, 1000, "배열"];
+    
+    //출력방법1
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+    document.write(arr[3]);
+    
+    //출력방법2 - 갯수
+    document.write(arr.length);
+    
+    //출력방법3 - for()
+    for(let i=0; i &lt; arr.length; i++){
+        document.write(arr[i]);
     }
+    //i = 인덱스 = 자연수 정수형
+    //for() = 조건식
+}
 
-    {
-        //배열 안의 2차배열과 함수 출력
-        const arr = [100, 500, {a:1000, b:2000}, ["배열","변수"]];
-        
-        //출력방법 1 - 전체 출력
-        document.write(arr[0]);
-        document.write(arr[1]);
-        document.write(arr[2].a);
-        document.write(arr[2].b);
-        document.write(arr[3]);
-        
-        //출력방법2 - 부분 출력
-        document.write(arr[2].b);
-        document.write(arr[3]);
-        document.write(arr[3][1]); //배열안에 배열이 있을 경우 출력하는 법
-        
-        //출력방법3 - 갯수
-        document.write(arr.length);
-    }
-    </code></pre>
+{
+    //배열 안의 2차배열과 함수 출력
+    const arr = [100, 500, {a:1000, b:2000}, ["배열","변수"]];
+    
+    //출력방법 1 - 전체 출력
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2].a);
+    document.write(arr[2].b);
+    document.write(arr[3]);
+    
+    //출력방법2 - 부분 출력
+    document.write(arr[2].b);
+    document.write(arr[3]);
+    document.write(arr[3][1]); //배열안에 배열이 있을 경우 출력하는 법
+    
+    //출력방법3 - 갯수
+    document.write(arr.length);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -234,18 +234,18 @@
                     <h3>04. 배열 : 데이터 불러오기 : 2차 배열</h3>
                     <p>배열 속에 배열이 있는 2차 구조에서 데이터를 불러오는 방법</p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = [100, 200, ["javascript","jquery"]];
+<pre><code class="language-js">{
+    const arr = [100, 200, ["javascript","jquery"]];
 
-        document.write(arr[0]);
-        document.write(arr[1]);
-        document.write(arr[2][0]);
-        document.write(arr[2][1]);   
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2][0]);
+    document.write(arr[2][1]);   
 
-        //[]안에 또 []가 있다면 똑같이 순서대로 입력해주면 된다. 
-        //[]순서는 보통 012로 시작.
-    }
-    </code></pre>
+    //[]안에 또 []가 있다면 똑같이 순서대로 입력해주면 된다. 
+    //[]순서는 보통 012로 시작.
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -267,13 +267,13 @@
                         .length : 배열 안의 갯수를 출력
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = [100, 200, "javascript"];
+<pre><code class="language-js">{
+    const arr = [100, 200, "javascript"];
 
-        document.write(arr.length)
-        //.length = 배열 안에 갯수를 출력해준다. 
-    }
-    </code></pre>
+    document.write(arr.length)
+    //.length = 배열 안에 갯수를 출력해준다. 
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -292,44 +292,44 @@
                         반복되고 중복되는 데이터들은 for()문을 사용하여 간편하게 출력할 수 있다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+<pre><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-        //document.write(arr[0]);
-        //document.write(arr[1]);
-        //document.write(arr[2]);
-        //document.write(arr[3]);
-        //document.write(arr[4]);
-        //document.write(arr[5]);
-        //document.write(arr[6]);
-        //document.write(arr[7]);
-        //document.write(arr[8]); 
+    //document.write(arr[0]);
+    //document.write(arr[1]);
+    //document.write(arr[2]);
+    //document.write(arr[3]);
+    //document.write(arr[4]);
+    //document.write(arr[5]);
+    //document.write(arr[6]);
+    //document.write(arr[7]);
+    //document.write(arr[8]); 
 
-        //코드는 위 출력방식처럼 반복되고 중복되는 것을 싫어한다.
-        //즉 document처럼 중복되는 것을 방지하기위해 for()사용
+    //코드는 위 출력방식처럼 반복되고 중복되는 것을 싫어한다.
+    //즉 document처럼 중복되는 것을 방지하기위해 for()사용
 
-        //for문 출력방법1
-        for(let i = 0; i &lt; 9; i++){
+    //for문 출력방법1
+    for(let i = 0; i &lt; 9; i++){
+    document.write(arr[i]);
+
+    //for문 출력방법2
+    for(let i=0; i&lt;arr.length; i++){
         document.write(arr[i]);
-
-        //for문 출력방법2
-        for(let i=0; i&lt;arr.length; i++){
-            document.write(arr[i]);
-        }
-        
-        // i &lt; arr.length가 아닌 i &lt; 9를 사용할 경우 만약 10이 추가된다면 출력이 되지 못하기 때문에 length를 사용하여 값이 계속 추가될 수 있도록 한다.
-        //데이터 처리 순서 : i=0  i &lt; 9 or i&lt;arr.length(조건문)  arr[i]  i++
     }
+    
+    // i &lt; arr.length가 아닌 i &lt; 9를 사용할 경우 만약 10이 추가된다면 출력이 되지 못하기 때문에 length를 사용하여 값이 계속 추가될 수 있도록 한다.
+    //데이터 처리 순서 : i=0  i &lt; 9 or i&lt;arr.length(조건문)  arr[i]  i++
+}
 
-    {
-        const arr = [100, 200, 300, 400, 500];
+{
+    const arr = [100, 200, 300, 400, 500];
 
-        //for()와 length
-        for( let i=0; i&lt;arr.length; i++){
-            document.write(arr[i]);
-        } 
-    }
-    </code></pre>
+    //for()와 length
+    for( let i=0; i&lt;arr.length; i++){
+        document.write(arr[i]);
+    } 
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -372,41 +372,40 @@
                         forEach() 기본 문법 : num(변수).forEach(function(){});
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const num = [100, 200, 300, 400, 500];
+<pre><code class="language-js">{
+    const num = [100, 200, 300, 400, 500];
 
-        //출력1
-        num.forEach(function(el){
-            document.write(el);  
-        });
-        //element = el
-
-        //출력2 - forEach() 3가지 인자(parameter)값
-        num.forEach(function(element, index, array){
-            document.write(element);
-            document.write(index);
-            document.write(array);
+    //출력1
+    num.forEach(function(el){
+        document.write(el);  
     });
+    //element = el
 
-    {
-        const arr = [100, 200, 300, 400, 500];
+    //출력2 - forEach() 3가지 인자(parameter)값
+    num.forEach(function(element, index, array){
+        document.write(element);
+        document.write(index);
+        document.write(array);
+});
 
-        //반복문으로 섹션이 10개일 경우 10개를 다 쓰지 않고 한번에 쓰기위해 사용하는 문법이다. (사이트 마우스를 인색해서 이미지 색상이 바뀌는 경우를 예로 들 수 있다.)
+{
+    const arr = [100, 200, 300, 400, 500];
 
-        //forEach
-        arr.forEach(function(el){
-            document.write(el);
-        });  //변수명 다른거 주의해서 보기! 변수명이 출력과 다를 경우 오류!
+    //반복문으로 섹션이 10개일 경우 10개를 다 쓰지 않고 한번에 쓰기위해 사용하는 문법이다. (사이트 마우스를 인색해서 이미지 색상이 바뀌는 경우를 예로 들 수 있다.)
 
-        //forEach(element, index, array)의 값을 출력할 수 있다.
-        arr.forEach(function(element, index, array){
-            document.write(element);
-            document.write(index);
-            document.write(array);
-        });
-    }
+    //forEach
+    arr.forEach(function(el){
+        document.write(el);
+    });  //변수명 다른거 주의해서 보기! 변수명이 출력과 다를 경우 오류!
 
-    </code></pre>
+    //forEach(element, index, array)의 값을 출력할 수 있다.
+    arr.forEach(function(element, index, array){
+        document.write(element);
+        document.write(index);
+        document.write(array);
+    });
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -467,14 +466,14 @@
                         for of는 배열의 요소값을 뽑아낸다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = [100, 200, 300, 400, 500];
+<pre><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500];
 
-        for(let i of arr){
-        document.write(i);  //배열의 요소값을 뽑아낸다, 즉 있는 개수만큼 뽑아내는 for on 문법
-        }
+    for(let i of arr){
+    document.write(i);  //배열의 요소값을 뽑아낸다, 즉 있는 개수만큼 뽑아내는 for on 문법
     }
-    </code></pre>
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -496,14 +495,14 @@
                         for in은 index 값을 뽑아낸다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = [100, 200, 300, 400, 500];
+<pre><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500];
 
-        for(let i in arr){
-            document.write(arr[i]);
-        }
+    for(let i in arr){
+        document.write(arr[i]);
     }
-    </code></pre>
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -532,38 +531,38 @@
                         두 문법의 차이점은 forEach()와 달리 map()은 새로운 배열을 만든다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = [100, 200, 300, 400, 500];
+<pre><code class="language-js">{
+    const arr = [100, 200, 300, 400, 500];
 
-        //1. forEach를 이용해서 값을 출력
+    //1. forEach를 이용해서 값을 출력
 
-        arr.forEach(function(el){ 
-            document.write(el); //el = 매개변수
-            console.log(el)
-        });
+    arr.forEach(function(el){ 
+        document.write(el); //el = 매개변수
+        console.log(el)
+    });
 
-        //2. map을 이용해서 값을 출력
+    //2. map을 이용해서 값을 출력
 
-        arr.map(function(el){
-            document.write(el);
-            console.log(el)
-        });
+    arr.map(function(el){
+        document.write(el);
+        console.log(el)
+    });
 
-        //이처럼 forEach와 map은 사용 방법이 같다고 볼 수 있다.▽
+    //이처럼 forEach와 map은 사용 방법이 같다고 볼 수 있다.▽
 
-        arr. forEach(function(element, index, array){
-            document.write(element);
-            document.write(index);
-            document.write(array);
-        });
+    arr. forEach(function(element, index, array){
+        document.write(element);
+        document.write(index);
+        document.write(array);
+    });
 
-        arr. map(function(element, index, array){
-            document.write(element);
-            document.write(index);
-            document.write(array);
-        });
-    }
-    </code></pre>
+    arr. map(function(element, index, array){
+        document.write(element);
+        document.write(index);
+        document.write(array);
+    });
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -608,15 +607,15 @@
                         //
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const num = [100, 200, 300, 400, 500];
+<pre><code class="language-js">{
+    const num = [100, 200, 300, 400, 500];
 
-        //document.write(num);   일반출력
-        //document.write(num[0],num[1],num[2],num[3],num[4]);  배열 하나씩 일반 출력
+    //document.write(num);   일반출력
+    //document.write(num[0],num[1],num[2],num[3],num[4]);  배열 하나씩 일반 출력
 
-        document.write(...num); //펼침 연산자로 출력 알고리즘에서 많이 사용한다. 
-    }
-    </code></pre>
+    document.write(...num); //펼침 연산자로 출력 알고리즘에서 많이 사용한다. 
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -634,15 +633,15 @@
                         배열구조할당(Destructruing assignment)은 최근 나온 문법이다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        let a, b, c;
-        [a,b,c] = [100, 200, "javascript"];
+<pre><code class="language-js">{
+    let a, b, c;
+    [a,b,c] = [100, 200, "javascript"];
 
-        document.write(a);
-        document.write(b);
-        document.write(c);
-    }
-    </code></pre>
+    document.write(a);
+    document.write(b);
+    document.write(c);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -660,18 +659,18 @@
                         객체를 불러오는 가장 기본적인 방법
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = {
-            a : 100,
-            b : 200,
-            c : "javascript"
-        }
-
-        document.write(obj.a);
-        document.write(obj.b);
-        document.write(obj.c);
+<pre><code class="language-js">{
+    const obj = {
+        a : 100,
+        b : 200,
+        c : "javascript"
     }
-    </code></pre>
+
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -690,18 +689,18 @@
                         키, 값, 엔트리 값을 한번에 출력하는 방법으로 죽은 문법이라 키 빼고는 거의 사용하지 않는다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = {
-            a : 100,
-            b : 200,
-            c : "javascript"
-        }
-
-        document.write(Object.keys(obj));
-        document.write(Object.values(obj));
-        document.write(Object.entries(obj));
+<pre><code class="language-js">{
+    const obj = {
+        a : 100,
+        b : 200,
+        c : "javascript"
     }
-    </code></pre>
+
+    document.write(Object.keys(obj));
+    document.write(Object.values(obj));
+    document.write(Object.entries(obj));
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -716,22 +715,22 @@
                 <div id="sample15" class="sample">
                     <h3 class="t_tit3">15. 객체 : 데이터 불러오기 : 변수</h3>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = {
-            a : 100,
-            b : 200,
-            c : "javascript"
-        }
-
-        const name1 = obj.a; //키 값에 변수를 선언해준다.
-        const name2 = obj.b;
-        const name3 = obj.c;
-
-        document.write(name1);
-        document.write(name2);
-        document.write(name3);
+<pre><code class="language-js">{
+    const obj = {
+        a : 100,
+        b : 200,
+        c : "javascript"
     }
-    </code></pre>
+
+    const name1 = obj.a; //키 값에 변수를 선언해준다.
+    const name2 = obj.b;
+    const name3 = obj.c;
+
+    document.write(name1);
+    document.write(name2);
+    document.write(name3);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -749,18 +748,18 @@
                         vue에서 많이 사용하는 문법
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = {
-            a : 100,
-            b : 200,
-            c : "javascript"
-        }
-
-        for (let key in obj){
-            document.write(obj[key]);
-        }
+<pre><code class="language-js">{
+    const obj = {
+        a : 100,
+        b : 200,
+        c : "javascript"
     }
-    </code></pre>
+
+    for (let key in obj){
+        document.write(obj[key]);
+    }
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -778,19 +777,19 @@
                         기본 문법 : obj.map(function(){});
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = [
-                    {a : 100, b : 200, c : "javascript"}
-                ];
-                // obj.map(() => {}); // 화살표 문법
+<pre><code class="language-js">{
+    const obj = [
+                {a : 100, b : 200, c : "javascript"}
+            ];
+            // obj.map(() => {}); // 화살표 문법
 
-                obj.map((el) => {
-                    document.write(el.a);
-                    document.write(el.b);
-                    document.write(el.c);
-                });
-    }
-    </code></pre>
+            obj.map((el) => {
+                document.write(el.a);
+                document.write(el.b);
+                document.write(el.c);
+            });
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -808,25 +807,25 @@
                         데이터 안에 데이터가 있는지 확인하여 ture 또는 false로 데이터를 불러온다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = {
-            a : 100,
-            b : 200,
-            c : "javascript"
-        }// = 객체함수라고 칭한다.
+<pre><code class="language-js">{
+    const obj = {
+        a : 100,
+        b : 200,
+        c : "javascript"
+    }// = 객체함수라고 칭한다.
 
-        document.write(obj.hasOwnProperty("a")); 
-        document.write(obj.hasOwnProperty("b")); 
-        document.write(obj.hasOwnProperty("c")); 
-        document.write(obj.hasOwnProperty("z")); // 데이터안에 없으므로 false
+    document.write(obj.hasOwnProperty("a")); 
+    document.write(obj.hasOwnProperty("b")); 
+    document.write(obj.hasOwnProperty("c")); 
+    document.write(obj.hasOwnProperty("z")); // 데이터안에 없으므로 false
 
-        // 약식
-        document.write("a" in obj); 
-        document.write("b" in obj); 
-        document.write("c" in obj); 
-        document.write("z" in obj); 
-    }
-    </code></pre>
+    // 약식
+    document.write("a" in obj); 
+    document.write("b" in obj); 
+    document.write("c" in obj); 
+    document.write("z" in obj); 
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -1033,7 +1032,7 @@
             }
         }
     </script> -->
-    <script>
+    <!-- <script>
         //11. 펼침연산자 (Spread Operator)
         {
             const num = [100, 200, 300, 400, 500];
@@ -1154,7 +1153,7 @@
             document.write("c" in obj); 
             document.write("z" in obj); 
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

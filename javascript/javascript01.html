@@ -40,7 +40,7 @@
                 <li><a href="effect/parallaxEffect.html">패랠랙스 효과</a></li>
                 <li><a href="effect/gameEffect.html">게임 효과</a></li>
             </ul>
-            <ul class="study">
+            <!-- <ul class="study">
                 <li><a href="study/basic.html">기본 규칙</a></li>
                 <li><a href="study/operator.html">연산자</a></li>
                 <li><a href="study/for.html">반복문</a></li>
@@ -50,7 +50,7 @@
                 <li><a href="study/var.html">지역변수/전역변수</a></li>
                 <li><a href="study/quiz01.html">퀴즈</a></li>
                 <li><a href="study/element.html">요소선택</a></li>
-            </ul>
+            </ul> -->
             </ul>
         </nav>
     </header>
@@ -86,16 +86,16 @@
                         var를 이용한 변수 선언방법은 동일한 변수의 중복 선언이 가능하다. 이러한 점 때문에 오류가 생기는 일이 발생하여 let을 이용한 변수 선언 방법이 새로 생겨났다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        var x = 100;           //변수 x에 숫자 100을 저장함
-        var y = 200;           //변수 y에 숫자 200을 저장함
-        var z = "Javascript";   //변수 z에 문자 "Javascript"를 저장함
+<pre><code class="language-js">{
+    var x = 100;           //변수 x에 숫자 100을 저장함
+    var y = 200;           //변수 y에 숫자 200을 저장함
+    var z = "Javascript";   //변수 z에 문자 "Javascript"를 저장함
 
-        document.write(x);
-        document.write(y);
-        document.write(z);
-    }
-    </code></pre>
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -111,20 +111,20 @@
                         let은 var와 같은 변수 선언 기능을 가지고 있으나 var와 달리 이미 선언한 변수에 대하여 중복 선언이 "불가능" 하다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        let x = 100;
-        let y = 200;
-        let z = "javascript";
+<pre><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
 
-        x = 300;        //변수  x의 값이 100에서 300으로 변경됨
-        y = 400;        //변수  y의 값이 200에서 400으로 변경됨
-        z = "jquery";    //변수  z의 값이 "javascript"에서 "jquery"으로 변경됨
+    x = 300;        //변수  x의 값이 100에서 300으로 변경됨
+    y = 400;        //변수  y의 값이 200에서 400으로 변경됨
+    z = "jquery";    //변수  z의 값이 "javascript"에서 "jquery"으로 변경됨
 
-        document.write(x);
-        document.write(y);
-        document.write(z);
-    }
-    </code></pre>
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -141,22 +141,22 @@
                         변수는 데이터를 추가하는 것이 가능하다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        let x = 100;
-        let y = 200;
-        let z = "javascript";
+<pre><code class="language-js">{
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
 
-        x += 300;        //변수  x의 값이 100 + 300이 되어 값은 400이 된다.
-        y += 400;        //변수  x의 값이 200 + 400이 되어 값은 600이 된다.  (- +,-,*,/ 모두 가능)
-        z += "jquery";    //변수  z의 값이 "javascript" + "jquery"이 되어 값은 javascriptjquery가 된다.
+    x += 300;        //변수  x의 값이 100 + 300이 되어 값은 400이 된다.
+    y += 400;        //변수  x의 값이 200 + 400이 되어 값은 600이 된다.  (- +,-,*,/ 모두 가능)
+    z += "jquery";    //변수  z의 값이 "javascript" + "jquery"이 되어 값은 javascriptjquery가 된다.
 
-        // x += 300은 x = x + 300과 같은 식이다 : **오른쪽 값을 왼쪽 변수에 대입시킨다고 봐야함(수학과는 다르다.)
+    // x += 300은 x = x + 300과 같은 식이다 : **오른쪽 값을 왼쪽 변수에 대입시킨다고 봐야함(수학과는 다르다.)
 
-        document.write(x);
-        document.write(y);
-        document.write(z);
-    }
-    </code></pre>
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -175,29 +175,29 @@
                         지역 변수는 함수 블록 {} 내에서만 사용 할 수 있다.
                     </p>
                     <div class="script">
-    <pre><code class="language-js">{
-        let x1 = 100;        //전역변수
-        let y1 = 200;
+<pre><code class="language-js">{
+    let x1 = 100;        //전역변수
+    let y1 = 200;
 
-        function func(){
-            let x1 = 101;               //지역변수
-            let z1 = "javascript";    //지역변수
-            x1 = 200;                   //지역변수 100 --> 200
-            y1 = 300;                   //전역변수 200 --> 300
+    function func(){
+        let x1 = 101;               //지역변수
+        let z1 = "javascript";    //지역변수
+        x1 = 200;                   //지역변수 100 --> 200
+        y1 = 300;                   //전역변수 200 --> 300
 
-            document.write("함수 안");
-            document.write(x1);
-            document.write(y1); //전역변수지만 {}안밖으로 자유롭기 때문에 출력이 가능하다.
-            document.write(z1);
-        }   
-
-        func()
-        document.write("함수 밖");
+        document.write("함수 안");
         document.write(x1);
-        document.write(y1);
-        document.write(z1);  //undifined - 지역변수라서 함수 밖에서는 출력이 불가하다.
-    }
-    </code></pre>
+        document.write(y1); //전역변수지만 {}안밖으로 자유롭기 때문에 출력이 가능하다.
+        document.write(z1);
+    }   
+
+    func()
+    document.write("함수 밖");
+    document.write(x1);
+    document.write(y1);
+    document.write(z1);  //undifined - 지역변수라서 함수 밖에서는 출력이 불가하다.
+}
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -223,21 +223,21 @@
                         상수(const)는 이미 선언한 상수를 중복해서 선언할 수 없고, 상수에 지정된 값을 변경할 수 없다.<br>
                         즉 데이터를 변경하거나 중복하는 것이 "불가능"하다.
                     </p>
-                    <div class="script"></div>
-    <pre><code class="language-js">{
-        const x = 100;
-        const y = 200;
-        const z = "javascript"
+                <div class="script"></div>
+<pre><code class="language-js">{
+    const x = 100;
+    const y = 200;
+    const z = "javascript"
 
-        //x = 300;      //상수는 데이터를 변경할 수 없다.
-        //y = 400;
-        //z = "jquery";
+    //x = 300;      //상수는 데이터를 변경할 수 없다.
+    //y = 400;
+    //z = "jquery";
 
-        document.write(x);
-        document.write(y);
-        document.write(z);
-    }
-    </code></pre>
+    document.write(x);
+    document.write(y);
+    document.write(z);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -255,18 +255,18 @@
                         [] = 배열 {} = 블록
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = new Array();
+<pre><code class="language-js">{
+    const arr = new Array();
 
-        arr[0] = 100;
-        arr[1] = 200;
-        arr[2] = "javascript";
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
 
-        document.write(arr[0]);
-        document.write(arr[1]);
-        document.write(arr[2]);
-    }
-    </code></pre>
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -283,14 +283,14 @@
                         ()안에 한 번에 값을 선언해주는 약식 방법이다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = new Array(100, 200, "javascript");
+<pre><code class="language-js">{
+    const arr = new Array(100, 200, "javascript");
 
-        document.write(arr[0]);
-        document.write(arr[1]);
-        document.write(arr[2]);
-    }
-    </code></pre>
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -304,17 +304,17 @@
                 <div id="sample08" class="sample">
                     <h3>08. 배열 : 데이터 저장(여러개) : 표현방법3</h3>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = [];
-        arr[0] = 100;
-        arr[1] = 200;
-        arr[2] = "javascript";
+<pre><code class="language-js">{
+    const arr = [];
+    arr[0] = 100;
+    arr[1] = 200;
+    arr[2] = "javascript";
 
-        document.write(arr[0]);
-        document.write(arr[1]);
-        document.write(arr[2]);
-    }
-    </code></pre>
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -328,14 +328,14 @@
                 <div id="sample09" class="sample">
                     <h3>09. 배열 : 데이터 저장(여러개) : 표현방법4</h3>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const arr = [100, 200, "javascript"];
+<pre><code class="language-js">{
+    const arr = [100, 200, "javascript"];
 
-        document.write(arr[0]);
-        document.write(arr[1]);
-        document.write(arr[2]);
-    }
-    </code></pre>
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -353,17 +353,17 @@
                         객체의 데이터는 '이름 : 값'의 쌍으로 이루어져 있으며 이를 속성(properties)이라 칭한다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = new Objext();
-        obj[0] = 100;
-        obj[1] = 200;
-        obj[2] = "javascript";
+<pre><code class="language-js">{
+    const obj = new Objext();
+    obj[0] = 100;
+    obj[1] = 200;
+    obj[2] = "javascript";
 
-        document.write(obj[0]);
-        document.write(obj[1]);
-        document.write(obj[2]);
-    }
-    </code></pre>
+    document.write(obj[0]);
+    document.write(obj[1]);
+    document.write(obj[2]);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -377,17 +377,17 @@
                 <div id="sample11" class="sample">
                     <h3>11. 객체 : 데이터 저장(키와 값) : 표현방법2</h3>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = new Objext();
-        obj.a = 100;
-        obj.b = 200;
-        obj.c = "javascript";
+<pre><code class="language-js">{
+    const obj = new Objext();
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
 
-        document.write(obj.a);
-        document.write(obj.b]);
-        document.write(obj.c);
-    }
-    </code></pre>
+    document.write(obj.a);
+    document.write(obj.b]);
+    document.write(obj.c);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -401,17 +401,17 @@
                 <div id="sample12" class="sample">
                     <h3>12. 객체 : 데이터 저장(키와 값) : 표현방법3</h3>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = {};
-        obj.a = 100;
-        obj.b = 200;
-        obj.c = "javascript";
+<pre><code class="language-js">{
+    const obj = {};
+    obj.a = 100;
+    obj.b = 200;
+    obj.c = "javascript";
 
-        document.write(obj.a);
-        document.write(obj.b);
-        document.write(obj.c);
-    }
-    </code></pre>
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -425,14 +425,14 @@
                 <div id="sample13" class="sample">
                     <h3>13. 객체 : 데이터 저장(키와 값) : 표현방법4</h3>
                     <div class="script"></div>
-                    <pre><code class="language-js">{
-        const obj = {a:100, b:200, c:"javascript"};
+<pre><code class="language-js">{
+const obj = {a:100, b:200, c:"javascript"};
 
-        document.write(obj.a);
-        document.write(obj.b);
-        document.write(obj.c);
-    }
-    </code></pre>
+document.write(obj.a);
+document.write(obj.b);
+document.write(obj.c);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -447,17 +447,17 @@
                     <h3>14. 객체 : 데이터 저장(키와 값) : 표현방법5 - 배열 속에 객체</h3>
                     <p>객체는 키와 값으로 구성된 데이터 값을 저장한다. 객체 안에 배열과 객체를 저장할 수 있다.</p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-    const obj = [
-        {a:100, b:200},
-        {c:"javascript"}
-    ];
+<pre><code class="language-js">{
+const obj = [
+    {a:100, b:200},
+    {c:"javascript"}
+];
 
-    document.write(obj[0].a);
-    document.write(obj[0].b);
-    document.write(obj[1].c);
-    }
-    </code></pre>
+document.write(obj[0].a);
+document.write(obj[0].b);
+document.write(obj[1].c);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -472,23 +472,22 @@
                     <h3>15. 객체 : 데이터 저장(키와 값) : 표현방법6 - 객체 속의 배열 **</h3>
                     <p>가장 많이 사용하는 표현 방법으로 객체 안에 배열을 저정할 수 있다.</p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = {
-            a: 100,
-            b: [200, 300],
-            c: {x:400, y:500},
-            d: "javascript"
-        }
-
-        document.write(obj.a);
-        document.write(obj.b[0]);
-        document.write(obj.b[1]);
-        document.write(obj.c.x);
-        document.write(obj.c.y);
-        document.write(obj.d);
-
+<pre><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: [200, 300],
+        c: {x:400, y:500},
+        d: "javascript"
     }
-    </code></pre>
+
+    document.write(obj.a);
+    document.write(obj.b[0]);
+    document.write(obj.b[1]);
+    document.write(obj.c.x);
+    document.write(obj.c.y);
+    document.write(obj.d);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -503,18 +502,18 @@
                     <h3>16. 객체 : 데이터 저장(키와 값) : 표현방법7 - 객체 속의 변수</h3>
                     <p>react에서 많이 사용하며 객체 속에 변수를 저장할 수 있다.</p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const a = 100;
-        const b = 200;
-        const c = "javascript";
+<pre><code class="language-js">{
+    const a = 100;
+    const b = 200;
+    const c = "javascript";
 
-        const obj = {a, b, c}  //즉 객체를 만들어서 변수를 객체에 넣었다고 볼 수 있다.
+    const obj = {a, b, c}  //즉 객체를 만들어서 변수를 객체에 넣었다고 볼 수 있다.
 
-        document.write(obj.a);
-        document.write(obj.b);
-        document.write(obj.c);
-    }
-    </code></pre>
+    document.write(obj.a);
+    document.write(obj.b);
+    document.write(obj.c);
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -529,36 +528,36 @@
                     <h3>17. 객체 : 데이터 저장(키와 값) : 표현방법8 - 객체 속에 함수 **</h3>
                     <p>객체 = object</p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const obj = {
-            a : 100,
-            b : [200, 300],
-            c : {x:400, y:500}, //배열은 나오지만 객체를 정확히 명시하지 않아 값이 object가 뜸. 즉 c의 값이 x인지 y인지 또다른 값인지를 인식하지 못함.
-            d : "javascript",
-            e : function(){
-                document.write("자바스크립트가 실행되었습니다.");
-            },
-            f : function(){
-                document.write(obj.d + "가 실행되었습니다.");
-            },
-            g : function(){
-                document.write(this.d + "가 실행되었습니다.");
-            }
+<pre><code class="language-js">{
+    const obj = {
+        a : 100,
+        b : [200, 300],
+        c : {x:400, y:500}, //배열은 나오지만 객체를 정확히 명시하지 않아 값이 object가 뜸. 즉 c의 값이 x인지 y인지 또다른 값인지를 인식하지 못함.
+        d : "javascript",
+        e : function(){
+            document.write("자바스크립트가 실행되었습니다.");
+        },
+        f : function(){
+            document.write(obj.d + "가 실행되었습니다.");
+        },
+        g : function(){
+            document.write(this.d + "가 실행되었습니다.");
         }
-
-        document.write(obj.a);
-        document.write(obj.b[0]);
-        document.write(obj.b[1]);
-        document.write(obj.b);
-        document.write(obj.c.x);
-        document.write(obj.c.y);
-        document.write(obj.c);
-        document.write(obj.d);
-        obj.e();  //이미 위에 함수에서 출력을 실행시켰기 때문에 document.write()를 빼야 한다.
-        obj.f();
-        obj.g();
     }
-    </code></pre>
+
+    document.write(obj.a);
+    document.write(obj.b[0]);
+    document.write(obj.b[1]);
+    document.write(obj.b);
+    document.write(obj.c.x);
+    document.write(obj.c.y);
+    document.write(obj.c);
+    document.write(obj.d);
+    obj.e();  //이미 위에 함수에서 출력을 실행시켰기 때문에 document.write()를 빼야 한다.
+    obj.f();
+    obj.g();
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>

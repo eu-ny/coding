@@ -85,14 +85,14 @@
                         변수(데이터 저장), 배열(데이터 저장), 객체(데이터 저장, 내장 객체(three.js 등등 자바스크립트 안에서 작동되는 것)) -> 함수(실행문) (제어문) 를 이용한다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        function func(){
-            document.write("함수가 실행되었습니다.1<br>")
-            //write도 객체이자 메소드이다 → 브라우저 객체
-        }
-        func();
+<pre><code class="language-js">{
+    function func(){
+        document.write("함수가 실행되었습니다.1<br>")
+        //write도 객체이자 메소드이다 → 브라우저 객체
     }
-    </code></pre>
+    func();
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -117,13 +117,13 @@
                         const x6 = true, false;<br>
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const func = function(){      //함수 안에 이름이 없어서 익명함수 이다.
-            document.write("함수가 실행되었습니다.2<br>");
-        }
-        func();
+<pre><code class="language-js">{
+    const func = function(){      //함수 안에 이름이 없어서 익명함수 이다.
+        document.write("함수가 실행되었습니다.2<br>");
     }
-    </code></pre>
+    func();
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -141,13 +141,13 @@
                         함수의 매개변수(parameter)란 함수를 호출할 때 <i>인수로 전달된 값을 함수 내부에서 사용</i>할 수 있게 해주는 변수이다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        function func(str){     //str = 변수 = 인자 = 매개변수
-            document.write(str);
-        }
-        func("함수가 실행되었습니다.3<br>"); // func안에 변수명을 지정할 수 있다.
+<pre><code class="language-js">{
+    function func(str){     //str = 변수 = 인자 = 매개변수
+        document.write(str);
     }
-    </code></pre>
+    func("함수가 실행되었습니다.3<br>"); // func안에 변수명을 지정할 수 있다.
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -166,16 +166,16 @@
                         또한 출력 명령어를 사용하지 않고 출력하기 위해서는 리턴값 함수를 사용해주면 된다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        function func(){
-            const str = "함수가 실행되었습니다.4<br>"
-            return str;
-        }
-        document.write(func());
-        //객체로 데이터를 저장하는 방법 중 객체 속에 함수로 표현하는 방법과 같은 맥락이다.
-        //다른 식에서도 리턴은 거의 생략한다. 리액트에서는 보통 리턴까지 사용하여 입력한다.
+<pre><code class="language-js">{
+    function func(){
+        const str = "함수가 실행되었습니다.4<br>"
+        return str;
     }
-    </code></pre>
+    document.write(func());
+    //객체로 데이터를 저장하는 방법 중 객체 속에 함수로 표현하는 방법과 같은 맥락이다.
+    //다른 식에서도 리턴은 거의 생략한다. 리액트에서는 보통 리턴까지 사용하여 입력한다.
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -194,19 +194,19 @@
                         function 키워드를 생략할 수 있으며 항상 <i>익명 함수 형식</i>으로 표현해야 한다. 이때 단일 명령문이라면 함수의 중괄호 {}와 return의 생략이 가능하다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        //화살표 함수(선언적 함수) 기본표현
-        func = () =&gt; {
-            document.write("함수가 실행되었습니다.5<br>");
-        }
-        func();
-
-        //화살표 함수(선언적 함수) 한줄 표현
-        func = () =&gt; document.write("함수가 실행되었습니다.5<br>"); //{}가 생략되어도 읽는다.
-
-        func();
+<pre><code class="language-js">{
+    //화살표 함수(선언적 함수) 기본표현
+    func = () =&gt; {
+        document.write("함수가 실행되었습니다.5<br>");
     }
-    </code></pre>
+    func();
+
+    //화살표 함수(선언적 함수) 한줄 표현
+    func = () =&gt; document.write("함수가 실행되었습니다.5<br>"); //{}가 생략되어도 읽는다.
+
+    func();
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -224,18 +224,18 @@
                         화살표 함수에서 익명 함수는 const를 사용하여 표현해야 한다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        //화살표 함수 익명함수 기본 표현
-        const func = () =&gt; {
-            document.write("함수가 실행되었습니다.6<br>");
-        }
-        
-        //화살표 함수 익명함수 단일 표현
-        const func = () =&gt;  document.write("함수가 실행되었습니다.6<br>");
-
-        func();
+<pre><code class="language-js">{
+    //화살표 함수 익명함수 기본 표현
+    const func = () =&gt; {
+        document.write("함수가 실행되었습니다.6<br>");
     }
-    </code></pre>
+    
+    //화살표 함수 익명함수 단일 표현
+    const func = () =&gt;  document.write("함수가 실행되었습니다.6<br>");
+
+    func();
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -253,18 +253,18 @@
                         화살표 함수에서 변수 선언을 해주어야 하지만 생략이 가능하다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        //화살표 함수 익명함수 기본 표현
-        const func = () =&gt; {
-            document.write("함수가 실행되었습니다.6<br>");
-        }
-        
-        //화살표 함수 익명함수 단일 표현
-        const func = () =&gt;  document.write("함수가 실행되었습니다.6<br>");
-
-        func();
+<pre><code class="language-js">{
+    //화살표 함수 익명함수 기본 표현
+    const func = () =&gt; {
+        document.write("함수가 실행되었습니다.6<br>");
     }
-    </code></pre>
+    
+    //화살표 함수 익명함수 단일 표현
+    const func = () =&gt;  document.write("함수가 실행되었습니다.6<br>");
+
+    func();
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -279,14 +279,14 @@
                 <div id="sample08" class="sample">
                     <h3>08. 화살표 함수 (리턴값 함수)</h3>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        func = () =&gt; {
-            const str = "함수가 실행되었습니다.8<br>";
-            return str;
-        }
-        document.write(func());
+<pre><code class="language-js">{
+    func = () =&gt; {
+        const str = "함수가 실행되었습니다.8<br>";
+        return str;
     }
-    </code></pre>
+    document.write(func());
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -302,13 +302,13 @@
                     <h3>09. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값</h3>
                     <p class="t_desc">const를 앞에 입력해주어야 익명 함수가 된다. </p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const func = (str) =&gt; {
-            return str;
-        }
-        document.write(func("함수가 실행되었습니다.9"));
+<pre><code class="language-js">{
+    const func = (str) =&gt; {
+        return str;
     }
-    </code></pre>
+    document.write(func("함수가 실행되었습니다.9"));
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -324,13 +324,13 @@
                     <h3>10. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호 생략</h3>
                     <p class="t_desc">()를 없앤 화살표 함수</p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const func = str =&gt; {
-            return str;
-        }
-        document.write(func("함수가 실행되었습니다.10"));
+<pre><code class="language-js">{
+    const func = str =&gt; {
+        return str;
     }
-    </code></pre>
+    document.write(func("함수가 실행되었습니다.10"));
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -346,12 +346,12 @@
                     <h3>11. 화살표 함수 : 익명 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
                     <p class="t_desc">() 과 {} 를 모두 생략한 화살표 함수 - 익명</p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        const func = str =&gt; str;
+<pre><code class="language-js">{
+    const func = str =&gt; str;
 
-        document.write(func("함수가 실행되었습니다.11"));
-    }
-    </code></pre>
+    document.write(func("함수가 실행되었습니다.11"));
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -367,12 +367,12 @@
                     <h3>12. 화살표 함수 : 선언적 함수 + 매개변수 + 리턴값 + 괄호 생략 + 리턴 생략</h3>
                     <p class="t_desc">() 과 {} 를 모두 생략한 화살표 함수 - 선언적함수 (const를 생략해주면 된다.)</p>
                     <div class="script"></div>
-    <pre><code class="language-js">{
-        func = str =&gt; str;
+<pre><code class="language-js">{
+    func = str =&gt; str;
 
-        document.write(func("함수가 실행되었습니다.12"));
-    }
-    </code></pre>
+    document.write(func("함수가 실행되었습니다.12"));
+}
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -393,13 +393,13 @@
                         2. 함수를 재활용하는 것이 목적이다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">function func(num, str1, str2){
-        document.write(num + ". " + str1 + "가 " + str2 + "되었습니다.13");
-    }
-    func("1", "함수", "실행");
-    func("2", "자바스크립트", "실행"); //재활용 : 함수를 두 번 쓸 필요가 없다. 
-    func("3", "제이쿼리", "실행");
-    </code></pre>
+<pre><code class="language-js">function func(num, str1, str2){
+    document.write(num + ". " + str1 + "가 " + str2 + "되었습니다.13");
+}
+func("1", "함수", "실행");
+func("2", "자바스크립트", "실행"); //재활용 : 함수를 두 번 쓸 필요가 없다. 
+func("3", "제이쿼리", "실행");
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -417,21 +417,21 @@
                     <h3>14. 함수 유형 : 함수와 변수를 이용한 형태</h3>
                     <p class="t_desc">변수를 통해 데이터를 전달시킨다.</p>
                     <div class="script"></div>
-    <pre><code class="language-js"> function func(num, str1, str2){
-        document.write(num + ". " + str1 + "가 " + str2 + "되었습니다.14");
-    }
-    const youNum1 = 1;
-    const youNum2 = 2;
-    const youNum3 = 3;
-    const youStr1 = "함수";
-    const youStr2 = "자바스크립트";
-    const youStr3 = "제이쿼리";
-    const youCom1 = "실행";
+<pre><code class="language-js"> function func(num, str1, str2){
+    document.write(num + ". " + str1 + "가 " + str2 + "되었습니다.14");
+}
+const youNum1 = 1;
+const youNum2 = 2;
+const youNum3 = 3;
+const youStr1 = "함수";
+const youStr2 = "자바스크립트";
+const youStr3 = "제이쿼리";
+const youCom1 = "실행";
 
-    func(youNum1, youStr1, youCom1);
-    func(youNum2, youStr2, youCom1);
-    func(youNum3, youStr3, youCom1);
-    </code></pre>
+func(youNum1, youStr1, youCom1);
+func(youNum2, youStr2, youCom1);
+func(youNum3, youStr3, youCom1);
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -449,31 +449,31 @@
                     <h3>15. 함수 유형 : 함수와 배열 , 객체를 이용한 형태 </h3>
                     <p class="t_desc">객체를 사용하여 데이터를 전달시킨다.</p>
                     <div class="script">
-    <pre><code class="language-js">function func(num, str1, str2){
-        document.write(num + ". " + str1 + "가 " + str2 + "되었습니다.15");
-    }
+<pre><code class="language-js">function func(num, str1, str2){
+    document.write(num + ". " + str1 + "가 " + str2 + "되었습니다.15");
+}
 
-    const info = [
-        {
-            num :  "1",
-            name :  "함수",
-            com :  "실행"
-        },
-        {
-            num :  "2",
-            name :  "자바스트립트",
-            com :  "실행"
-        },
-        {
-            num :  "3",
-            name :  "제이쿼리",
-            com :  "실행"
-        }
-    ];
-    func(info[0].num, info[0].name, info[0].com);
-    func(info[1].num, info[1].name, info[1].com);
-    func(info[2].num, info[2].name, info[2].com);
-    </code></pre>
+const info = [
+    {
+        num :  "1",
+        name :  "함수",
+        com :  "실행"
+    },
+    {
+        num :  "2",
+        name :  "자바스트립트",
+        com :  "실행"
+    },
+    {
+        num :  "3",
+        name :  "제이쿼리",
+        com :  "실행"
+    }
+];
+func(info[0].num, info[0].name, info[0].com);
+func(info[1].num, info[1].name, info[1].com);
+func(info[2].num, info[2].name, info[2].com);
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -495,34 +495,34 @@
                         16번 유형은 재사용이 불가하기 때문에 아래의 17번 식이 만들어지게 되었다.
                     </p>
                     <div class="script"></div>
-    <pre><code class="language-js">const info = {
-        num1 : 1,
-        name1 : "함수",
-        word1 : "실행",
-        num2 : 2,
-        name2 : "자바스크립트",
-        word2 : "실행",
-        num3 : 3,
-        name3 : "제이쿼리",
-        word3 : "실행",
+<pre><code class="language-js">const info = {
+    num1 : 1,
+    name1 : "함수",
+    word1 : "실행",
+    num2 : 2,
+    name2 : "자바스크립트",
+    word2 : "실행",
+    num3 : 3,
+    name3 : "제이쿼리",
+    word3 : "실행",
 
-        result1 : function(){    
-            //객체 안에 함수를 넣은 상태 
-            document.write(info.num1 + ". " + info.name1 + "가 " + info.word1 + "되었습니다.16");
-        },
-        result2 : function(){    
-            //객체 안에 함수를 넣은 상태 
-            document.write(info.num2 + ". " + info.name2 + "가 " + info.word2 + "되었습니다.16");
-        },
-        result3 : function(){    
-            //객체 안에 함수를 넣은 상태 
-            document.write(info.num3 + ". " + info.name3 + "가 " + info.word3 + "되었습니다.16");
-        }
+    result1 : function(){    
+        //객체 안에 함수를 넣은 상태 
+        document.write(info.num1 + ". " + info.name1 + "가 " + info.word1 + "되었습니다.16");
+    },
+    result2 : function(){    
+        //객체 안에 함수를 넣은 상태 
+        document.write(info.num2 + ". " + info.name2 + "가 " + info.word2 + "되었습니다.16");
+    },
+    result3 : function(){    
+        //객체 안에 함수를 넣은 상태 
+        document.write(info.num3 + ". " + info.name3 + "가 " + info.word3 + "되었습니다.16");
     }
-    info.result1(); 
-    info.result2(); 
-    info.result3(); 
-    </code></pre>
+}
+info.result1(); 
+info.result2(); 
+info.result3(); 
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -544,27 +544,27 @@
                         1.this. : 이것을 저장하시오. 라는 의미로 재사용을 가능하게 해준다.
                         2,객체 생성자를 출력하려면 꼭 인스턴트를 생성 한뒤 실행문을 써주어야 한다.
                     </p>
-    <pre><code class="language-js">function func(num, name, word){ //저장한 데이터를 변수에게 데이터 전달
-        this.num = num; //재사용울 위해 const를 생략하고 this.를 붙인다.
-        this.name = name;
-        this.word = word;
+<pre><code class="language-js">function func(num, name, word){ //저장한 데이터를 변수에게 데이터 전달
+    this.num = num; //재사용울 위해 const를 생략하고 this.를 붙인다.
+    this.name = name;
+    this.word = word;
 
-        this.result = function(){
-            document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.17<br>");
-        }
+    this.result = function(){
+        document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.17<br>");
     }
+}
 
-    //인스턴트 생성 - 데이터 저장
-    const info1 = new func("1", "함수", "실행"); //데이터 저장  : this. : 이것을 저장하시오. 라는 의미!
-    const info2 = new func("2", "자바스크립트", "실행");
-    const info3 = new func("3", "제이쿼리", "실행");
+//인스턴트 생성 - 데이터 저장
+const info1 = new func("1", "함수", "실행"); //데이터 저장  : this. : 이것을 저장하시오. 라는 의미!
+const info2 = new func("2", "자바스크립트", "실행");
+const info3 = new func("3", "제이쿼리", "실행");
 
-    //실행
+//실행
 
-    info1.result();
-    info2.result();
-    info3.result();
-    </code></pre>
+info1.result();
+info2.result();
+info3.result();
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -582,25 +582,25 @@
                     <h3>18. 함수 유형 : 프로토타입 함수</h3>
                     <p class="t_desc">데이터에 이어 메모리까지 재사용을 하기 위해 나온 함수 - 쓸데없는 데이터 사용하지 않도록!</p>
                     <div class="script">
-    <pre><code class="language-js"> function func(num, name, word){ //저장한 데이터를 변수에게 데이터 전달
-        this.num = num; //재사용울 위해 const를 생략하고 this.를 붙인다.
-        this.name = name;
-        this.word = word;
-    }
-    func.prototype.result = function(){
-        document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.18<br>");
-    }
+<pre><code class="language-js"> function func(num, name, word){ //저장한 데이터를 변수에게 데이터 전달
+    this.num = num; //재사용울 위해 const를 생략하고 this.를 붙인다.
+    this.name = name;
+    this.word = word;
+}
+func.prototype.result = function(){
+    document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.18<br>");
+}
 
-    //인스턴트 생성 - 데이터 저장
-    const info1 = new func("1", "함수", "실행"); //데이터 저장  : this. : 이것을 저장하시오. 라는 의미!
-    const info2 = new func("2", "자바스크립트", "실행");
-    const info3 = new func("3", "제이쿼리", "실행");
+//인스턴트 생성 - 데이터 저장
+const info1 = new func("1", "함수", "실행"); //데이터 저장  : this. : 이것을 저장하시오. 라는 의미!
+const info2 = new func("2", "자바스크립트", "실행");
+const info3 = new func("3", "제이쿼리", "실행");
 
-    //실행
-    info1.result();
-    info2.result();
-    info3.result();
-    </code></pre>
+//실행
+info1.result();
+info2.result();
+info3.result();
+</code></pre>
                     </div>
                     <div class="result">
                         <details>
@@ -619,33 +619,33 @@
                     <h3>19. 함수 유형 : 객체 리터럴 함수</h3>
                     <p class="t_desc">함수를 리터럴 객체 안에 넣기 : 원하는 값만 추출하기 용이함!.</p>
                     <div class="script"></div>
-    <pre><code class="language-js">function func(num, name, word){ //저장한 데이터를 변수에게 데이터 전달
-        this.num = num; //재사용을 위해 const를 생략하고 this.를 붙인다.
-        this.name = name;
-        this.word = word;
+<pre><code class="language-js">function func(num, name, word){ //저장한 데이터를 변수에게 데이터 전달
+    this.num = num; //재사용을 위해 const를 생략하고 this.를 붙인다.
+    this.name = name;
+    this.word = word;
+}
+func.prototype = {
+    result1 : function(){
+        document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.19<br>");
+    },
+    result2 : function(){
+        document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.19<br>");
+    },
+    result3 : function(){
+        document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.19<br>");
     }
-    func.prototype = {
-        result1 : function(){
-            document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.19<br>");
-        },
-        result2 : function(){
-            document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.19<br>");
-        },
-        result3 : function(){
-            document.write(this.num + ". " + this.name + "가 " + this.word + "되었습니다.19<br>");
-        }
-    }
+}
 
-    //인스턴트 생성 - 데이터 저장
-    const info1 = new func("1", "함수", "실행"); //데이터 저장  : this. : 이것을 저장하시오. 라는 의미!
-    const info2 = new func("2", "자바스크립트", "실행");
-    const info3 = new func("3", "제이쿼리", "실행");
+//인스턴트 생성 - 데이터 저장
+const info1 = new func("1", "함수", "실행"); //데이터 저장  : this. : 이것을 저장하시오. 라는 의미!
+const info2 = new func("2", "자바스크립트", "실행");
+const info3 = new func("3", "제이쿼리", "실행");
 
-    //실행
-    info1.result1();
-    info2.result2();
-    info3.result3();
-    </code></pre>
+//실행
+info1.result1();
+info2.result2();
+info3.result3();
+</code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
@@ -856,7 +856,7 @@ func();
 
 
     </script> -->
-    <script>
+    <!-- <script>
         //1
         {
             function func(){
@@ -1105,7 +1105,7 @@ func();
             info2.result2();
             info3.result3();
         }
-        // 클래스 : 함수의 집합체 --> 함수형(요즘 트렌드 *) / 클래스형 (함수형에 클래스 장점을 추가시켜 리액트 훅이 생김))
+        // 클래스 : 함수의 집합체 -> 함수형(요즘 트렌드 *) / 클래스형 (함수형에 클래스 장점을 추가시켜 리액트 훅이 생김))
         // 자바와 자바스크립트 구분 // css클래스와 자바스크립트의 클래스 구분하기!! 
         //20. 즉시실행함수 - func() 생략
         {
@@ -1139,7 +1139,7 @@ func();
             }
             func("1.함수가 실행되었습니다.22","2.함수가 실행되었습니다.22");
         }
-    </script>
+    </script> -->
 
 </body>
 
