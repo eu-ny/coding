@@ -12,6 +12,7 @@
     left: 0;
     top: 0;
     background-color: #fff;
+    z-index: 10000;
     /* backdrop-filter: blur(10px); */
 }
 
