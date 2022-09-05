@@ -730,6 +730,7 @@ body {
     transform: rotate(0);
     animation: none;
 }
+  
 
 @keyframes movetongue {
     100% {
