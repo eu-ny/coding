@@ -79,42 +79,18 @@
                     <strong>TIP !</strong><br>
                     • 섹션, 아티클과 같은 시멘틱 태그에는 꼭 헤딩 태그를 함께 사용해주어야 웹표준을 준수하게 됩니다.<br>
                     • 섹션 영역에 웹표준 준수를 위해 선언한 h2태그가 사용자 눈에 보이지 않도록 블라인드 속성을 주기 위해 선택자로 블라인드를 설정합니다.<br>
-                    • 이미지 대체 텍스트를 눈에 안보이게 하기 위해 ir효과를 사용합니다.<br>
-                    • 이미지는 css로 넣기 때문에 이미지 안 텍스트 박스 구조로 작업합니다.<br>
-                    • 그 외 이동 아이콘과 dot부분의 아이콘은 각각 하나로 묶어주어서 <i>이미지 | 이동아이콘 | dot </i>세개의 큰 틀을 잡아줍니다.
+                    • 이너(이미지 삽입) | 제목 | 텍스트(텍스트, 링크) | 텍스트(머리말) 구조로 큰 틀을 설정합니다.
                 </p>
 
                 <div class="t_code">
-<pre><code class="language-html">&lt;section id="sliderType" class="slider__wrap"&gt;
-    &lt;h2 class="blind"&gt;슬라이드 영역&lt;/h2&gt;
-    &lt;div class="slider__inner"&gt;
-        &lt;div class="slider"&gt;
-            &lt;div class="slider__img"&gt;
-                &lt;div class="desc"&gt;
-                    &lt;span&gt;ANIMALS&lt;/span&gt;
-                    &lt;h3&gt;cUTE ANIMALS&lt;/h3&gt;
-                    &lt;p&gt;
-                        너무 무리하지 말아요! 이미 당신은 잘하고 있고!&lt;br&gt;
-                        앞으로도 잘 할 수 있어요! 
-                    &lt;/p&gt;
-                    &lt;div class="btn"&gt;
-                        &lt;a href="#"&gt;자세히 보기&lt;/a&gt;
-                        &lt;a href="#" class="black"&gt;사이트 보기&lt;/a&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class="slider__arrow"&gt;
-                &lt;a href="#" class="left"&gt;&lt;span class="ir"&gt;이전 이미지&lt;/span&gt;&lt;/a&gt;
-                &lt;a href="#" class="right"&gt;&lt;span class="ir"&gt;다음 이미지&lt;/span&gt;&lt;/a&gt;
-            &lt;/div&gt;
-            &lt;div class="slider__dot"&gt;
-                &lt;a href="#" class="dot active"&gt;&lt;span class="ir"&gt;1&lt;/span&gt;&lt;/a&gt;
-                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;2&lt;/span&gt;&lt;/a&gt;
-                &lt;a href="#" class="dot"&gt;&lt;span class="ir"&gt;3&lt;/span&gt;&lt;/a&gt;
-                &lt;a href="#" class="play"&gt;&lt;span class="ir"&gt;플레이&lt;/span&gt;&lt;/a&gt;
-                &lt;a href="#" class="stop"&gt;&lt;span class="ir"&gt;정지&lt;/span&gt;&lt;/a&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
+<pre><code class="language-html">&lt;section id="bannerType" class="banner__wrap nexon"&gt;
+    &lt;h2 class="blind"&gt;배너 영역&lt;/h2&gt;
+    &lt;div class="banner__inner"&gt;
+        &lt;h3 class="title"&gt;애니멀 유치원&lt;/h3&gt;
+        &lt;p class="desc"&gt;세상에서 귀여운 고양이들을 알리기 위해 만든 사이트 입니다.
+            &lt;a href="#" title="고양이 보러가기"&gt;다들 고양이 자랑과 이미지 보고 가세요.&lt;/a&gt;
+        &lt;/p&gt;
+        &lt;span class="small"&gt;배너 유형 01&lt;/span&gt;
     &lt;/div&gt;
 &lt;/section&gt;
 </pre></code>
@@ -136,7 +112,6 @@
                     • 각 영역과 섹션에 반복적으로 들어가는 속성들은 공통 속성으로 따로 설정하는 것이 좋습니다.<br />
                     • 컨테이너 설정을 통해 메인 화면 크기와 여백을 설정해준 뒤 메인 콘텐츠인 섹션에게 스타일을 적용시킵니다.<br />
                     • span 태그는 display: block를 먼저 설정하여 작업하는 것이 편리합니다.<br>
-                    • text-underline-position: under는 크롬 브라우저에게만 적용되는 속성으로 언더라인과 텍스트의 간격이 조금 생성됩니다.<br>
                     • 이미지는 background: url()을 이용하여 배경에 삽입합니다.
                 </p>
                 <div class="t_code">
@@ -212,94 +187,40 @@ li {
     background-color: #f5f5f5;
 }
 
-/* sliderType */
-.slider__inner {
-    margin-top: 70px;
+/* bannerType */
+
+.banner__inner {
+    background-image: url(../img/banner_type01.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    padding: 120px 0;
+    color: #fff;
 }
-.slider {
-    position: relative;
-}
-.slider__img {
-    /* height: 500px;  밑에 세부 영역 잡기 전에 대충 잡아놓은 영역이므로 지우기 */
-    background: url(../img/slider_type01_01.jpg) no-repeat center / cover;
-}
-.slider__img .desc {
-    width: 1160px;
-    margin: 0 auto;
-    padding: 100px 20px;
-}
-.slider__img .desc span {
-    font-size: 16px;
-    background-color: #fff;
-    padding: 1px 14px 0 14px;
-    border-radius: 30px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    display: inline-block;
-}
-.slider__img .desc h3 {
-    font-size: 110px;
-    font-weight: 300;
+.banner__inner .title {
+    font-size: 50px;
     line-height: 1;
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-    margin-left: -8px;
-}
-.slider__img .desc p {
-    font-size: 20px;
     font-weight: 300;
-    color: #fff;
-    line-height: 1.35;
-    margin-bottom: 130px;
+    margin-bottom: 40px;
 }
-.slider__img .desc .btn {}
-.slider__img .desc .btn a {
+.banner__inner .desc {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 70px;
+}
+.banner__inner .desc a {
+    color: #fff;
+    display: block;
+}
+.banner__inner .desc a:hover {
+    text-decoration: underline;
+}
+.banner__inner .small {
+    display: block
     font-size: 16px;
-    background-color: #fff;
-    padding: 11px 50px;
-    display: inline-block;
-}
-.slider__img .desc .btn a.black {
-    background: #000;
-    color: #fff;
-}
-.slider__arrow a {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 56px;
-    background: url(../img/slider_icon.svg);
-}
-.slider__arrow a.left {
-    left: 20px;
-}
-.slider__arrow a.right {
-    right: 20px;
-    background-position: -50px 0; /* x축으로 -50px이동해야 나온다. */
-}
-.slider__dot {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 25px;
-}
-.slider__dot a {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-image: url(../img/slider_icon.svg);
-    background-position: -20px -70px;
-}
-.slider__dot a.active {
-    background-position: 0 -70px;
-}
-.slider__dot a.play {
-    background-position: -40px -70px;
-}
-.slider__dot a.stop {
-    background-position: -60px -70px;
+    text-decoration: underline;
 }
 </pre></code>
                 </div>
@@ -310,15 +231,15 @@ li {
 
             <h3 class="t_tit2">🎉 결과보기 🎉</h3>
             <div class="t_iframe" style="min-height: 800px; padding-top: 0;">
-                <iframe src="https://eu-ny.github.io/coding/site/sliderType/sliderType01.html" frameborder="0"></iframe>
+                <iframe src="https://eu-ny.github.io/coding/site/bannerType/bannerType01.html" frameborder="0"></iframe>
             </div>
 
             <div class="t_link">
-                <a href="https://github.com/eu-ny/coding/blob/main/site/sliderType/sliderType01.html">원본 소스 보기</a>
+                <a href="https://github.com/eu-ny/coding/blob/main/site/bannerType/bannerType01.html">원본 소스 보기</a>
             </div>
 
             <div class="t_link">
-                <a href="https://eu-ny.github.io/coding/site/sliderType/sliderType01.html">원본 페이지 보기</a>
+                <a href="https://eu-ny.github.io/coding/site/bannerType/bannerType01.html">원본 페이지 보기</a>
             </div>
 
 
