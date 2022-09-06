@@ -1,326 +1,413 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
+  <head>
     <!-- 언어 -->
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <!-- 호환성 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>사이트 만들기</title>
 
     <!-- SEO -->
-    <meta name="author" content="enny">
-    <meta name="description" content="사이트 만들기 튜토리얼 입니다.">
-    <meta name="keyword" content="사이트, 만들기, 튜토리얼, 으니">
-    <meta name="robots" content="all">
+    <meta name="author" content="enny" />
+    <meta name="description" content="사이트 만들기 튜토리얼 입니다." />
+    <meta name="keyword" content="사이트, 만들기, 튜토리얼, 으니" />
+    <meta name="robots" content="all" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="asset/css/font.css">
-    <link rel="stylesheet" href="asset/css/reset.css">
-    <link rel="stylesheet" href="asset/css/common.css">
+    <link rel="stylesheet" href="asset/css/font.css" />
+    <link rel="stylesheet" href="asset/css/reset.css" />
+    <link rel="stylesheet" href="asset/css/common.css" />
 
     <!-- CSS(섹션) -->
-    <link rel="stylesheet" href="asset/css/card.css">
-    <link rel="stylesheet" href="asset/css/image.css">
-    <link rel="stylesheet" href="asset/css/text.css">
-    <link rel="stylesheet" href="asset/css/header.css">
-    <link rel="stylesheet" href="asset/css/imgTextType.css">
-    <link rel="stylesheet" href="asset/css/bannerType.css">
-    <link rel="stylesheet" href="asset/css/footer.css">
-    <link rel="stylesheet" href="asset/css/slider.css">
-</head>
-<body>
+    <link rel="stylesheet" href="asset/css/card.css" />
+    <link rel="stylesheet" href="asset/css/image.css" />
+    <link rel="stylesheet" href="asset/css/text.css" />
+    <link rel="stylesheet" href="asset/css/header.css" />
+    <link rel="stylesheet" href="asset/css/imgTextType.css" />
+    <link rel="stylesheet" href="asset/css/bannerType.css" />
+    <link rel="stylesheet" href="asset/css/footer.css" />
+    <link rel="stylesheet" href="asset/css/slider.css" />
+  </head>
+  <body>
     <div id="skip">
-        <a href="#">헤더 영역 바로가기</a>
-        <a href="#">슬라이드 영역(배너 광고 등) 바로가기</a>
-        <a href="#">이미지 영역 바로가기</a>
-        <a href="#">이미지/텍스트 영역 바로가기</a>
-        <a href="#">카드 영역 바로가기</a>
-        <a href="#">배너 영역 바로가기</a>
-        <a href="#">텍스트 영역 바로가기</a>
-        <a href="#">푸터 영역 바로가기</a>
+      <a href="#">헤더 영역 바로가기</a>
+      <a href="#">슬라이드 영역(배너 광고 등) 바로가기</a>
+      <a href="#">이미지 영역 바로가기</a>
+      <a href="#">이미지/텍스트 영역 바로가기</a>
+      <a href="#">카드 영역 바로가기</a>
+      <a href="#">배너 영역 바로가기</a>
+      <a href="#">텍스트 영역 바로가기</a>
+      <a href="#">푸터 영역 바로가기</a>
     </div>
     <!-- //skip : 웹표준 준수에 반드시 필요! -->
 
     <section id="headerType" class="header__wrap nexon">
-        <div class="header__inner">
-            <div class="header__logo">
-                <a href="#">WEB <em>SITE</em></a>
-            </div>
-            <nav class="header__menu">
-                <ul>
-                    <li><a href="#">헤더 영역</a></li>
-                    <li><a href="#">슬라이드 영역</a></li>
-                    <li><a href="#">배너 영역</a></li>
-                    <li><a href="#">컨텐츠 영역</a></li>
-                    <li><a href="#">푸터 영역</a></li>
-                </ul>
-            </nav>
-            <div class="header__member">
-                <a href="#">로그인</a>
-            </div>
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="#">WEB <em>SITE</em></a>
         </div>
+        <nav class="header__menu">
+          <ul>
+            <li><a href="#">슬라이드 영역</a></li>
+            <li><a href="#">헤더 영역</a></li>
+            <li><a href="#">슬라이드 영역</a></li>
+            <li><a href="#">배너 영역</a></li>
+            <li><a href="#">컨텐츠 영역</a></li>
+            <li><a href="#">푸터 영역</a></li>
+          </ul>
+        </nav>
+        <div class="header__member">
+          <a href="#">로그인</a>
+        </div>
+      </div>
     </section>
     <!-- //headerType -->
 
     <main id="mainType">
-        <section id="sliderType" class="slider__wrap">
-            <h2 class="blind">슬라이드 영역</h2>
-            <div class="slider__inner">
-                <div class="slider">
-                    <div class="slider__img">
-                        <div class="desc">
-                            <span>ANIMALS</span>
-                            <h3>cUTE ANIMALS</h3>
-                            <p>
-                                너무 무리하지 말아요! 이미 당신은 잘하고 있고!<br>
-                                앞으로도 잘 할 수 있어요! 
-                            </p>
-                            <div class="btn">
-                                <a href="#">자세히 보기</a>
-                                <a href="#" class="black">사이트 보기</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider__arrow">
-                        <a href="#" class="left"><span class="ir">이전 이미지</span></a>
-                        <a href="#" class="right"><span class="ir">다음 이미지</span></a>
-                    </div>
-                    <div class="slider__dot">
-                        <a href="#" class="dot active"><span class="ir">1</span></a>
-                        <a href="#" class="dot"><span class="ir">2</span></a>
-                        <a href="#" class="dot"><span class="ir">3</span></a>
-                        <a href="#" class="play"><span class="ir">플레이</span></a>
-                        <a href="#" class="stop"><span class="ir">정지</span></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- //sliderType -->
-
-        <section id="imageType" class="image__wrap nexon section">
-            <h2>귀여운 동물들</h2>
-            <p>🐶 동물을 좋아하는 사람들을 위한 동물 리스트 입니다. 🐱</p>
-            <div class="image__inner container">
-                <article class="image img1">
-                    <h3 class="image__title">귀여운 동물 강아지</h3>
-                    <p class="image__desc">강아지는 매우 귀엽습니다. 활동적인 모습이 귀엽습니다. 강아지는 기뻐할 때도 귀엽고 시무룩할 때도 귀엽습니다. 그냥 귀엽습니다. </p>
-                    <a href="#" title="자세히 보기" class="image__btn">자세히 보기</a>
-                </article>
-                <article class="image img2">
-                    <h3 class="image__title">귀여운 동물 고양이</h3>
-                    <p class="image__desc">고양이는 매우 귀엽습니다. 도도하면서도 애교가 많습니다. 고양이는 은근하게 다가오는 것이 매력적입니다. </p>
-                    <a href="#" title="자세히 보기" class="image__btn yellow">자세히 보기</a>
-                </article>
-            </div>
-        </section>
-        <!-- //imageType -->
-
-        <section id="imgTextType" class="image__wrap nexon section gray">
-            <h2 class="blind">멍멍 유치원 살펴보기</h2>
-            <div class="imgText__inner container">
-                <div class="imgText__txt">
-                    <span>이미지 텍스트 유형01</span>
-                    <h3>멍멍 유치원 살펴보기</h3>
-                    <p>댕댕이를 좋아하는 사람들을 위한 멍멍 유치원 소개 사이트 입니다.</p>
-                    <ul>
-                        <li><a href="#">멍멍 유치원 사이트</a></li>
-                        <li><a href="#">댕댕꾸러기 소개</a></li>
-                        <li><a href="#">칭찬해요</a></li>
-                        <li><a href="#">서운해요</a></li>
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">댕댕 Youtube</a></li>
-                    </ul>
-                </div>
-                <div class="imgText__img img1">
-                    <li><a href="#">멍멍 유치원 사이트</a></li>
-                </div>
-                <div class="imgText__img img2">
-                    <li><a href="#" class="blue">멍멍 유치원 사이트</a></li>
-                </div>
-            </div>
-        </section>
-        <!-- //imgTextType -->
-
-        <section id="cardType" class="card__wrap nexon section gray">
-            <h2>전시회 리스트 📝</h2>
-            <p>전시를 좋아하는 사람들을 위한 전시 리스트</p>
-            <div class="card__inner container">
-                <article class="card">
-                    <figure class="card__header">
-                        <img src="asset/img/card_bg01_01.jpg" alt="상업 전시">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="tit">상업 전시를 찾고 계신가요?</h3>
-                        <p class="desc">
-                            상업적인 성격을 띄는 전시회로 대표적으로는 디자인아트페어, 키아프 등등이 있습니다. 이 전시회에서는 관람 뿐만 아니라 현장에서 바로 구매할 수 있습니다.
-                        </p>
-                        <a class="btn" href="#">
-                            더 자세히 보기
-                            <span aria-hidden="true"> 
-                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/>
-                                </svg>                                
-                            </span>
-                        </a>
-                    </div>
-                </article>
-                <article class="card">
-                    <figure class="card__header">
-                        <img src="asset/img/card_bg01_02.jpg" alt="미술 전시">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="tit">미술 전시를 찾고 계신가요?</h3>
-                        <p class="desc">
-                            순수미술과 같은 예술 분야를 주로 전시하며 가벼운 상업 전시와는 달리 좀더 깊은 문화 예술을 관람할 수 있습니다. 전문적인기관에서 운영하는 경우가 대부분 입니다.
-                        </p>
-                        <a class="btn" href="#">
-                            더 자세히 보기
-                            <span aria-hidden="true"> 
-                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/>
-                                    </svg>                                
-                            </span>
-                        </a>
-                    </div>  
-                </article>
-                <article class="card">
-                    <figure class="card__header">
-                        <img src="asset/img/card_bg01_03.jpg" alt="사진 전시">
-                    </figure>
-                    <div class="card__body">
-                        <h3 class="tit">사진 전시를 찾고 계신가요?</h3>
-                        <p class="desc">
-                            사진을 주제로 하여 일상의 모습 또는 그 이상을 보여주는 작품들을 감상할 수 있습니다. 최근 사진전의 수요가 오르는 추세이며, 가볍게 관람하기에도 좋습니다. 
-                        </p>
-                        <a class="btn" href="#">
-                            더 자세히 보기
-                            <span aria-hidden="true"> 
-                                <svg width="65" height="8" viewBox="0 0 65 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z" fill="black"/>
-                                    </svg>                                
-                            </span>
-                        </a>
-                    </div>
-                </article>
-            </div>
-        </section>
-        <!-- //cardType -->
-
-        <section id="bannerType" class="banner__wrap nexon">
-            <h2 class="blind">배너 영역</h2>
-            <div class="banner__inner">
-                <h3 class="title">애니멀 유치원</h3>
-                <p class="desc">세상에서 귀여운 고양이들을 알리기 위해 만든 사이트 입니다.
-                    <a href="#" title="고양이 보러가기">다들 고양이 자랑과 이미지 보고 가세요.</a>
+      <section id="sliderType" class="slider__wrap nexon section">
+        <h2 class="blind">슬라이드 영역</h2>
+        <div class="slider__inner">
+          <div class="slider">
+            <div class="slider__img">
+              <div class="desc">
+                <span>ANIMALS</span>
+                <h3>cUTE ANIMALS</h3>
+                <p>
+                  너무 무리하지 말아요! 이미 당신은 잘하고 있고!<br />
+                  앞으로도 잘 할 수 있어요!
                 </p>
-                <span class="small">배너 유형 01</span>
+                <div class="btn">
+                  <a href="#">자세히 보기</a>
+                  <a href="#" class="black">사이트 보기</a>
+                </div>
+              </div>
             </div>
-        </section>
-        <!-- //bannerType -->
-
-        <section id="textType" class="text__wrap section nexon">
-            <span>텍스트 유형01</span>
-            <h2 class="mb70">스크립트를 익히는 방법</h2>
-            <div class="text__inner container">
-                <div class="text t1">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
-                    <a class="text_btn" href="/">더보기</a>
-                </div>
-                <div class="text t2">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
-                    <a class="text_btn" href="/">더보기</a>
-                </div>
-                <div class="text t3">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
-                    <a class="text_btn" href="/">더보기</a>
-                </div>
-                <div class="text t4">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
-                    <a class="text_btn" href="/">더보기</a>
-                </div>
-                <div class="text t5">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
-                    <a class="text_btn" href="/">더보기</a>
-                </div>
-                <div class="text t6">
-                    <h3 class="text__title">검색이펙트</h3>
-                    <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
-                    <a class="text_btn" href="/">더보기</a>
-                </div>
+            <div class="slider__arrow">
+              <a href="#" class="left"><span class="ir">이전 이미지</span></a>
+              <a href="#" class="right"><span class="ir">다음 이미지</span></a>
             </div>
-        </section>
-        <!-- //textType -->
+            <div class="slider__dot">
+              <a href="#" class="dot active"><span class="ir">1</span></a>
+              <a href="#" class="dot"><span class="ir">2</span></a>
+              <a href="#" class="dot"><span class="ir">3</span></a>
+              <a href="#" class="play"><span class="ir">플레이</span></a>
+              <a href="#" class="stop"><span class="ir">정지</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- //sliderType -->
 
+      <section id="imageType" class="image__wrap nexon section">
+        <h2>귀여운 동물들</h2>
+        <p>🐶 동물을 좋아하는 사람들을 위한 동물 리스트 입니다. 🐱</p>
+        <div class="image__inner container">
+          <article class="image img1">
+            <h3 class="image__title">귀여운 동물 강아지</h3>
+            <p class="image__desc">
+              강아지는 매우 귀엽습니다. 활동적인 모습이 귀엽습니다. 강아지는
+              기뻐할 때도 귀엽고 시무룩할 때도 귀엽습니다. 그냥 귀엽습니다.
+            </p>
+            <a href="#" title="자세히 보기" class="image__btn">자세히 보기</a>
+          </article>
+          <article class="image img2">
+            <h3 class="image__title">귀여운 동물 고양이</h3>
+            <p class="image__desc">
+              고양이는 매우 귀엽습니다. 도도하면서도 애교가 많습니다. 고양이는
+              은근하게 다가오는 것이 매력적입니다.
+            </p>
+            <a href="#" title="자세히 보기" class="image__btn yellow"
+              >자세히 보기</a
+            >
+          </article>
+        </div>
+      </section>
+      <!-- //imageType -->
+
+      <section id="imgTextType" class="image__wrap nexon section gray">
+        <h2 class="blind">멍멍 유치원 살펴보기</h2>
+        <div class="imgText__inner container">
+          <div class="imgText__txt">
+            <span>이미지 텍스트 유형01</span>
+            <h3>멍멍 유치원 살펴보기</h3>
+            <p>
+              댕댕이를 좋아하는 사람들을 위한 멍멍 유치원 소개 사이트 입니다.
+            </p>
+            <ul>
+              <li><a href="#">멍멍 유치원 사이트</a></li>
+              <li><a href="#">댕댕꾸러기 소개</a></li>
+              <li><a href="#">칭찬해요</a></li>
+              <li><a href="#">서운해요</a></li>
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">댕댕 Youtube</a></li>
+            </ul>
+          </div>
+          <div class="imgText__img img1">
+            <li><a href="#">멍멍 유치원 사이트</a></li>
+          </div>
+          <div class="imgText__img img2">
+            <li><a href="#" class="blue">멍멍 유치원 사이트</a></li>
+          </div>
+        </div>
+      </section>
+      <!-- //imgTextType -->
+
+      <section id="cardType" class="card__wrap nexon section gray">
+        <h2>전시회 리스트 📝</h2>
+        <p>전시를 좋아하는 사람들을 위한 전시 리스트</p>
+        <div class="card__inner container">
+          <article class="card">
+            <figure class="card__header">
+              <img src="asset/img/card_bg01_01.jpg" alt="상업 전시" />
+            </figure>
+            <div class="card__body">
+              <h3 class="tit">상업 전시를 찾고 계신가요?</h3>
+              <p class="desc">
+                상업적인 성격을 띄는 전시회로 대표적으로는 디자인아트페어,
+                키아프 등등이 있습니다. 이 전시회에서는 관람 뿐만 아니라
+                현장에서 바로 구매할 수 있습니다.
+              </p>
+              <a class="btn" href="#">
+                더 자세히 보기
+                <span aria-hidden="true">
+                  <svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+          <article class="card">
+            <figure class="card__header">
+              <img src="asset/img/card_bg01_02.jpg" alt="미술 전시" />
+            </figure>
+            <div class="card__body">
+              <h3 class="tit">미술 전시를 찾고 계신가요?</h3>
+              <p class="desc">
+                순수미술과 같은 예술 분야를 주로 전시하며 가벼운 상업 전시와는
+                달리 좀더 깊은 문화 예술을 관람할 수 있습니다. 전문적인기관에서
+                운영하는 경우가 대부분 입니다.
+              </p>
+              <a class="btn" href="#">
+                더 자세히 보기
+                <span aria-hidden="true">
+                  <svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+          <article class="card">
+            <figure class="card__header">
+              <img src="asset/img/card_bg01_03.jpg" alt="사진 전시" />
+            </figure>
+            <div class="card__body">
+              <h3 class="tit">사진 전시를 찾고 계신가요?</h3>
+              <p class="desc">
+                사진을 주제로 하여 일상의 모습 또는 그 이상을 보여주는 작품들을
+                감상할 수 있습니다. 최근 사진전의 수요가 오르는 추세이며, 가볍게
+                관람하기에도 좋습니다.
+              </p>
+              <a class="btn" href="#">
+                더 자세히 보기
+                <span aria-hidden="true">
+                  <svg
+                    width="65"
+                    height="8"
+                    viewBox="0 0 65 8"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M64.3536 4.35355C64.5488 4.15829 64.5488 3.84171 64.3536 3.64645L61.1716 0.464466C60.9763 0.269204 60.6597 0.269204 60.4645 0.464466C60.2692 0.659728 60.2692 0.976311 60.4645 1.17157L63.2929 4L60.4645 6.82843C60.2692 7.02369 60.2692 7.34027 60.4645 7.53553C60.6597 7.7308 60.9763 7.7308 61.1716 7.53553L64.3536 4.35355ZM0 4.5H64V3.5H0V4.5Z"
+                      fill="black"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- //cardType -->
+
+      <section id="bannerType" class="banner__wrap nexon section">
+        <h2 class="blind">배너 영역</h2>
+        <div class="banner__inner">
+          <h3 class="title">애니멀 유치원</h3>
+          <p class="desc">
+            세상에서 귀여운 고양이들을 알리기 위해 만든 사이트 입니다.
+            <a href="#" title="고양이 보러가기"
+              >다들 고양이 자랑과 이미지 보고 가세요.</a
+            >
+          </p>
+          <span class="small">배너 유형 01</span>
+        </div>
+      </section>
+      <!-- //bannerType -->
+
+      <section id="textType" class="text__wrap section nexon">
+        <span>텍스트 유형01</span>
+        <h2 class="mb70">스크립트를 익히는 방법</h2>
+        <div class="text__inner container">
+          <div class="text t1">
+            <h3 class="text__title">검색이펙트</h3>
+            <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+          <div class="text t2">
+            <h3 class="text__title">검색이펙트</h3>
+            <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+          <div class="text t3">
+            <h3 class="text__title">검색이펙트</h3>
+            <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+          <div class="text t4">
+            <h3 class="text__title">검색이펙트</h3>
+            <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+          <div class="text t5">
+            <h3 class="text__title">검색이펙트</h3>
+            <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+          <div class="text t6">
+            <h3 class="text__title">검색이펙트</h3>
+            <p class="text__desc">자바스트립트뭐시기뭐시구머시기</p>
+            <a class="text_btn" href="/">더보기</a>
+          </div>
+        </div>
+      </section>
+      <!-- //textType -->
     </main>
     <!-- //mainType -->
 
     <footer id="footerType" class="footer__wrap nexon section gray">
-        <h2 class="blind">푸터 영역</h2>
-        <div class="footer__inner container">
-            <div class="footer__menu">
-                <div>
-                    <h3>사이트</h3>
-                    <ul>
-                        <li><a href="#">웹표준 사이트</a></li>
-                        <li><a href="#">웹표준 사이트</a></li>
-                        <li><a href="#">웹표준 사이트</a></li>
-                        <li><a href="#">웹표준 사이트</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>헤더 영역</h3>
-                    <ul>
-                        <li><a href="#">메뉴 유형01</a></li>
-                        <li><a href="#">메뉴 유형02</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>슬라이드 영역</h3>
-                    <ul>
-                        <li><a href="#">슬라이드 유형01</a></li>
-                        <li><a href="#">슬라이드 유형02</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>이미지 영역</h3>
-                    <ul>
-                        <li><a href="#">이미지 유형01</a></li>
-                        <li><a href="#">이미지 유형02</a></li>
-                        <li><a href="#">이미지/텍스트 유형01</a></li>
-                        <li><a href="#">이미지/텍스트 유형02</a></li>
-                        <li><a href="#">텍스트 유형01</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>컨텐츠 영역</h3>
-                    <ul>
-                        <li><a href="/">카드 유형01</a></li>
-                        <li><a href="/">카드 유형02</a></li>
-                        <li><a href="/">카드 유형03</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>푸터 영역</h3>
-                    <ul>
-                        <li><a href="/">푸터 메뉴 유형01</a></li>
-                        <li><a href="/">푸터 컨텍트 유형02</a></li>
-                        <li><a href="/">푸터 이메일 유형03</a></li>
-                    </ul>
-                </div>
-
-            </div>
-            <div class="footer__right">
-                2022 LEEHAEUN. Portfolio is Power<br>
-                All rights reserved.
-            </div>
+      <h2 class="blind">푸터 영역</h2>
+      <div class="footer__inner container">
+        <div class="footer__menu">
+          <div>
+            <h3>사이트</h3>
+            <ul>
+              <li><a href="#">웹표준 사이트</a></li>
+              <li><a href="#">웹표준 사이트</a></li>
+              <li><a href="#">웹표준 사이트</a></li>
+              <li><a href="#">웹표준 사이트</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>헤더 영역</h3>
+            <ul>
+              <li><a href="#">메뉴 유형01</a></li>
+              <li><a href="#">메뉴 유형02</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>슬라이드 영역</h3>
+            <ul>
+              <li><a href="#">슬라이드 유형01</a></li>
+              <li><a href="#">슬라이드 유형02</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>이미지 영역</h3>
+            <ul>
+              <li><a href="#">이미지 유형01</a></li>
+              <li><a href="#">이미지 유형02</a></li>
+              <li><a href="#">이미지/텍스트 유형01</a></li>
+              <li><a href="#">이미지/텍스트 유형02</a></li>
+              <li><a href="#">텍스트 유형01</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>컨텐츠 영역</h3>
+            <ul>
+              <li><a href="/">카드 유형01</a></li>
+              <li><a href="/">카드 유형02</a></li>
+              <li><a href="/">카드 유형03</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>푸터 영역</h3>
+            <ul>
+              <li><a href="/">푸터 메뉴 유형01</a></li>
+              <li><a href="/">푸터 컨텍트 유형02</a></li>
+              <li><a href="/">푸터 이메일 유형03</a></li>
+            </ul>
+          </div>
         </div>
+        <div class="footer__right">
+          2022 LEEHAEUN. Portfolio is Power<br />
+          All rights reserved.
+        </div>
+      </div>
     </footer>
     <!-- //footerType -->
-</body>
+    <script>
+      const scroll = document.querySelector("#mainType");
+
+      window.addEventListener("#mainType", () => {
+        let scrollTop =
+          window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+        //nav 해당 영역 불 들어오기
+        //forEach문으로 스크롤 위치 값이 요소의 offsetTop(요소의 수직 값) 값보다 크거나 같을 경우
+        document.querySelectorAll(".section").forEach((el, index) => {
+          if (scrollTop >= el.offsetTop - 500) {
+            //현 페이지에서 스크롤이 마지막 요소값에 미치지 못하는 오류가 있어 오차를 줄이기 위해 -2를 해주어서 오류를 완화해주었다.
+            document.querySelectorAll("#parallax__nav li").forEach((li) => {
+              li.classList.remove("active"); //li의 전체를 선택하기 위해 forEach문을 통해 li 값을 뽑아내고 li 요소에 선언되어있는 모든 active 선택자를 지워준다.
+            });
+            //위 조건이 실행된 후 다시 li 요소의 첫번째에게 class로 active를 선언한다.
+            document
+              .querySelector("#parallax__nav li:nth-child(" + (index + 1) + ")")
+              .classList.add("active");
+          }
+        });
+
+        //info
+        // scroll.innerText = Math.round(scrollTop);
+        document.querySelector(".scroll span").innerText = Math.ceil(scrollTop);
+
+        //for()
+        for (let i = 1; i <= 9; i++) {
+          document.querySelector(".offset" + i).innerText =
+            document.getElementById("section" + i).offsetTop;
+        }
+        //스크롤 이동
+        document.querySelectorAll("#parallax__nav li a").forEach((li) => {
+          li.addEventListener("click", (e) => {
+            e.preventDefault(); //클릭했을 때 메뉴에 링크 된 영역을 없앰. 즉 a 태그를 눌렀을때도 href 링크로 이동하지 않게함
+            document.querySelector(li.getAttribute("href")).scrollIntoView({  //특정위치로 화면을 이동시키는 메서드 : scrollIntoView 즉 버튼을 눌렀을때 원하는 내용이 있는 위치로 이동시켜야 할 때 사용할 수 있다.
+              behavior: "smooth", //부드럽게 움직이도록 : 스크롤이 움직일 때.
+            });
+          });
+        });
+      });
+    </script>
+  </body>
 </html>
