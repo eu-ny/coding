@@ -70,6 +70,10 @@
                 <strong>페럴랙스(parallax)</strong> 시차란 의미로 사용자가 스크롤링을 할 때 배경과 요소마다 속도 및 크기의 차이를 주어 입체적으로 느껴지게 하는 효과를 말합니다.<br>
                 이번 시간에는 버튼을 눌렀을 때(active) 해당 화면으로 스크롤이 부드럽게 이동하는 효과와 스크롤을 내릴 때 해당 버튼이 강조되는 효과를 실습해보겠습니다. 😆
             </p>
+            <br>
+            <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
+                <iframe src="https://eu-ny.github.io/coding/javascript/effect/parallaxEffect01.html" frameborder="0"></iframe>
+            </div>
 
             <hr>
 
@@ -801,11 +805,17 @@ li {
             <hr>
 
             <div id="sample02" class="sample">
-                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트로 페렐렉스 효과 주기 </h3>
-                <p class="t_desc">
+                <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트로 페럴랙스 효과 주기 </h3>
+                <p class="t_box">
+                    다음은 가장 중요한 스크립트 부분입니다! 먼저 예시 사진을 보면서 스크립트가 어떻게 작동되는지 확인해봅시다! 🥹
                 </p>
-                <details style="margin-bottom: 10px;">
+                <img src="https://user-images.githubusercontent.com/106949433/188758143-dce5719a-af03-4d76-8fa8-5587bde62313.jpg" alt="페럴렉스">
+                <details style="margin-bottom: 30px;">
                     <summary> 💡 전체 스크립트 보기</summary>
+                    <p class="t_box">
+                        다음은 전체적인 스크립트 입니다. 주석으로 처리된 부분은 설명 외의 각각 다른 방식으로 작성된 스크립트로 참고정도만 하시면 됩니다! <br>
+                        왜 다른 방식의 스크립트가 아닌 아래의 최종 스크립트가 나왔는지 정도로만 보시면 될 것 같습니다. 😊
+                    </p>
                     <div class="t_code" style="margin-bottom: 30px;">
 <pre><code class="language-js">const scroll = document.querySelector("#parallax__info .scroll span");
 
@@ -925,14 +935,16 @@ li {
 </code></pre>
                     </div>
                 </details>
-                <h3 class="t_tit3">✏️ 스크립트 01 : </h3>
+                <p class="t_desc">
+                    ❗️ 그럼 다음의 코드를 보며 주석과 함께 스크립트를 순서대로 알아가봅시다 🥹
+                </p>
+                <br>
                 <p class="t_desc2">
                     <strong>! JAVASCRIPT TIP !</strong><br>
-                    1. 위치(좌표)값을 출력하기 위해 innerText를 통해 이벤트 위치 속성을 부여합니다.<br>
-                    2. 커서를 커서 영역의 중심에 맞추기 위해 브라우저 기준의 위치 속성인 clientX/Y를 사용합니다. <br>
-                    3. 이 때 반드시 문자열을 추가하여 그 값의 단위를 설정해주어야 합니다!(+ "px")<br>
-                    4. getAttribute 메서드를 사용하여 마우스 이벤트 메서드를 효율적으로 실행시킵니다.<br>
-                    5. 그 외에는 아래의 주석을 참고하여 더 자세하게 알아봅시다!<br>
+                    1. .scrollIntoView : 특정위치로 화면을 이동시키는 메서드 : 즉 버튼을 눌렀을때 원하는 내용이 있는 위치로 이동시켜야 할 때 사용할 수 있다.<br>
+                    2. element.getAttribute() : 선택한 요소의 특정 속성 값을 가져오는 메서드<br>
+                    3. 스크롤 수직 위치값을 불러오는 3가지 방법 : pageYOffset / scrollY / scrollTop<br>
+                    4. event.preventDefault : 일반적으로 브라우저에 의해 처리되는 기존의 액션(동작) 즉 이벤트 발생을 막아준다. ex) a 태그의 기본 이벤트인 href 링크 이동을 막아서 이동하지 않게 설정.
                 </p>
                 <div class="t_code">
 <pre><code class="language-js"> const scroll = document.querySelector("#parallax__info .scroll span");
@@ -941,53 +953,55 @@ window.addEventListener("scroll", () => {
     //스크롤 수직 위치값을 불러오는 3가지 방법 : pageYOffset / scrollY / scrollTop : 3가지 속성을 모두 사용해야 모든 브라우저에서 위치값을 가져올 수 있다.
     let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
     
-    //forEach문으로 스크롤 위치 값이 요소의 offsetTop(요소의 수직 값) 값보다 크거나 같을 경우 
+    //forEach문 - active 없애고 첫번째에게 다시추가 시켜 추가된 요소만 효과가 나타나도록 하기
+    //스크롤 위치 값이 요소의 offsetTop(요소의 수직 값) 값보다 크거나 같을 경우 
     document.querySelectorAll(".content__item").forEach((el, index) => {
     if (scrollTop >= el.offsetTop -2) { //현 페이지에서 스크롤이 마지막 요소값에 미치지 못하는 오류가 있어 오차를 줄이기 위해 -2를 해주어서 오류를 완화해주었다.
         document.querySelectorAll("#parallax__nav li").forEach((li) => {
         li.classList.remove("active"); //li의 전체를 선택하기 위해 forEach문을 통해 li 값을 뽑아내고 li 요소에 선언되어있는 모든 active 선택자를 지워준다.
         });
         //위 조건이 실행된 후 다시 li 요소의 첫번째에게 class로 active를 선언한다.
+        //인덱스에 1을 추가한 이유는 인덱스는 0부터 시작하기 때문. 즉 0부터 시작하면 마지막 영역을 포함하지 못하므로 1부터 시작하기 위해 맞춰준 것
         document.querySelector("#parallax__nav li:nth-child(" + (index + 1) + ")").classList.add("active");
     }
     });
 
     //info
     //스크롤 위치값이 소숫점으로 나오기 때문에 소숫점을 올림 및 반올림을 해주어 값이 딱 떨어지게 해준다
-    document.querySelector(".scroll span").innerText = Math.ceil(scrollTop);    //Math.ceil = 값을 올려서 숫자로 반환시키는 수학메서드
+    document.querySelector(".scroll span").innerText = Math.ceil(scrollTop);    //Math.ceil = 값을 올려서 숫자로 반환시키는 
 
     //for()
+    //선택자 offset에게 section의 n번째 offsetTop값을 innerText를 통해 저장시킨다.
     for (let i = 1; i &lt;= 9; i++) {
     document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
     }
 
     //스크롤 이동
     // 링크를 클릭했을 때 딱딱한 클릭 이벤트가 실행되지 않고 새로 부드러운(smooth) 이벤트 만들어주기
-    document.querySelectorAll("#parallax__nav li a").forEach((li) => {
-    li.addEventListener("click", (e) => {
-        e.preventDefault(); //클릭했을 때 메뉴에 링크 된 영역을 없앰. 즉 a 태그를 눌렀을때도 href 링크로 이동하지 않게함
-        document.querySelector(li.getAttribute("href")).scrollIntoView({ //특정위치로 화면을 이동시키는 메서드 : scrollIntoView 즉 버튼을 눌렀을때 원하는 내용이 있는 위치로 이동시켜야 할 때 사용할 수 있다.
-        behavior: "smooth", //부드럽게 움직이도록 : 스크롤이 움직일 때.
+    document.querySelectorAll("#parallax__nav li a").forEach((li) =&gt;{
+        li.addEventListener("click", (e) =&gt;{
+            e.preventDefault(); // event.preventDefault : 클릭했을 때 li가 가지고 있던 a의 속성인 href(링크)를 실행시키지 않는다.
+            document.querySelector(li.getAttribute("href")).scrollIntoView({ 
+            behavior: "smooth", //부드럽게 움직이도록 : 스크롤이 움직일 때.
+            });
         });
-    });
     });
 });
 </code></pre>
                 </div>
 
                 <hr>
+
                 
-                <h3 class="t_tit2">#3. 결과 보기 🎉</h3>
-                <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
-                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/parllaxEffect01.html" frameborder="0"></iframe>
+
+                <hr>
+
+                <div class="t_link">
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/parallaxEffect01.html">원본 소스 보기</a>
                 </div>
 
                 <div class="t_link">
-                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/parllaxEffect01.html">원본 소스 보기</a>
-                </div>
-
-                <div class="t_link">
-                    <a href="https://eu-ny.github.io/coding/javascript/effect/parllaxEffect01.html">원본 페이지 보기</a>
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/parallaxEffect01.html">원본 페이지 보기</a>
                 </div>
             </div>
         </div>

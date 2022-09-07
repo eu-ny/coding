@@ -31,14 +31,14 @@
   </head>
   <body>
     <div id="skip">
-      <a href="#">헤더 영역 바로가기</a>
-      <a href="#">슬라이드 영역(배너 광고 등) 바로가기</a>
-      <a href="#">이미지 영역 바로가기</a>
-      <a href="#">이미지/텍스트 영역 바로가기</a>
-      <a href="#">카드 영역 바로가기</a>
-      <a href="#">배너 영역 바로가기</a>
-      <a href="#">텍스트 영역 바로가기</a>
-      <a href="#">푸터 영역 바로가기</a>
+      <!-- <a href="headerType">헤더 영역 바로가기</a> -->
+      <a href="#sliderType">슬라이드 영역(배너 광고 등) 바로가기</a>
+      <a href="#imageType">이미지 영역 바로가기</a>
+      <a href="#imgTextType">이미지/텍스트 영역 바로가기</a>
+      <a href="#cardType">카드 영역 바로가기</a>
+      <a href="#bannerType">배너 영역 바로가기</a>
+      <a href="#textType">텍스트 영역 바로가기</a>
+      <a href="#footerType#">푸터 영역 바로가기</a>
     </div>
     <!-- //skip : 웹표준 준수에 반드시 필요! -->
 
@@ -47,16 +47,18 @@
         <div class="header__logo">
           <a href="#">WEB <em>SITE</em></a>
         </div>
-        <nav class="header__menu">
-          <ul>
-            <li><a href="#">슬라이드 영역</a></li>
-            <li><a href="#">헤더 영역</a></li>
-            <li><a href="#">슬라이드 영역</a></li>
-            <li><a href="#">배너 영역</a></li>
-            <li><a href="#">컨텐츠 영역</a></li>
-            <li><a href="#">푸터 영역</a></li>
-          </ul>
-        </nav>
+        
+        <div class="header__menu">
+            <ul>
+                <li><a href="#sliderType">슬라이드 영역</a></li>
+                <li><a href="#imageType">이미지 영역</a></li>
+                <li><a href="#imgTextType">이미지 텍스트 영역</a></li>
+                <li><a href="#cardType">카드 영역</a></li>
+                <li><a href="#bannerType">배너 영역</a></li>
+                <li><a href="#textType">텍스트 영역</a></li>
+                <li><a href="#footerType">푸터 영역</a></li>
+            </ul>
+        </div>
         <div class="header__member">
           <a href="#">로그인</a>
         </div>
@@ -65,7 +67,7 @@
     <!-- //headerType -->
 
     <main id="mainType">
-      <section id="sliderType" class="slider__wrap nexon section">
+      <section id="sliderType" class="slider__wrap nexon section scroll">
         <h2 class="blind">슬라이드 영역</h2>
         <div class="slider__inner">
           <div class="slider">
@@ -99,7 +101,7 @@
       </section>
       <!-- //sliderType -->
 
-      <section id="imageType" class="image__wrap nexon section">
+      <section id="imageType" class="image__wrap nexon section scroll">
         <h2>귀여운 동물들</h2>
         <p>🐶 동물을 좋아하는 사람들을 위한 동물 리스트 입니다. 🐱</p>
         <div class="image__inner container">
@@ -125,7 +127,7 @@
       </section>
       <!-- //imageType -->
 
-      <section id="imgTextType" class="image__wrap nexon section gray">
+      <section id="imgTextType" class="image__wrap nexon section gray scroll">
         <h2 class="blind">멍멍 유치원 살펴보기</h2>
         <div class="imgText__inner container">
           <div class="imgText__txt">
@@ -153,7 +155,7 @@
       </section>
       <!-- //imgTextType -->
 
-      <section id="cardType" class="card__wrap nexon section gray">
+      <section id="cardType" class="card__wrap nexon section gray scroll">
         <h2>전시회 리스트 📝</h2>
         <p>전시를 좋아하는 사람들을 위한 전시 리스트</p>
         <div class="card__inner container">
@@ -251,7 +253,7 @@
       </section>
       <!-- //cardType -->
 
-      <section id="bannerType" class="banner__wrap nexon section">
+      <section id="bannerType" class="banner__wrap nexon section scroll">
         <h2 class="blind">배너 영역</h2>
         <div class="banner__inner">
           <h3 class="title">애니멀 유치원</h3>
@@ -266,7 +268,7 @@
       </section>
       <!-- //bannerType -->
 
-      <section id="textType" class="text__wrap section nexon">
+      <section id="textType" class="text__wrap section nexon scroll">
         <span>텍스트 유형01</span>
         <h2 class="mb70">스크립트를 익히는 방법</h2>
         <div class="text__inner container">
@@ -306,7 +308,7 @@
     </main>
     <!-- //mainType -->
 
-    <footer id="footerType" class="footer__wrap nexon section gray">
+    <footer id="footerType" class="footer__wrap nexon section gray scroll">
       <h2 class="blind">푸터 영역</h2>
       <div class="footer__inner container">
         <div class="footer__menu">
@@ -368,46 +370,26 @@
     </footer>
     <!-- //footerType -->
     <script>
-      const scroll = document.querySelector("#mainType");
-
-      window.addEventListener("#mainType", () => {
-        let scrollTop =
-          window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-        //nav 해당 영역 불 들어오기
-        //forEach문으로 스크롤 위치 값이 요소의 offsetTop(요소의 수직 값) 값보다 크거나 같을 경우
-        document.querySelectorAll(".section").forEach((el, index) => {
-          if (scrollTop >= el.offsetTop - 500) {
-            //현 페이지에서 스크롤이 마지막 요소값에 미치지 못하는 오류가 있어 오차를 줄이기 위해 -2를 해주어서 오류를 완화해주었다.
-            document.querySelectorAll("#parallax__nav li").forEach((li) => {
-              li.classList.remove("active"); //li의 전체를 선택하기 위해 forEach문을 통해 li 값을 뽑아내고 li 요소에 선언되어있는 모든 active 선택자를 지워준다.
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //이렇게 3개 중첩해서 사용 가능
+            //forEach 문
+            document.querySelectorAll(".scroll").forEach((e,i)=>{
+                if(scrollTop >=  e.offsetTop-500 ){ //scrollTop이 id값 이상이면
+                    document.querySelectorAll(".header__menu ul li").forEach((li)=>{
+                        li.classList.remove("active");
+                    });
+                    document.querySelector(".header__menu ul li:nth-child("+(i+1)+")").classList.add("active");
+                };
             });
-            //위 조건이 실행된 후 다시 li 요소의 첫번째에게 class로 active를 선언한다.
-            document
-              .querySelector("#parallax__nav li:nth-child(" + (index + 1) + ")")
-              .classList.add("active");
-          }
         });
-
-        //info
-        // scroll.innerText = Math.round(scrollTop);
-        document.querySelector(".scroll span").innerText = Math.ceil(scrollTop);
-
-        //for()
-        for (let i = 1; i <= 9; i++) {
-          document.querySelector(".offset" + i).innerText =
-            document.getElementById("section" + i).offsetTop;
-        }
-        //스크롤 이동
-        document.querySelectorAll("#parallax__nav li a").forEach((li) => {
-          li.addEventListener("click", (e) => {
-            e.preventDefault(); //클릭했을 때 메뉴에 링크 된 영역을 없앰. 즉 a 태그를 눌렀을때도 href 링크로 이동하지 않게함
-            document.querySelector(li.getAttribute("href")).scrollIntoView({  //특정위치로 화면을 이동시키는 메서드 : scrollIntoView 즉 버튼을 눌렀을때 원하는 내용이 있는 위치로 이동시켜야 할 때 사용할 수 있다.
-              behavior: "smooth", //부드럽게 움직이도록 : 스크롤이 움직일 때.
+        document.querySelectorAll(".header__menu li a").forEach( li => {
+            li.addEventListener("click",(e)=>{
+                e.preventDefault();
+                document.querySelector(li.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
             });
-          });
         });
-      });
     </script>
   </body>
 </html>
