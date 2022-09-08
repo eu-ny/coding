@@ -47,7 +47,7 @@
     display: block;
     text-align: center;
     font-size: 16px;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-underline-position: underline;
     margin-bottom: 16px;
 }
