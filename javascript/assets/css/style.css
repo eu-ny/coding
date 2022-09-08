@@ -437,6 +437,86 @@ body {
     text-decoration: none;
 }
 
+/* 결과보기 버튼 */
+.document summary {
+    display: inline-block;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 20px;
+    /* background: linear-gradient(70deg,#ffaf7a 30%, #ff947e 100%); */
+    background: #ffa800;
+    color: #fff;
+    font-weight: 400;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 1px 2px  #ce61e9;
+    transition: all 0.2s;
+}
+.document summary:hover {
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 30px #ffcead;
+}
+.document summary:active {
+    transform: translateX(1px);
+    transform: translateY(2px);
+    box-shadow: none;
+}
+/* 샘플 맥브라우저 바 */
+.document .t_sample {
+    box-shadow: 1px 2px 10px rgb(0 0 0 / 7%);
+    margin-bottom: 40px;
+}
+.document .t_sample > h3 {
+    background: #f6f6f6;
+    height: 30px;
+    padding-top: 13px;
+    margin-bottom: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.document .t_sample > h3 span {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #E96E4C;
+    border-radius: 50%;
+    margin-left: 15px;
+    align-items: center;
+    position: relative;
+}
+.document .t_sample > h3 span::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #E6A935;
+    border-radius: 50%;
+    position: absolute;
+    left: 23px;
+    top: 0;
+}
+.document .t_sample > h3 span::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background-color: #85C33D;
+    border-radius: 50%;
+    position: absolute;
+    left: 45px;
+    top: 0;
+}
+.document .t_sample .svgBox {
+    background: #fff;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.document .t_sample .svgBox>svg{
+    width: 160px;
+    height: 160px;
+    background: #FFEBEE;
+    margin: 6px;
+}
+
 @media (max-width: 800px) {
     body {
         padding: 20px;
