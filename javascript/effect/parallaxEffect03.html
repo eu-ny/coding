@@ -236,13 +236,13 @@
         내릴땐 가려지기
       </p>
       <ul>
-        <li class="active"><a href="parllaxEffect01.html">1</a></li>
-        <li><a href="parllaxEffect02.html">2</a></li>
-        <li><a href="parllaxEffect03.html">3</a></li>
-        <li><a href="parllaxEffect04.html">4</a></li>
-        <li><a href="parllaxEffect05.html">5</a></li>
-        <li><a href="parllaxEffect06.html">6</a></li>
-        <li><a href="parllaxEffect07.html">7</a></li>
+        <li><a href="parallaxEffect01.html">1</a></li>
+        <li><a href="parallaxEffect02.html">2</a></li>
+        <li class="active"><a href="parallaxEffect03.html">3</a></li>
+        <li><a href="parallaxEffect04.html">4</a></li>
+        <li><a href="parallaxEffect05.html">5</a></li>
+        <li><a href="parallaxEffect06.html">6</a></li>
+        <li><a href="parallaxEffect07.html">7</a></li>
       </ul>
     </header>
     <!-- //header -->
@@ -627,26 +627,76 @@
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
-      window.addEventListener("scroll", () => {
+      //01
+      // window.addEventListener("scroll", () => {
+      //   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+      //   if (scrollTop > 0) {
+      //     document.querySelector("#parallax__nav").classList.add("show");
+      //   } else {
+      //     document.querySelector("#parallax__nav").classList.remove("show");
+      //   }
+      //   document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+      // });
+
+      //02
+      //문서 전체 높이 - 브라우저 높이
+      // window.addEventListener("scroll", () => {
+      //   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+      //   if(scrollTop > 7000) {
+      //     document.querySelector("#parallax__top").classList.add("show");
+      //   }else {
+      //     document.querySelector("#parallax__top").classList.remove("show");
+      //   }
+      //   document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+      // });
+
+
+      //top버튼 마지막 스크롤 값에만 보이게 하기
+      window.addEventListener("scroll", ()=>{
         let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-        if (scrollTop > 0) {
+        if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+            document.querySelector("#parallax__top").classList.add("show")
+        }else {
+            document.querySelector("#parallax__top").classList.remove("show")
+        }
+      })
+
+      //top버튼 누르면 올라오게 하기
+      document.querySelector("#parallax__top").addEventListener("click", ()=> {
+        window.scrollTo({left: 0, top: 0, behavior:"smooth"}); //scrollTo : 절대 기준의 스크롤 값 설정으로 0px의 최상단을 기준으로 설정하는 것이다. (By는 현재 스크롤 값 위치와 이동하려는 스크롤위차값의 거리만 설정.)
+      });
+
+      //03 : 스크롤 값을 움직일 때 마다 작동되는 이벤트.
+      //현재 값이 3000인 스크롤을 내릴 경우 값은 4000이 되고 이 때 메뉴가 보이지 않아야 하고 다시 스크롤을 올려서 2000이 될 때 다시 보여야 한다.
+      //현재 값은 계속 변동하고 브라우저의 총 스크롤 값도 계속 변한다. 즉 1초 전이나 30초 전인 과거의 스크롤 값 2000과 현재의 스크롤값 3000을 비교하는 식을 구해야 한다.
+      let nowScroll = true; //실행 0 // let nowScroll = false; //실행 x
+      let lastScroll = 0;
+
+      function scrollProgress(){
+        nowScroll = true;
+
+        // 스크롤값에 약간의 간격을 두기 위함. 버벅거리기 때문에 setInterval로 시간차를 줌
+        setInterval(() => {
+          if(nowScroll){
+               nowScroll = false;
+               hasScroll();
+          }
+        },300); 
+      }
+
+      function hasScroll(){
+        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+        if(scrollTop < lastScroll ){ //현재 스크롤 값과 1초 전의 스크롤 값
           document.querySelector("#parallax__nav").classList.add("show");
-        } else {
+        }else {
           document.querySelector("#parallax__nav").classList.remove("show");
         }
-        document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
-      });
 
+        lastScroll = scrollTop; // 1초 전의 현재 스크롤 값이 마지막 스크롤값이 되어 0.3초마다 스크롤값을 인식하여 값이 변화함.
+      }
 
-      //문서 전체 높이 - 브라우저 높이
-      window.addEventListener("scroll", () => {
-        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-        if(scrollTop > 7000) {
-          document.querySelector("#parallax__top").classList.add("show");
-        }else {
-          document.querySelector("#parallax__top").classList.remove("show");
-        }
-      });
+      window.addEventListener("scroll", scrollProgress); //함수를 바로 불러와서 추출한다.
     </script>
   </body>
 </html>
