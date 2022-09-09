@@ -625,7 +625,7 @@
       el.addEventListener("click", e => {
         e.preventDefault();
 
-        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+        document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"}); //scrollIntoView : 스크롤 이동 속성
         });
 
 
@@ -635,7 +635,7 @@
           document.querySelector("#parallax__info span").innerText = Math.floor(scrollTop);
 
           document.querySelectorAll(".content__item").forEach((e,i) => {
-            if(scrollTop >= e.offsetTop){ //- window.innerHeight/2 브라우저 화면의 반 한 화면의(vh) 스크롤
+            if(scrollTop >= e.offsetTop - window.innerHeight/2){ //- window.innerHeight/2 브라우저 화면의 반 한 화면의(vh) 스크롤
               document.querySelectorAll("#parallax__dot li").forEach(li => {
                 li.classList.remove("active");
                 //해당되는 것들만 선택하여 순서대로 실행

@@ -640,6 +640,7 @@
 
       //02
       //문서 전체 높이 - 브라우저 높이
+      //자바스크립트로 문서 전체 높이 값 구하는 방법 서치해서 알아보기
       // window.addEventListener("scroll", () => {
       //   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
       //   if(scrollTop > 7000) {
@@ -651,15 +652,31 @@
       // });
 
 
+      //window : 현재 화면
       //top버튼 마지막 스크롤 값에만 보이게 하기
-      window.addEventListener("scroll", ()=>{
+      // window.addEventListener("scroll", ()=>{
+      //   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+      //   if(scrollTop + window.innerHeight >= document.body.scrollHeight){
+      //       document.querySelector("#parallax__top").classList.add("show")
+      //   }else {
+      //       document.querySelector("#parallax__top").classList.remove("show")
+      //   }
+      // });
+
+
+
+      //top버튼 마지막 스크롤 값에만 보이게 하기
+      window.addEventListener("scroll", ()=> {
         let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-        if(scrollTop + window.innerHeight >= document.body.scrollHeight){
-            document.querySelector("#parallax__top").classList.add("show")
+        if(scrollTop > window.pageXOffset - ){
+          document.querySelectorAll("#parallax__top").classList.remove("active");
         }else {
-            document.querySelector("#parallax__top").classList.remove("show")
+          document.querySelectorAll("#parallax__top").classList.add("active");
         }
-      })
+      });
+
+
+
 
       //top버튼 누르면 올라오게 하기
       document.querySelector("#parallax__top").addEventListener("click", ()=> {
@@ -673,6 +690,12 @@
       let lastScroll = 0;
 
       function scrollProgress(){
+        //info에 현재 스크롤 위치 값 구현하기
+        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+        document.querySelector('#parallax__info span').innerText = scrollTop;
+
+        
+
         nowScroll = true;
 
         // 스크롤값에 약간의 간격을 두기 위함. 버벅거리기 때문에 setInterval로 시간차를 줌
@@ -686,6 +709,7 @@
 
       function hasScroll(){
         let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+        //console.log("현재 값",scrollTop, "이전 값", lastScroll)
 
         if(scrollTop < lastScroll ){ //현재 스크롤 값과 1초 전의 스크롤 값
           document.querySelector("#parallax__nav").classList.add("show");
