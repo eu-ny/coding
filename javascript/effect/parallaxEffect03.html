@@ -665,9 +665,8 @@
       // });
 
 
-
-      //top버튼 마지막 스크롤 값에만 보이게 하기
-      //문서 전체 높이 - 브라우저 높이( = 마지막 섹션에 스크롤이 위치했을 때  top버튼 띄우기)
+      // 01. top버튼 마지막 스크롤 값에만 보이게 하기
+      // 문서 전체 높이 - 브라우저 높이( = 마지막 섹션에 스크롤이 위치했을 때  top버튼 띄우기)
       window.addEventListener("scroll", ()=> {
         let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
         if(document.documentElement.scrollHeight <= scrollTop + window.innerHeight){
@@ -679,27 +678,25 @@
 
 
 
-
-      //top버튼 누르면 올라오게 하기
+      //02. top버튼 누르면 올라오게 하기
       document.querySelector("#parallax__top").addEventListener("click", ()=> {
         window.scrollTo({left: 0, top: 0, behavior:"smooth"}); //scrollTo : 절대 기준의 스크롤 값 설정으로 0px의 최상단을 기준으로 설정하는 것이다. (By는 현재 스크롤 값 위치와 이동하려는 스크롤위차값의 거리만 설정.)
       });
 
-      //03 : 스크롤 값을 움직일 때 마다 작동되는 이벤트.
-      // 트리거 변수 이용
-      //현재 값이 3000인 스크롤을 내릴 경우 값은 4000이 되고 이 때 메뉴가 보이지 않아야 하고 다시 스크롤을 올려서 2000이 될 때 다시 보여야 한다.
-      //현재 값은 계속 변동하고 브라우저의 총 스크롤 값도 계속 변한다. 즉 1초 전이나 30초 전인 과거의 스크롤 값 2000과 현재의 스크롤값 3000을 비교하는 식을 구해야 한다.
-      let nowScroll = true; //실행 0 // let nowScroll = false; //실행 x
+      // 03.  스크롤 값을 움직일 때 마다 작동되는 이벤트 설정하기
+      // 현재 값이 3000인 스크롤을 내렸을 때 스크롤 값이 3000보다 높아지면 메뉴가 보이지 않아야 하고 다시 스크롤을 올려서 현재 값보다 작아질 때 다시 보여야 한다.
+      // 현재 값은 계속 변동하고 브라우저의 총 스크롤 값도 콘텐츠가 추가될 수록 계속 변한다. 즉 이러한 변화를 고려하여 1초 전이나 30초 전 즉 과거의 스크롤값과 현재의 스크롤값을 비교하는 식을 구해야 한다.
+      let nowScroll = true;   // 트리거 변수 이용 //nowScroll가 true일 때 실행
       let lastScroll = 0;
 
       function scrollProgress(){
-        //info에 현재 스크롤 위치 값 구현하기
+        // info에 현재 스크롤 위치 값 구현하기
         let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
         document.querySelector('#parallax__info span').innerText = Math.ceil(scrollTop);
 
         nowScroll = true;
 
-        // 스크롤값에 약간의 간격을 두기 위함. 버벅거리기 때문에 setInterval로 시간차를 줌
+        // nowScroll = false일 때 hasScroll()함수가 0.3초 마다 실행되도록 설정 : 계속 실행 시 버벅거리기 때문에 스크롤값에 약간의 간격을 두기 위해 setInterval로 시간차를 준 것.
         setInterval(() => {
           if(nowScroll){
                nowScroll = false;

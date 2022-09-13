@@ -6,7 +6,7 @@
 }
 .slider__img {
     /* height: 500px;  밑에 세부 영역 잡기 전에 대충 잡아놓은 영역이므로 지우기 */
-    background: url(../img/slider_type01_01.jpg) no-repeat center / cover;
+    background: url(../img/slider_type01_04.jpg) no-repeat center / cover;
 }
 .slider__img .desc {
     width: 1160px;

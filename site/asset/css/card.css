@@ -1,6 +1,7 @@
 /* cardType */
 .card__inner {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around; /* 중심을 기준으로 하여 정렬에 맞게 모아준다.*/
 }
 .card {
@@ -31,4 +32,48 @@
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
+}
+
+/* 반응형 */
+
+/* 반응형 */
+@media (max-width: 1080px) {
+    .card__inner {
+        justify-content: space-around;
+    }
+    #cardType > h2 {
+        font-size: 40px;
+    }
+    #cardType > p {
+        font-size: 18px;
+    }
+    .card__body .desc {
+        margin-bottom: 16px;
+        /* 3줄효과 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    #cardType > h2 {
+        font-size: 30px;
+    }
+    #cardType > p {
+        font-size: 16px;
+    }
+    .card__inner .card {
+        width: 96%;
+        margin-bottom: 20px;
+    }
+    .card__body .title {
+        font-size: 20px;
+    }
+    .card__body .desc {
+        font-size: 16px;
+    }
 }
