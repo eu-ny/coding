@@ -144,3 +144,9 @@
         margin-right: 10px;
     }
 }
+@media (max-width: 480px) {
+    #headerType {
+        width: 96%;
+        overflow: hidden;
+    }
+}
