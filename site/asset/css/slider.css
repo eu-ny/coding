@@ -86,3 +86,12 @@
 .slider__dot a.stop {
     background-position: -60px -70px;
 }
+
+@media(max-width: 800px){
+    .slider__img .desc h3 {
+        font-size: 60px;
+    }
+    .slider__img .desc p {
+        font-size: 16px;
+    }
+}
