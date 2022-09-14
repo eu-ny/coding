@@ -56,11 +56,15 @@
         flex-wrap: wrap;
     }
     .card {
-        width: 49%;
+        width: 48%;
     }
 
     .card:last-child {
         display: none;
+    }
+
+    .card__body .desc {
+        font-size: 16px;
     }
 }
 @media(max-width: 600px){
@@ -68,7 +72,7 @@
         width: 100%;
     }
 
-    .card:first-child {
+    .card {
         margin-bottom: 20px;
     }
 
@@ -76,7 +80,7 @@
         padding: 20px;
     }
 
-    .card__body .desc {
-
+    .card:last-child {
+        display: inline-block;
     }
 }

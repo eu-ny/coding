@@ -1,4 +1,4 @@
-/* imageType */
+/* imgText Type */
 .imgText__wrap {
     background: rgb(255, 255, 255);
 }
@@ -117,11 +117,12 @@
 }
 @media(max-width: 600px){
     .imgText__txt span {
+        text-align: center;
         font-size: 14px;
         margin-bottom: 10px;
     }
     .imgText__txt h3 {
-        font-size: 30px;
+        font-size: 40px;
     }
 
     .imgText__txt p {
