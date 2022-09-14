@@ -34,32 +34,46 @@
     -webkit-line-clamp: 3;
 }
 
-@media(max-width: 960px){
-    .card__inner {
-        flex-wrap: wrap;
-    }
-    .card {
-        width: 49%;
-    }
+/* 반응형 */
 
-    .card:last-child {
-        display: none;
+/* 반응형 */
+@media (max-width: 1080px) {
+    .card__inner {
+        justify-content: space-around;
+    }
+    #cardType > h2 {
+        font-size: 40px;
+    }
+    #cardType > p {
+        font-size: 18px;
+    }
+    .card__body .desc {
+        margin-bottom: 16px;
+        /* 3줄효과 */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        padding-bottom: 0;
     }
 }
-@media(max-width: 600px){
-    .card {
-        width: 100%;
-    }
 
-    .card:first-child {
+@media (max-width: 768px) {
+    #cardType > h2 {
+        font-size: 30px;
+    }
+    #cardType > p {
+        font-size: 16px;
+    }
+    .card__inner .card {
+        width: 96%;
         margin-bottom: 20px;
     }
-
-    .card__body {
-        padding: 20px;
+    .card__body .title {
+        font-size: 20px;
     }
-
     .card__body .desc {
-
+        font-size: 16px;
     }
 }

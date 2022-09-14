@@ -9,6 +9,7 @@
     height: 370px;
     color: #fff;
     padding: 200px 30px 30px 30px;
+    border-radius: 10px;
     box-sizing: border-box;
 }
 .image.img1 {
@@ -46,6 +47,7 @@
     padding: 10px 20px;
     display: inline-block;
     transition: all 0.3s ease;
+    border-radius: 20px;
 }
 .image__btn.yellow {
     background-color: #687553;

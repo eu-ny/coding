@@ -22,9 +22,6 @@
 .image__title {
     font-size: 32px;
     margin-bottom: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 .image__desc {
     font-size: 16px;
@@ -56,22 +53,25 @@
 }
 
 /* 반응형 */
-@media(max-width: 960px){}
-@media(max-width: 600px){
-    .image__inner {
-        flex-direction: column;
-    }
-    .image {
-        width: 100%;
-        padding: 205px 20px 20px 20px;
-    }
-    .image:first-child {
+@media (max-width: 1080px) {
+    .image__inner .image {
+        margin: 0 auto;
+        width: 96%;
         margin-bottom: 20px;
     }
-    .image__title {
-        font-size: 24px;
+    #imageType > h2 {
+        font-size: 40px;
     }
-    .image__desc {
+    #imageType > p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    #imageType > h2 {
+        font-size: 30px;
+    }
+    #imageType > p {
         font-size: 16px;
     }
 }

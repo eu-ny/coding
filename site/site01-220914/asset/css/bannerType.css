@@ -32,21 +32,11 @@
     text-decoration: underline;
 }
 
-@media(max-width: 960px){
-    .banner__inner {
-        padding: 100px 0;
-    }
-}
-@media(max-width: 600px){
-    .banner__inner {
-        padding: 80px 0;
-    }
+@media (max-width: 768px) {
     .banner__inner .title {
         font-size: 30px;
-        margin-bottom: 20px;
     }
     .banner__inner .desc {
         font-size: 16px;
-        margin-bottom: 40px;
     }
 }

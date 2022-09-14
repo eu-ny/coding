@@ -9,13 +9,13 @@
     color: #fff;
 }
 .banner__inner .title {
-    font-size: 50px;
+    font-size: 60px;
     line-height: 1;
-    font-weight: 300;
+    font-weight: 600;
     margin-bottom: 40px;
 }
 .banner__inner .desc {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.5;
     font-weight: 300;
     margin-bottom: 70px;

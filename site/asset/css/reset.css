@@ -132,3 +132,7 @@ img, fieldset, button {
     text-indent: -99999px;
 }
 /* 가로모드 폰트 크기 초기화 */
+
+#headerType {
+    display: none;
+}

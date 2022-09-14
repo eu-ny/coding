@@ -1,4 +1,12 @@
 /* Text__inner */
+.text__wrap span {
+    display: block;
+    color: #666;
+    text-align: center;
+    font-size: 16px;
+    text-underline-position: underline;
+    margin-bottom: 16px;
+}
 .text__inner {
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +61,7 @@
     background-position: -300px 0;
 }
 .text__desc {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     line-height: 1.4;
     overflow: hidden;

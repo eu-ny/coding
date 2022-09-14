@@ -47,13 +47,13 @@
     word-break: keep-all;
     line-height: 1.5;
 }
-.section span {
+/* .section span {
     display: block;
     text-align: center;
     font-size: 16px;
     text-underline-position: underline;
     margin-bottom: 16px;
-}
+} */
 
 /* font */
 .nexon {
