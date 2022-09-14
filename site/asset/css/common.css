@@ -19,10 +19,12 @@
 }
 
 /* 컨테이너 */
-.container {                   /* 부모 컨테이너 박스를 만들어 가로 값을 고정시킨다. */
-    width: 1160px;
+.container {
+    width: 100%;
+    max-width: 1160px;
     padding: 0 20px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 /* 섹션 공통 요소 */
@@ -41,12 +43,14 @@
     color: #666;
     text-align: center;
     margin-bottom: 70px;
+    padding: 0 20px;
+    word-break: keep-all;
+    line-height: 1.5;
 }
 .section span {
     display: block;
     text-align: center;
     font-size: 16px;
-    /* text-decoration: underline; */
     text-underline-position: underline;
     margin-bottom: 16px;
 }
@@ -81,25 +85,26 @@
 .mt60 {margin-top: 60px !important;}
 .mt70 {margin-top: 70px !important;}
 
-/* 반응형 container */
-@media (max-width: 1250px) {
-    .container {
-        width: 96%;
-        padding: 0;
+@media (max-width: 960px) {
+    .section {
+        padding: 100px 0;
+    }
+    .section > h2 {
+        font-size: 40px;
+    }
+    .section > p {
+        font-size: 18px;
     }
 }
-
-@media (max-width: 1080px) {
-    .container {
-        width: 96%;
+@media (max-width: 600px) {
+    .section {
+        padding: 80px 0;
     }
-}
-
-@media (max-width: 480px) {
-    .container {
-        width: 96%;
+    .section > h2 {
+        font-size: 30px;
     }
-    body {
-        width: 100%;
+    .section > p {
+        font-size: 16px;
+        margin-bottom: 50px;
     }
 }
