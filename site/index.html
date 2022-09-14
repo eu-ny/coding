@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="asset/css/reset.css" />
     <link rel="stylesheet" href="asset/css/common.css" />
 
-    <!-- CSS(섹션) -->
+    <!-- CSS section -->
     <link rel="stylesheet" href="asset/css/card.css" />
     <link rel="stylesheet" href="asset/css/image.css" />
     <link rel="stylesheet" href="asset/css/text.css" />
@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="asset/css/footer.css" />
     <link rel="stylesheet" href="asset/css/slider.css" />
 
+    <!-- CSS swiper -->
     <link rel="stylesheet" href="asset/css/swiper.css"/>
   </head>
   <body>
@@ -352,6 +353,7 @@
         </div>
       </section>
       <!-- //textType -->
+
     </main>
     <!-- //mainType -->
 
@@ -416,8 +418,26 @@
       </div>
     </footer>
     <!-- //footerType -->
+
     <script src="../site/asset/js/swiper-bundle.min.js"></script>
-    <!-- <script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+          navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+          },
+          autoplay: {
+              delay: 2000,
+          },
+          pagination: {
+              el: ".swiper-pagination",
+              type: 'bullets',
+          },
+      });
+    </script>
+    <!-- //swiper script -->
+
+    <script>
         window.addEventListener("scroll", () => {
             let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop; //이렇게 3개 중첩해서 사용 가능
             //forEach 문
@@ -438,21 +458,7 @@
                 });
             });
         });
-    </script> -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-          navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-          },
-          autoplay: {
-              delay: 2000,
-          },
-          pagination: {
-              el: ".swiper-pagination",
-              type: 'bullets',
-          },
-      });
     </script>
+     <!-- //scroll script -->
   </body>
 </html>
