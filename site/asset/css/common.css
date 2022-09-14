@@ -94,3 +94,12 @@
         width: 96%;
     }
 }
+
+@media (max-width: 480px) {
+    .container {
+        width: 96%;
+    }
+    body {
+        width: 100%;
+    }
+}
