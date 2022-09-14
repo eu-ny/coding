@@ -32,6 +32,7 @@
     text-decoration: underline;
 }
 
+/* 반응형 */
 @media(max-width: 960px){
     .banner__inner {
         padding: 100px 0;

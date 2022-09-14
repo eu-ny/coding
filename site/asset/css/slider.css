@@ -162,6 +162,7 @@
     background-position: 0 -70px !important;
 }
 
+/* 반응형 */
 @media (max-width: 960px){
     .swiper-slide .desc {
         width: 100%;
