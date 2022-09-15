@@ -478,17 +478,18 @@
             List.addEventListener("click", ()=>{
                 btnMenu.classList.remove("active");
                 btnHam.classList.remove("active");
+                document.body.classList.remove("fixed");
             })
         })
 
-        // window.addEventListener("resize", () => {
-        //     let width = window.innerWidth;
-        //     if (width > 1300) {
-        //         document.body.classList.remove("fixed");
-        //         btnMenu.classList.remove("active");
-        //         btnHam.classList.remove("active");
-        //     }
-        // });
+        window.addEventListener("resize", () => {
+            let width = window.innerWidth;
+            if (width > 1300) {
+                document.body.classList.remove("fixed");
+                btnMenu.classList.remove("active");
+                btnHam.classList.remove("active");
+            }
+        });
 
         document.querySelectorAll("a").forEach(li => {
             li.addEventListener("click", (e) => {

@@ -67,6 +67,9 @@
 }
 
 /* fixed */
+body {
+    overflow: overlay;
+}
 body.fixed {
     height: 100vh;
     overflow: hidden;
