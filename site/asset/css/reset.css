@@ -61,6 +61,12 @@ em, address {
     font-style: normal;
 }
 
+/* 가로모드 초기화 */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
 /* link 초기화 */
 a {
     text-decoration: none;
@@ -130,9 +136,4 @@ img, fieldset, button {
     font-size: 0;
     line-height: 0;
     text-indent: -99999px;
-}
-/* 가로모드 폰트 크기 초기화 */
-
-#headerType {
-    display: none;
 }
