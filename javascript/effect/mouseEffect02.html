@@ -88,9 +88,6 @@
             transform: scale(5);
             background: rgba(79, 42, 225, 0.5);
         }
-        .modal__btn.active {
-            transform: scale(2) rotateY(70deg);
-        }
 
     </style>
   </head>
@@ -188,7 +185,14 @@
                     </div>
                     <div class="cont">
                         <div class="active">
-<pre><code class="language-js">
+<pre><code class="language-js">//선택자
+const cursor = document.querySelector(".mouse__cursor"); //첫번째 커서
+const cursor2 = document.querySelector(".mouse__cursor2"); //2번째 커서
+const span = document.querySelectorAll(".mouse__wrap span"); //오버 효과
+const menu = document.querySelectorAll("#header ul li"); // 메뉴 선택
+const srcBtn = document.querySelectorAll(".modal__btn"); //소스보기 버튼 선택
+
+//
 </code></pre>
                         </div>
                         <div>
@@ -215,12 +219,13 @@
     <script src="../assets/js/common.js"> </script>
     <script src="../assets/js/gsap.min.js"></script>
     <script>
-        const cursor = document.querySelector(".mouse__cursor");
-        const cursor2 = document.querySelector(".mouse__cursor2");
+        const cursor = document.querySelector(".mouse__cursor"); //첫번째 커서
+        const cursor2 = document.querySelector(".mouse__cursor2"); //2번째 커서
         const span = document.querySelectorAll(".mouse__wrap span"); //오버 효과
-        const srcBtn = document.querySelector(".modal__btn");
-        const menu = document.querySelectorAll("#header ul");
+        const menu = document.querySelectorAll("#header ul li"); // 메뉴 선택
+        const srcBtn = document.querySelectorAll(".modal__btn"); //소스보기 버튼 선택
 
+        //마우스가 윈도우 브라우저 내에서 움직일 경우 이벤트 발생시키기 (e는 마우스 요소를 의미)
         window.addEventListener("mousemove", e => {
             // 커서 좌표값 할당
             // cursor.style.left = e.pageX -5 + "px";
@@ -229,10 +234,12 @@
             // cursor2.style.top = e.pageY -15 + "px";
 
             // GSAP
+            // 마우스 이벤트가 좀 더 부드럽고 섬세하게 작동되도록 함
             gsap.to(cursor, {duration: 0.15, left: e.pageX -5, top: e.pageY -5});
             gsap.to(cursor2, {duration: 0.5, left: e.pageX -15, top: e.pageY -15});
 
-            //오버효과(화살표 함수 사용 : 화살표 함수에서는 this가 먹히지 않는다. 즉 this를 쓰기 위해선 옛날 문법으로 짜야한다.(펑션))
+            //오버효과(화살표 함수 사용 : 화살표 함수에서는 this가 먹히지 않는다.
+            // 즉 this를 쓰기 위해선 옛날 문법으로 짜야한다.(펑션)
             //mouseenter / mouseover => 자식요소에게 영향을 주는가 즉 이벤트 버블링에 차이가 있다.
             span.forEach(span => {
                 //마우스가 영역 안으로 들어올 때 active 붙이기
@@ -244,22 +251,20 @@
                 span.addEventListener("mouseleave", () => {
                     cursor.classList.remove("active");
                     cursor2.classList.remove("active");
-                });
-                
+                });   
             });
-            //메뉴와 소스보기에도 효과 주기
+
+            //EventTarget으로 변수를 사용하여 메뉴와 소스보기에도 효과 주기
             menu.forEach(menu => {
                 menu.addEventListener("mouseenter", () => {
                     cursor.classList.add("active");
                     cursor2.classList.add("active");
-                });
                 });
                 menu.addEventListener("mouseleave", () => {
                     cursor.classList.remove("active");
                     cursor2.classList.remove("active");
                 });
             });
-
             srcBtn.forEach(srcBtn => {
                 srcBtn.addEventListener("mouseenter", () => {
                     cursor.classList.add("active");
@@ -270,6 +275,18 @@
                     cursor2.classList.remove("active");
                 });
             });
+
+            //2번째 방법 : EventTarget으로 변수를 사용하지 않고 문서에서 바로 선택하기
+            // document.querySelector(".modal__btn").addEventListener("mouseenter", () => {
+            //     cursor.classList.add("active");
+            //     cursor2.classList.add("active");
+            // });
+            // document.querySelector(".modal__btn").addEventListener("mouseleave", () => {
+            //     cursor.classList.remove("active");
+            //     cursor2.classList.remove("active");
+            // });
+
+        });
     </script>
   </body>
 </html>
