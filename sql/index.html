@@ -309,9 +309,9 @@ Query OK, 0 rows affected (0.03 sec)
 </code></pre>
                 <h3 id="intro5-5" class="page-header">테이블 복사</h3>
                 <div class="bs-callout bs-callout-info">
-                    
+                    CREATE TABLE 새로운 테이블명 SELECT * FROM 복사할 테이블 명
                 </div>
-<pre><code class="language-js">
+<pre><code class="language-js">CREATE TABLE member3 SELECT * FROM member;
 </code></pre>
             </div>
             <!-- //intro05 -->
@@ -540,6 +540,58 @@ INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES
           </div>
           <!-- //intro7 -->
 
+            <div class="bs-docs-section">
+              <h2 id="intro8" class="page-header">테이블 합치기</h2>
+              <h2 id="intro8-1" class="page-header">테이블 JOIN</h2>
+              <div class="bs-callout bs-callout-info">
+                SELECT 필드명 FROM 테이블 명 엘리어스 JOIN 연결할 테이블 명 엘리어스 ON (조건문)
+              </div>
+              <h4 class="pt20">/</h4>
+<pre><code class="language-js">create table myMember (
+  myMemberID int(10) unsigned auto_increment,
+  youEmail varchar(40) NOT NULL,
+  youName varchar(20) NOT NULL,
+  youPass varchar(20) NOT NULL,
+  youBirth int(20) NOT NULL,
+  youAge int(5) NOT NULL,
+  youPhone varchar(20) NOT NULL,
+  regTime int(20) NOT NULL,
+  PRIMARY KEY (myMemberID)
+) charset=utf8;
+
+create table myReview (
+  myReviewID int(10) unsigned auto_increment,
+  myMemberID int(10) unsigned,
+  youText tinytext NOT NULL,
+  regTime int(20) NOT NULL,
+  PRIMARY KEY (myReviewID)
+) charset=utf8;
+
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('webstoryboy@naver.com','황상연','1234','19990303','20','01000000000','1234567');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('thdtjdgml415@naver.com', '송성희', '1234', '19970415','20','01000000000','1234567');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('mo0647@naver.com', '김민정', '1234', '19970530', '20','01000000000','1234567');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('tjrwnsrkdtj@naver.com', '김석준', '1234', '19941009', '20','01000000000','1234567');
+INSERT INTO myMember(youEmail, youName, youPass, youBirth, youAge, youPhone, regTime) VALUES('jwor124@naver.com', '정은비', '1234', '19990303', '20','01000000000','1234567');
+
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES("1", "정말 감사합니다. 너무 좋네요!", "1234567");
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES("3", "이거 별루네요~~ 사지마 너무 좋네요!", "1234567");
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES("2", "안녕하세요. 너무 좋네요!", "1234567");
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES("3", "가성비 짱. 너무 좋네요!", "1234567");
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES("4", "올드합니다. 너무 좋네요!", "1234567");
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES("5", "에잉 비추비추.... 너무 좋네요!", "1234567");
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES("2", "오호라 강추강추. 너무 좋네요!", "1234567");
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES("3", "정말 감사합니다. 너무 좋네요!", "1234567");
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES("4", "훌륭합니다... 너무 좋네요!", "1234567");
+INSERT INTO myReview(myMemberID, youText, regTime) VALUES("5", "대박대박. 너무 좋네요!", "1234567");
+
+SELECT m.youName, m.youEmail, r.youText, r.regTime FROM myMember m JOIN myReview r ON (m.myMemberID = r.myMemberID) ORDER BY myReviewID DESC LIMIT 5;
+</code></pre>
+              <h4 class="pt20"></h4>
+<pre><code class="language-js">
+</code></pre>
+          </div>
+          <!-- //intro8 -->
+
         </div>
         <!-- //col-md-9 -->
         <div class="col-md-3">
@@ -579,7 +631,7 @@ INSERT INTO member(youEmail, youName, youPass, youBirth, youAge, regTime) VALUES
                         <li><a href="#intro7-2">필드 수정하기</a></li>
                         <li><a href="#intro7-3">필드 삭제하기</a></li>
                     </ul></li>
-                    <li><a href="#intro8">테이블 JOIN</a></li>
+                    <li><a href="#intro8">테이블 합치기</a></li>
                 </ul>
             </div>
         </div>
