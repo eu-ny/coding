@@ -1,37 +1,10 @@
-const sliderWrap = document.querySelector(".slider__wrap");
-const sliderImg = document.querySelector(".slider__img");   //보여지는 영역
-const sliderInner = document.querySelector(".slider__inner"); //움직이는 영역
-const slider = document.querySelectorAll(".slider");      //각각의 이미지
-const sliderBtn = document.querySelector("slider__btn"); //버튼
-const sliderBtnPrev= document.querySelector(".prev"); // 왼쪽버튼
-const sliderBtnNext = document.querySelector(".next"); // 오른쪽 버튼
-
-let currentIndex = 0; //현재 보이는 이미지 : 마크업 순서대로 0번부터 4번
-let sliderCount = slider.length;    //이미지 갯수
-let sliderWidth = sliderImg.offsetWidth; //이미지 가로값
-
-//이미지 움직이는 영역
-//gotoSlider 함수에 num매개변수를 설정하고 sliderInner 선택자에 에니메이션 속성을 부여한다.
-//translateX X축으로 -sliderWidth * num 만큼 영역을 이동하도록 한다. : 여기서 -를 붙은 이유는 왼쪽으로 움직이게 하기 위함!
-//왜 매개변수를 쓰는 가? : 반복 시키기 위함
-function gotoSlider(num){
-    sliderInner.style.transition = "all 400ms";
-    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
-    currentIndex = num; // 보이는 이미지가 바뀌도록 설정
-}
-
-//완쪽 버튼 클릭
-//43210
-//sliderCount(이미지 갯수 : 6개) + currentIndex(현재 이미지의 순서 : 4) -1 == 9
-// 9 % 5 == 나머지 값은 4이므로 4부터 순서대로 돌아간다.
-sliderBtnPrev.addEventListener("click", () =&gt; {
-    let prevIndex = (sliderCount + currentIndex -1) % sliderCount; //0번이 되었을 때 5%5 ==0이 되므로 계속 해서 반복하는 것.
-    gotoSlider(prevIndex);
-});
-
-//오른쪽 버튼 클릭
-//01234
-sliderBtnNext.addEventListener("click", () =&gt; {
-    let nextIndex = (currentIndex +1) % sliderCount; //5 % 5의 나머지 값이 0이기 때문에 다시 0번째 순서로 넘어가는 것.
-    gotoSlider(nextIndex);
-});
+create table member2 (
+        myMemberID int(10) unsigned auto_increment,
+        youEmail varchar(40) NOT NULL,
+        youName varchar(20) NOT NULL,
+        youPass varchar(20) NOT NULL,
+        youBirth int(20) NOT NULL,
+        youAge int(5) NOT NULL,
+        regTime int(20) NOT NULL,
+        PRIMARY KEY (myMemberID)
+    ) charset=utf8;
