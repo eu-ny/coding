@@ -23,11 +23,15 @@
       #parallax__nav {
         position: fixed;
         right: 20px;
-        top: 20px;
+        top: -200px;
         z-index: 2000;
         background-color: rgba(95, 95, 95, 0.4);
         padding: 20px 30px;
         border-radius: 50px;
+        transition: top 0.4s ease;
+      }
+      #parallax__nav.show {
+        top: 20px;
       }
 
       #parallax__nav li {
@@ -151,22 +155,7 @@
         margin-right: -4vw;
       }
 
-      #parallax__info {
-        position: fixed;
-        left: 20px;
-        bottom: 20px;
-        z-index: 2000;
-        background: rgba(0, 0, 0.4);
-        color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-      }
-
-      #parallax__info li,
-      .scrollTop {
-        line-height: 1.4;
-      }
-
+      /* 반응형 */
       @media (max-width: 800px) {
         #parallax__cont {
           margin-top: 70vw;
@@ -194,30 +183,28 @@
         #parallax__nav li.active a {
           border-radius: 5px;
         }
-        #parallax__info {
-          left: 10px;
-          bottom: 10px;
-        }
       }
     </style>
   </head>
   <body>
     <header id="header">
-      <h1><a href="parallaxEffect.html">Javascript Parallax Effect01</a></h1>
-      <p>페럴렉스 이펙트 - 메뉴 이동</p>
+      <h1><a href="parallaxEffect.html">Javascript Parallax Effect04</a></h1>
+      <p>
+        페럴렉스 이펙트 - 숨김 메뉴 : 나타내기
+      </p>
       <ul>
-        <li class="active"><a href="parallaxEffect01.html">1</a></li>
+        <li><a href="parallaxEffect01.html">1</a></li>
         <li><a href="parallaxEffect02.html">2</a></li>
         <li><a href="parallaxEffect03.html">3</a></li>
         <li><a href="parallaxEffect04.html">4</a></li>
-        <li><a href="parallaxEffect05.html">5</a></li>
+        <li class="active"><a href="parallaxEffect05.html">5</a></li>
         <li><a href="parallaxEffect06.html">6</a></li>
         <li><a href="parallaxEffect07.html">7</a></li>
       </ul>
     </header>
     <!-- //header -->
 
-    <nav id="parallax__nav">
+    <nav id="parallax__nav" class="show">
       <ul>
         <li class="active"><a href="#section1">메뉴1</a></li>
         <li><a href="#section2">메뉴2</a></li>
@@ -230,6 +217,7 @@
         <li><a href="#section9">메뉴9</a></li>
       </ul>
     </nav>
+    <!-- //parallax__nav -->
 
     <main id="parallax__cont">
       <div id="contents">
@@ -349,23 +337,6 @@
       </div>
     </main>
     <!-- //main -->
-
-    <aside id="parallax__info">
-      <div class="scroll">scrollTop : <span>0</span>px</div>
-      <div class="info">
-        <ul>
-          <li>#section1 offset() : <span class="offset1">0</span>px</li>
-          <li>#section2 offset() : <span class="offset2">0</span>px</li>
-          <li>#section3 offset() : <span class="offset3">0</span>px</li>
-          <li>#section4 offset() : <span class="offset4">0</span>px</li>
-          <li>#section5 offset() : <span class="offset5">0</span>px</li>
-          <li>#section6 offset() : <span class="offset6">0</span>px</li>
-          <li>#section7 offset() : <span class="offset7">0</span>px</li>
-          <li>#section8 offset() : <span class="offset8">0</span>px</li>
-          <li>#section9 offset() : <span class="offset9">0</span>px</li>
-        </ul>
-      </div>
-    </aside>
 
     <footer id="footer">
       <div class="modal__wrap">
@@ -548,15 +519,15 @@
             </div>
             <div class="cont">
               <div class="active">
-                <pre><code class="language-js">
+<pre><code class="language-js">
 </code></pre>
               </div>
               <div>
-                <pre><code class="language-html">
+<pre><code class="language-html">
 </code></pre>
               </div>
               <div>
-                <pre><code class="language-css">
+<pre><code class="language-css">
 </code></pre>
               </div>
             </div>
@@ -593,122 +564,7 @@
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
     <script>
-      const scroll = document.querySelector("#parallax__info .scroll span");
 
-      window.addEventListener("scroll", () => {
-        //스크롤 수직 위치값을 불러오는 3가지 방법 : pageYOffset / scrollY / scrollTop : 3가지 속성을 모두 사용해야 모든 브라우저에서 위치값을 가져올 수 있다.
-        // let scrollTop = window.pageYOffset;                  - 1
-        // let scrollTop = window.scrollY;                      - 2
-        // let scrollTop = document.documentElement.scrollTop;  - 3
-        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-
-        // if(scrollTop >= document.getElementById("section1").offsetTop){
-        //   document.querySelectorAll("#parallax__nav li").forEach(li => {
-        //     li.classList.remove("active");
-        //   });
-        //   document.querySelector("#parallax__nav li:nth-child(1)").classList.add("active");
-        // }
-        // if(scrollTop >= document.getElementById("section2").offsetTop){
-        //   document.querySelectorAll("#parallax__nav li").forEach(li => {
-        //     li.classList.remove("active");
-        //   });
-        //   document.querySelector("#parallax__nav li:nth-child(2)").classList.add("active");
-        // }
-        // if(scrollTop >= document.getElementById("section3").offsetTop){
-        //   document.querySelectorAll("#parallax__nav li").forEach(li => {
-        //     li.classList.remove("active");
-        //   });
-        //   document.querySelector("#parallax__nav li:nth-child(3)").classList.add("active");
-        // }
-        // if(scrollTop >= document.getElementById("section4").offsetTop){
-        //   document.querySelectorAll("#parallax__nav li").forEach(li => {
-        //     li.classList.remove("active");
-        //   });
-        //   document.querySelector("#parallax__nav li:nth-child(4)").classList.add("active");
-        // }
-        // if(scrollTop >= document.getElementById("section5").offsetTop){
-        //   document.querySelectorAll("#parallax__nav li").forEach(li => {
-        //     li.classList.remove("active");
-        //   });
-        //   document.querySelector("#parallax__nav li:nth-child(5)").classList.add("active");
-        // }
-        // if(scrollTop >= document.getElementById("section6").offsetTop){
-        //    document.querySelectorAll("#parallax__nav li").forEach(li => {
-        //     li.classList.remove("active");
-        //   });
-        //   document.querySelector("#parallax__nav li:nth-child(6)").classList.add("active");
-        // }
-        // if(scrollTop >= document.getElementById("section7").offsetTop){
-        //    document.querySelectorAll("#parallax__nav li").forEach(li => {
-        //     li.classList.remove("active");
-        //   });
-        //   document.querySelector("#parallax__nav li:nth-child(7)").classList.add("active");
-        // }
-        // if(scrollTop >= document.getElementById("section8").offsetTop){
-        //    document.querySelectorAll("#parallax__nav li").forEach(li => {
-        //     li.classList.remove("active");
-        //   });
-        //   document.querySelector("#parallax__nav li:nth-child(8)").classList.add("active");
-        // }
-        // if(scrollTop >= document.getElementById("section9").offsetTop){
-        //    document.querySelectorAll("#parallax__nav li").forEach(li => {
-        //     li.classList.remove("active");
-        //   });
-        //   document.querySelector("#parallax__nav li:nth-child(9)").classList.add("active");
-        // }
-
-        // for(let i=1; i<=9; i++){
-        //   if(scrollTop >= document.getElementById("section"+i).offsetTop){
-        //     document.querySelectorAll("#parallax__nav li").forEach(li => {
-        //       li.classList.remove("active");
-        //     });
-        //     document.querySelector("#parallax__nav li:nth-child("+i+")").classList.add("active");
-        //   }
-        // }
-
-        // forEach
-        
-        //forEach문으로 스크롤 위치 값이 요소의 offsetTop(요소의 수직 값) 값보다 크거나 같을 경우 
-        document.querySelectorAll(".content__item").forEach((el, index) => {
-          if (scrollTop >= el.offsetTop -2) { //현 페이지에서 스크롤이 마지막 요소값에 미치지 못하는 오류가 있어 오차를 줄이기 위해 -2를 해주어서 오류를 완화해주었다.
-            document.querySelectorAll("#parallax__nav li").forEach((li) => {
-              li.classList.remove("active"); //li의 전체를 선택하기 위해 forEach문을 통해 li 값을 뽑아내고 li 요소에 선언되어있는 모든 active 선택자를 지워준다.
-            });
-            //위 조건이 실행된 후 다시 li 요소의 첫번째에게 class로 active를 선언한다.
-            document.querySelector("#parallax__nav li:nth-child(" + (index + 1) + ")").classList.add("active");
-          }
-        });
- 
-        //info
-        // scroll.innerText = Math.round(scrollTop);
-        document.querySelector(".scroll span").innerText = Math.ceil(scrollTop);
-
-        // document.querySelector(".offset1").innerText = document.getElementById("section1").offsetTop;
-        // document.querySelector(".offset2").innerText = document.getElementById("section1").offsetTop;
-        // document.querySelector(".offset3").innerText = document.getElementById("section1").offsetTop;
-        // document.querySelector(".offset4").innerText = document.getElementById("section1").offsetTop;
-        // document.querySelector(".offset5").innerText = document.getElementById("section1").offsetTop;
-        // document.querySelector(".offset6").innerText = document.getElementById("section1").offsetTop;
-        // document.querySelector(".offset7").innerText = document.getElementById("section1").offsetTop;
-        // document.querySelector(".offset8").innerText = document.getElementById("section1").offsetTop;
-        // document.querySelector(".offset9").innerText = document.getElementById("section1").offsetTop;
-
-        //for()
-        for (let i = 1; i <= 9; i++) {
-          document.querySelector(".offset" + i).innerText = document.getElementById("section" + i).offsetTop;
-        }
-
-        //스크롤 이동
-        document.querySelectorAll("#parallax__nav li a").forEach((li) => {
-          li.addEventListener("click", (e) => {
-            e.preventDefault(); //클릭했을 때 메뉴에 링크 된 영역을 없앰. 즉 a 태그를 눌렀을때도 href 링크로 이동하지 않게함
-            document.querySelector(li.getAttribute("href")).scrollIntoView({ //특정위치로 화면을 이동시키는 메서드 : scrollIntoView 즉 버튼을 눌렀을때 원하는 내용이 있는 위치로 이동시켜야 할 때 사용할 수 있다.
-              behavior: "smooth", //부드럽게 움직이도록 : 스크롤이 움직일 때.
-            });
-          });
-        });
-      });
     </script>
   </body>
 </html>

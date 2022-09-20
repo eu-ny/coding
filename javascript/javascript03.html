@@ -70,10 +70,11 @@
                     <li><a href="#sample21">21. 파라미터 함수</a></li>
                     <li><a href="#sample22">22. 아규먼트 함수</a></li>
                     <li><a href="#sample23">23. 재귀 함수</a></li>
-                    <li><a href="#sample24">24. 콜백 함수</a></li>
+                    <li><a href="#sample24">24. 콜백 함수 : 다른 함수에 인수가 넘겨지는 함수</a></li>
                     <li><a href="#sample25">25. 콜백 함수 : 반복문</a></li>
                     <li><a href="#sample26">26. 콜백 함수 : 동기 / 비동기</a></li>
-                    <li><a href="#sample27">27. 내부 함수</a></li>
+                    <li><a href="#sample26">26. promise 함수 : 콜백함수를 정리하기 위해 사용하는 함수</a></li>
+                    <li><a href="#sample27">27. 내부 함수 : 스코프, 클로져와 관련돤 함수</a></li>
                     <li><a href="#sample28">28. 클래스</a></li>
                 </ul>
             </div>
@@ -779,7 +780,7 @@ func();
                 <!-- //sample23 -->
 
                 <div id="sample24" class="sample">
-                    <h3>24. 함수 유형 : 콜백 함수 : 다른 함수에 인수로 넘겨지는 함수 : 정석 버젼~!</h3>
+                    <h3>24. 함수 유형 : 콜백 함수 : 다른 함수에 인수로 넘겨지는 함수 : 정석 버젼~! 📌</h3>
                     <p class="t_desc">
                         로딩 소스가 실행이 된 후 그 다음에 함수를 실행시키고 싶을 때 콜백함수를 사용한다.<br>
                         2번(로딩소스)가 끝나고 1번 실행 : 즉 첫번째 함수가 실행 -> 두번째 함수가 실행 : 즉 순서대로 실행
@@ -809,7 +810,7 @@ func();
                 <!-- //sample24 -->
 
                 <div id="sample25" class="sample">
-                    <h3>25. 함수 유형 : 콜백 함수 : 반복문</h3>
+                    <h3>25. 함수 유형 : 콜백 함수 : 반복문 📌</h3>
                     <p class="t_desc">
                         콜백함수로 반복문을 실행 시키기
                     </p>
@@ -837,10 +838,88 @@ func();
                 <!-- //sample25 -->
 
                 <div id="sample26" class="sample">
-                    <h3>26. 함수 유형 : 콜백 함수 : 동기/비동기</h3>
+                    <h3>26. 함수 유형 : 콜백 함수 : 동기/비동기 📌</h3>
                     <p class="t_desc">
+                        콜백함수 사용 시 : 원래 b가 먼저 실행된 후 a가 실행되어야 하지만 매개변수로 콜백을 사용하여서 실행문인 것 처럼 사용한다. <br> 그러면 a가 먼저 실행된 후 b가 실행된다. 즉 b도 3초 뒤에 a가 끝나고 b가 실행되는 것<br>
+                        콜백함수의 용도는 순차적으로 코드를 실행시키기 위함. 콜백함수에 사용할 수 있는 함수는 대표적으로 이벤트 리스너와 셋타임아웃 등이 있다.<br>
+                        콜백함수의 원리 : funcA 실행 해라. 그러나 실행 후 파리미터로 콜백을 넣어서 : 굳이 콜백 함수를 사용해서 순차적으로 사용하는 이유는 협업을 했을 때 각각 출력하고자 하는 값이 다를 때 콜백함수를 이용해서 원하는대로 순서를 바꿀 수 있기 때문.
                     </p>
-<pre><code class="language-js">
+<pre><code class="language-js">function funcA(){
+    setTimeout(() =&gt; {
+       console.log("funcA가 실행되었습니다.");
+    },1000); //1초 후에 실행됨.
+}
+function funcB(){
+    console.log("funcB가 실행되었습니다.");
+}
+
+funcA();
+funcB();
+
+//b
+//a
+</code></pre>
+<pre><code class="language-js">function funcA(callback){
+    setTimeout(() =&gt; {
+       console.log("funcA가 실행되었습니다.");
+       callback(); //실행문인 것처럼 훼이크
+    }, 1000); //1초 후에 실행됨.
+}
+function funcB(){
+    console.log("funcB가 실행되었습니다.");
+}
+funcA(function(){
+    funcB();
+});
+
+//a
+//b
+
+{
+    function funcA(callback){
+        setTimeout(() =&gt; {
+           console.log("funcA가 실행되었습니다.");
+           callback();
+        }, 1000);
+    }
+    function funcB(callback){
+        setTimeout(() =&gt; {
+           console.log("funcB가 실행되었습니다.");
+           callback();
+        }, 1000);
+    }
+    function funcC(callback){
+        setTimeout(() =&gt; {
+           console.log("funcC가 실행되었습니다.");
+           callback();
+        }, 1000);
+    }
+    function funcD(callback){
+        setTimeout(() =&gt; {
+           console.log("funcD가 실행되었습니다.");
+           callback();
+        }, 1000);
+    }
+    function funcE(){
+        console.log("funcE가 실행되었습니다.");
+    }
+    funcA(function(){
+        funcB(function(){
+            funcC(function(){
+                funcD(function(){
+                    funcE();
+                });
+            });
+        });
+    });
+
+    //a
+    //b
+    //c
+    //d
+    //e
+}
+
 </code></pre>
                     <div class="result">
                         <details>
@@ -851,7 +930,7 @@ func();
                 <!-- //sample26 -->
 
                 <div id="sample27" class="sample">
-                    <h3>27. 함수 유형 : 콜백 함수 : 동기/비동기</h3>
+                    <h3>27. 함수 유형 : promise함수 : </h3>
                     <p class="t_desc">
                     </p>
 <pre><code class="language-js">
@@ -863,6 +942,45 @@ func();
                     </div>
                 </div>
                 <!-- //sample27 -->
+
+                <div id="sample28" class="sample">
+                    <h3>28. 함수 유형 : 내부함수 : 스코프, 클로저 💛 나중에 다시 배움</h3>
+                    <p class="t_desc">
+                    </p>
+<pre><code class="language-js">  function func(){
+    function funcA(){
+        document.write("함수가 실행되었습니다.");
+    }
+    funcA();
+
+    function funcB(){
+        document.write("함수가 실행되었습니다.");
+    }
+    funcB();
+}
+func();
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample28 -->
+
+                <div id="sample29" class="sample">
+                    <h3>29. 함수 유형 : 클래스</h3>
+                    <p class="t_desc">
+                    </p>
+<pre><code class="language-js">
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample29 -->
 
 
 
@@ -1340,19 +1458,164 @@ func();
         // }
 
         //콜백함수 : 동기 / 비동기
+        // {
+        //     function funcA(){
+        //         document.write("funcA가 실행되었습니다. <br>");
+        //     }
+        //     function funcB(){
+        //         document.write("funcB가 실행되었습니다. <br>");
+        //     }
+
+        //     funcA();
+        //     funcB();
+
+        //     // funcA가 실행되었습니다.
+        //     // funcB가 실행되었습니다.
+        // }
+
+        //setTimeout을 걸었을 때 : 로딩소스
+        // {
+        //     function funcA(){
+        //         setTimeout(() => {
+        //            console.log("funcA가 실행되었습니다. <br>");
+        //         },1000); //1초 후에 실행됨.
+        //     }
+        //     function funcB(){
+        //         console.log("funcB가 실행되었습니다. <br>");
+        //     }
+
+        //     funcA();
+        //     funcB();
+
+        //     //b
+        //     //a
+
+        // }
+
+        // 콜백함수 사용 시 : 원래 b가 먼저 실행된 후 a가 실행되어야 하지만 매개변수로 콜백을 사용하여서 실행문인 것 처럼 사용한다. <br> 그러면 a가 먼저 실행된 후 b가 실행된다. 즉 b도 3초 뒤에 a가 끝나고 b가 실행되는 것
+        // 콜백함수의 용도는 순차적으로 코드를 실행시키기 위함. 콜백함수에 사용할 수 있는 함수는 대표적으로 이벤트 리스너와 셋타임아웃 등이 있다.
+        // 콜백함수의 원리 : funcA 실행 해라. 그러나 실행 후 파리미터로 콜백을 넣어서 : 굳이 콜백 함수를 사용해서 순차적으로 사용하는 이유는 협업을 했을 때 각각 출력하고자 하는 값이 다를 때 콜백함수를 이용해서 원하는대로 순서를 바꿀 수 있기 때문.
+        // {
+        //     function funcA(callback){
+        //         setTimeout(() => {
+        //            console.log("funcA가 실행되었습니다. <br>");
+        //            callback(); //실행문인 것처럼 훼이크
+        //         }, 1000); //1초 후에 실행됨.
+        //     }
+        //     function funcB(){
+        //         console.log("funcB가 실행되었습니다. <br>");
+        //     }
+        //     funcA(function(){
+        //         funcB();
+        //     });
+
+        //     //a
+        //     //b
+        // }
+        // {
+        //     function funcA(callback){
+        //         setTimeout(() => {
+        //            console.log("funcA가 실행되었습니다. <br>");
+        //            callback();
+        //         }, 1000);
+        //     }
+        //     function funcB(callback){
+        //         setTimeout(() => {
+        //            console.log("funcB가 실행되었습니다. <br>");
+        //            callback();
+        //         }, 1000);
+        //     }
+        //     function funcC(callback){
+        //         setTimeout(() => {
+        //            console.log("funcC가 실행되었습니다. <br>");
+        //            callback();
+        //         }, 1000);
+        //     }
+        //     function funcD(callback){
+        //         setTimeout(() => {
+        //            console.log("funcD가 실행되었습니다. <br>");
+        //            callback();
+        //         }, 1000);
+        //     }
+        //     function funcE(){
+        //         console.log("funcE가 실행되었습니다. <br>");
+        //     }
+        //     funcA(function(){
+        //         funcB(function(){
+        //             funcC(function(){
+        //                 funcD(function(){
+        //                     funcE();
+        //                 });
+        //             });
+        //         });
+        //     });
+
+        //     //a
+        //     //b
+        //     //c
+        //     //d
+        //     //e
+        // }
+    
+        //내부함수 : 함수안에 함수가 있는데 그 안에 변수값을 불러오냐 마냐의 차이
+        // {
+        //     function func(){
+        //         function funcA(){
+        //             document.write("함수가 실행되었습니다.");
+        //         }
+        //         funcA();
+
+        //         function funcB(){
+        //             document.write("함수가 실행되었습니다.");
+        //         }
+        //         funcB();
+        //     }
+        //     func();
+        // }
+
+        //29 클래스 : 내부함수 변경 , 객체 생성자 사용 (객체생성자의 개념을 클래스 함수에 그대로 사용할 수 있다.)
+        //마음대로 변수를 사용할 수 있다.
         {
-            function funcA(){
-                document.write("funcA가 실행되었습니다. <br>");
+            class study {
+                constructor(num, name, job){
+                    this.num = num;
+                    this.name = name;
+                    this.job = job;
+                } //class함수을 사용할 때 무조건 실행됨
+
+                result(){
+                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+                }
             }
-            function funcB(){
-                document.write("funcB가 실행되었습니다. <br>");
+            
+            // const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+            // const info2 = new study("2", "웹스토리보이", "프론트엔드 개발자");
+
+            // info1.result();
+            // info2.result();
+            
+        }
+        //30 클래스 : 상속 (클래스 함수도 상속받을 수 있다.)
+        {
+            class study2 extends study {
+                constructor(num, name, job, age){
+                    super(num, name, job);
+                    this.age = age
+                }
+
+                resul2t2(){
+                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다." + "제 나이는 " + this.age + "입니다.");
+                }
             }
 
-            funcA();
-            funcB();
+            const info1 = new study2("1", "웹쓰", "웹퍼블리셔");
+            const info2 = new study2("2", "웹스토리보이", "프론트엔드 개발자", 100);
+
+            info1.result();
+            info2.result();
+            info2.result2();
         }
-    
-   
+            
    </script>
 </body>
 
