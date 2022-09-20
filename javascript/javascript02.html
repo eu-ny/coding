@@ -837,6 +837,154 @@
                 </div>
                 <!-- //sample18 -->
 
+                <div id="sample19" class="sample">
+                    <h3>19. 객체 : 데이터 불러오기 : 복사의 기능을 가지고 있는 펼침연산자</h3>
+                    <p>
+                    </p>
+                    <div class="script"></div>
+<pre><code class="language-js">const obj = {
+    a: 100,
+    b: 200,
+    c: "javascript"
+}
+// document.write(obj.b); : 이렇게 출력해도 되지만 아래의 상수를 작성하고 출력해도 가능하다.
+
+const spread = {...obj}
+
+document.write(spread.a);
+document.write(spread.b);
+document.write(spread.c);
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                            <div class="sample05_result">
+                                100 200 javascript
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample19 -->
+
+                <div id="sample20" class="sample">
+                    <h3>20. 객체 : 데이터 불러오기 :추가의 기능을 가지고 있는 펼침연산자</h3>
+                    <p>
+                    </p>
+                    <div class="script"></div>
+<pre><code class="language-js"> const obj = {
+    a: 100,
+    b: 200,
+    c: "javascript"
+}
+
+const spread = {...obj, d: "jquery"}
+
+document.write(spread.a);
+document.write(spread.b);
+document.write(spread.c);
+document.write(spread.d);
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                                100 200 javascript
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample20 -->
+
+                <div id="sample21" class="sample">
+                    <h3>21. 객체 : 데이터 불러오기 : 결합의 기능을 가지고 있는 펼침연산자</h3>
+                    <p>
+                    </p>
+                    <div class="script"></div>
+<pre><code class="language-js">const objA = {
+    a: 100,
+    b: 200,
+}
+
+const objB = {
+    c: "javascript",
+    d: "jquery"
+}
+
+const spread = {...objA, ...objB}
+
+document.write(spread.a);
+document.write(spread.b);
+document.write(spread.c);
+document.write(spread.d);
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                                100 200 javascript jquery 
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample21 -->
+
+                <div id="sample22" class="sample">
+                    <h3>22. 객체 : 데이터 불러오기 : 비구조할당</h3>
+                    <p>
+                    </p>
+                    <div class="script"></div>
+<pre><code class="language-js">// 비구조할당은 실무에서 많이 사용하는 객체
+{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+
+    const { a, b, c } = obj //불러올 변수(상수) 이름 : 즉 구조를 분해해서 다시 불러오는 것 : 새로운 문법으로 변수를 이렇게도 사용할 수 있다라 이해하면 된다.
+
+    document.write(a);
+    document.write(b);
+    document.write(c);
+}
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                                100 200 javascript
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample22 -->
+
+
+                <div id="sample23" class="sample">
+                    <h3>23. 객체 : 데이터 불러오기 : 비구조할당 : 별도 이름 저장</h3>
+                    <p>
+                    </p>
+                    <div class="script"></div>
+<pre><code class="language-js">{
+    const obj = {
+        a: 100,
+        b: 200,
+        c: "javascript"
+    }
+
+    const { a: name1, b: name2, c: name3 } = obj //불러올 변수(상수) 이름 : 키 값을 변경해서 사용도 가능하다.
+    
+    document.write(name1);
+    document.write(name2);
+    document.write(name3);
+}
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                                100 200 javascript
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample23 -->
+
+
+
+
 
 
 
@@ -1154,6 +1302,38 @@
             document.write("z" in obj); 
         }
     </script> -->
+<script>
+    // 비구조할당 많이 사용하는 객체
+    {
+        const obj = {
+            a: 100,
+            b: 200,
+            c: "javascript"
+        }
+
+        const { a, b, c } = obj //불러올 변수(상수) 이름 : 즉 구조를 분해해서 다시 불러오는 것 : 새로운 문법으로 변수를 이렇게도 사용할 수 있다라 이해하면 된다.
+
+        document.write(a);
+        document.write(b);
+        document.write(c);
+    }
+
+    {
+        const obj = {
+            a: 100,
+            b: 200,
+            c: "javascript"
+        }
+
+        const { a: name1, b: name2, c: name3 } = obj //불러올 변수(상수) 이름 : 키 값을 변경해서 사용도 가능하다.
+        
+        document.write(name1);
+        document.write(name2);
+        document.write(name3);
+    }
+
+</script>
+
 </body>
 
 </html>

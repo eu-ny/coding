@@ -595,6 +595,7 @@ function scroll(){
     }
   });
   //부드러운 움직임을 1초에 60번 실행시킨다. 이렇게 실행시킬 경우 메모리를 적게 차지하여 웹이 다운되지 않는다. 
+  //1초에 60번 실행시키므로 무한 반복이 되지 않는다.
   requestAnimationFrame(scroll);
 }
 scroll();
