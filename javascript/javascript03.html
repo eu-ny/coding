@@ -859,7 +859,8 @@ funcB();
 //b
 //a
 </code></pre>
-<pre><code class="language-js">function funcA(callback){
+<pre><code class="language-js">//비동기
+function funcA(callback){
     setTimeout(() =&gt; {
        console.log("funcA가 실행되었습니다.");
        callback(); //실행문인 것처럼 훼이크
@@ -1049,7 +1050,8 @@ func();
 
             </div>
         </div>
-        </div>
+        <div id="parallax__top">Top</div>
+        <!-- //parallax__top -->
     </main>
     <!-- //main -->
     <footer id="footer">
@@ -1686,6 +1688,28 @@ func();
         // }
             
    </script>
+
+    <!-- !topbutton -->
+    <script>
+        // 01. top버튼 마지막 스크롤 값에만 보이게 하기
+        // 문서 전체 높이 - 브라우저 높이( = 마지막 섹션에 스크롤이 위치했을 때  top버튼 띄우기)
+        window.addEventListener("scroll", ()=> {
+            let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+            if(document.documentElement.scrollHeight <= scrollTop + window.innerHeight){
+                document.querySelector("#parallax__top").classList.add("show");
+            }else {
+                document.querySelector("#parallax__top").classList.remove("show");
+            }
+        });
+
+        //02. top버튼 누르면 올라오게 하기
+        document.querySelector("#parallax__top").addEventListener("click", ()=> {
+            window.scrollTo({left: 0, top: 0, behavior:"smooth"}); //scrollTo : 절대 기준의 스크롤 값 설정으로 0px의 최상단을 기준으로 설정하는 것이다. (By는 현재 스크롤 값 위치와 이동하려는 스크롤위차값의 거리만 설정.)
+        });
+
+        window.addEventListener("scroll");
+    </script>
+
 </body>
 
 </html>

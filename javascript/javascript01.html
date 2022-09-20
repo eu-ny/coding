@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/deracula.css">
+
+
 </head>
 
 <body>
@@ -78,6 +80,7 @@
                     <li><a href="#sample17">17. 객체 : 데이터 저장(키와 값) : 표현방법8</a></li>
                 </ul>
             </div>
+
             <div class="main_sample">
                 <div id="sample01" class="sample">
                     <h3>01. var 변수 : 데이터 저장</h3>
@@ -575,9 +578,13 @@ document.write(obj[1].c);
 
 
             </div>
+
         </div>
     </main>
     <!-- //main -->
+
+    <div id="parallax__top">Top</div>
+     <!-- //parallax__top -->
 
     <footer id="footer">
         <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
@@ -867,6 +874,27 @@ document.write(obj[1].c);
         {
 
         }
+    </script>
+
+    <!-- !topbutton -->
+    <script>
+      // 01. top버튼 마지막 스크롤 값에만 보이게 하기
+      // 문서 전체 높이 - 브라우저 높이( = 마지막 섹션에 스크롤이 위치했을 때  top버튼 띄우기)
+      window.addEventListener("scroll", ()=> {
+        let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+        if(document.documentElement.scrollHeight <= scrollTop + window.innerHeight){
+          document.querySelector("#parallax__top").classList.add("show");
+        }else {
+          document.querySelector("#parallax__top").classList.remove("show");
+        }
+      });
+
+      //02. top버튼 누르면 올라오게 하기
+      document.querySelector("#parallax__top").addEventListener("click", ()=> {
+        window.scrollTo({left: 0, top: 0, behavior:"smooth"}); //scrollTo : 절대 기준의 스크롤 값 설정으로 0px의 최상단을 기준으로 설정하는 것이다. (By는 현재 스크롤 값 위치와 이동하려는 스크롤위차값의 거리만 설정.)
+      });
+
+      window.addEventListener("scroll");
     </script>
 </body>
 
