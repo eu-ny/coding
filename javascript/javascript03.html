@@ -971,16 +971,78 @@ func();
                 <div id="sample29" class="sample">
                     <h3>29. 함수 유형 : 클래스</h3>
                     <p class="t_desc">
+                        내부함수 변경 , 객체 생성자 사용 (객체생성자의 개념을 클래스 함수에 그대로 사용할 수 있다.)<br>
+
                     </p>
-<pre><code class="language-js">
+<pre><code class="language-js">  {
+    class study {
+        constructor(num, name, job){
+            this.num = num;
+            this.name = name;
+            this.job = job;
+        } //class함수을 사용할 때 무조건 실행됨
+
+        result(){
+            document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+        }
+    }
+    
+    const info1 = new study("1", "웹쓰", "웹퍼블리셔");
+    const info2 = new study("2", "웹스토리보이", "프론트엔드 개발자");
+
+    info1.result();
+    info2.result();
+    
+}
 </code></pre>
                     <div class="result">
                         <details>
                             <summary>결과 보기</summary>
+                            1. 내 이름은 웹쓰이며, 직업은 웹퍼블리셔입니다.2. 내 이름은 웹스토리보이이며, 직업은 프론트엔드 개발자입니다.
                         </details>
                     </div>
                 </div>
                 <!-- //sample29 -->
+
+                <div id="sample30" class="sample">
+                    <h3>30. 함수 유형 : 클래스 : 상속하기</h3>
+                    <p class="t_desc">
+                    </p>
+<pre><code class="language-js">{
+    class study {
+        constructor(num, name, job){
+        this.num = num;
+        this.name = name;
+        this.job = job;
+    }
+    result(){
+        document.write(this.num +  ". 내 이름은 " + this.name +  " 이며, 직업은 " + this.job +  " 입니다." );
+    }
+    }
+    class study2 extends study{
+        constructor(num, name, job,age){
+        super(num, name, job);
+        this.age = age;
+        }
+        result2(){
+            document.write(this.num +  ". 내 이름은 " + this.name +  " 이며, 직업은 " + this.job +  " 이며 나이는 " + this.age + "살 입니다.");
+        }
+    }
+    const info1 = new study("1","토매토","백수");
+    const info2 = new study2("2","영양만점 토매토","프론트엔드 희망 백수",587);
+    info1.result();
+    info2.result();
+    info2.result2();
+}
+</code></pre>
+                    <div class="result">
+                        <details>
+                            <summary>결과 보기</summary>
+                            1. 내 이름은 토매토 이며, 직업은 백수 입니다.2. 내 이름은 영양만점 토매토 이며, 직업은 프론트엔드 희망 백수 입니다.2. 내 이름은 영양만점 토매토 이며, 직업은 프론트엔드 희망 백수 이며 나이는 587살 입니다.
+                        </details>
+                    </div>
+                </div>
+                <!-- //sample30 -->
 
 
 
@@ -1575,18 +1637,18 @@ func();
 
         //29 클래스 : 내부함수 변경 , 객체 생성자 사용 (객체생성자의 개념을 클래스 함수에 그대로 사용할 수 있다.)
         //마음대로 변수를 사용할 수 있다.
-        {
-            class study {
-                constructor(num, name, job){
-                    this.num = num;
-                    this.name = name;
-                    this.job = job;
-                } //class함수을 사용할 때 무조건 실행됨
+        // {
+            // class study {
+            //     constructor(num, name, job){
+            //         this.num = num;
+            //         this.name = name;
+            //         this.job = job;
+            //     } //class함수을 사용할 때 무조건 실행됨
 
-                result(){
-                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
-                }
-            }
+            //     result(){
+            //         document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다.");
+            //     }
+            // }
             
             // const info1 = new study("1", "웹쓰", "웹퍼블리셔");
             // const info2 = new study("2", "웹스토리보이", "프론트엔드 개발자");
@@ -1594,27 +1656,34 @@ func();
             // info1.result();
             // info2.result();
             
-        }
+        // }
         //30 클래스 : 상속 (클래스 함수도 상속받을 수 있다.)
-        {
-            class study2 extends study {
-                constructor(num, name, job, age){
-                    super(num, name, job);
-                    this.age = age
-                }
-
-                resul2t2(){
-                    document.write(this.num + ". 내 이름은 " + this.name + "이며, 직업은 " + this.job + "입니다." + "제 나이는 " + this.age + "입니다.");
-                }
-            }
-
-            const info1 = new study2("1", "웹쓰", "웹퍼블리셔");
-            const info2 = new study2("2", "웹스토리보이", "프론트엔드 개발자", 100);
-
-            info1.result();
-            info2.result();
-            info2.result2();
-        }
+        // {
+        //     class study {
+        //         constructor(num, name, job){
+        //         this.num = num;
+        //         this.name = name;
+        //         this.job = job;
+        //     }
+        //     result(){
+        //         document.write(this.num +  ". 내 이름은 " + this.name +  " 이며, 직업은 " + this.job +  " 입니다." );
+        //     }
+        //     }
+        //     class study2 extends study{
+        //         constructor(num, name, job,age){
+        //         super(num, name, job);
+        //         this.age = age;
+        //         }
+        //         result2(){
+        //             document.write(this.num +  ". 내 이름은 " + this.name +  " 이며, 직업은 " + this.job +  " 이며 나이는 " + this.age + "살 입니다.");
+        //         }
+        //     }
+        //     const info1 = new study("1","토매토","백수");
+        //     const info2 = new study2("2","영양만점 토매토","프론트엔드 희망 백수",587);
+        //     info1.result();
+        //     info2.result();
+        //     info2.result2();
+        // }
             
    </script>
 </body>

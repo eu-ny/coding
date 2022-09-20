@@ -114,7 +114,7 @@
         background-position: center center;
         background-size: cover;
         filter: saturate(0%);
-        transition: all 1s;
+        /* transition: all 1s; */
       }
 
       .content__item:nth-child(2) .content__item__img {
@@ -184,13 +184,29 @@
           border-radius: 5px;
         }
       }
+
+      #parallax__info {
+        position: fixed;
+        left: 20px;
+        bottom: 20px;
+        z-index: 2000;
+        background: rgba(0, 0, 0.4);
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      #parallax__info li,
+      .scrollTop {
+        line-height: 1.4;
+      }
     </style>
   </head>
   <body>
     <header id="header">
-      <h1><a href="parallaxEffect.html">Javascript Parallax Effect04</a></h1>
+      <h1><a href="parallaxEffect.html">Javascript Parallax Effect05</a></h1>
       <p>
-        페럴렉스 이펙트 - 숨김 메뉴 : 나타내기
+        페럴렉스 이펙트 - 숨김 메뉴 : 이질감 효과
       </p>
       <ul>
         <li><a href="parallaxEffect01.html">1</a></li>
@@ -337,6 +353,24 @@
       </div>
     </main>
     <!-- //main -->
+
+    <aside id="parallax__info">
+      <div class="scroll">scrollTop : <span>0</span>px</div>
+      <!-- <div class="info">
+        <ul>
+          <li>#section1 offset() : <span class="offset1">0</span>px</li>
+          <li>#section2 offset() : <span class="offset2">0</span>px</li>
+          <li>#section3 offset() : <span class="offset3">0</span>px</li>
+          <li>#section4 offset() : <span class="offset4">0</span>px</li>
+          <li>#section5 offset() : <span class="offset5">0</span>px</li>
+          <li>#section6 offset() : <span class="offset6">0</span>px</li>
+          <li>#section7 offset() : <span class="offset7">0</span>px</li>
+          <li>#section8 offset() : <span class="offset8">0</span>px</li>
+          <li>#section9 offset() : <span class="offset9">0</span>px</li>
+        </ul>
+      </div> -->
+    </aside>
+    <!-- //parallax__info -->
 
     <footer id="footer">
       <div class="modal__wrap">
@@ -563,8 +597,36 @@
     <!-- //footer -->
     <script src="../assets/js/highlight.min.js"></script>
     <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/gsap.min.js"></script>
     <script>
+        //0에서 500만큼 간 거리를 구해야 이미지가 온전히 나옴
+      function scroll(){
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
+        document.querySelector("#parallax__info span").innerText = Math.ceil(scrollTop);
+
+        document.querySelectorAll(".content__item").forEach(item => {
+          //스크롤을 움직일 때 트렌스폼으로 이미지와 텍스트가 반대로 움직이는 효과를 주어 이질감을 준다.
+          const taget1 = item.querySelector(".content__item__img");
+          const taget2 = item.querySelector(".content__item__desc");
+          const taget3 = item.querySelector(".content__item__num");
+
+          //scrollTop과 item.offsetTop값은 같다.: 현재 스크롤 탑 값이 1000일 경우 -item.offsetTop(섹션의 시작 스크롤값 위치)를 하면 0이 나온다. 여기에 0.1을 곱하면 움직일 때 100만큼 움직일 경우 1만큼 움직이게 한다.
+          let offset1 = (scrollTop - item.offsetTop) * 0.1;
+          let offset2 = (scrollTop - item.offsetTop) * 0.15;
+          let offset3 = (scrollTop - item.offsetTop) * 0.2;
+          
+          // taget1.style.transform = `translateY(${offset}px)`;
+          // taget2.style.transform = `translateX(${offset}px)`;
+
+          gsap.to(taget1, {duration: .3, y: offset1, ease: "power4.out"});
+          gsap.to(taget2, {duration: .3, y: offset2});
+          gsap.to(taget3, {duration: .3, y: offset2, ease: "expo.out"});
+        });
+
+        requestAnimationFrame(scroll);
+      }
+      scroll();
     </script>
   </body>
 </html>
