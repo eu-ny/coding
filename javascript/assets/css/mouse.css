@@ -45,6 +45,12 @@ body.img09 {
 body.img10 {
   background: url(../img/effect_bg10-2.jpg) no-repeat center / cover;
 }
+body.img11 {
+  background: url(../img/city_bg05-2.jpg) no-repeat center / cover;
+}
+body.img12 {
+  background: url(../img/Mountian_bg03-2.jpg) no-repeat center / cover;
+}
 
 body::after {
   /* 가상 요소 : 배경 전체 불투명도 씌우기 */
