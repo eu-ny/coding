@@ -328,11 +328,17 @@ window.addEventListener("mousemove", (e) =&gt; {
     <script src="../assets/js/common.js"> </script>
     <script src="../assets/js/gsap.min.js"></script>
     <script>
-        const cursor = document.querySelector(".mouse__cursor");
-        const cursorRect = cursor.getBoundingClientRect();
-
+        //선택자
+        const cursor = document.querySelector(".mouse__cursor"); //커서
+        const cursorRect = cursor.getBoundingClientRect();       //커서위치값
+ 
+        //마우스를 움직일 때 이벤트 설정
         document.querySelector(".mouse__wrap figure").addEventListener("mousemove", (e) => {
             // 커서
+            //커서의 가로 길이를 반으로 나눈 이유는 바로 정해준 커서의 영역이 가운데로 맞춰지도록 하기 위해서 이다. 
+            //커서의 영역을 만들게 될 경우 현재 커서의 포지션이 left와 top값을 기준으로 설정되어 있기 때문에 사각형의 왼쪽 모서리를 기준으로 영역이 생긴다. 즉 왼쪽모서리 아래쪽으로 영역이 생기기 때문에 거리감이 생기겍 된다 특히 원형으로 영역을 잡을 경우 사각형이 깍여져서 만들어지기 때문에 더욱 거리감이 생기게된다. 
+            //때문에 사각형(커서 영역)을 ÷2 해주어서 커서를 가운데로 지정해주는 것!
+            //e.pageX - cursorRect.width/2 : 요소의 x축 - 요소의 영역 가로 길이의 반
             gsap.to(cursor, {
                 duration: .5,
                 left: e.pageX - cursorRect.width/2,
@@ -340,6 +346,7 @@ window.addEventListener("mousemove", (e) =&gt; {
             });
 
             //마우스 좌표 값
+            //요소의 x축과 y축 좌표값을 변수에 대입한다.
             let mousePageX = e.pageX;
             let mousePageY = e.pageY;
 
@@ -351,22 +358,27 @@ window.addEventListener("mousemove", (e) =&gt; {
             // console.log(window.innerWidth);
 
             //마우스 좌표값 가운데로 초기화
-            //전체길이/2 - 마우스 좌표값 == 0 : 500*500일 경우 전체 길이에서 반을 빼주면 가운데로 맞춰지게 된다.
+            //전체길이/2(전체길이 ÷ 2) - 마우스 좌표값 == 0 : 500*500일 경우 전체 길이에서 반을 빼주면 가운데로 맞춰지게 된다.
+            //전체 영역을 가운데로 초기화 == window.innerWidth/Height/2 -> 그 뒤 각 마우스의 좌표값을 빼주면 좌표값 기준도 가운데로 초기화 된다. 즉 이 식의 최종 값이 바로 아래의 이미지의 이동 거리 값이 된다. (커서가 중앙에 위치 == 0(가운데로 초기화) | 커서가 왼쪽에 위치 == 양수 | 커서가 오른쪽에 위치 - 값(음수))
             //크기 속성을 사용할 땐 앞에 윈도우는 생략해도 괜찮다.
             let centerPageX = window.innerWidth/2 - mousePageX;
             let centerPageY = window.innerHeight/2 - mousePageY;
 
             //이미지 움직이기
             const imgMove = document.querySelector(".mouse__wrap figure img");
+            //기존 js 방식
             // imgMove.style.transform = "translate(" + centerPageX/20 + "px, " + centerPageY/20 + "px)";
+
             //GSAP
+            //좌표를 20으로 나눈 이유 : 오차 값으로 이미지가 이동 할 경우 너무 많이 이동하기 때문에 20을 나눠주어 이미지의 이동거리를 축소시켜 준 것.
             gsap.to(imgMove, {
                 duration: 0.3,
                 x: centerPageX/20,
                 y: centerPageY/20
             });
 
-            //출력
+            //마우스 좌표값 출력
+            //textContent를 통해 선택자에게 각 좌표값를 대입시킨다.
             document.querySelector(".mousePageX").textContent = mousePageX;
             document.querySelector(".mousePageY").textContent = mousePageY;
             document.querySelector(".centerPageX").textContent = centerPageX;
