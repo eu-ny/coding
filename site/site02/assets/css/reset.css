@@ -45,17 +45,6 @@ section {
     display: block;
 }
 
-/* Font 초기화 */
-body,
-button,
-input,
-select,
-table,
-textarea {
-    color: #000;
-    font-family: 'GmarketSans', 'NexonLv1Gothic', 'AppleSDGothicNeo-Regular', 'Malgun Gothic', '맑은 고딕';
-}
-
 /* font 스타일 초기화 */
 em, address {
     font-style: normal;
