@@ -1,0 +1,35 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+li {
+  list-style: none;
+}
+
+/* common */
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+#aside {
+width: 300px;
+height: 1000px;
+background: #ccc;
+}
+#section {
+    width: 700px;
+    height: 1000px;
+    background: rgb(168, 168, 168);
+}
+#footer {
+    height: 100px;
+    background: rgb(168, 168, 168);
+}
