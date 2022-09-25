@@ -5,7 +5,232 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>site02</title>
+
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/header.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
+    <link rel="stylesheet" href="assets/css/text.css">
+    <link rel="stylesheet" href="assets/css/card.css">
 </head>
 <body>
+    <div id="skip">
+        <a href="#sliderType">슬라이드 영역 바로가기</a>
+        <a href="#textType01">텍스트01 영역 바로가기</a>
+        <a href="#imageType">이미지 영역 바로가기</a>
+        <a href="#cardType">카드 영역 바로가기</a>
+        <a href="#bannerType">배너 영역 바로가기</a>
+        <a href="#textType02">텍스트02 영역 바로가기</a>
+        <a href="#footerType">푸터 영역 바로가기</a>
+      </div>
+      <!-- //skip -->
+    <header id="headerType" class="header__wrap gmark">
+        <h2>WEB <em>site</em></h2>
+          <nav id="nav" class="header__menu">
+            <ul>
+              <li><a href="#sliderType">슬라이드</a></li>
+              <li><a href="#textType01">텍스트01</a></li>
+              <li><a href="#imageType">이미지</a></li>
+              <li><a href="#cardType">카드</a></li>
+              <li><a href="#bannerType">배너</a></li>
+              <li><a href="#textType02">텍스트02</a></li>
+              <li><a href="#footerType">푸터</a></li>
+            </ul>
+          </nav>
+      </header>
+      <!-- //headerType -->
+
+      <main id="main">
+        <section id="sliderType" class="slider__wrap gmark">
+            <h2 class="blind">슬라이드 영역</h2>
+            <div class="slider__inner">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slider__img1">
+                            <div class="desc container">
+                                <h3>NEW <br> PORTFOLIO </h3>
+                                <p>
+                                    너무 무리하지 말아요!<br>
+                                    이미 당신은 해내고 있고 <br>
+                                    앞으로도 잘 할 수 있을거예요!
+                                </p>
+                                <div class="btn">
+                                    <a href="#">more</a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+        <!-- //sliderType-->    
+
+        <section id="textTypee" class="section gmak container">
+            <div id="header">
+                <div class="CAT">FRONTEND</div>
+                <h2>프론트앤드<br> 전문과정</h2>
+                <p>프론트앤드 개발자로 취업하기 위한<br>전문 과정입니다. <br>여러분들도 도전해보세요!</p>    
+            </div>
+            <div class="text__inner">
+                <div class="text_top">
+                    <article class="text__box">
+                        <span class="icons icon1 ir">button</span>
+                        <div class="text_desc">
+                            <h2 class="desc__header">웹 디자인</h2>
+                            <p class="desc">웹디자이너가 포함된 웹 및 멀티미디어 디자이너는 다른 직업과 비교하여 임금과 복리후생이 낮은 퍼블리싱은 웹 사이트를 제작 할 계</h2>
+                        </div>
+                    </article>
+                    <article class="text__box">
+                        <span class="icons icon2 ir">button</span>
+                        <div class="text_desc">
+                            <h2 class="desc__header">웹 퍼블리셔</h2>
+                            <p class="desc">퍼블리싱은 웹 사이트를 제작할 때, 웹 디자이너가 디자인한 것을 웹 표준성과 접근성에 부합하도록 재정하였다.</h2>
+                        </div>
+                    </article>
+                </div>
+                <div class="text_bottom">
+                    <article class="text__box">
+                        <span class="icons icon3 ir">button</span>
+                        <div class="text_desc">
+                            <h2 class="desc__header">프론트앤드 개발자</h2>
+                            <p class="desc">사이트와 상호작용하는 모든 부분에 대한 개발, 관리, 유지 보수를 하는 것 솔루션의 프로세스를 개발합니다.</h2>
+                        </div>
+                    </article>
+                    <article class="text__box">
+                        <span class="icons icon4 ir">button</span>
+                        <div class="text_desc">
+                            <h2 class="desc__header">백앤드 개발자</h2>
+                            <p class="desc">용어 자체에서 알 수 있듯이, 백엔드는 웹사이트나 웹 애플리케이션 또는 모바일 솔루션의 프로세스와 관련된입니다.</h2>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- //textType -->
+
+        <section id="cardType" class="card__wrap gmark section gray">
+            <h2>파스타 요리하기🍝</h2>
+            <p>
+                토마토와 오일 그리고 크림 등 다양한 파스타를 만나보세요!<br />
+                그리고 파스타의 매력을 느껴보세요!
+            </p>
+            <div class="card__inner container">
+                <acticle class="card">
+                    <img src="img/card_bg02_01.jpg" alt="파스타">
+                    <h3 class="tit">파스타의 정의</h3>
+                    <p class="desc"> 파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 지금부터 파스타의 정의를 알아볼까요?</p> 
+                    <a href="#" class="more"><span class="ir">더보기</span></a>
+                </acticle>
+                <acticle class="card">
+                    <img src="img/card_bg02_02.jpg" alt="파스타">
+                    <h3 class="tit">파스타의 정의</h3>
+                    <p class="desc"> 파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 지금부터 파스타의 정의를 알아볼까요?</p> 
+                    <a href="#" class="more"><span  class="ir">더보기</span></a>
+                </acticle>
+                <acticle class="card">
+                    <img src="img/card_bg02_03.jpg" alt="파스타">
+                    <h3 class="tit">파스타의 정의</h3>
+                    <p class="desc"> 파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 지금부터 파스타의 정의를 알아볼까요?</p> 
+                    <a href="#" class="more"><span class="ir">더보기</span></a>
+                </acticle>
+                <acticle class="card">
+                    <img src="img/card_bg02_04.jpg" alt="파스타">
+                    <h3 class="tit">파스타의 정의</h3>
+                    <p class="desc"> 파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 지금부터 파스타의 정의를 알아볼까요?</p> 
+                    <a href="#" class="more"><span class="ir">더보기</span></a>
+                </acticle>
+                <acticle class="card">
+                    <img src="img/card_bg02_05.jpg" alt="파스타">
+                    <h3 class="tit">파스타의 정의</h3>
+                    <p class="desc"> 파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 지금부터 파스타의 정의를 알아볼까요?</p> 
+                    <a href="#" class="more"><span class="ir">더보기</span></a>
+                </acticle>
+                <acticle class="card">
+                    <img src="img/card_bg02_06.jpg" alt="파스타">
+                    <h3 class="tit">파스타의 정의</h3>
+                    <p class="desc"> 파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 지금부터 파스타의 정의를 알아볼까요?</p> 
+                    <a href="#" class="more"><span class="ir">더보기</span></a>
+                </acticle>
+                <acticle class="card">
+                    <img src="img/card_bg02_07.jpg" alt="파스타">
+                    <h3 class="tit">파스타의 정의</h3>
+                    <p class="desc"> 파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 파지금부터 파스타의 정의를 알아볼까요?</p> 
+                    <a href="#" class="more"><span class="ir">더보기</span></a>
+                </acticle>
+                <acticle class="card">
+                    <img src="img/card_bg02_08.jpg" alt="파스타">
+                    <h3 class="tit">파스타의 정의</h3>
+                    <p class="desc"> 파스타는 이탈리아의 전통 음식 중 하나로 면이 주 요리 재료인 음식입니다. 지금부터 파스타의 정의를 알아볼까요?</p> 
+                    <a href="#" class="more"><span class="ir">더보기</span></a>
+                </acticle>
+            </div>
+        </section>
+        <!-- //cardType -->
+
+        <section id="bannerType" class="banner__wrap nexon">
+            <h2 class="blind">배너 영역</h2>
+            <div class="banner__inner">
+              <h3 class="title">유튜버 웹 보이</h3>
+              <p class="desc">
+                세상에서 귀여운 고양이들을 알리기 위해 만든 사이트 입니다.
+                <a href="#" title="자세히보기">자세히보기</a>
+              </p>
+            </div>
+        </section>
+        <!-- //bannerType -->
+
+        <section id="textType" class="section gmak container">
+            <h2>멍멍 유치원</h2>
+            <p>🐶 멍멍 유치원의 말썽꾸러기 강아지 학생들을 소개합니다. 🐶</p>
+            <div class="text__inner">
+                <article class="text__box">
+                    <p>불과 3달전만해도 여러 원인들로 인해 자존감이 밑바닥이였던 저에게 이 스터디는 너무 소중한 시간이었어요. 매일 마음속으로 울고싶다를 외쳤던 저였는데 이제는 조금이나마 이겨 낼 수 있을 것 같네요. 다음에 선생님 만났을 때는 많이 발전해있는 제가 되었으면 좋겠네요...</p>
+                    <span class="icon icon1 ir">아이콘</span>
+                    <div class="dogname">
+                        <h2>김댕댕<em>멍멍 24기</em></h2>
+                        <div class="star star1 ir">별</div>
+                    </div>
+                    <div class="more"><a href="#">자세히 보기</a></div>
+                </article>
+                <article class="text__box">
+                    <p>제일 기억에 남는 활동은 바로 간식 시간이에요! 수제로 만들어진 간식은 간도 딱 맞고 건강에도 좋은 재료로 만들어져서 양심에 찔리지 않고 맘껏 먹을 수 있었습니다~~~! 선생님 맛있는 간식 늘 정성껏 만들어 주셔서 감사합니다~!!!!!!!! 😆</p>
+                    <span class="icon icon2 ir">아이콘</span>
+                    <div class="dogname">
+                        <h2>오왈왈<em>멍멍 24기</em></h2>
+                        <div class="star star2 ir">별</div>
+                    </div>
+                    <div class="more"><a href="#">자세히 보기</a></div>
+                </article>
+                <article class="text__box">
+                    <p>게을러서 가끔 지각도 하고 말도 잘 안들었지만 끝까지 저를 잘 지도해주셔서 감사했습니다...ㅎㅎㅎ 그 때만 생각하면 너무 죄송하네요 ㅠㅠ <br>댕댕 유치원에 다니면서 많은 것을 배우고 갈 수 있었습니다. 마지막으로 하고싶은 말은 간식 최고!!!!!</p>
+                    <span class="icon icon3 ir">아이콘</span>
+                    <div class="dogname">
+                        <h2>박비숑<em>멍멍 24기</em></h2>
+                        <div class="star star3 ir">별</div>
+                    </div>
+                    <div class="more"><a href="#">자세히 보기</a></div>
+                </article>
+            </div>
+        </section>
+        <!-- textType -->
+
+        <footer id="footerType">
+            <div class="top">
+                <div class="left"></div>
+                <div class="right"></div>
+            </div>
+            <p>Copyright 2022. All Rights Reserved. - Designed by Webstoryboy</p>
+        </footer>
+    
+    
+    
+    
+    </main>
 </body>
 </html>
