@@ -165,25 +165,25 @@
 /* media */
 @media (max-width: 960px) {
     .slider__wrap {
+        width: 90%;
         overflow: hidden;
     }
     .swiper-slide .desc {
-        width: 100%;
+        width: 90%;
         text-align: center;
     }
     .swiper-slide .desc h3 {
-        font-size: 80px;
+        font-size: 60px;
     }
     .swiper-slide .desc p {
         margin-bottom: 40px;
     }
-    .swiper-slide .desc > img {
-        width: 25rem;
-        height: 25rem;
-        top: 10%;
-    }
+
     .swiper-slide .desc .btn a {
         margin-top: 60px;
+    }
+    .figure {
+        width: 100%;
     }
 
     .swiper-slide .desc .circle {
@@ -206,67 +206,4 @@
         right: 50%;
     }
    
-}
-@media (max-width: 600px) {
-    .swiper-slide .desc {
-        padding: 80px 0;
-    }
-    .swiper-slide .desc h3 {
-        font-size: 50px;
-        line-height: 70px;
-    }
-    .swiper-slide .desc p {
-        font-size: 16px;
-        margin-bottom: 40px;
-    }
-    .swiper-slide .desc .btn a {
-        padding: 10px 25px;
-    }
-    .swiper-slide .desc > img {
-        width: 18rem;
-        height: 18rem;
-    }
-    .swiper-slide .desc .circle {
-        right: 9%;
-        top: -2%;
-    }
-    .camera {
-        z-index: -1;
-        top: 15px;
-        right: 310px;
-    }
-    .action {
-        z-index: -1;
-        top: 75px;
-        right: 70px;
-    }
-    .usan {
-        z-index: -1;
-        top: 225px;
-        right: 265px;
-    }
-}
-@media (max-width: 460px){
-    .swiper-slide .desc .circle {
-        width: 24rem;
-        height: 24rem;
-
-        right: 10%;
-        top: 3%;
-    }
-    .camera {
-        top: 45px;
-        right: 260px;
-    }
-    .action {
-        z-index: -1;
-        top: 95px;
-        right: 25px;
-    }
-    .usan {
-        z-index: -1;
-        top: 205px;
-        right: 195px;
-    }
-    
 }
