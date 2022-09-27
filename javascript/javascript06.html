@@ -1920,6 +1920,52 @@ document.querySelector(".sample03_A2").innerHTML = arrNum2;  //리턴값 100, 20
             document.querySelector(".sample14_P3").innerHTML = result3;
         }
   
+
+
+        {
+            //출력값 = 400
+            const number = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const find = number.find(el => el === 400);
+            console.log(find);
+
+            const number2 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const slice = number2.slice(3, 4);
+            console.log(slice);
+
+            const number3 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const splice = number3.splice(3,1);
+            console.log(splice);
+
+            const number4 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const filter = number4.filter(el => el === 400);
+            console.log(filter);
+
+            const number5 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const result = number5[3];
+            console.log(result);
+
+
+            //출력값 400, 500
+            const number6 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const filter2 = number6.filter(el => el >= 400 && el <= 500);
+            console.log(filter2);
+
+            const number7 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const splice2 = number7.splice(3, 2);
+            console.log(splice2);
+
+            const number8 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            const slice2 = number8.slice(3, 5);
+            console.log(slice2);
+
+            const number9 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
+            for(let i=0; i<number9.length; i++){
+                if(number9[i]>300 && number9[i]<600)
+                console.log(number9[i]);
+            }
+
+            
+        }
   </script>
 </body>
 
