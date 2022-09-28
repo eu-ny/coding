@@ -144,17 +144,17 @@
     background-image: url(../img/slider_icon02.svg);
 }
 .swiper-button-next {
-    background-position: -50px 0px;
+    background-position: -50px 0;
 }
-.swiper-button-next:after,
-.swiper-button-prev:after {
+.swiper-button-next::after, 
+.swiper-button-prev::after {
     opacity: 0;
 }
 .swiper-pagination-bullet {
     width: 16px !important;
     height: 16px !important;
     background-image: url(../img/slider_icon02.svg) !important;
-    background-position: -70px !important;
+    background-position: -20px -70px !important;
     background-color: transparent !important;
     opacity: 1 !important;
 }
@@ -165,18 +165,19 @@
 .swiper-button {
     position: absolute;
     left: 50%;
-    margin-left: 80px;
-    bottom: 20px;
+    margin-left: 40px;
+    bottom: 25px;
     z-index: 1000;
     display: flex;
-    cursor: pointer;
 }
+
 .swiper-button-stop {
     background-image: url(../img/slider_icon02.svg) !important;
     background-position: -60px -70px;
     width: 16px;
     height: 16px;
 }
+
 .swiper-button-play {
     background-image: url(../img/slider_icon02.svg) !important;
     background-position: -40px -70px;

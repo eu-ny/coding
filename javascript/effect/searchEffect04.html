@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색 이펙트</title>
+
+    <link rel="stylesheet" href="../assets/css/search.css">
+    <link rel="stylesheet" href="../assets/css/deracula.css">
+    
+    <link href="https://webfontworld.github.io/tmon/Tmon.css" rel="stylesheet">
+    <link href="https://webfontworld.github.io/NexonLv1Gothic/NexonLv1Gothic.css" rel="stylesheet">
+    
+</head>
+<body>
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="searchEffect01.html">1</a></li>
+                <li><a href="searchEffect02.html">2</a></li>
+                <li><a href="searchEffect03.html">3</a></li>
+                <li class="active"><a href="searchEffect04.html">4</a></li>
+                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect06.html">6</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- //header -->
+
+    <main id="main">
+        <div class="search__wrap">
+            <span>find()를 이용하여 속성을 검색하면 설명 보여주기</span>
+            <h1>CSS 속성 검색하기</h1>
+            <div class="search__box">
+                <label for="search">검색하기</label>
+                <input type="text" id="search" placeholder="CSS 속성 및 유형을 입력해주세요!">
+            </div>
+            <div class="search__desc">
+                <div class="desc">속성을 검색하시면 설명이 나타납니다.</div>
+            </div>
+            <div class="search__info">
+                <div>CSS 전체 속성 : <span class="num">0</span></div>
+            </div>
+
+            <div class="search__list">
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+    <div class="modal__wrap">
+        <div class="modal__btn">Source</div>
+        <div class="modal__cont">
+            <div class="modal__box">
+                <div class="title">
+                    <span class="dot" aria-label="ture"></span>
+                    <div class="tabs">
+                        <div class="active">
+                            <span class="favicon" aria-label="ture">
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                    <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                    <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                    <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                </svg>
+                            </span>
+                            <em>JAVASCRIPT</em>
+                            <span class="close">
+                                <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="favicon" aria-label="ture">
+                                <svg width="17" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                    <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                    <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                    <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                </svg>
+                            </span>
+                            <em>HTML</em>
+                            <span class="close">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="favicon" aria-label="ture">
+                                <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true" focusable="false">
+                                    <circle cx="9" cy="9" r="9" fill="#fff"></circle>
+                                    <path d="M18 9C18 13.9706 15.4688 3.09375 9 10.125C2.53125 17.1562 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="orange"></path>
+                                    <path d="M18 9C18 13.9706 14.9062 0.84375 8.29688 6.1875C1.6875 11.5312 0 13.9706 0 9C0 4.02944 4.02944 0 9 0C13.9706 0 18 4.02944 18 9Z" fill="yellow"></path>
+                                </svg>
+                            </span>
+                            <em>CSS</em>
+                            <span class="close">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <span class="plus" aria-label="ture">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M2.5 8H13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M8 2.5V13.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="cont">
+                    <div class="active">
+<pre><code class="language-js">
+</code></pre>
+                    </div>
+                    <div>
+<pre><code class="language-html">
+</code></pre>
+                    </div>
+                    <div>
+<pre><code class="language-css">
+</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="modal__close">
+                <svg width="18" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                    <path d="M12.5 3.5L3.5 12.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path d="M12.5 12.5L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+
+     <footer id="footer">
+        <a href="mailto:praise1109@gmail.com">praise1109@gmail.com</a>
+    </footer>
+    <!-- //footer -->
+    <script src="../assets/js/highlight.min.js"> </script>
+    <script src="../assets/js/common.js"></script>
+    <script>
+        //데이터 객체화 시키기
+        const cssProperty = [
+            {name: "all", desc: "all 속성은 CSS 속성을 재설정하는데 사용할 수 있는 약식 속성입니다."},
+            {name: "animation", desc: "animation 속성은 애니메이션 속성을 설정하기 위한 약식 속성입니다."},
+            {name: "animation-delay", desc: "animation-delay 속성은 애니메이션이 시작되는 시간을 설정합니다."},
+            {name: "animation-direction", desc: "animation-direction 속성은 애니메이션이 움직이는 방향을 설정합니다."},
+            {name: "animation-duration", desc: "animation-duration 속성은 애니메이션이 움직이는 시간을 설정합니다."},
+            {name: "animation-fill-mode", desc: "animation-fill-mode 속성은 애니메이션이 끝난 후의 상태를 설정합니다."},
+            {name: "animation-iteration-count", desc: "animation-iteration-count 속성은 애니메이션 반복 횟수를 설정합니다."},
+            {name: "animation-name", desc: "animation-name 속성은 애니메이션 키프레임 이름을 설정합니다."},
+            {name: "animation-play-state", desc: "animation-play-state 속성은 애니메이션의 진행상태를 설정합니다."},
+            {name: "backdrop-filter", desc: "backdrop-filter 속성은 요소 뒤에 필터효과를 설정합니다."},
+            {name: "backface-visibility", desc: "backface-visibility 속성은 요소 뒷면 출력 여부 설정합니다."},
+            {name: "caption-side", desc: "caption-side 속성은 테이블 caption의 위치를 설정합니다."},
+            {name: "direction", desc: "direction 속성은 문장의 방향을 설정합니다."},
+            {name: "filter", desc: "filter 속성은 그래픽 효과를 설정합니다."},
+            {name: "flex", desc: "flex 속성은 콘텐츠의 성질을 flex로 정의합니다."},
+            {name: "grid-template-columns", desc: "grid-template-columns 속성은 가로 컬럼의 크기와 위치 설정합니다."},
+        ];
+        const searchList = document.querySelector(".search__list");
+        const searchNum = document.querySelector(".search__info .num");
+        const searchBox = document.querySelector(".search__box input");
+        const searchDesc = document.querySelector(".search__desc");
+
+        //출력하기 : 배열 map()메서드
+        cssProperty.map((element, index) => {
+            // searchNum.innerText = index + 1;
+            searchNum.innerText = cssProperty.length;
+            // searchList.innerHTML += `<span>${element.name} : ${element.desc}</span>`;
+            searchList.innerHTML += `<span>${element.name}</span>`;
+        });
+
+        //입력하기
+        searchBox.addEventListener("keyup", () => {
+            const searchWord = searchBox.value;
+            // console.log(searchWord);
+            findProperty(searchWord);
+        });
+
+        //속성찾기 (data = cssProperty의 데이터값) : 지역 변수이기 때문에 매개변수 사용하여 전달시키거나 전역변수로 바꿔주기. 현재는 매개변수사용!
+        function findProperty(searchData){
+            const tagetData = cssProperty.find((data) => data.name === searchData);
+
+            if(tagetData == null){
+                searchDesc.textContent = "해당 속성은 존재하지 않습니다. 다시 검색해주세요!";
+                //리턴을 사용할 경우 결과값 출력 뿐만 아니라 종료의 의미로도 쓰인다.
+                //아래의 textcontent가 무조건 실행되므로 값이 없는데도 계속 찾으려고 하기 때문에 오류가 나는 것! 때문에 리턴을 써서 종료를 시켜주면 버그를 고칠 수 있다.
+                return;
+            }
+
+            searchDesc.textContent = tagetData.desc;
+        };
+
+        //클릭했을 때 속성 보이기
+        document.querySelector(".search__list span").addEventListener("click", () => {
+            // searchDesc.textContent = ;
+        });
+
+    </script>
+</body>
+</html>
