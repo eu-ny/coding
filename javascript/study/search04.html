@@ -204,6 +204,17 @@ function findProperty(searchWord2){
     searchDesc.textContent = tagetData.desc;
 };
 
+//05 클릭했을 때 속성 보이기(반복문은 서치 03번 참고)
+//먼저 버튼을 모두 선택해준 뒤 forEach문을 통해 요소를 클릭했을 시 클릭한 요소를 searchBtn에 저장.
+//매개변수를 사용하여 함수에게 searchBtn값 전달
+const search = document.querySelectorAll(".search__list span");
+search.forEach((el) => {
+    el.addEventListener("click", ()=> {
+        const searchBtn = el.innerText;
+
+        findProperty(searchBtn);
+    });
+});
 </code></pre>
                     </div>
                 <!-- </details> -->
