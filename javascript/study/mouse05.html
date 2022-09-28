@@ -120,11 +120,11 @@
                 <p class="t_desc2">
                     <strong>! CSS TIP !</strong><br>
                     transform: translate3d(x, y, z) : x축과 y축 그리고 z축의 값을 기준으로 각각 설정한 값을 이용하여 3차원 방식으로 이동시킵니다.<br>
-                    transform: perspective(px) rotateX(deg) rotateY(deg);<br>
-                    transform-style: preserve-3d;<br>
-                    will-change: transform;<br>
-                    mix-blend-mode: difference;<br>
-                    filter: blur(npx) grayscale(n%);
+                    transform: perspective(px) : 원근감을 주는 속성입니다. transform의 스타일을 3D로 설정해야 사용 가능합니다!<br>
+                    transform-style: preserve-3d : transform의 스타일을 3D로 설정합니다.<br>
+                    will-change: transform : 헤당 속성 값의 변화를 미리 브라우저에게 알려주어서 동적 효과가 더 부드럽게 작동되도록합니다. 다만 과한 사용은 오히려 과부화를 불러오므로 권장하지 않습니다.<br>
+                    mix-blend-mode: difference : 포토샵의 블렌드 모드와 유사하며 서로 다른 요소(포토샵의 경우 레이어)를 겹쳐서 색상에 대한 효과를 주고 싶을 때 사용합니다.<br>
+                    filter: blur(px) grayscale(%) : 필터효과로 blur는 이미지의 흐림효과, grayscale은 이미지를 %값에 따라 회색조로 변환합니다.;
                 </p>
                 <details style="margin-bottom: 10px;">
                     <summary> ✏️ CSS 스크립트 보기 : 마우스 포인터 / 커서 / 에니메이션효과</summary>
@@ -218,41 +218,55 @@
                     오늘의 스크립트 포인트는 마우스 커서의 좌표값을 구한 뒤 그 좌표값의 최소/최대값을 고정하고 오차범위를 설정하는 것 입니다. <br>
                     그럼 아래의 전체 스크립트와 주석으로 흐름을 파악하면서 이해해봅시다.
                 </p>
-                <details style="margin-bottom: 10px;">
-                    <summary> 💡 전체 스크립트 보기</summary>
+                <p class="t_desc2">
+                    <strong>! JAVASCRIPT TIP !</strong><br>
+                    let 변수명 = Math.max(a, b) / Math.min(a,b) : Math메서드 중 하나로 a, b중 큰 값 / 작은 값을 선택합니다.
+                </p>
+                <!-- <details style="margin-bottom: 10px;"> -->
+                    <!-- <summary> 💡 전체 스크립트 보기</summary> -->
                     <div class="t_code" style="margin-bottom: 30px;">
-<pre><code class="language-js">const mouseMove = (e) =&gt; { // == function mouseMove(){}; 와 같다. 즉 마우스를 움직일 때 발생하는 이벤트를 함수로 설정한 뒤 실행문에서 이벤트 리스너와 함께 함수를 실행시킨 것!
+<pre><code class="language-js">//01
+    const mouseMove = (e) =&gt; { // == function mouseMove(){}; 와 같다. 즉 마우스를 움직일 때 발생하는 이벤트를 함수로 설정한 뒤 실행문에서 이벤트 리스너와 함께 함수를 실행시킨 것!
 
+    //02
     //마우스 좌표값 - 브라우저 기준
     let mousePageX = e.pageX;
     let mousePageY = e.pageY;
 
-    //마우스 좌표 기준점을 가운데로 변경 - 마우스 좌표값 : 화면 중앙 기준
+    //03
+    //마우스 좌표 기준점을 가운데로 변경 : 마우스 좌표값은 화면 중앙 기준 0px
     let centerPageX = window.innerWidth/2 - mousePageX;
     let centerPageY = window.innerHeight/2 - mousePageY;
 
-    //마우스 좌표값이 최소값은 -100 최대값은 100이 되도록 설정 : 좌표가 너무 크게 움직일 경우 이미지 움직임도 커지기 때문에 구해주는 것.
-    //Math.max == 메서드 안의 값 중 최대값을 반환 / Math.min == 메서드 안의 값 중 최소값을 반환
+    //04
+    //마우스 좌표값이 최소값은 -100 최대값은 100이 되도록 설정 : 좌표값이 커질 경우 이미지 움직임도 커지기 때문에 뒤집혀 버리는 경우가 생김 때문에 최소, 최대값을 구해주는 것.
+    //Math.max == 메서드 안의 값 중 최대값을 반환(a, b중 더 큰 값 설정) / Math.min == 메서드 안의 값 중 최소값을 반환(a, b중 더 작은 값 설정)
     //Math.min이 먼저 구해지고 Math.max가 구해진다. 즉 min에서 100보다 커지지 못하도록 최소 100을 고정했으므로 좌표값이 100을 넘어가더라도 100으로 고정이 되어 최대값이 100으로 설정된다. 그 뒤 max에서 좌표값이 -100보다 작아질 경우 최대값은 -100으로 고정되기 때문에 최솟값은 -100이 설정된다. 
     let maxPageX =  Math.max(-100, Math.min(100,centerPageX));
-    let maxPageY = Math.max(-100, Math.min(100,centerPageY));
+    let maxPageY = Math.max(-100, Math.min(100,centerPageY)); // centerPageY와 100중 작은 값 선택한 뒤 -100과 해당 값 중 큰 값을 선택!
 
-    //각도 줄이는 설정 : 위의 값에서 더 각도를 줄이기 위함.
+    //05
+    //각도 줄이는 설정 : 위의 값도 큰 편이기 때문에 더 각도를 줄이기 위함.
     let anglePageX = maxPageX * 0.3;
     let anglePageY = maxPageY * 0.3;
 
-    //부드럽게 설정 : 
+    //06
+    //부드럽게 움직임 설정 : 계산처리 시 텀을 주어 부드러운 움직임을 만들어줍니다.
     let softPageX = 0 , softPageY = 0;
     softPageX += (anglePageX - softPageX) * 0.4;
     softPageY += (anglePageY - softPageY) * 0.4; //오차범위
 
+    //07
     //이미지 움직이기
+    //좌표값에 -를 붙여준 이유는 커서의 방향대로 움직이게 하기 위해서 입니다.
     const imgMove = document.querySelector(".mouse__img");
     imgMove.style.transform = "perspective(600px) rotateX("+ -softPageY +"deg) rotateY("+ -softPageX +"deg)";
 
+    //08
     //커서
     gsap.to(".mouse__cursor" , {duration : 0.3 , left: mousePageX -50, top : mousePageY -50 });
 
+    //09
     //출력
     document.querySelector(".mousePageX").textContent = mousePageX;
     document.querySelector(".mousePageY").textContent = mousePageY;
@@ -267,13 +281,13 @@
   window.addEventListener("mousemove", mouseMove);
 </code></pre>
                     </div>
-                </details>
+                <!-- </details> -->
 
                 <hr>
                 
                 <h3 class="t_tit2">#3. 결과 보기 🎉</h3>
                 <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
-                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/mouseEffect05" frameborder="0"></iframe>
+                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/mouseEffect05.html" frameborder="0"></iframe>
                 </div>
 
                 <div class="t_link">

@@ -1042,12 +1042,6 @@ document.querySelector(".sample03_A2").innerHTML = arrNum2;  //리턴값 100, 20
                                 <td class="sample11_M5"></td>
                                 <td class="sample11_P5"></td>
                             </tr>
-                            <tr>
-                                <td class="sample11_N6"></td>
-                                <td class="sample11_Q6"></td>
-                                <td class="sample11_M6"></td>
-                                <td class="sample11_P6"></td>
-                            </tr>
                         </tbody>    
                     </table>
                 </div>
@@ -1339,13 +1333,6 @@ document.querySelector(".sample03_A2").innerHTML = arrNum2;  //리턴값 100, 20
                 </div>
             </div>
             <!-- //sample14 -->
-
-
-
-
-
-
-
 
 
         </div>
@@ -1965,14 +1952,42 @@ document.querySelector(".sample03_A2").innerHTML = arrNum2;  //리턴값 100, 20
             }
 
             const number10 = [100, 200, 300, 400, 500, 600, 700, 800, 900];
-            if (number.includes(400 || 500)) {
-                console.log(number[3], number[4])
+            if (number10.includes(400 || 500)) {
+                console.log(number10[3], number10[4])
             }
             
-
+        }
+        {
             //출력값 b d f h k = 짝수값 4가지 방법으로 
-            const num = [a, b, c, d, e, f, g, h, i, k];
+            //2<= i < 3
+            const num = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            const slice3 = num.slice(1,2) + num.slice(3,4) + num.slice(5,6) + num.slice(7,8) + num.slice(9);
+            console.log(slice3);
+
+            const num1 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            for( let i=0; i<num1.length; i++){
+                if(i % 2 == 1){
+                    console.log(num1[i]);
+                }
+            }
+
+            const num2 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            const map = num2.map((el, i) => {
+                if(i % 2 == 1){
+                    console.log(num2[i]);
+                }
+            });
             
+            const num3 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            const arr = num3.filter((el,i) => i % 2 == 1);
+            console.log(arr);
+
+
+            // const num4 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
+            // const filter3 = num4.filter(function(el,i){
+            //     return i % 2 == 1
+            // });
+            // console.log(filter3);
         }
   </script>
 </body>

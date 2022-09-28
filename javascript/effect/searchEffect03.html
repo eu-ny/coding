@@ -60,9 +60,11 @@
                     <span>x</span>
                     <span>y</span>
                     <span>z</span>
+                    <span class="all">*</span>
                 </div>
                 <div>CSS 전체 갯수 : <span class="num1">0</span></div>
-                <div>CSS 속성 갯수 : <span class="num2">0</span></div>
+                <!-- <div>CSS 속성 갯수 : <span class="num2">0</span></div> -->
+                <div><span class="num3"></span></div>
             </div>
             <div class="search__list">
                 <div class="css">
@@ -793,38 +795,55 @@ li {
         const searchKeyword = document.querySelectorAll(".search__info .keyword span");  //알파벳
         const searchList = document.querySelectorAll(".search__list ul li");  //목록 리스트
         const searchInfo = document.querySelector(".search__info .num1");      //갯수
-        const searchInfo2 = document.querySelector(".search__info .num2");     //속성갯수
+        // const searchInfo2 = document.querySelector(".search__info .num2");     //속성갯수
+        const searchInfo3 = document.querySelector(".search__info .num3");     //속성갯수2
 
         //전체 갯수 구하기
         searchInfo.textContent = searchList.length;
 
 
-        //searchBox 검색 영역
+        //01searchBox 검색 영역
+        //키워드가 여러개이므로 forEach 반복문을 작성한다.
         searchKeyword.forEach(el => {
             el.addEventListener("click", () => {
+                //searchWord에게 searchKeyword의 모든 el(요소)를 저장합니다. 이때 이벤트 설정도 함께 포함 되므로 클릭한 요소를 최종적으로 저장하게 됩니다.
+                //즉 클릭할 때 마다 해당 요소가 저장되어야 하므로 반복문으로 작성한 것 입니다.
                 const searchWord = el.innerText;  // 사용자가 클릭한 알파벳
-            
-                // console.log("searchWord");
 
+
+                //02 searchList 모든 요소들 중 strong 태그에 감싸여진 요소만 불러와 cssName(변수)에 저장합니다.
                 searchList.forEach(el => {
                     const cssName = el.querySelector("strong").innerText;  //CSS 속성 텍스트
 
                     //알파벳 첫글자와 css속성의 첫글자가 같은 것만 출력된다.
+                    //만약 cssName의 알파벳 첫글자와 사용자가 클릭한 알파벳의 첫글자가 같을 경우 해당 요소만 출력된다.
                     if(searchWord.charAt(0) === cssName.charAt(0)){
                         el.classList.remove("hide");
-                    }else {
+                    } else {
                         el.classList.add("hide");
                     }
 
                     //속성 갯수 구하기
-                    const src1 = document.querySelectorAll(".search__list ul li.hide");
-                    searchInfo2.textContent = searchList.length - src1.length;
+                    //hide가 붙은 속성들을 제외한 총 갯수를 구해야 하므로 hide가 붙은 리스트의 선택자를 만들어 줍니다.
+                    //그 후 전체 갯수에서 hide가 붙은 리스트의 갯수를 빼주면 해당 속성의 갯수만 출력됩니다!
+                    const hide = document.querySelectorAll(".search__list ul li.hide");
+                    // searchInfo2.textContent = searchList.length - src1.length;
 
-                    //
+                    //all버튼 구현
+                    //먼저 텍스트 * 와 searchWord가 같은 경우 list에 붙은 hide를 모두 지워주어 다시 전체 리스트를 불러오도록 합니다.
+                    //그 뒤 백틱을 통해 갯수 값을 해당 요소에 출력시키도록 합니다.
+                    if(searchWord === "*"){
+                        el.classList.remove("hide");
+                        searchInfo3.textContent = `전체 속성은 총 ${searchList.length}개 입니다.`;
+                    //만약 같지 않은 경우 해당 알파벳으로 시작하는 속성의 갯수가 출력되도록 합니다.
+                    }else{
+                        searchInfo3.textContent = `${searchWord}로 시작하는 속성은 총 ${searchList.length - hide.length}개 입니다.`;
+                    }
 
                 });
             });
         });
+
     </script>
 </body>
 </html>
