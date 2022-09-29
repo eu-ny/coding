@@ -553,7 +553,15 @@
         });
         //함수 밖에 위치했으므로 지역 변수이기 때문에 매개변수 사용하여 전달시키거나 전역변수로 바꿔주기. 현재는 매개변수사용!
 
-        //04 속성찾기
+        //04 클릭하기 : 매개변수 활용하여 클릭한 요소를 변수에 저장하여 변수값을 매개변수로 함수에 전달 후 실행!
+        document.querySelectorAll(".search__list span").forEach(el => {
+            el.addEventListener("click", () => {
+                const clickWord = el.innerText;
+                findProperty(clickWord);
+            })
+        })
+
+        //05 속성찾기
         //위의 매개변수 searchWord를 함수의 searchWord2 변수에 저장합니다.
         function findProperty(searchWord2){
             //find메서드를 통해 데이터의 네임값과 searchWord(사용자 입력 값)이 같은 경우 tagetData에 저장한 뒤 해당 데이터의 desc값을 찾아서 불러옵니다.
@@ -569,22 +577,16 @@
             searchDesc.textContent = tagetData.desc;
         };
 
-        //05 클릭했을 때 속성 보이기(반복문은 서치 03번 참고)
+        //04 클릭했을 때 속성 보이기(반복문은 서치 03번 참고)
         //먼저 버튼을 모두 선택해준 뒤 forEach문을 통해 요소를 클릭했을 시 클릭한 요소를 searchBtn에 저장.
         //매개변수를 사용하여 함수에게 searchBtn값 전달
-        const search = document.querySelectorAll(".search__list span");
-        search.forEach((el) => {
-            el.addEventListener("click", ()=> {
-                const searchBtn = el.innerText;
-
-                findProperty(searchBtn);
-            });
-        });
+        // const search = document.querySelectorAll(".search__list span");
         // search.forEach((el) => {
-        //     const searchBtn = el.innerText;
-        //     el.addEventListener("click", ()=> {
+        //     el.addEventListener("click", () => {
+        //         const searchBtn = el.innerText; //
+
         //         findProperty(searchBtn);
-        //     })
+        //     });
         // });
     </script>
 </body>

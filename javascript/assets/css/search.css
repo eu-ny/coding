@@ -137,6 +137,26 @@ li {
     color: #fff;
 }
 
+.search__list em {
+    float: right;
+    font-style: normal;
+}
+
+.search__list .line {
+    margin-bottom: 50px 0;
+}
+
+.search__list .line li {
+    background: #e3eaf5;
+    padding: 10px 30px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+.search__list .line li:hover {
+    background: #d3e2fa;
+    cursor: pointer;
+}
+
 /* search__info_type */
 .search__info {
     text-align: right;
@@ -181,6 +201,27 @@ li {
     background-position: 22px 17px;
 }
 
+.search__click {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.search__click li {
+    display: inline;
+}
+
+.search__click li a {
+    display: inline-block;
+    border: 1px solid var(--htmlColor);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 5px 0;
+}
+
+.search__click li a:hover {
+    background-color: var(--htmlColor);
+    color: #fff;
+}
 
 /* 모바일 */
 @media (max-width: 600px){

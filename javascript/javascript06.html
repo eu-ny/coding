@@ -1982,12 +1982,58 @@ document.querySelector(".sample03_A2").innerHTML = arrNum2;  //리턴값 100, 20
             const arr = num3.filter((el,i) => i % 2 == 1);
             console.log(arr);
 
+            const num4 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            const result12 = [...num4].map(el => el);
+            for (let result12=1; result12 < num2.length; result12++){
+                if (result12%2 == 1){
+                    console.log(num4[result12]);
+                }
+            }
+            const num5 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            const result13 = num5.filter(function(e, i){
+                return i%2 == 1 ? true : false;
+            })
+            console.log(result13);
+
+            const num6 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            num6.splice(0,1);
+            num6.splice(1,1);
+            num6.splice(2,1);
+            num6.splice(3,1);
+            num6.splice(4,1);
+
+            console.log(num6);
+
+            const num7 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            console.log(num7.filter(e => e == "b" || e == "d" || e == "f" || e == "h" || e == "k"));
+
 
             // const num4 = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'k'];
             // const filter3 = num4.filter(function(el,i){
             //     return i % 2 == 1
             // });
             // console.log(filter3);
+        }
+
+        {
+            //ef 3가지 - slice , splice 금지
+            //01
+            const num = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            console.log(num.filter(e => e == "e" || e == "f"));
+
+            //02
+            const num2 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            const filter4 = num2.filter((el,i)=> i>=4 && i<=5);
+            console.log(filter4);
+
+            //03
+            const num3 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "k"];
+            for(let i=0; i<=num3.length; i++){
+                if(i>=4 && i<=5){
+                    console.log(num3[i]);
+                }
+            }
+
         }
   </script>
 </body>
