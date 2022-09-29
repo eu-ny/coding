@@ -81,6 +81,7 @@
             background-color: rgba(255,255,255,0.9);
             user-select: none;
             pointer-events: none;
+            mix-blend-mode: difference;
         }
     </style>
   </head>
@@ -257,6 +258,7 @@
     <script src="../assets/js/common.js"> </script>
     <script src="../assets/js/gsap.min.js"></script>
     <script>
+        const cursor = document.querySelector(".mouse__cursor");
         const mouseMove = (e) => {
             // 반 값 빼주고 현재위치값 빼주면 가운데 정렬
             let positionSlow = (e.pageX - (window.innerWidth/2)) * 0.1;
@@ -265,11 +267,18 @@
             gsap.to(".spanFast", {duration: 0.4, x: -positionFast});
             gsap.to(".mouse__cursor", {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
 
-            
-        }
-        window.addEventListener("mousemove", mouseMove);
+            }
+            window.addEventListener("mousemove", mouseMove);
 
-        //마우스 커서가 글씨 위에 올라가면 원의 크기는 5배 정도 크게 작업... 글씨 반전 효과 추가
+            //마우스 커서가 글씨 위에 올라가면 원의 크기는 5배 정도 크게 작업... 글씨 반전 효과 추가
+            document.querySelector(".mouse__text").addEventListener("mouseover", () => {
+            cursor.style.transform = "scale(5)"
+            });
+
+            document.querySelector(".mouse__text").addEventListener("mouseout", () => {
+            cursor.style.transform = "scale(1)"
+            });
+
     </script>
   </body>
 </html>
