@@ -37,6 +37,7 @@
 
         .mouse__text .line {
             width: 100%;
+            height: 100%;
             display: flex;
         }
 
@@ -85,7 +86,7 @@
         }
     </style>
   </head>
-  <body class="img12">
+  <body class="img20">
     <header id="header">
         <h1><a href="mousEffect.html">Javascript Mouse Effect</a></h1>
         <p>마우스 이펙트 - 텍스트 효과</p>
@@ -258,25 +259,55 @@
     <script src="../assets/js/common.js"> </script>
     <script src="../assets/js/gsap.min.js"></script>
     <script>
-        const cursor = document.querySelector(".mouse__cursor");
+        //선택자
+        const cursor = document.querySelector(".mouse__cursor");//마우스 커서
+
+        //01 : 마우스가 움직일 때 설정 (매개변수로 설정)
         const mouseMove = (e) => {
-            // 반 값 빼주고 현재위치값 빼주면 가운데 정렬
+            //요소 크기에서 브라우저 페이지 반 값 빼주고 현재위치값 빼주면 가운데 정렬
             let positionSlow = (e.pageX - (window.innerWidth/2)) * 0.1;
-            let positionFast = (e.pageX - (window.innerWidth/2)) * 0.2;
+            let positionFast = (e.pageX - (window.innerWidth/2)) * 0.3;
+
             gsap.to(".spanSlow", {duration: 0.4, x: positionSlow});
             gsap.to(".spanFast", {duration: 0.4, x: -positionFast});
             gsap.to(".mouse__cursor", {duration: 0.3, left: e.pageX -5, top: e.pageY -5});
 
             }
+            //실행문에 이밴트리스너를 사용하여 마우스가 움직일 때 매개변수로 값을 받아서 실행시킨다.
             window.addEventListener("mousemove", mouseMove);
 
-            //마우스 커서가 글씨 위에 올라가면 원의 크기는 5배 정도 크게 작업... 글씨 반전 효과 추가
-            document.querySelector(".mouse__text").addEventListener("mouseover", () => {
-            cursor.style.transform = "scale(5)"
+
+            //02 : 마우스 커서가 글씨 위에 올라가면 원의 크기는 5배 정도 크게 작업... 글씨 반전 효과 추가
+            // 방법 01 : 선택자로 텍스트들의 부모를 선택한 뒤 CSS의 트렌스폼 스케일 설정을 해줍니다.
+            // document.querySelector(".mouse__text").addEventListener("mouseover", () => {
+            // cursor.style.transform = "scale(5)"
+            // });
+
+            // document.querySelector(".mouse__text").addEventListener("mouseout", () => {
+            // cursor.style.transform = "scale(1)"
+            // });
+
+            //방법 02 : 반복문을 통해 설정합니다. : 이벤트 리스너는 All가 적용되지 않으므로 반복문을 통해 설정할 수 있습니다!
+            const leftLine = document.querySelectorAll(".mouse__text .spanSlow"); //라인 선택자.
+            const rightLine = document.querySelectorAll(".mouse__text .spanFast"); 
+
+            leftLine.forEach((el)=>{
+                el.addEventListener("mouseover", () => {
+                    cursor.style.transform = "scale(5)"
+                });
+                el.addEventListener("mouseout", () => {
+                    cursor.style.transform = "scale(1)"
+                });
             });
 
-            document.querySelector(".mouse__text").addEventListener("mouseout", () => {
-            cursor.style.transform = "scale(1)"
+            rightLine.forEach((el)=>{
+                el.addEventListener("mouseover", () => {
+                    cursor.style.transform = "scale(5)"
+                });
+    
+                el.addEventListener("mouseout", () => {
+                    cursor.style.transform = "scale(1)"
+                });
             });
 
     </script>

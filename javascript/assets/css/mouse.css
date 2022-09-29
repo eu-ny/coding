@@ -51,6 +51,30 @@ body.img11 {
 body.img12 {
   background: url(../img/Mountian_bg03-2.jpg) no-repeat center / cover;
 }
+body.img13 {
+  background: url(../img/city_bg01-2.jpg) no-repeat center / cover;
+}
+body.img14 {
+  background: url(../img/city_bg02-2.jpg) no-repeat center / cover;
+}
+body.img15 {
+  background: url(../img/city_bg03-2.jpg) no-repeat center / cover;
+}
+body.img16 {
+  background: url(../img/city_bg04-2.jpg) no-repeat center / cover;
+}
+body.img17 {
+  background: url(../img/city_bg05-2.jpg) no-repeat center / cover;
+}
+body.img18 {
+  background: url(../img/Mountian_bg02-2.jpg) no-repeat center / cover;
+}
+body.img19 {
+  background: url(../img/Mountian_bg04-2.jpg) no-repeat center / cover;
+}
+body.img20 {
+  background: url(../img/Mountian_bg05-2.jpg) no-repeat center / cover;
+}
 
 body::after {
   /* 가상 요소 : 배경 전체 불투명도 씌우기 */
