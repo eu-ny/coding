@@ -20,8 +20,8 @@
                 <li><a href="searchEffect01.html">1</a></li>
                 <li><a href="searchEffect02.html">2</a></li>
                 <li><a href="searchEffect03.html">3</a></li>
-                <li class="active"><a href="searchEffect04.html">4</a></li>
-                <li><a href="searchEffect05.html">5</a></li>
+                <li><a href="searchEffect04.html">4</a></li>
+                <li class="active"><a href="searchEffect05.html">5</a></li>
                 <li><a href="searchEffect06.html">6</a></li>
             </ul>
         </nav>
@@ -43,15 +43,16 @@
                     <li data-star="5"><a href="#">★★★★★</a></li>
                 </ul>
                 <ul>
-                    <li><a href="#">1개 이상</a></li>
-                    <li><a href="#">2개 이상</a></li>
-                    <li><a href="#">3개 이상</a></li>
-                    <li><a href="#">4개 이상</a></li>
+                    <li data-num="1"><a href="#">1개 이상</a></li>
+                    <li data-num="2"><a href="#">2개 이상</a></li>
+                    <li data-num="3"><a href="#">3개 이상</a></li>
+                    <li data-num="4"><a href="#">4개 이상</a></li>
                 </ul>
             </div>
 
             <div class="search__info">
                 <div>CSS 전체 속성 : <span class="num">0</span></div>
+                <div>CSS 선택 속성 : <span class="num2">0</span></div>
             </div>
 
             <div class="search__list">
@@ -155,7 +156,8 @@
     <script src="../assets/js/highlight.min.js"> </script>
     <script src="../assets/js/common.js"></script>
     <script>
-        //01 데이터 객체화 시키기
+        //01.선택자
+        //cssProperty : 데이터 객체화 시키기
         const cssProperty = [
             { star: 1 , name: "accent-color", desc: " 요소의 강조 색상을 지정합니다. " },
             { star: 5 , name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다." },
@@ -543,38 +545,77 @@
         const searchList = document.querySelector(".search__list ul"); //서치리스트
         const searchClick = document.querySelectorAll(".search__click ul li"); //클릭 요소
         const searchNum = document.querySelector(".search__info .num"); //전체속성
+        const searchNum2 = document.querySelector(".search__info .num2"); //선택속성
         const starNum = document.querySelectorAll(".search__click ul li a") //별
-        let count = 0;//실행 순서
 
-        //전체속성갯수표시 ok
+        //전체속성갯수표시
         searchNum.innerText = cssProperty.length + "개";
+        //선택속성을 위한 카운트 변수 설정
+        let count = "";
 
-        //02 출력하기
-        //출력하기를 따로 함수화 시키기
-        //매개변수를 받아서 작업 : 재활용이 가능한 스크립트로 작업
-        function updateList(list){
+
+        //02 출력하기 : 출력하기를 함수화 시키기 : 이렇게 할 경우 재활용이 가능한 스크립트가 된다!
+        //2.매개변수를 받아서 작업
+        function updateList(cssProperty2){
             listCSS = "";
 
             //for of문을 사용하여 반복.
-            for( const data of list ){
-                listStar = starNum[data.star].innerText;
-                listCSS += `<li>${data.name}: ${data.desc} <em>${data.star}</em></li>`;
-            }
+            //3.받은 매개변수 값을 다시 data라는 변수에 저장시킨다. 즉 data == cssProperty
+            for( const data of cssProperty2 ){
+                //서치리스트 ul안에 들어갈 li리스트의 구조 설정!
+                // listCSS += `<li>${data.name}: ${data.desc} <em>${data.star}</em></li>`;
 
+                //숫자 별로 치환 방법1
+                //변수를 설정하여 텍스트 별의 데이터값을 넣는다.
+                // listStar = starNum[data.star].innerText;
+                // listCSS += `<li>${data.name}: ${data.desc} <em>${listStar}</em></li>`;
+                count++;
+                // 방법2 : if문을 통해 리스트의 구조 중 숫자를 별로 치환해주기.
+                if(data.star === 0){
+                    listCSS += `<li>${data.name}: ${data.desc} <em> ☆☆☆☆☆ </em></li>`;
+                }
+                if(data.star === 1){
+                    listCSS += `<li>${data.name}: ${data.desc} <em> ★☆☆☆☆ </em></li>`;
+                }
+                if(data.star === 2){
+                    listCSS += `<li>${data.name}: ${data.desc} <em> ★★☆☆☆ </em></li>`;
+                }
+                if(data.star === 3){
+                    listCSS += `<li>${data.name}: ${data.desc} <em> ★★★☆☆ </em></li>`;
+                }
+                if(data.star === 4){
+                    listCSS += `<li>${data.name}: ${data.desc} <em> ★★★★☆ </em></li>`;
+                }
+                if(data.star === 5){
+                    listCSS += `<li>${data.name}: ${data.desc} <em> ★★★★★ </em></li>`;
+                }
+            }
+            //선택 속성 값
+            searchNum2.innerText = count + "개";
+            count = 0;
+
+            //서치리스트에 위의 구조를 innerHTML을 통해 넣어준다.(요소를 넣어야 하므로!)
             searchList.innerHTML = listCSS;
         
         }
+        //1. 매개변수로 위의 변수값 가져온 후 함수에 저장 
         updateList(cssProperty);
 
-        //클릭하기
-        searchClick.forEach(star => {
-            star.addEventListener("click",()=>{
-                //data-star 속성을 가져옴
-                const target = star.dataset.star;
 
-                //콜백함수 / filter와 find의 사용법이 같다.
-                const filterList = cssProperty.filter(data => data.star == target || );
+        //03. 클릭하기
+        //searchClick의 요소 모두 선택 후 이벤트 클릭 설정(이벤트 리스너는 다중 선택자가 불가하므로 반복문을 통해 다중 설정이 가능!)
+        searchClick.forEach(element => {
+            element.addEventListener("click",()=>{
+                //위의 html에서 searchClick의 li의 data-star 속성을 가져온 후 target변수에 저장
+                const target = element.dataset.star;
+                //마찬 가지로 위의 data-num 속성을 모두 가져온 뒤 target2에 저장!
+                const target2 = element.dataset.num;
 
+                //콜백함수
+                //filter와 find의 사용법이 같다. 다만 조건을 쓸 수 있다는 점에서 다르다!
+                const filterList = cssProperty.filter(data => data.star == target || data.star >= target2);
+
+                //매개변수로 위의 변수 값을 가져와 함수를 실행시킨다.
                 updateList(filterList);
             });
         });
