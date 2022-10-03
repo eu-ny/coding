@@ -213,23 +213,19 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
 
 <body>
 
-    <h1>Javascript Test05</h1>
+    <h1>Javascript Test01</h1>
 
     <div id="sample1" class="sample">
-        <h2>03. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <h2>01. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    function func(){
-        let a = [1,2,3,4,5,6,7,8,9];    //a의 값 중 2의 배수(짝수)일 때 cnt의 값이 1씩 증가된다.
-        cnt = 0;                        //만약 a[1]일 때 2%2==0이 성립되므로 cnt = 0+1 즉 1이 된다. 
-        for( i=0; i&lt;a.length; i++){     //다시 a[3]일 때 4%2==0이 성립되므로 cnt = 1+1 즉 2가 된다. 
-            if(a[i]%2 == 0){            //이렇게 반복하게 되면 값은 4가 나오게 된다.     
-                cnt += 1;
-            }
-        }
-        document.write(cnt)//정답 : 4
-    }
-    func();
+    var x = 100; 
+    var y = 200; 
+    var z = "javascript"; 
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
 }
 </code></pre>
         </div>
@@ -238,19 +234,19 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
     <hr>
 
     <div id="sample2" class="sample">
-        <h2>06. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <h2>02. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    function func(){
-        let i = 0;  //for문에서는 초기값은 무조건 실행하고 그 뒤 조건에 맞을 때 마다 실행된다.
-        let j = 0;  //때문에 j값이 출력이 되면 i도 반복을 멈추게 된다. 여기서 j는 i가 8일 때 최종값이 나오므로 값은 36이 된다.
+    let x = 100;
+    let y = 200;
+    let z = "javascript";
+    x = 300;   
+    y = 400;
+    z = "jquery";
 
-        for(i=0; i&lt;=8; i++){
-            j += i;     //이 때 i는 j= 36 + 9 에서 반복이 멈추기 때문에 더이상 j값을 구하지 않고 종료된다. 때문에 i값은 9가 된다.
-        }
-        document.write(j + i) //정답은 36 + 9가 되므로 값은 45가 나오게 된다.
-    }
-    func();
+    document.write(x);
+    document.write(y);
+    document.write(z);
 }
 </code></pre>
         </div>
@@ -259,7 +255,7 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
     <hr>
 
     <div id="sample3" class="sample">
-        <h2>09. 결괏값을 작성하시오.<span class="dot"></span></h2>
+        <h2>03. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     let x = 100;
@@ -581,12 +577,6 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
 
     <hr>
 
-    <div class="t_iframe" style="background: #fff; height: 1000px; padding-top: 0;">
-        <iframe src="https://eu-ny.github.io/coding/test/jsTestFalse.html" frameborder="0"></iframe>
-    </div>
-
-    <hr>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
@@ -830,70 +820,6 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         //     obj.f();
         // }
 
-    </script>
-
-    <script>
-        //03
-        {
-            function func(){
-                let a = [1,2,3,4,5,6,7,8,9];    //a의 값 중 2의 배수(짝수)일 때 cnt의 값이 1씩 증가된다.
-                cnt = 0;                        //만약 a[1]일 때 2%2==0이 성립되므로 cnt = 0+1 즉 1이 된다. 
-                for( i=0; i<a.length; i++){     //다시 a[3]일 때 4%2==0이 성립되므로 cnt = 1+1 즉 2가 된다. 
-                    if(a[i]%2 == 0){            //이렇게 반복하게 되면 값은 4가 나오게 된다.     
-                        cnt += 1;
-                    }
-                }
-                document.write(cnt)//정답 : 4
-            }
-            func();
-        }
-        document.write("<br>");
-        //06
-        {   
-            function func(){
-                let i = 0;  //for문에서는 초기값은 무조건 실행하고 그 뒤 조건에 맞을 때 마다 실행된다.
-                let j = 0;  //때문에 j값이 출력이 되면 i도 반복을 멈추게 된다. 여기서 j는 i가 8일 때 최종값이 나오므로 값은 36이 된다.
-
-                for(i=0; i<=8; i++){
-                    j += i;     //이 때 i는 j= 36 + 9 에서 반복이 멈추기 때문에 더이상 j값을 구하지 않고 종료된다. 때문에 i값은 9가 된다.
-                }
-                document.write(j + i) //정답은 36 + 9가 되므로 값은 45가 나오게 된다.
-            }
-            func();
-        }
-        document.write("<br>");
-        //09
-        {
-            //while문의 조건에서 a값이 10보다 작을 경우 a를 1씩 증가시키고 조건식에 들어간다. 
-            //즉 0123456789까지 while의 조건에 충족하므로 
-            function func(){
-                let a=0;
-                let sum=0;
-                while(a<10){
-                    a++;
-                    if(a%2==1) continue;
-                    sum+=a
-                }
-                document.write(sum);
-            }
-            func();
-        }
-        document.write("<br>");
-        //09
-        {
-            function func(){
-                let a=0;
-                let sum=0;
-                while(1){
-                    a++;
-                    if(a%2==1) continue;
-                    sum+=a; 
-                    break;
-                }
-                document.write(sum);
-            }
-            func();
-        }
     </script>
 </body>
 
