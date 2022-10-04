@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>javascript</title>
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font.css">
     <link rel="stylesheet" href="https://tistory4.daumcdn.net/tistory/2933724/skin/images/font-awesome.css">
 
@@ -675,8 +676,72 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
                     answer+=x;
                 }
             }
-            document.write();
+            document.write(answer);
         }
+        document.write("<br>");
+        {
+            function func(){
+                let i = 0;
+                let j = 1;
+
+                for(i=3; i<=4; i++){
+                    j+=i;
+                }
+                document.write(j);
+            }
+            func();
+        }
+        document.write("<br>");
+        {
+            for(let i=0; i<3; i++){
+                for(let j=0; j<4; j++){
+                    document.write("*");
+                }
+                document.write(i,"<br>")
+            }
+        }
+        document.write("<br>");
+        {
+           let text = "Good Tomato";
+
+           let text2 = text.split(' ').join("#").slice(4);
+           document.write(text2);
+        }
+        document.write("<br>");
+        {
+            function num(a,b,c){
+                return ((a % b == 0) ? c-b : a-c) * 2
+            }
+            document.write(num(5,10,2));
+        }
+        document.write("<br>")
+        {
+            function func(){
+                let num = [1,2,2,4,5,6,8,2,10]
+                let count = 0;
+
+                for( i=0; i<num.length; i++){
+                    if(num[i] == 2){
+                        count+=1
+                    }
+                }
+                document.write(count);
+            }
+            func();
+        }
+        document.write("<br>")
+        {
+            function func(){
+                let num = [];
+
+                for(i=1; i<=12; i+=4){
+                    num+=i * 2;
+                }
+                document.write(num);
+            }
+            func();
+        }
+
     </script>
 
     </body>
