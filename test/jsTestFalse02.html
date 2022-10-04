@@ -396,14 +396,15 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <h2>10. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    const obj = new Object();
-    obj.a = 100;
-    obj.b = 200;
-    obj.c = "javascript";
+    function func(){
+        let num = [];
 
-    document.write(obj.a);
-    document.write(obj.b);
-    document.write(obj.c);
+        for(i=1; i&lt;=12; i+=4){
+            num+=i * 2;
+        }
+        document.write(num);
+    }
+    func();
 }
 </code></pre>
         </div>
