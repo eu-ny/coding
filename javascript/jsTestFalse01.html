@@ -657,13 +657,13 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
                 let answer = 0;
                 
                 for(x of s){
-                    if(x == (x % 2==0)) continue;
+                    if(x % 2==0) continue;
                     answer++
                 }
                 return answer;
 
             }
-            let num = [1,2,3,4,5,6]
+            let num = [1,2,3,4,5,6,7]
             document.write(func(num));
         }
         document.write("<br>");
