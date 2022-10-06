@@ -359,7 +359,7 @@
         transition-delay: 2200ms;
       } */
 
-        /* 순차적으로 나타나기 */
+      /* 순차적으로 나타나기 */
         .style1.split span {
             opacity: 0;
             transform: translateY(50px);
@@ -425,6 +425,105 @@
             66.6% {transform: skewX(-0.78125deg) skewY(-0.78125deg);}
             77.7% {transform: skewX(0.390625deg) skewY(0.390625deg);}
             88.8% {transform: skewX(-0.1953125deg) skewY(-0.1953125deg);}
+        }
+        .style6.split span {
+           display: inline-block;
+           min-width: 1vw;
+        }
+        .style6.split span.show {
+            animation: style6 1s 1 ease-in forwards;
+        }
+        @keyframes style6 {
+            0% {
+                opacity: 0;
+                transform: scale(1);
+            }
+
+            14% {
+                opacity: 1;
+                transform: scale(1.6);
+            }
+
+            28% {
+                opacity: 1;
+                transform: scale(0.5);
+            }
+
+            72% {
+                opacity: 1;
+                transform: scale(1.6);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .style7.split span {
+           display: inline-block;
+           min-width: 1vw;
+        }
+        .style7.split span.show {
+            animation: style7 1s 1 ease-in forwards;
+        }
+        @keyframes style7 {
+            0% {
+                opacity: 0;
+                transform: rotate3d(0, 0, 1, 15deg);
+            }
+
+            35% {
+                opacity: 1;
+                transform: rotate3d(0, 0, 1, -10deg);
+            }
+
+            60% {
+                opacity: 1;
+                transform: rotate3d(0, 0, 1, 5deg);
+            }
+
+            80% {
+                opacity: 1;
+                transform: rotate3d(0, 0, 1, -5deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: rotate3d(0, 0, 1, 0deg);
+            }
+        }
+        .style8.split span {
+           display: inline-block;
+           min-width: 1vw;
+        }
+        .style8.split span.show {
+            animation: style8 1s 1 ease-in forwards;
+        }
+        @keyframes style8 {
+          0% {
+            transform: translate3d(-100%, 0, 0);
+            visibility: visible;
+          }
+          50% {
+            transform: translate3d(-50%, 0, 0);
+            visibility: visible;
+          }
+
+          100% {
+            transform: translate3d(0, 0, 0);
+          }
+      }
+        
+        .style9.split span {
+            display: inline-block;
+            min-width: 1vw;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.3s cubic-bezier(0, 0, 0.77, 2);
+        }
+        .style9.split span.show {
+          opacity: 1;
+          transform: translateY(0);
         }
     </style>
   </head>
@@ -517,7 +616,7 @@
           <figure class="content__item__imgWrap">
             <div class="content__item__img"></div>
           </figure>
-          <p class="content__item__desc split">
+          <p class="content__item__desc split style5">
             좋은 성과를 얻으려면 한 걸음 한 걸음이 힘차고 충실하지 않으면 안된다.
           </p>
         </section>
@@ -529,7 +628,7 @@
           <figure class="content__item__imgWrap">
             <div class="content__item__img"></div>
           </figure>
-          <p class="content__item__desc split">
+          <p class="content__item__desc split style6">
             성공의 비결은 단 한 가지, 잘할 수 있는 일에 광적으로 집중하는 것이다.
           </p>
         </section>
@@ -541,7 +640,7 @@
           <figure class="content__item__imgWrap">
             <div class="content__item__img"></div>
           </figure>
-          <p class="content__item__desc split">
+          <p class="content__item__desc split style7">
             꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다.
           </p>
         </section>
@@ -553,7 +652,7 @@
           <figure class="content__item__imgWrap">
             <div class="content__item__img"></div>
           </figure>
-          <p class="content__item__desc split">
+          <p class="content__item__desc split style8">
             흔히 사람들은 기회를 기다리고 있지만 기회는 기다리는 사람에게 잡히지 않는 법이다.
           </p>
         </section>
@@ -565,7 +664,7 @@
           <figure class="content__item__imgWrap">
             <div class="content__item__img"></div>
           </figure>
-          <p class="content__item__desc split">
+          <p class="content__item__desc split style9">
             이미끝나버린 일을 후회하기 보다는 하고 싶었던 일들을 하지못한 것을
             후회하라.
           </p>
@@ -1393,21 +1492,19 @@
           //     });
           //   }
           // });
+          //힌트는 인덱스 인덱스를 이용해서
+          //첫 번째 span --> 0.01
+          //두 번째 span --> 0.02
+          //세 번째 span --> 0.03
+          //네 번째 span --> 0.04
+          //다섯 번째 span --> 0.05
+          //여섯 번째 span --> 0.06
+          //일곱 번째 span --> 0.07
 
           //03 : css 스타일 주기 - setimeout
           document.querySelectorAll(".content__item").forEach(item => {
                 if(scrollTop >= item.offsetTop){
                     item.querySelectorAll(".split span").forEach((span, index) => {
-                        span.classList.add("show");
-                        //힌트는 인덱스 인덱스를 이용해서
-                        //첫 번째 span --> 0.01
-                        //두 번째 span --> 0.02
-                        //세 번째 span --> 0.03
-                        //네 번째 span --> 0.04
-                        //다섯 번째 span --> 0.05
-                        //여섯 번째 span --> 0.06
-                        //일곱 번째 span --> 0.07
-
                         //선생님 방법
                         setTimeout(()=>{
                             span.classList.add("show");

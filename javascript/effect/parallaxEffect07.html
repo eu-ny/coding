@@ -192,18 +192,21 @@
           border-radius: 10px;
         }
 
-         /* option */
-         .reveal > div,
+        /* option : reveal 공통 속성 */
+        .reveal > div,
         .reveal > span {
             opacity: 0;
         }
+        
         .reveal.show > div,
         .reveal.show > span {
             animation: opacity 1s linear forwards;
         }
+
         .reveal {
             position: relative;
         }
+
         .reveal::before {
             position: absolute;
             content: '';
@@ -214,6 +217,7 @@
             background: #999;
             z-index: 1;
         }
+
         .reveal.reveal-TWO::after {
             position: absolute;
             content: '';
@@ -224,60 +228,76 @@
             z-index: 1;
             background: #000;
         }
-        /* reveal-ONE */
+
+        /* reveal 1개 ver. */
         .reveal.show::before {
             animation: reveal 1s;
         }
+
         .reveal-RTL.show::before  {
             animation: reveal-RTL 1s;
         }
+
         .reveal-TTB.show::before  {
             animation: reveal-TTB 1s;
         }
+
         .reveal-BTT.show::before  {
             animation: reveal-BTT 1s;
         }
-        /* reveal-TWO */
+
+        /* reveal 2개 ver. */
         .reveal.show::after {
             animation: reveal 1s 0.3s;
         }
+
         .reveal.reveal-RTL.show::after {
             animation: reveal-RTL 1s 0.3s;
         }
+
         .reveal.reveal-TTB.show::after {
             animation: reveal-TTB 1s 0.3s;
         }
+
         .reveal.reveal-BTT.show::after {
             animation: reveal-BTT 1s 0.3s;
         }
+
         .content__item__num,
         .content__item__title {
             display: none;
         }
+
+        /* reveal 애니메이션 */
         @keyframes opacity {
             0% {opacity: 0;}
             60% {opacity: 0;}
             70% {opacity: 1;}
             100% {opacity: 1;}
         }
+
         @keyframes reveal {
             0% {width: 0; left: 0;}
             50% {width: 100%; left: 0;}
             80% {width: 100%; left: 0;}
             100% {width: 0; left: 100%;}
         }
+
         @keyframes reveal-RTL {
             0% {width: 0; right: 0; left: auto;}
             50% {width: 100%; right: 0; left: auto;}
             80% {width: 100%; right: 0; left: auto;}
             100% {width: 0; right: 100%; left: auto;}
+             /* left로 설정되어 있기 때문에 right로 다시 설정하기 위하여 오토 속성으로 초기화 시킨다. */
         }
+        
         @keyframes reveal-TTB {
             0% {width: 100%; height: 0; top: 0;}
             50% {width: 100%; height: 100%; top: 0;}
             80% {width: 100%; height: 100%; top: 0;}
             100% {width: 100%; height: 0; top: 100%;}
         }
+
         @keyframes reveal-BTT {
             0% {width: 100%; height: 0; bottom: 0; top: auto;}
             50% {width: 100%; height: 100%; bottom: 0; top: auto;}
@@ -329,9 +349,7 @@
             <div class="content__item__img"></div>
           </figure>
           <p class="content__item__desc reveal">
-            <span>
               미래는 현재 우리가 무엇을 하는가에 달려 있다.
-            </span>
           </p>
         </section>
         <!-- //section1 -->
@@ -343,9 +361,7 @@
             <div class="content__item__img"></div>
           </figure>
           <p class="content__item__desc reveal reveal-RTL">
-            <span>
               어제로 돌아갈 수 없다. 왜냐하면 나는 어제와는 다른 사람이 되었기 때문이다.
-            </span>
           </p>
         </section>
         <!-- //section2 -->
@@ -357,9 +373,7 @@
             <div class="content__item__img"></div>
           </figure>
           <p class="content__item__desc  reveal reveal-TTB" data-delay="500">
-            <span>
               언제나 현재에 집중할수 있다면 행복할것이다.
-            </span>
           </p>
         </section>
         <!-- //section3 -->
@@ -385,9 +399,7 @@
             <div class="content__item__img"></div>
           </figure>
           <p class="content__item__desc reveal reveal-TWO">
-            <span>
               좋은 성과를 얻으려면 한 걸음 한 걸음이 힘차고 충실하지 않으면 안된다.
-            </span>
           </p>
         </section>
         <!-- //section5 -->
@@ -398,7 +410,7 @@
           <figure class="content__item__imgWrap reveal reveal-TWO reveal-RTL">
             <div class="content__item__img"></div>
           </figure>
-          <p class="content__item__desc">
+          <p class="content__item__desc reveal reveal-TWO reveal-RTL">
             성공의 비결은 단 한 가지, 잘할 수 있는 일에 광적으로 집중하는 것이다.
           </p>
         </section>
@@ -410,7 +422,7 @@
           <figure class="content__item__imgWrap reveal reveal-TWO reveal-TTB">
             <div class="content__item__img"></div>
           </figure>
-          <p class="content__item__desc">
+          <p class="content__item__desc reveal reveal-TWO reveal-TTB">
             꿈을 계속 간직하고 있으면 반드시 실현할 때가 온다.
           </p>
         </section>
@@ -422,7 +434,7 @@
           <figure class="content__item__imgWrap reveal reveal-TWO reveal-BTT">
             <div class="content__item__img"></div>
           </figure>
-          <p class="content__item__desc">
+          <p class="content__item__desc reveal reveal-TWO reveal-BTT">
             흔히 사람들은 기회를 기다리고 있지만 기회는 기다리는 사람에게 잡히지 않는 법이다.
           </p>
         </section>
@@ -431,10 +443,10 @@
         <section id="section9" class="content__item">
           <span class="content__item__num">09</span>
           <h1 class="content__item__title">section9</h1>
-          <figure class="content__item__imgWrap reveal">
+          <figure class="content__item__imgWrap reveal reveal-TWO">
             <div class="content__item__img"></div>
           </figure>
-          <p class="content__item__desc">
+          <p class="content__item__desc reveal reveal-TWO">
             이미끝나버린 일을 후회하기 보다는 하고 싶었던 일들을 하지못한 것을 후회하라.
           </p>
         </section>
@@ -1201,8 +1213,14 @@
     <script src="../assets/js/gsap.min.js"></script>
 
     <script>
-      //span을 텍스트에 다 넣어주기.숙제(div해도 무방) .미션
+      //span을 텍스트에 다 넣어주기.숙제(div해도 무방) .미션 / html로 일일히 작성하기엔 너무 비효율적.
       //reveal 클래스 자식에 글씨만 있다면 가상으로 span태그를 만들어서 넣어주기 (페럴렉스 6번 참고)
+      document.querySelectorAll(".content__item__desc.reveal").forEach(text => {
+        let splitText = text.innerHTML;
+        splitText = "<span>" + splitText + "</span>";
+        text.innerHTML = splitText;
+      });
+
 
       function scroll(){
         // 스크롤 탑값
@@ -1234,7 +1252,7 @@
 
         });
 
-        document.querySelector(".scrollTop span").innerText = Math.round(scrollTop);
+        document.querySelector(".scroll span").innerText = Math.round(scrollTop);
 
         requestAnimationFrame(scroll);
       }
