@@ -219,16 +219,16 @@ code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shad
         <h2>01. 결괏값을 작성하시오.<span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    function func(e,i){
-        let answer;
-        n = 10
-
-        if(i>e) answer = e+i;
-        else answer = i-n*e;
-
+    function q1(num) {
+        let answer = 0;
+        while(num) {
+            answer += num % 10;
+            num = parseInt(num / 10);
+        }
         return answer;
     }
-    document.write(func(3,2));
+    
+    console.log(q1(1996));
 }
 </code></pre>
         </div>
