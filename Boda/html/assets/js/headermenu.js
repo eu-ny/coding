@@ -1,7 +1,7 @@
 // header hover 
 const sub = document.querySelectorAll(".header__center .menu li .sub");
 const menu = document.querySelectorAll(".header__center .menu li a");
-const header = document.querySelector(".header__container");
+const header = document.querySelector(".header__center");
 
 header.addEventListener("mouseover", () => {
     header.classList.remove("height");

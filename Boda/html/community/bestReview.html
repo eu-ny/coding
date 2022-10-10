@@ -19,36 +19,46 @@
     </head>
     <body>
         <header id="header">
-            <div class="header__container height">
+            <div class="header__container">
                 <div class="header__left">
                     <div class="header__logo"><a href="#">BODA</a></div>
                 </div>
-                <div class="header__center">
+                <div class="header__center height">
                     <ul class="menu">
                         <li><a href="#">EXHIBITION</a>
-                            <ul class="sub" >
-                                <li><a href="#">현재전시</a></li>
-                                <li><a href="#">예정전시</a></li>
-                                <li><a href="#">지난전시</a></li>
-                                <li><a href="#">추천전시</a></li>
-                            </ul>
+                            <div class="subMemu">
+                                <ul class="sub" >
+                                    <li><a href="#">현재전시</a></li>
+                                    <li><a href="#">예정전시</a></li>
+                                    <li><a href="#">지난전시</a></li>
+                                    <li><a href="#">추천전시</a></li>
+                                </ul>
+                            </div>
                         </li>
                         <li><a href="#">SEARCH</a>
-                            <ul class="sub" >
-                                <li><a href="#">키워드별 검색</a></li>
-                                <li><a href="#">직접 검색</a></li>
-                            </ul>    
+                            <div class="subMemu">
+                                <ul class="sub" >
+                                    <li><a href="#">키워드별 검색</a></li>
+                                    <li><a href="#">직접 검색</a></li>
+                                </ul>
+                            </div>    
                         </li>
-                        <li><a href="bestReview.html">COMMUNITY</a>
-                            <ul class="sub" >
-                                <li><a href="bestReview.html">REVIEW</a></li>
-                                <li><a href="Talk.html">TALK</a></li>
-                            </ul></li>
+                        <li><a href="../community/bestReview.html">COMMUNITY</a>
+                            <div class="subMemu">
+                                <ul class="sub" >
+                                    <li><a href="../community/bestReview.html">REVIEW</a></li>
+                                    <li><a href="../community/Talk.html">TALK</a></li>
+                                </ul>
+                            </div>
+                        </li>
                         <li><a href="#">ABOUT</a>
-                            <ul class="sub" >
-                                <li><a href="#">ABOUT BODA</a></li>
-                                <li><a href="#">CONTACT US</a></li>
-                            </ul></li>
+                            <div class="subMemu">
+                                <ul class="sub" >
+                                    <li><a href="#">ABOUT BODA</a></li>
+                                    <li><a href="#">CONTACT US</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="header__right">
@@ -99,7 +109,7 @@
                     </svg>
                     <div class="smallmenu blind">
                         <li><a href="#">LOGIN</a></li>
-                        <li><a href="#">SIGN UP</a></li>
+                        <li><a href="../login/agree.html">SIGN UP</a></li>
                         <li><a href="#">MYPAGE</a></li>
                         <li><a href="../notice/notice.html">NOTICE</a></li>
                     </div>
@@ -129,9 +139,9 @@
                         <button type="submit" class="login-btn">로그인</button>
                         <div class="login__footer">
                             <div class="join__btn">
-                                <a href="#">회원가입</a>
+                                <a href="../login/agree.html">회원가입</a>
                                 <a href="../login/findID.html">아이디 찾기</a>
-                                <a href="#">비밀번호 찾기</a>
+                                <a href="../login/findPass.html">비밀번호 찾기</a>
                             </div>
                         </div>
                     </div>
@@ -139,7 +149,7 @@
             </div>
             <!-- //login popup -->
         </header>
-
+        
         <main id="main">
             <h2 class="blind">베스트 리뷰 게시판입니다.</h2>
             <div class="main__header top__container">

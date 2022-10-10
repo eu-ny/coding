@@ -18,3 +18,12 @@
     margin: 0 auto;
     font-family: "scoredream";
 }
+
+/* 미디어쿼리 */
+@media (max-width:960px) {
+    .container,
+    .top__container,
+    .mid__container {
+        width: 85%;
+    }
+}

@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비밀번호 찾기</title>
 
-    <link rel="stylesheet" href="../assets/css/reset.css">
-    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/fonts.css" />
+    <link rel="stylesheet" href="../assets/css/reset.css" />
+    <link rel="stylesheet" href="../assets/css/common.css" />
 
-    <link rel="stylesheet" href="../assets/css/header.css">
-    <link rel="stylesheet" href="../assets/css/login.css">
+    <link rel="stylesheet" href="../assets/css/header.css" />
     <link rel="stylesheet" href="../assets/css/loginPopup.css">
-    <link rel="stylesheet" href="../assets/css/agree.css">
+
+    <title></title>
 </head>
 <body>
     <header id="header">
@@ -147,88 +147,6 @@
         <!-- //login popup -->
     </header>
 
-    <main id="main" class="login__container">
-        <div class="find__header">
-            <h2>계정 찾기</h2>
-        </div>
-        <div class="find__ID">
-            <ul class="find__menu">
-                <li><a href="findID.html">아이디 찾기</a></li>
-                <li><a href="findPass.html" class="active">비밀번호 찾기</a></li>
-            </ul>
-            <div class="find__contents">
-                <form name="findForm" action="#" class="findForm"  method="post">
-                    <fieldset>
-                        <legend class="blind">비밀번호 찾기 작성 란</legend>
-                        <div class="find-name">
-                            <label for="userName">이름</label>
-                            <input type="text" class="userName" name="userName" placeholder="이름을 입력해주세요." id="userName" maxlength="20" required>
-                        </div>
-                        <div class="find-ID">
-                            <label for="userID">아이디</label>
-                            <input type="text" class="userID" name="userID" placeholder="아이디를 입력해주세요." id="userID" maxlength="20" required>
-                        </div>
-                        <div class="find__tebMenu">
-                            <label for="find-ID"><input type="radio" name="find" class="tabBtn" checked>이메일로 찾기</label>
-                            <label for="find-ID"><input type="radio" name="find" class="tabBtn">휴대폰 번호로 찾기</label>
-                        </div>
-                        <div class="find__tabContent">
-                            <div class="find-tab1">
-                                <label for="userEmail">이메일</label>
-                                <input type="email" class="userEmail" name="userEmail" placeholder="이메일을 입력해주세요." id="userEmail" required>
-                            </div>
-                            <div class="find-tab2">
-                                <label for="userPhone">휴대폰 번호</label>
-                                <input type="text" class="userPhone" name="userPhone" placeholder="휴대폰 번호를 입력해주세요." id="userPhone" required>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
-                <button type="submit" class="find-btn openBtn">비밀번호 찾기</button>
-            </div>
-        </div>
-
-        <div class="modal hidden">
-            <div class="bg"></div>
-            <div class="modalBox">
-                <h2>계정 찾기</h2>
-                <p>비밀번호는 XXXXXX 입니다.</p>
-                <div class="mobal-btn"><a href="#" class="closeBtn">메인으로</a></div>
-            </div>
-        </div>
-    </main>
-
-    <script src="../assets/js/alert.js"></script>
     <script src="../assets/js/headermenu.js"></script>
-    <script src="../assets/js/loginpopup.js"></script>
-    
-    <script>
-        // const tabBtn = document.querySelectorAll(".find__tebMenu label tabBtn");
-        // const findTabCont = document.querySelectorAll(".find__tabContent div");
-        // tabBtn.forEach((element, index) => {
-        //     //버튼을 클릭함
-        //     element.addEventListener("click", (event) => {  //클릭한 값이 이벤트에 저장된다.
-        //         event.preventDefault();   //클릭을 해도 반응되지 않도록 함. (기본값은 맨 위로 이동)
-
-        //         //클래스의 active를 모두 제거시킨다.
-        //         tabBtn.forEach(li => {
-        //             li.classList.remove("show");  //엑티브를 지워준다.
-        //         });
-        //         //내가 클릭한 버튼에 active 추가하기
-        //         element.classList.add("show");
-                
-        //         //버튼을 클릭하면 모든 자식 박스(컨텐츠)를 숨긴다.
-        //         findTabCont.forEach(div => {
-        //             div.style.display = "none";
-        //         });
-
-        //         //클릭한 버튼과 관련된 콘텐츠 박스(div)를 보이게 한다.
-        //         //[i]클릭한 버튼과 [i]콘텐츠 박스를 보이게 한다. (첫번째 버튼 - 첫번째 콘텐츠)
-        //         findTabCont[index].style.display = "block";
-        //     });
-        // });
-    
-    </script>
 </body>
-
 </html>

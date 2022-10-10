@@ -11,7 +11,7 @@
     box-shadow: 0px 10px 10px 0px rgba(48,49,51,6%);
 }
 
-.header__container.height {
+.height {
     height: 80px;
 }
 
@@ -51,19 +51,23 @@
     font-size: 16px;
 }
 .header__center {
-    width: 40%;
+    width: 50%;
 }
-
 .header__center .menu {
     display: flex;
     justify-content: space-between;
     font-weight: 500;
     font-size: 18px;
     margin-top: 25px;
+    box-sizing: border-box;
+}
+.header__center .menu li {
+    text-align: center;
 }
 
 .header__center .menu li a {
-    padding: 10px 25px;
+    padding: 10px 40px;
+    display:inline-block;
     color: #323232;
 }
 .header__center .menu li .sub {
@@ -88,7 +92,7 @@
 
 .header__right {
     margin-top: 22px;
-    margin-right: 60px;
+    margin-right: 40px;
     position: relative;
 }
 .header__right svg:first-child {
@@ -124,4 +128,16 @@
 }
 .header__right .smallmenu li:hover {
     text-decoration: underline;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 960px) {
+    .header__container {
+    }
+    .header__container {
+        box-shadow: none;
+    }
+    .header__center {
+        display: none;
+    }
 }
