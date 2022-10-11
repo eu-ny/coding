@@ -12,142 +12,10 @@
         <link rel="stylesheet" href="../assets/css/header.css" />
         <link rel="stylesheet" href="../assets/css/loginPopup.css">
         <link rel="stylesheet" href="../assets/css/notice.css">
-        <link rel="stylesheet" href="../assets/css/FAQ.css">
         <link rel="stylesheet" href="../assets/css/footer.css">
         <title>FAQ</title>
     </head>
     <body>
-        <header id="header">
-            <div class="header__container">
-                <div class="header__left">
-                    <div class="header__logo"><a href="#">BODA</a></div>
-                </div>
-                <div class="header__center height">
-                    <ul class="menu">
-                        <li><a href="#">EXHIBITION</a>
-                            <div class="subMemu">
-                                <ul class="sub" >
-                                    <li><a href="#">현재전시</a></li>
-                                    <li><a href="#">예정전시</a></li>
-                                    <li><a href="#">지난전시</a></li>
-                                    <li><a href="#">추천전시</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a href="#">SEARCH</a>
-                            <div class="subMemu">
-                                <ul class="sub" >
-                                    <li><a href="#">키워드별 검색</a></li>
-                                    <li><a href="#">직접 검색</a></li>
-                                </ul>
-                            </div>    
-                        </li>
-                        <li><a href="../community/bestReview.html">COMMUNITY</a>
-                            <div class="subMemu">
-                                <ul class="sub" >
-                                    <li><a href="../community/bestReview.html">REVIEW</a></li>
-                                    <li><a href="../community/Talk.html">TALK</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li><a href="#">ABOUT</a>
-                            <div class="subMemu">
-                                <ul class="sub" >
-                                    <li><a href="#">ABOUT BODA</a></li>
-                                    <li><a href="#">CONTACT US</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="header__right">
-                    <a href="#">
-                        <svg
-                            width="29"
-                            height="29"
-                            viewBox="0 0 29 29"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M20.7261 18.239H19.4162L18.952 17.7913C20.5769 15.9011 21.5552 13.4471 21.5552 10.7776C21.5552 4.82504 16.7301 0 10.7776 0C4.82504 0 0 4.82504 0 10.7776C0 16.7301 4.82504 21.5552 10.7776 21.5552C13.4471 21.5552 15.9011 20.5769 17.7913 18.952L18.239 19.4162V20.7261L25.391 27.8638C25.7937 28.2658 25.9951 28.4667 26.2279 28.5402C26.424 28.602 26.6345 28.6019 26.8306 28.5399C27.0633 28.4662 27.2644 28.265 27.6667 27.8627L27.8627 27.6667C28.265 27.2644 28.4662 27.0633 28.5399 26.8306C28.6019 26.6345 28.602 26.424 28.5402 26.2279C28.4667 25.9951 28.2658 25.7937 27.8638 25.391L20.7261 18.239ZM10.7776 18.239C6.64894 18.239 3.31618 14.9062 3.31618 10.7776C3.31618 6.64894 6.64894 3.31618 10.7776 3.31618C14.9062 3.31618 18.239 6.64894 18.239 10.7776C18.239 14.9062 14.9062 18.239 10.7776 18.239Z"
-                                fill="#323232"
-                            />
-                        </svg>
-                    </a>
-                    <svg
-                        width="40"
-                        height="32"
-                        viewBox="0 0 40 32"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M6.25 5.94922H33.75M6.25 15.8979H33.75M6.25 25.8467H33.75"
-                            stroke="black"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
-                    <svg
-                        class="blind"
-                        width="40"
-                        height="32"
-                        viewBox="0 0 40 32"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            d="M6.25 5.94922H33.75M6.25 15.8979H33.75M6.25 25.8467H33.75"
-                            stroke="black"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        />
-                    </svg>
-                    <div class="smallmenu blind">
-                        <li><a href="#">LOGIN</a></li>
-                        <li><a href="../login/agree.html">SIGN UP</a></li>
-                        <li><a href="#">MYPAGE</a></li>
-                        <li><a href="../notice/notice.html">NOTICE</a></li>
-                    </div>
-                </div>
-            </div>
-            <!-- login popup -->
-            <div id="loginPopup" class="login__popup open blind">
-                <div class="login__wrap">
-                    <div class="login__header">
-                        <h2 class="popup__title">LOGIN</h2>
-                        <button type="button" class="popup__close"><span class="blind">닫기</span></button>
-                    </div>  
-                    <div class="login__inner">
-                        <form action="#" class="loginForm"  method="post">
-                            <fieldset>
-                                <legend class="blind">로그인 작성 란</legend>
-                                <div class="ID">
-                                    <label for="userID" class="blind">아이디</label>
-                                    <input type="text" class="userID" name="userID" placeholder="아이디" id="userID" maxlength="20" required>
-                                </div>
-                                <div class="pass">
-                                    <label for="userPass" class="blind">패스워드</label>
-                                    <input type="password" class="userPass" name="userPass" placeholder="비밀번호" id="userPass" required>
-                                </div>
-                            </fieldset>
-                        </form>
-                        <button type="submit" class="login-btn">로그인</button>
-                        <div class="login__footer">
-                            <div class="join__btn">
-                                <a href="../login/agree.html">회원가입</a>
-                                <a href="../login/findID.html">아이디 찾기</a>
-                                <a href="../login/findPass.html">비밀번호 찾기</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- //login popup -->
-        </header>
     
         <main id="main">
             <h2 class="blind">자주 묻는 질문 게시판입니다.</h2>
@@ -202,8 +70,8 @@
                     <div class="board__table">
                         <table>
                             <colgroup>
-                                <col style="width: 10%" />
-                                <col/>
+                                <col style="width: 20%" />
+                                <col style="width: 50%"/>
                                 <col style="width: 20%" />
                                 <col style="width: 10%" />
                             </colgroup>
@@ -229,7 +97,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="5" class="content blind">
+                                    <td colspan="4" class="content blind">
                                         BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
                                         <p class="box">
                                             [기존 약관]<br>
@@ -261,7 +129,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="5" class="content blind">
+                                    <td colspan="4" class="content blind">
                                         BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
                                         <p class="box">
                                             [기존 약관]<br>
@@ -539,6 +407,346 @@
                             </tbody>
                         </table>
                     </div>
+                    <!-- 반응형용 표 -->
+                    <div class="board__table2">
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 60%;">
+                            <col style="width: 20%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>번호</th>
+                                <th>제목</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>10</td>
+                                <td>BODA 이용약관 개정 안내 (10/21)</td>
+                                <td>
+                                    <svg class="open" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L15 1" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="close blind" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 8L8 0.999999L1 8" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="content blind">
+                                    BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
+                                    <p class="box">
+                                        [기존 약관]<br>
+                                        제 1조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+
+                                        [기존 약관]<br>
+                                        제 2조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>09</td>
+                                <td>BODA 이용약관 개정 안내 (10/21) BODA 이용약관 개정 안내 (10/21)</td>
+                                <td>
+                                    <svg class="open" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L15 1" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="close blind" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 8L8 0.999999L1 8" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="content blind">
+                                    BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
+                                    <p class="box">
+                                        [기존 약관]<br>
+                                        제 1조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+
+                                        [기존 약관]<br>
+                                        제 2조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>08</td>
+                                <td>BODA 이용약관 개정 안내 (10/21)</td>
+                                <td>
+                                    <svg class="open" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L15 1" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="close blind" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 8L8 0.999999L1 8" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="content blind">
+                                    BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
+                                    <p class="box">
+                                        [기존 약관]<br>
+                                        제 1조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+
+                                        [기존 약관]<br>
+                                        제 2조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>07</td>
+                                <td>BODA 이용약관 개정 안내 (10/21)</td>
+                                <td>
+                                    <svg class="open" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L15 1" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="close blind" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 8L8 0.999999L1 8" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="content blind">
+                                    BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
+                                    <p class="box">
+                                        [기존 약관]<br>
+                                        제 1조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+
+                                        [기존 약관]<br>
+                                        제 2조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>06</td>
+                                <td>BODA 이용약관 개정 안내 (10/21)</td>
+                                <td>
+                                    <svg class="open" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L15 1" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="close blind" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 8L8 0.999999L1 8" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="content blind">
+                                    BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
+                                    <p class="box">
+                                        [기존 약관]<br>
+                                        제 1조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+
+                                        [기존 약관]<br>
+                                        제 2조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>05</td>
+                                <td>BODA 이용약관 개정 안내 (10/21)</td>
+                                <td>
+                                    <svg class="open" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L15 1" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="close blind" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 8L8 0.999999L1 8" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="content blind">
+                                    BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
+                                    <p class="box">
+                                        [기존 약관]<br>
+                                        제 1조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+
+                                        [기존 약관]<br>
+                                        제 2조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td>BODA 이용약관 개정 안내 (10/21)</td>
+                                <td>
+                                    <svg class="open" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L15 1" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="close blind" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 8L8 0.999999L1 8" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="content blind">
+                                    BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
+                                    <p class="box">
+                                        [기존 약관]<br>
+                                        제 1조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+
+                                        [기존 약관]<br>
+                                        제 2조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>BODA 이용약관 개정 안내 (10/21)</td>
+                                <td>
+                                    <svg class="open" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L15 1" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="close blind" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 8L8 0.999999L1 8" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="content blind">
+                                    BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
+                                    <p class="box">
+                                        [기존 약관]<br>
+                                        제 1조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+
+                                        [기존 약관]<br>
+                                        제 2조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>BODA 이용약관 개정 안내 (10/21)</td>
+                                <td>
+                                    <svg class="open" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L15 1" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="close blind" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 8L8 0.999999L1 8" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="content blind">
+                                    BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
+                                    <p class="box">
+                                        [기존 약관]<br>
+                                        제 1조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+
+                                        [기존 약관]<br>
+                                        제 2조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>01</td>
+                                <td>BODA 이용약관 개정 안내 (10/21)</td>
+                                <td>
+                                    <svg class="open" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 1L8 8L15 1" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <svg class="close blind" width="16" height="9" viewBox="0 0 16 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 8L8 0.999999L1 8" stroke="#888888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="content blind">
+                                    BODA 홈페이지 내 이용약관 내용을 개정하여 다음과 같이 안내드립니다.
+                                    <p class="box">
+                                        [기존 약관]<br>
+                                        제 1조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 1 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+
+                                        [기존 약관]<br>
+                                        제 2조 목적 어쩌고 저쩌고...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...<br><br>
+                                        [수정된 약관]<br>
+                                        제 2 조 목적 어쩌고 저쩌고... 순댓국 먹고 싶네요...
+                                    </p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    
                 </div>
                 <div class="board__pages">
                     <ul>
@@ -645,5 +853,6 @@
 
         <script src="../assets/js/headermenu.js"></script>
         <script src="../assets/js/loginpopup.js"></script>
+        <script src="../assets/js/review.js"></script>
     </body>
 </html>

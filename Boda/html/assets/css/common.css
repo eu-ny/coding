@@ -1,19 +1,19 @@
 .container {
-    width: 1200px;
+    max-width: 1200px;
     padding: 0 20px;
     margin: 180px auto 120px auto;
     font-family: "scoredream";
 }
 
 .top__container {
-    width: 1200px;
+    max-width: 1200px;
     padding: 180px 20px 0 20px;
     margin: 0 auto;
     font-family: "scoredream";
 }
 
 .mid__container {
-    width: 1200px;
+    max-width: 1200px;
     padding: 0 20px 120px 20px;
     margin: 0 auto;
     font-family: "scoredream";
@@ -24,6 +24,6 @@
     .container,
     .top__container,
     .mid__container {
-        width: 85%;
+        width: 90%;
     }
 }

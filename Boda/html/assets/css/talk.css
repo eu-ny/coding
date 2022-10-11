@@ -106,19 +106,19 @@ table {
 .comment .contents .contents__top .date {
     font-weight: 300;
     font-size: 16px;
-    color: #888888;
+    color: #b0b0b0;
     padding: 0 5px;
 }
 .comment .contents .contents__top .modify {
     font-weight: 300;
     font-size: 16px;
-    color: #888888;
+    color: #b0b0b0;
     padding: 0 5px 0 0;
 }
 .comment .contents .contents__top .remove {
     font-weight: 300;
     font-size: 16px;
-    color: #888888;
+    color: #b0b0b0;
 }
 .comment .contents .contents__bottom {
     font-weight: 300;
@@ -224,7 +224,15 @@ fieldset label {
     .main__header h2:nth-child(2) {
         margin-bottom: 80px;
     }
+
     .main__header .home {
         display: none;
+    }
+
+    .comment .profile {
+        margin-bottom: 10px;
+    }
+    .comment .contents .contents__top {
+        margin-bottom: 10px;
     }
 }
