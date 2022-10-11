@@ -17,11 +17,11 @@
 
 .login__wrap {
     font-family: 'SCoreDream';
-    width: 500px;
+    width: 450px;
     box-sizing: border-box;
     border-radius: 20px;
     background: #fff;
-    padding: 75px 50px 50px;
+    padding: 75px 40px 50px;
     position: relative;
 }
 
@@ -110,9 +110,10 @@
 }
 .login__footer .join__btn a {
     width: 100px;
-    padding: 20px 12px;
+    padding: 20px 8px;
     border: 1px solid #323232;
     border-radius: 10px;
     text-align: center;
+    font-size: 16px;
 }
 

@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../assets/css/common.css" />
 
         <link rel="stylesheet" href="../assets/css/header.css" />
+        <link rel="stylesheet" href="../assets/css/loginPopup.css">
         <link rel="stylesheet" href="../assets/css/noticeHeader.css">
         <link rel="stylesheet" href="../assets/css/notice.css">
         <link rel="stylesheet" href="../assets/css/footer.css">
@@ -643,23 +644,6 @@
         </footer>
 
         <script src="../assets/js/headermenu.js"></script>
-        <script>
-            const OpenBtn = document.querySelectorAll(".board__table table tbody tr td .open");
-            const CloseBtn = document.querySelectorAll(".board__table table tbody tr td .close");
-            const content = document.querySelectorAll(".board__table table tbody tr td.content");
-
-            for(let i=0; i<content.length; i++){
-                OpenBtn[i].addEventListener("click", () => {
-                    content[i].classList.remove("blind");
-                    OpenBtn[i].classList.add("blind");
-                    CloseBtn[i].classList.remove("blind");
-                })
-                CloseBtn[i].addEventListener("click", () => {
-                    content[i].classList.add("blind");
-                    OpenBtn[i].classList.remove("blind");
-                    CloseBtn[i].classList.add("blind");
-                })
-            }
-        </script>
+        <script src="../assets/js/loginpopup.js"></script>
     </body>
 </html>
