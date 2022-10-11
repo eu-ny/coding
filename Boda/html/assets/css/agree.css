@@ -436,5 +436,8 @@ input[id="check4"]:checked + label::after {
     #infoType .IDbox .id {
         width: 100%;
     }
+    .btn_box .Btn {
+        width: 140px;
+    }
 
 }
