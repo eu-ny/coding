@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게임 효과</title>
+
+    <link rel="stylesheet" href="../assets/css/bg.css">
+    <link rel="stylesheet" href="../assets/css/game.css">
+    <link rel="stylesheet" href="../assets/css/music.css">
+</head>
+<body>
+    <header id="header">
+        <h1>HELLO GAME WORLD</h1>
+        <div class="time"></div>
+    </header>
+    <!-- //header -->
+    <main id="main">
+        <div class="mouse__cursor">
+            <img src="../assets/img/game_cursor01.png" alt="마우스 커서" />
+        </div>
+
+        <div class="icon_box">
+            <div class="icon icon1">
+                <img src="../assets/img/game_folderIcon01.png" alt="icon">
+                <span>뮤직 듣기</span>
+            </div>
+            <div class="icon icon2">
+                <img src="../assets/img/game_folderIcon02.png" alt="icon">
+                <span>뮤직 듣기</span>
+            </div>
+            <div class="icon icon3">
+                <img src="../assets/img/game_folderIcon03.png" alt="icon">
+                <span>뮤직 듣기</span>
+            </div>
+            <div class="icon icon4">
+                <img src="../assets/img/game_folderIcon04.png" alt="icon">
+                <span>뮤직 듣기</span>
+            </div>
+            <div class="icon icon5">
+                <img src="../assets/img/game_folderIcon05.png" alt="icon">
+                <span>뮤직 듣기</span>
+            </div>
+            <div class="icon icon6">
+                <img src="../assets/img/game_folderIcon06.png" alt="icon">
+                <span>뮤직 듣기</span>
+            </div>
+        </div>
+    </main>
+    <!-- //main -->
+
+    <footer id="footer">
+        <div class="agent"></div>
+    </footer>
+    <!-- //footer -->
+    
+    <!-- 뮤직 플레이어 -->
+    <div class="music__wrap">
+        <div class="music_inner">
+            <div class="music__header">
+                <div>*</div>
+                <h2>MUSIC PlAYER</h2>
+                <div>*</div>
+            </div>
+            <div class="music__contents">
+                <div class="music__view">
+                    <div class="img">
+                        <img src="../assets/img/game_musicPlayer_img01.png" alt="game_musicPlayer_img01">
+                    </div>
+                    <div class="title">
+                        <h3>BACK ON TOP (feat.Griff) - HONNE</h3>
+                        <p>YOUTUBE MUSIC</p>
+                    </div>
+                </div>
+                <div class="music__control">
+                    <div class="progress">
+                        <div class="bar">
+                            <audio id="main-audio" src="../assets/audio/music-1.mp3"></audio>
+                        </div>
+                        <div class="timer">
+                            <span class="current">0:00</span>
+                            <span class="duration">4:00</span>
+                        </div>
+                    </div>
+                    <div class="control">
+                        <i title="전체 반복" class="repeat" id="control-repeat"></i>
+                        <i title="이전곡" class="prev" id="control-prev"></i>
+                        <i title="재생" class="play" id="control-play"></i>
+                        <i title="디음곡" class="next" id="control-next"></i>
+                        <i title="재생목록" class="list"></i>
+
+
+                        <!-- <i title="한곡 반복" class="repeat_one"></i>
+                        <i title="랜덤 반복" class="shuffle"></i> -->
+                        <!-- <i title="정지" class="pause"></i>  -->
+                    </div>
+                </div>
+            </div>
+            <div class="music__footer"></div>
+        </div>
+    </div>
+    <!-- // 뮤직 플레이어 -->
+
+
+   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script src="../assets/js/music.js"></script>
+    <script>
+        // 0. 마우스 커서
+        const cursor = document.querySelector(".mouse__cursor");
+        window.addEventListener("mousemove", (e) => {
+            cursor.style.left = e.clientX + "px";
+            cursor.style.top = e.clientY + "px";
+        });
+
+
+        // 1. 시간 출력
+        function printTime() {
+            const clock = document.querySelector(".time");
+            const now = new Date();
+            const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초";
+                // getMonth()의 반환값은 0-11 사이임. 그래서 1을 더해줘야 함;; 왠지 아무도 모름...
+                // 이유: 매개변수를 사용하여 해당하는 달의 이름을 가져올 때 편리하다고 함
+            clock.innerText = nowTime;
+            setTimeout("printTime()", 1000);
+            // 1초마다 시간이 바뀌도록 하려면 setTimeout 사용해야 함
+        }
+
+
+        // 2. 현재 사용하고 있는 환경
+        function printAgent() {
+            const agent = document.querySelector(".agent");
+            const os = navigator.userAgent.toLocaleLowerCase();
+            // agent.innerText = os;
+            // 윈도우 기준 출력물
+            // mozilla/5.0 (windows nt 10.0; win64; x64) applewebkit/537.36 (khtml, like gecko) chrome/105.0.0.0 safari/537.36
+            if (os.indexOf("window") >= 0) {
+                // 기종 출력
+                // 기종별로 CSS를 달리 설정할 수 있음
+                agent.innerText = "현재 windows를 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
+                document.querySelector("body").classList.add("window");
+            } else if (os.indexOf("macintosh") >= 0) {
+                agent.innerText = "현재 mac을 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
+                document.querySelector("body").classList.add("mac");
+            } else if (os.indexOf("iphone") >= 0) {
+                agent.innerText = "현재 IPhone을 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
+                document.querySelector("body").classList.add("iphone");
+            } else if (os.indexOf("android") >= 0) {
+                agent.innerText = "현재 Android를 사용하고 있으며, 화면 크기는 " + screen.width + " * " + screen.height + "입니다.";
+                document.querySelector("body").classList.add("android");
+            }
+        }
+
+
+        // 3. 각각의 폴더 드래그 효과, 드래그하면 마우스의 색상이 변화하도록
+        $(".icon1").draggable({
+            drag: function () {
+                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor01.png");
+            },
+        });
+        $(".icon2").draggable({
+            drag: function () {
+                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor02.png");
+            },
+        });
+        $(".icon3").draggable({
+            drag: function () {
+                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor03.png");
+            },
+        });
+        $(".icon4").draggable({
+            drag: function () {
+                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor04.png");
+            },
+        });
+        $(".icon5").draggable({
+            drag: function () {
+                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor05.png");
+            },
+        });
+        $(".icon6").draggable({
+            drag: function () {
+                $(".mouse__cursor img").attr("src", "../assets/img/game_cursor06.png");
+            },
+        });
+
+
+        window.onload = function () {
+            printTime();
+            printAgent();
+        };
+    </script>
+</body>
+
+</html>

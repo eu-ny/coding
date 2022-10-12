@@ -70,7 +70,6 @@
 
 
 /* board */
-
 table {
     width: 100%;
     border-spacing: 0px;
@@ -166,10 +165,8 @@ table tbody tr td.content .box {
     margin-right: 20px;
     font-weight: 400;
     font-size: 16px;
-    font-family: 'scoredream';
 }
 .board__search fieldset select option {
-    font-family: 'scoredream';
     font-size: 16px;
     font-weight: 400;
 }
@@ -181,7 +178,6 @@ table tbody tr td.content .box {
     height: 45px;
     border: none;
     border-bottom: 1px solid #b0b0b0;
-    font-family: 'scoredream';
     font-size: 16px;
     font-weight: 400;
 }
@@ -271,5 +267,9 @@ input::-webkit-search-results-decoration{
 @media (max-width: 480px) {
     .board__search {
         width: inherit;
+    }
+    .board__search fieldset select {
+        margin-right: 5px;
+        width: 90px;
     }
 }
