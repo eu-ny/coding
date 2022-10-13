@@ -61,6 +61,7 @@ const allMusic = [
     }
 ]
 
+// 선택자
 const musicWrap = document.querySelector(".music__wrap");
 const musicView = musicWrap.querySelector(".music__view .img img");
 const musicName = musicWrap.querySelector(".music__view .title h3");
@@ -69,12 +70,16 @@ const musicAudio = musicWrap.querySelector("#main-audio");
 const musicPlay = musicWrap.querySelector("#control-play");
 const musicPrevBtn = musicWrap.querySelector("#control-prev");
 const musicNextBtn = musicWrap.querySelector("#control-next");
+const musicListBtn = musicWrap.querySelector("#control-list");
+const musicList = musicWrap.querySelector(".music__list");
+const musicListUl = musicWrap.querySelector(".music__list ul");
 const musicProgress = musicWrap.querySelector(".progress");
 const musicProgressBar = musicWrap.querySelector(".progress .bar");
 const musicProgressCurrent = musicWrap.querySelector(".progress .timer .current");
 const musicProgressDuration = musicWrap.querySelector(".progress .timer .duration");
 const musicRepeat = musicWrap.querySelector("#control-repeat");
 
+// 현재음악
 let musicIndex = 1;
 
 //음악재생
@@ -172,21 +177,64 @@ musicRepeat.addEventListener("click", () => {
 
     switch(getAttr){
         case "repeat" :
-            musicRepeat.setAttribute("class", "repeat");
-            musicRepeat.setAttribute("title", "전체 반복");
-        break;
-
-        case "repeat_one" : 
             musicRepeat.setAttribute("class", "repeat_one");
             musicRepeat.setAttribute("title", "한 곡 반복");
         break;
 
-        case "shuffle" :
+        case "repeat_one" : 
             musicRepeat.setAttribute("class", "shuffle");
             musicRepeat.setAttribute("title", "랜덤 반복");
         break;
+
+        case "shuffle" :
+            musicRepeat.setAttribute("class", "repeat");
+            musicRepeat.setAttribute("title", "전체 반복");
+        break;
     }
 });
+
+//오디오가 끝날 경우
+musicAudio.addEventListener("ended", () => {
+    let getAttr = musicRepeat.getAttribute("class");
+
+    switch(getAttr){
+        case "repeat" :
+            nextMusic();
+        break;
+        case "repeat_one" :
+            playMusic();
+        break;
+        case "shuffle" :
+            //배열의 총 길이에서 랜덤으로 인덱스 값을 추출한다. 0부터 1까지의 수를 10을 곱하여 자연수로 만들어 준다. 그리고 floor로 나머지 값을 버린다. 마지막으로 +1을 하여 배열과 인덱스 값을 맞춰준다. 그러면 1부터 10 까지 값이 나온다.
+            let randomIndex = Math.floor(Math.random() * allMusic.length + 1); //랜덤 인덱스 생성
+
+            do {
+                randomIndex = Math.floor(Math.random() * allMusic.length + 1);
+            } while (musicIndex == randomIndex)
+            musicIndex = randomIndex; //현재 인덱스를 랜덤 인덱스로 변경
+            loadMusic(musicIndex);    //랜덤 인덱스가 반영된 현제 인덱스 값으로 음악을 다시 로드한다.
+            playMusic();              //로드한 음악을 재생
+        break;
+    }
+});
+
+//뮤직 리스트 버튼
+musicPlay.addEventListener("click", () => {
+    musicList.classList.add("show");
+});
+
+// 뮤직 리스트 구현하기
+for(let i=0; i < allMusic.length; i++){
+    let li = `
+        <li>
+            <strong>${allMusic[i].name}</strong>
+            <em>${allMusic[i].artist}</em>
+            <span>재생시간</span>
+        </li>
+    `;
+
+    musicListUl.innerHTML += li;
+}
 
 //플레이 버튼
 //재생 버튼 클릭했을 때 함수 실행

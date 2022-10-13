@@ -108,7 +108,7 @@
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -235px;
+    background-position: -240px;
 }
 .music__control .control .shuffle {
     width: 35px;
@@ -116,7 +116,7 @@
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -270px;
+    background-position: -274px;
 }
 .music__control .control .prev {
     width: 35px;
@@ -135,12 +135,12 @@
     background-position: 4px;
 }
 .music__control .control .stop {
-    width: 36px;
-    height: 36px;
+    width: 35px;
+    height: 35px;
     background-image: url(../img/game_musicPlayer_icons.svg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: -138px;
+    background-position: -136px;
 }
 .music__control .control .next {
     width: 35px;
@@ -160,4 +160,49 @@
 }
 
 
-.music__footer {}
+.music__footer {
+    background: #b0b0b0;
+}
+.music__list {
+    padding: 0 20px 20px 20px
+}
+.music__list h3 {
+    font-family: 'YdestreetB';
+    border-top: 2px solid #000;
+    padding-top: 10px;
+    font-size: 20px;
+}
+.music__list h3 .list {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    margin-bottom: 7px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+    background-position: -119px -24px;
+}
+.music__list ul {
+    max-height: 180px;
+    overflow-y: scroll;
+}
+.music__list li {
+    border-bottom: 1px dashed #888;
+    list-style: none;
+    position: relative;
+    padding: 10px 0 5px;
+}
+.music__list strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+.music__list em {
+   font-style: normal;
+}
+.music__list li span {
+    position: absolute;
+    right: 0;
+    top: 10px;
+}

@@ -86,10 +86,11 @@
                     </div>
                     <div class="control">
                         <i title="전체 반복" class="repeat" id="control-repeat"></i>
+                        <!-- <i title="한곡 반복" class="repeat_one"></i> -->
                         <i title="이전곡" class="prev" id="control-prev"></i>
                         <i title="재생" class="play" id="control-play"></i>
                         <i title="디음곡" class="next" id="control-next"></i>
-                        <i title="재생목록" class="list"></i>
+                        <i title="재생목록" class="list" id="control-list"></i>
 
 
                         <!-- <i title="한곡 반복" class="repeat_one"></i>
@@ -98,7 +99,18 @@
                     </div>
                 </div>
             </div>
-            <div class="music__footer"></div>
+            <div class="music__footer">
+                <div class="music__list">
+                    <h3><span class="list"></span>MUSIC LIST</h3>
+                    <ul>
+                        <!-- <li>
+                            <strong>제목</strong>
+                            <em>아티스트</em>
+                            <span>재생시간</span>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
     <!-- // 뮤직 플레이어 -->
@@ -117,15 +129,38 @@
 
 
         // 1. 시간 출력
+        // function printTime() {
+        //     const clock = document.querySelector(".time");
+        //     const now = new Date();
+        //     const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초";
+        //         // getMonth()의 반환값은 0-11 사이임. 그래서 1을 더해줘야 함;; 왠지 아무도 모름...
+        //         // 이유: 매개변수를 사용하여 해당하는 달의 이름을 가져올 때 편리하다고 함
+        //     clock.innerText = nowTime;
+        //     setTimeout("printTime()", 1000);
+        //     // 1초마다 시간이 바뀌도록 하려면 setTimeout 사용해야 함
+        // }
+        // 1. 시간 출력
         function printTime() {
             const clock = document.querySelector(".time");
             const now = new Date();
-            const nowTime = now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " + now.getDate() + "일 " + now.getHours() + "시 " + now.getMinutes() + "분 " + now.getSeconds() + "초";
-                // getMonth()의 반환값은 0-11 사이임. 그래서 1을 더해줘야 함;; 왠지 아무도 모름...
-                // 이유: 매개변수를 사용하여 해당하는 달의 이름을 가져올 때 편리하다고 함
+            let hour = now.getHours();
+            let minute = now.getMinutes();
+            let second = now.getSeconds();
+            if (hour > 12) hour = hour - 12;
+            if (hour < 10) hour = `0${hour}`;
+            if (minute < 10) minute = `0${minute}`;
+            if (second < 10) second = `0${second}`;
+            const nowTime =
+                now.getFullYear() + "년 " + (now.getMonth() + 1) + "월 " +
+                now.getDate() +
+                "일 " +
+                hour +
+                ":" +
+                minute +
+                ":" +
+                second;
             clock.innerText = nowTime;
             setTimeout("printTime()", 1000);
-            // 1초마다 시간이 바뀌도록 하려면 setTimeout 사용해야 함
         }
 
 
