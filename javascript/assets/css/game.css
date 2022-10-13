@@ -33,7 +33,7 @@ body {
 
 #header h1 {
     color: #f5f5f5;
-    font-size: 28px;
+    font-size: 20px;
     padding: 5px;
 }
 
@@ -117,7 +117,7 @@ body {
 }
 
 #footer .agent {
-    
+    font-size: 14px;
 }
 
 /* 기기 별 푸터 스타일 */
