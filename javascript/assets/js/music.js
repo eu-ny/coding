@@ -24,8 +24,8 @@ const allMusic = [
         audio: "music-4"
     },
     {
-        name: "Windflower (Feat.알렉스)",
-        artist: "지선",
+        name: "Nick Mono",
+        artist: "Rusty",
         img: "game_musicPlayer_img05",
         audio: "music-5"
     },
