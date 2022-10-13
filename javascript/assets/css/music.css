@@ -76,7 +76,7 @@
 .music__control .progress .bar {
     width: 10%;
     height: inherit; /* 높이는 상속받기 */
-    background: #3500d4;
+    background: #c405e2;
     border-radius: 5px;
 }
 
@@ -193,6 +193,9 @@
     position: relative;
     padding: 10px 0 5px;
 }
+.music__list li.playing {
+    color: #c405e2;
+}
 .music__list strong {
     display: block;
     font-size: 18px;
@@ -205,4 +208,15 @@
     position: absolute;
     right: 0;
     top: 10px;
+}
+.music__list .close-btn {
+    display: inline-block;
+    float: right;
+    margin-top: 3px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background-image: url(../img/game_music_close-btn.svg);
+    background-size: cover;
+    width: 18px;
+    height: 18px;
 }
