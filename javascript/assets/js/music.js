@@ -342,3 +342,23 @@ closeBtn.addEventListener("click", () => {
 musicListBtn.addEventListener("click", () => {
     musicList.style.display = "block";
 });
+
+//볼륨조절
+const soundBtn = document.querySelector("#control-sound");
+const sound = document.querySelector("#player_sound");
+
+sound.addEventListener("change", function(e) {
+    musicAudio.volume = this.value/15;
+});
+    
+// soundBtn.forEach((e,i)=> {
+//     if(sound.style.display = "block"){
+//         soundBtn.addEventListener("click", () => {
+//             sound.style.display = "none";
+//         });
+//     }else{
+//         soundBtn.addEventListener("click", () => {
+//             sound.style.display = "block";
+//         });
+//     }
+// });

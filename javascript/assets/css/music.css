@@ -158,6 +158,17 @@
     background-repeat: no-repeat;
     background-position: -167px;
 }
+.music__control .control .sound {
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/game_musicPlayer_icons.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -107px;
+}
+.music__control .control .sound input {
+    /* display: none; */
+}
 
 
 .music__footer {
