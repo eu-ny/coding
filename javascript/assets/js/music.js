@@ -346,19 +346,14 @@ musicListBtn.addEventListener("click", () => {
 //볼륨조절
 const soundBtn = document.querySelector("#control-sound");
 const sound = document.querySelector("#player_sound");
+    
+soundBtn.addEventListener("click", () => {
+    sound.classList.add("blind");
+});
+soundBtn.addEventListener("click", () => {
+    sound.classList.remove("blind");
+});
 
 sound.addEventListener("change", function(e) {
     musicAudio.volume = this.value/15;
 });
-    
-// soundBtn.forEach((e,i)=> {
-//     if(sound.style.display = "block"){
-//         soundBtn.addEventListener("click", () => {
-//             sound.style.display = "none";
-//         });
-//     }else{
-//         soundBtn.addEventListener("click", () => {
-//             sound.style.display = "block";
-//         });
-//     }
-// });
