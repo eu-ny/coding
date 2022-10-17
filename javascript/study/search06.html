@@ -66,10 +66,10 @@
     <!-- //header --> 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">🔍 검색 효과 : filter()를 이용하여 속성 중요도 순으로 검색하기 </h2>
+            <h2 class="t_tit">🔍 검색 효과 : sort(), reverse()를 이용하여 정렬하기</h2>
             <p class="t_desc">
-                이번 시간에는 filter 통해 중요도 순으로 클릭할 경우 속성이 나타나는 실습을 해보겠습니다. <br>
-                + 추가로 중요도(별)이 몇개 이상일 경우 해당 속성이 나오는 실습도 해보겠습니다......... 🥲
+                이번 시간에는 sort(), reverse() 메서드를 통해 클릭할 경우 해당 조건으로 속성을 정렬하는 실습을 해보겠습니다. <br>
+                + 추가로 랜덤으로 속성이 정렬되는 실습도 해보겠습니다......... 🥲
             </p>
 
             <hr>
@@ -85,29 +85,22 @@
                     <div class="t_code">
 <pre><code class="language-html">&lt;main id="main"&gt;
     &lt;div class="search__wrap"&gt;
-        &lt;span&gt;filter()를 이용하여 속성 클릭 시 중요도 순으로 보여주기&lt;/span&gt;
+        &lt;span&gt;sort(), reverse()를 이용하여 정렬하기&lt;/span&gt;
         &lt;h1&gt;CSS 속성 검색하기&lt;/h1&gt;
 
         &lt;div class="search__click"&gt;
             &lt;ul&gt;
-                &lt;li data-star="0"&gt;&lt;a href="#"&gt;☆☆☆☆☆&lt;/a&gt;&lt;/li&gt;
-                &lt;li data-star="1"&gt;&lt;a href="#"&gt;★☆☆☆☆&lt;/a&gt;&lt;/li&gt;
-                &lt;li data-star="2"&gt;&lt;a href="#"&gt;★★☆☆☆&lt;/a&gt;&lt;/li&gt;
-                &lt;li data-star="3"&gt;&lt;a href="#"&gt;★★★☆☆&lt;/a&gt;&lt;/li&gt;
-                &lt;li data-star="4"&gt;&lt;a href="#"&gt;★★★★☆&lt;/a&gt;&lt;/li&gt;
-                &lt;li data-star="5"&gt;&lt;a href="#"&gt;★★★★★&lt;/a&gt;&lt;/li&gt;
-            &lt;/ul&gt;
-            &lt;ul&gt;
-                &lt;li data-num="1"&gt;&lt;a href="#"&gt;1개 이상&lt;/a&gt;&lt;/li&gt;
-                &lt;li data-num="2"&gt;&lt;a href="#"&gt;2개 이상&lt;/a&gt;&lt;/li&gt;
-                &lt;li data-num="3"&gt;&lt;a href="#"&gt;3개 이상&lt;/a&gt;&lt;/li&gt;
-                &lt;li data-num="4"&gt;&lt;a href="#"&gt;4개 이상&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn1"&gt;&lt;a href="#"&gt;반대로 정렬&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn2"&gt;&lt;a href="#"&gt;내림차순 정렬&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn3"&gt;&lt;a href="#"&gt;오름차순 정렬&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn4"&gt;&lt;a href="#"&gt;알파벳순(a-z)&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn5"&gt;&lt;a href="#"&gt;알파벳순(z-a)&lt;/a&gt;&lt;/li&gt;
+                &lt;li class="btn6"&gt;&lt;a href="#"&gt;랜덤 정렬&lt;/a&gt;&lt;/li&gt;
             &lt;/ul&gt;
         &lt;/div&gt;
 
         &lt;div class="search__info"&gt;
             &lt;div&gt;CSS 전체 속성 : &lt;span class="num"&gt;0&lt;/span&gt;&lt;/div&gt;
-            &lt;div&gt;CSS 선택 속성 : &lt;span class="num2"&gt;0&lt;/span&gt;&lt;/div&gt;
         &lt;/div&gt;
 
         &lt;div class="search__list"&gt;
@@ -115,13 +108,12 @@
         &lt;/div&gt;
     &lt;/div&gt;
 &lt;/main&gt;
-&lt;!-- //main --&gt;
 </code></pre>
                     </div>
                 </details>
                 <p class="t_desc2">
                     <strong>! CSS TIP !</strong><br>
-                    이전 검색 이펙트와 스타일이 동일하며 새로운 구조인 search__click의 스타일을 설정해주시면 됩니다!
+                    버튼의 스타일 및 페이지 스타일을 설정해주시면 됩니다!
                 </p>
                 <details style="margin-bottom: 10px;">
                     <summary> ✏️ CSS 스크립트 보기</summary>
@@ -157,106 +149,140 @@
             <div id="sample02" class="sample">
                 <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트  </h3>
                 <p class="t_desc">
-                    이번 스크립트에서는 filter() 메서드, 그리고 매개변수를 통해 스크립트를 작업해보겠습니다.<br>
-                    자세한 내용은 아래의 스크립트 주석과 함께 살펴보겠습니다!
+                    이번 스크립트에서는 sort(), reverse() 메서드, 그리고 매개변수를 통해 스크립트를 작업해보겠습니다.<br>
+                    자세한 내용은 아래의 스크립트 주석과 함께 살펴보겠습니다!!
                 </p>
                 <p class="t_desc2">
                     <strong>! JAVASCRIPT TIP !</strong><br>
-                    1. for of : 반복문
-                    2. 변수명.filter((element) =&gt; element 조건식) : 변수에서 해당 조건에 해당하는 요소를 가져옵니다.<br>
-                    3. dataset = data-데이터명="데이터 값"을 모두 불러오는 속성!
+                    1. 재활용 함수를 설정하여 보다 스크립트를 편리하게 작성할 수 있습니다.
+                    2. 변수명.sort(): 조건에 따라 정렬합니다.<br>
+                    3. 변수명.reverse(): 반대로 정렬합니다.<br>
                 </p>
                 <!-- <details style="margin-bottom: 10px;"> -->
                     <!-- <summary> 💡 전체 스크립트 보기</summary> -->
                     <div class="t_code" style="margin-bottom: 30px;">
-<pre><code class="language-js">//01.선택자
-//cssProperty : 데이터 객체화 시키기
+<pre><code class="language-js">//cssProperty : 데이터 객체화 시키기
 const cssProperty = [
-    { star: 1 , name: "accent-color", desc: " 요소의 강조 색상을 지정합니다. " },
-    { star: 5 , name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다." },
-    { star: 4 , name: "align-items", desc: " 교차축에서 아이템 정렬 하는 속성입니다. 주로 flex에서 item들을 정렬할 때 사용됩니다." },
-    { star: 1 , name: "align-self", desc: " 특정 item의 정렬을 따로 하고 싶을 때 사용합니다." },
-    { star: 1 , name: "all", desc: " CSS 사용자 지정 속성을 제외한 모든 속성을 초기화합니다. 초깃값, 상속값, 아니면 다른 스타일시트 출처의 값로 설정할 수 있습니다." },
-    { star: 3 , name: "animation", desc: " 애니메이션과 관련된 속성을 일괄적로 처리합니다." },
-    { star: 3 , name: "animation-delay", desc: " 애니메이션 지연 시간을 설정합니다." },
-    { star: 3 , name: "animation-direction", desc: " 애니메이션 움직임 방향을 설정합니다." },
-    { star: 3 , name: "animation-duration", desc: " 애니메이션 움직인 시간을 설정합니다." },
+    { num: 1, name: "accent-color", desc: " 요소의 강조 색상을 지정합니다. " },
+    { num: 2, name: "align-content", desc: " 콘텐츠 사이와 콘텐츠 주위 빈 공간을 플렉스 박스'의 교차축 또는 그리드의 블록 축을 따라 배치하는 방식을 결정합니다." },
+    { num: 3, name: "align-items", desc: " 교차축에서 아이템 정렬 하는 속성입니다. 주로 flex에서 item들을 정렬할 때 사용됩니다." },
+    { num: 4, name: "align-self", desc: " 특정 item의 정렬을 따로 하고 싶을 때 사용합니다." },
+    { num: 5, name: "all", desc: " CSS 사용자 지정 속성을 제외한 모든 속성을 초기화합니다. 초깃값, 상속값, 아니면 다른 스타일시트 출처의 값로 설정할 수 있습니다." },
+    { num: 6, name: "animation", desc: " 애니메이션과 관련된 속성을 일괄적로 처리합니다." },
+    { num: 7, name: "animation-delay", desc: " 애니메이션 지연 시간을 설정합니다." },
+    { num: 8, name: "animation-direction", desc: " 애니메이션 움직임 방향을 설정합니다." },
+    { num: 9, name: "animation-duration", desc: " 애니메이션 움직인 시간을 설정합니다." },
+    { num: 10, name: "animation-fill-mode", desc: " 애니메이션이 끝난 후의 상태를 설정합니다." },
     .
     .
     .
-    { star: 3 , name: "z-index", desc: " 엘리먼트의 겹쳐지는 순서를 지정한다." }
+    { num: 382, name: "z-index", desc: " 엘리먼트의 겹쳐지는 순서를 지정한다." }
 ];
-const searchList = document.querySelector(".search__list ul"); //서치리스트
-const searchClick = document.querySelectorAll(".search__click ul li"); //클릭 요소
-const searchNum = document.querySelector(".search__info .num"); //전체속성
-const starNum = document.querySelectorAll(".search__click ul li a") //별
 
-//전체속성갯수표시
-searchNum.innerText = cssProperty.length + "개";
+//선택자
+const cssList = document.querySelector(".search__list .line");
 
+//데이터 출력하기
+const updateList = () => {
+    let listCSS = "";
 
-//02 출력하기 : 출력하기를 함수화 시키기 : 이렇게 할 경우 재활용이 가능한 스크립트가 된다!
-//2.매개변수를 받아서 작업
-function updateList(cssProperty2){
-    listCSS = "";
-
-    //for of문을 사용하여 반복.
-    //3.받은 매개변수 값을 다시 data라는 변수에 저장시킨다. 즉 data == cssProperty
-    for( const data of cssProperty2 ){
-        //서치리스트 ul안에 들어갈 li리스트의 구조 설정!
-        // listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt;${data.star}&lt;/em&gt;&lt;/li&gt;`;
-
-        //숫자 별로 치환 방법1
-        //변수를 설정하여 텍스트 별의 데이터값을 넣는다.
-        // listStar = starNum[data.star].innerText;
-        // listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt;${listStar}&lt;/em&gt;&lt;/li&gt;`;
-        
-        // 방법2 : if문을 통해 리스트의 구조 중 숫자를 별로 치환해주기.
-        if(data.star === 0){
-            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ☆☆☆☆☆ &lt;/em&gt;&lt;/li&gt;`;
-        }
-        if(data.star === 1){
-            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ★☆☆☆☆ &lt;/em&gt;&lt;/li&gt;`;
-        }
-        if(data.star === 2){
-            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ★★☆☆☆ &lt;/em&gt;&lt;/li&gt;`;
-        }
-        if(data.star === 3){
-            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ★★★☆☆ &lt;/em&gt;&lt;/li&gt;`;
-        }
-        if(data.star === 4){
-            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ★★★★☆ &lt;/em&gt;&lt;/li&gt;`;
-        }
-        if(data.star === 5){
-            listCSS += `&lt;li&gt;${data.name}: ${data.desc} &lt;em&gt; ★★★★★ &lt;/em&gt;&lt;/li&gt;`;
-        }
-    }
-
-    //서치리스트에 위의 구조를 innerHTML을 통해 넣어준다.(요소를 넣어야 하므로!)
-    searchList.innerHTML = listCSS;
-
-}
-//1. 매개변수로 위의 변수값 가져온 후 함수에 저장 
-updateList(cssProperty);
-
-
-//03. 클릭하기
-//searchClick의 요소 모두 선택 후 이벤트 클릭 설정(이벤트 리스너는 다중 선택자가 불가하므로 반복문을 통해 다중 설정이 가능!)
-searchClick.forEach(element =&gt; {
-    element.addEventListener("click",()=&gt;{
-        //위의 html에서 searchClick의 li의 data-star 속성을 가져온 후 target변수에 저장
-        const target = element.dataset.star;
-        //마찬 가지로 위의 data-num 속성을 모두 가져온 뒤 target2에 저장!
-        const target2 = element.dataset.num;
-
-        //콜백함수
-        //filter와 find의 사용법이 같다. 다만 조건을 쓸 수 있다는 점에서 다르다!
-        const filterList = cssProperty.filter(data =&gt; data.star == target || data.star &gt;= target2);
-
-        //매개변수로 위의 변수 값을 가져와 함수를 실행시킨다.
-        updateList(filterList);
+    cssProperty.forEach((data, index) => {
+        listCSS += `<li>${data.num}. ${data.name} : ${data.desc}</li>`
     });
+
+    cssList.innerHTML = listCSS;
+}
+updateList();
+
+//스크립스는 순서대로 작동하므로 순서 주의
+
+//반대로 정렬
+function sortReverse(){
+    cssProperty.reverse();
+    updateList();
+}
+//내림차순 정렬
+function sortDescending(){
+    cssProperty.sort((a,b) => {
+        return b.num - a.num;
+    });
+    updateList();
+}
+//오름차순 정렬
+function sortAscending(){
+    cssProperty.sort((a,b) => {
+        return a.num - b.num;
+    });
+    updateList();
+}
+
+
+
+//미션!
+//알파벳(a-z) 정렬
+function sortAlphabet(){
+    cssProperty.sort((a,b) => {
+        return a.name.localeCompare(b.name);
+    });
+updateList();
+}
+
+//알파벳(z-a) 정렬
+function sortAlphabetZ(){
+    cssProperty.sort((a,b) => {
+        return b.name.localeCompare(a.name);
+    });
+updateList();
+}
+
+
+
+
+//반대로 정렬 클릭
+document.querySelector(".btn1").addEventListener("click", () => {
+    sortReverse();
 });
+
+//내림차순 정렬 클릭
+document.querySelector(".btn2").addEventListener("click", () => {
+    sortDescending();
+});
+
+//오름차순 정렬 클릭
+document.querySelector(".btn3").addEventListener("click", () => {
+    sortAscending();
+});
+
+
+
+//알파벳(a-z) 정렬 클릭
+document.querySelector(".btn4").addEventListener("click", () => {
+    sortAlphabet();
+});
+
+//알파벳(z-a) 정렬 클릭
+document.querySelector(".btn5").addEventListener("click", () => {
+    sortAlphabetZ();
+});
+
+
+//랜덤 반복
+//피셔 예이츠 알고리즘
+//1
+document.querySelector(".btn6").addEventListener("click", (e) => {
+    e.preventDefault();
+    for( let i=cssProperty.length-1; i>=0; i--){
+        const radomIndex = Math.floor(Math.random() * (i + 1));
+        // console.log(radomIndex)
+        // 위까지 하고 출력하면 중복 숫자가 발생한다. 때문에
+        // 객체구조분해할당을 사용하여 작업한다. = [1,2,3] = [3,2,1] : 이렇게 쓰면 중복된 숫자가 나오지 않는다.
+        [cssProperty[i], cssProperty[radomIndex]] = [cssProperty[radomIndex], cssProperty[i]]; // 중복 제거... 모르면 걍 외워...
+        cssProperty.innerHTML += cssProperty[i];
+    }
+    updateList();
+});
+
+
 </code></pre>
                     </div>
                 <!-- </details> -->
@@ -266,15 +292,15 @@ searchClick.forEach(element =&gt; {
            
                 <h3 class="t_tit2">#3. 결과 </h3>
                 <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
-                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/searchEffect05" frameborder="0"></iframe>
+                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/searchEffect06" frameborder="0"></iframe>
                 </div>
     
                 <div class="t_link">
-                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/searchEffect05.html">원본 소스 보기</a>
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/searchEffect06.html">원본 소스 보기</a>
                 </div>
     
                 <div class="t_link">
-                    <a href="https://eu-ny.github.io/coding/javascript/effect/searchEffect05.html">원본 페이지 보기</a>
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/searchEffect06.html">원본 페이지 보기</a>
                 </div>
             </div>
             <!-- //sample02 -->

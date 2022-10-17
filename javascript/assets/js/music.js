@@ -343,15 +343,21 @@ musicListBtn.addEventListener("click", () => {
     musicList.style.display = "block";
 });
 
+
 //볼륨조절
 const soundBtn = document.querySelector("#control-sound");
 const sound = document.querySelector("#player_sound");
-    
+
+let i = 0;
+
 soundBtn.addEventListener("click", () => {
-    sound.classList.add("blind");
-});
-soundBtn.addEventListener("click", () => {
-    sound.classList.remove("blind");
+    if(i==0){
+        sound.classList.add("open");
+        i++;
+    }else{
+        sound.classList.remove("open");
+        i--;
+    }
 });
 
 sound.addEventListener("change", function(e) {

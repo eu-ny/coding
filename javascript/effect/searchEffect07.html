@@ -24,6 +24,7 @@
                 <li><a href="searchEffect05.html">5</a></li>
                 <li><a href="searchEffect06.html">6</a></li>
                 <li class="active"><a href="searchEffect07.html">7</a></li>
+                <li><a href="searchEffect08.html">8</a></li>
             </ul>
         </nav>
     </header>
@@ -70,6 +71,7 @@
         </div>
     </main>
     <!-- //main -->
+
     <div class="modal__wrap">
         <div class="modal__btn">Source</div>
         <div class="modal__cont">
@@ -1539,6 +1541,7 @@ li {
 
 
         const cssList = document.querySelector(".search__list .line");
+        const btn = document.querySelectorAll(".category li a");
 
         //배열 저장 - 전역변수
         let cssProp = [];
@@ -1563,7 +1566,14 @@ li {
                 cssProp.push(`<li>${data.num}. ${data.name} : ${data.desc} <em>${data.category}</em></li>`);
 
                 cssList.innerHTML += cssProp[index]
+                
             });
+
+            btn.forEach((el) => {
+                el.addEventListener("click", () => {
+                    console.log(cssProp);
+                });
+            });            
         }
         updateList();
 
@@ -1588,7 +1598,13 @@ li {
         //     shuffle(cssProp);
         // });
 
+        //카테고리 
+        //1
+
+        
         
     </script>
+
+
 </body>
 </html>

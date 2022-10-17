@@ -66,9 +66,9 @@
     <!-- //header --> 
     <main id="main">
         <div class="document">
-            <h2 class="t_tit">이미지 슬라이드 : 버튼을 통해 슬라이드 움직이기 (왼쪽 오른쪽 모두 동작) </h2>
+            <h2 class="t_tit">슬라이드 이펙트 - 이미지 슬라이드(버튼, dot메뉴) </h2>
             <p class="t_desc">
-                이번 시간에는 자동으로 넘어가지 않고 버튼을 클릭했을 때 해당 순서로 이미지가 넘어가도록 구현해보겠습니다! 🥹
+                이번 시간에는 자동으로 넘어가지 않고 버튼과 닷 메뉴를 클릭했을 때 해당 순서로 이미지가 넘어가도록 구현해보겠습니다! 🥹
             </p>
 
             <hr>
@@ -78,12 +78,12 @@
                 <p class="t_desc2">
                     <strong>! HTML TIP !</strong><br>
                     각 이미지마다 css설정을 주기 위해 따로 부모를 2번 감싸서 묶어줍니다.<br>
-                    구조는 지난 시간과 똑같으나 slider__img 밑에 형제 요쇼로 버튼 영역을 선언해주었습니다!
+                    또한 버튼 아래 닷메뉴 구조를 추가해주었습니다. 닷 메뉴는 스크립트로 구현할 것이므로 주석처리를 해줍니다.
                 </p>
                 <details style="margin-bottom: 10px;">
                     <summary> ✏️ HTML 스크립트 보기</summary>
                     <div class="t_code">
-<pre><code class="language-html">&lt;section id="sliderType04"&gt;
+<pre><code class="language-html">&lt;section id="sliderType05"&gt;
     &lt;div class="slider__wrap"&gt;
         &lt;div class="slider__img"&gt;
             &lt;div class="slider__inner"&gt;
@@ -108,6 +108,13 @@
             &lt;a href="#" class="prev" role="button" aria-label="왼쪽 이미지"&gt;prev&lt;/a&gt;
             &lt;a href="#" class="next" role="button" aria-label="오른쪽 이미지"&gt;next&lt;/a&gt;
         &lt;/div&gt;
+        &lt;div class="slider__dot"&gt;
+            &lt;!-- &lt;a href="#" class="dot active"&gt;이미지1&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지2&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지3&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지4&lt;/a&gt;
+            &lt;a href="#" class="dot"&gt;이미지5&lt;/a&gt; --&gt;
+        &lt;/div&gt;
     &lt;/div&gt;
 &lt;/section&gt;
 </code></pre>
@@ -118,7 +125,7 @@
                     1. 이미지를 가로로 연결하기 위해 포지션을 relative로 설정하고 영역에서 벗어나는 이미지를 안보이게 처리하기 위해 overflow: hidden을 설정해줍니다.<br>
                     2. 이미지가 연속적으로 움직일 수 있도록 첫번째 이미지를 6번째에 추가로 넣습니다. (애니메이션 설정은 스크립트 파트에서!!)<br>
                     3. 마찬가지로 이미지가 6장이기 때문에 inner의 가로 크기를 +하여 4800px로 설정합니다.<br>
-                    4. 지난 시간과 똑같지만 버튼 영역의 스타일만 자유롭게 설정해주면 됩니다.
+                    4. 닷 메뉴 스타일을 지정해줍니다.
                 </p>
                 <details style="margin-bottom: 10px;">
                     <summary> ✏️ CSS 스크립트 보기</summary>
@@ -197,6 +204,25 @@
 .slider__btn a.next {
     right: 0;
 }
+.slider__dot {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+.slider__dot .dot {
+    width: 20px;
+    height: 20px;
+    background: rgba(0,0,0,0.4);
+    display: inline-block;
+    border-radius: 50%;
+    text-indent: -9999px;
+    transition: all 0.3s;
+    margin: 2px;
+}
+.slider__dot .dot.active {
+    background: rgba(255,255,255,0.9);
+}
 </code></pre>
                     </div>
                 </details>
@@ -208,72 +234,94 @@
             <div id="sample02" class="sample">
                 <h3 class="t_tit2">#2. JAVASCRIPT : 스크립트 짜기 </h3>
                 <p class="t_desc">
-                   이번 슬라이드 유형에서 포인트는 매개변수 입니다. 매개변수를 어떻게 사용했는지 함께 알아보겠습니다!
+                    반복문을 통해 문자열을 생성하고 각 함수를 만들어 재활용이 가능하도록 합니다.
                 </p>
-                <details style="margin-bottom: 10px;">
-                    <summary> 💡 전체 스크립트 보기</summary>
                     <div class="t_code" style="margin-bottom: 30px;">
-<pre><code class="language-js">const sliderWrap = document.querySelector(".slider__wrap");
-const sliderImg = document.querySelector(".slider__img");   //보여지는 영역
-const sliderInner = document.querySelector(".slider__inner"); //움직이는 영역
-const slider = document.querySelectorAll(".slider");      //각각의 이미지
-const sliderBtn = document.querySelector("slider__btn"); //버튼
-const sliderBtnPrev= document.querySelector(".prev"); // 왼쪽버튼
-const sliderBtnNext = document.querySelector(".next"); // 오른쪽 버튼
+<pre><code class="language-js">{
+    const sliderWrap = document.querySelector(".slider__wrap");
+    const sliderImg = document.querySelector(".slider__img");   //보여지는 영역
+    const sliderInner = document.querySelector(".slider__inner"); //움직이는 영역
+    const slider = document.querySelectorAll(".slider");      //각각의 이미지
+    const sliderBtn = document.querySelector(".slider__btn"); //버튼
+    const sliderBtnPrev= sliderBtn.querySelector(".prev"); // 왼쪽버튼
+    const sliderBtnNext = sliderBtn.querySelector(".next"); // 오른쪽 버튼
+    const sliderDot = document.querySelector(".slider__dot"); // 닷메뉴
 
-let currentIndex = 0; //현재 보이는 이미지 : 마크업 순서대로 0번부터 4번
-let sliderCount = slider.length;    //이미지 갯수
-let sliderWidth = sliderImg.offsetWidth; //이미지 가로값
+    let currentIndex = 0;                       //현재 이미지
+    let sliderCount = slider.length;            //이미지 갯수
+    let sliderWidth = sliderImg.offsetWidth;    //이미지 가로값
 
-//이미지 움직이는 영역
-//gotoSlider 함수에 num매개변수를 설정하고 sliderInner 선택자에 에니메이션 속성을 부여한다.
-//translateX X축으로 -sliderWidth * num 만큼 영역을 이동하도록 한다. : 여기서 -를 붙은 이유는 왼쪽으로 움직이게 하기 위함!
-//왜 매개변수를 쓰는 가? : 이미지의 순서를 바꾸기 위함. (아래의 이벤트 리스너에서 인덱스 값을 추출)
-function gotoSlider(num){
-    sliderInner.style.transition = "all 400ms";
-    sliderInner.style.transform = "translateX("+ -sliderWidth * num +"px)";
-    currentIndex = num; // 보이는 이미지가 바뀌도록 설정
+    let dotIndex = "";
+    
+    function intit(){
+        // dot 만들어주기!
+        // slider.forEach(() =&gt; {
+        //     dotIndex += "&lt;a href='#' class='dot'&gt;이미지1&lt;/a&gt;";
+        // });
+        // dot 만들어주기!
+        slider.forEach(() =&gt; dotIndex += "&lt;a href='#' class='dot'&gt;이미지1&lt;/a&gt;");
+        sliderDot.innerHTML = dotIndex;
+
+        //첫번째 닷 버튼 활성화 표시(active)
+        sliderDot.firstChild.classList.add("active");
+
+    }
+    intit();
+
+    //이미지 이동 스크립트
+    function gotoSlider(num){
+        sliderInner.style.transition = "all 400ms";
+        sliderInner.style.transform = "translateX(" + -sliderWidth * num + "px)";
+        currentIndex = num;
+
+
+        //두번재 이미지에서 두번째 닷 버튼 활성화 (탭 메뉴와 원리 동일)
+        //1. 닷 메뉴의 클래스를 모두 삭제
+        //2. 해당 이미지의 해당 닷 메뉴에 클래스 추가
+        let dotActive = document.querySelectorAll(".slider__dot .dot");
+        dotActive.forEach(el =&gt; el.classList.remove("active"));
+        dotActive[num].classList.add("active");
+    }
+
+    //버튼을 클릭할 때 이미지 이동 작동시키기
+    document.querySelectorAll(".slider__btn a").forEach((btn, index) =&gt; {
+        btn.addEventListener("click", () =&gt; {
+            let prevIndex = (currentIndex + (sliderCount - 1 )) % sliderCount;
+            let nextIndex = (currentIndex + 1) % sliderCount;
+
+            if(btn.classList.contains("prev")){
+                gotoSlider(prevIndex);
+            }else{
+                gotoSlider(nextIndex);
+            }
+        });
+    });
+
+    //dot 메뉴를 클릭할 때 이미지 이동 작동시키기
+    document.querySelectorAll(".slider__dot .dot").forEach((dot, index) =&gt; {
+        dot.addEventListener("click", () =&gt; {
+            gotoSlider(index);
+        });
+    });
+
+    //자바스크립트는 순서댜로 진행되므로 실행문이 맨 밑에 있어서 나오지 않은 것.
 }
-
-//완쪽 버튼 클릭
-//43210
-//sliderCount(이미지 갯수 : 6개) + currentIndex(현재 이미지의 순서 : 4) -1 == 9
-// 9 % 5 == 나머지 값은 4이므로 4부터 순서대로 돌아간다.
-sliderBtnPrev.addEventListener("click", () =&gt; {
-    let prevIndex = (sliderCount + currentIndex -1) % sliderCount; //0번이 되었을 때 5%5 ==0이 되므로 계속 해서 반복하는 것.
-    gotoSlider(prevIndex);
-});
-
-//오른쪽 버튼 클릭
-//01234
-sliderBtnNext.addEventListener("click", () =&gt; {
-    let nextIndex = (currentIndex +1) % sliderCount; //5 % 5의 나머지 값이 0이기 때문에 다시 0번째 순서로 넘어가는 것.
-    gotoSlider(nextIndex);
-});
 </code></pre>
                     </div>
-                </details>
-                <h3 class="t_tit3">✏️ 스크립트 보기 : 자바스크립트</h3>
-                <p class="t_desc2">
-                    <strong>! JAVASCRIPT TIP !</strong><br>
-                    1. 스크립트에 필요한 선택자를 설정해주고 현재 보이는 이미지에게 0을 부여하여 첫 순서가 되게 합니다.<br>
-                    2. 다음 이미지가 보이도록 하기 위해 이미지 총 갯수 / 이미지의 가로값을 변수에 저장하여 이미지 가로 * 보여야할 이미지가 되도록 합니다.<br>
-                    3. 각 버튼에게 이벤트리스너를 통해 순서대로 또는 반대 순서로 이동되도록 식을 작성해줍니다.
-                </p>
 
                 <hr>
                 
                 <h3 class="t_tit2">#3. 결과 보기 🎉</h3>
                 <div class="t_iframe" style="min-height: 1000px; padding-top: 0;">
-                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/sliderEffect04.html" frameborder="0"></iframe>
+                    <iframe src="https://eu-ny.github.io/coding/javascript/effect/sliderEffect05.html" frameborder="0"></iframe>
                 </div>
 
                 <div class="t_link">
-                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/sliderEffect04.html">원본 소스 보기</a>
+                    <a href="https://github.com/eu-ny/coding/blob/main/javascript/effect/sliderEffect05.html">원본 소스 보기</a>
                 </div>
 
                 <div class="t_link">
-                    <a href="https://eu-ny.github.io/coding/javascript/effect/sliderEffect04.html">원본 페이지 보기</a>
+                    <a href="https://eu-ny.github.io/coding/javascript/effect/sliderEffect05.html">원본 페이지 보기</a>
                 </div>
             </div>
         </div>

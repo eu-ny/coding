@@ -166,8 +166,8 @@
     background-repeat: no-repeat;
     background-position: -107px;
 }
-.music__control .control .sound input {
-    /* display: none; */
+.music__control .control .sound #player_sound.open {
+    display: none;
 }
 
 
