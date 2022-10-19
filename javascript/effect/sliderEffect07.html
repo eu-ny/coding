@@ -156,7 +156,7 @@
 <body class="img11">
     <header id="header">
         <h1>Javascript Slider Effect07</h1>
-        <p>슬라이드 이펙트 - 이미지슬라이드(버튼, dot메뉴, 무한, 플레이 버튼, 정지버튼, 자동 플레이, 리빌효과)</p>
+        <p>슬라이드 이펙트 - 이미지슬라이드(버튼, dot메뉴, 무한, 플레이 버튼, 정지버튼, 자동 플레이)</p>
         <ul>
             <li><a href="sliderEffect01.html">1</a></li>
             <li><a href="sliderEffect02.html">2</a></li>
@@ -481,10 +481,19 @@ setInterval(sliderEffect,2000);
             sliderDot.firstChild.classList.add("active");
 
             //닷 버튼 움직이기
-            sliderDot.forEach((e, i) => {cu
-                if(e.classList.){}
+            // sliderDot.forEach((e, i) => {cu
+            //     if(e.classList.){}
+            // });
+            const dotActive = document.querySelectorAll(".slider__dot .dot");
+            document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=>{
+                dot.addEventListener("click", ()=>{
+                    dotActive.forEach(el => el.classList.remove("active"));
+                    dotActive[index].classList.add("active");
+                    gotoSlider(index);
+                });
             });
         }
+        
 
 
         // 슬라이드 함수
