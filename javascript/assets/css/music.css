@@ -1,4 +1,7 @@
 /* music */
+.music__wrap {
+    display: none;
+}
 .music__wrap .music_inner {
     width: 450px;
     background: #000;
