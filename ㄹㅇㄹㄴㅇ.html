@@ -1,12 +1,141 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1e0">
-    <title>Docume</title>
-</head>
-<body>
-    
-</body>
-    <script>
+const sliderWrap = document.querySelector(".slider__wrap");            //전체 이미지 슬라이드
+        const sliderImg = document.querySelector(".slider__img");              //보여지는 영역
+        const sliderInner = document.querySelector(".slider__inner");          //움직이는 영역
+        const slider = document.querySelectorAll(".slider");                   //이미지
+        const sliderDot = document.querySelector(".slider__dot");              //닷 메뉴
+        const sliderBtn = document.querySelector(".slider__btn");              //버튼
+        const sliderBtnPrev = document.querySelector(".slider__btn .prev");    //왼쪽 버튼
+        const sliderBtnNext = document.querySelector(".slider__btn .next");    //오른쪽 버튼
+        // const sliderBtnPlay = document.querySelector(".slider__dot .play");    //플레이 버튼
+        // const sliderBtnStop = document.querySelector(".slider__dot .stop");    //정지 버튼
+
+        let currentIndex = 0,                         //현재 이미지
+            sliderLength = slider.length,             //슬라이더 총 길이
+            sliderWidth = slider[0].offsetWidth,      //슬라이더 가로 값
+            sliderFirst = slider[0],                  //첫번째 이미지
+            sliderLast = slider[sliderLength -1],     //마지막 이미지
+            cloneFirst = sliderFirst.cloneNode(true), //첫번째 이미지 복사
+            cloneLast = sliderLast.cloneNode(true);   //마지막 이미지 복사
+        let dotIndex = ""; //닷 생성시킬 문자열
+        let interval = 3000;
+        let sliderTimer = "";
+
+
+        function init(){
+            imgClone();     // 이미지 복사 바로 실행시키기
+            createDot();    // 닷 버튼 생성시키기
+            // autoPlay();     // 자동플레이
+        }
+        init();
+
+
+
+        // 자동플레이 함수
+        function autoPlay(){
+            sliderTimer = setInterval(() =&gt; {
+                let intervalNum = currentIndex + 1; //매개변수 값
+                gotoSlider(intervalNum);
+            }, interval);
+        }
+
+        function stopPlay(){
+            clearInterval(sliderTimer);
+        }
+
+        // 이미지 복사 함수
+        function imgClone(){
+            sliderInner.appendChild(cloneFirst);
+            sliderInner.insertBefore(cloneLast, sliderFirst);
+        }
+
+        // 닷 버튼 생성 함수
+        function createDot(){
+            for(let i=0; i&lt;sliderLength; i++){
+                dotIndex += "&lt;a href='#' class='dot'&gt;이미지1&lt;/a&gt;";
+            }
+            dotIndex += "&lt;a href='#' class='play show'&gt;&lt;/a&gt;";
+            dotIndex += "&lt;a href='#' class='stop'&gt;&lt;/a&gt;";
+
+            sliderDot.innerHTML = dotIndex;
+            sliderDot.firstChild.classList.add("active");
+
+            //닷 버튼 움직이기
+            // sliderDot.forEach((e, i) =&gt; {cu
+            //     if(e.classList.){}
+            // });
+            const dotActive = document.querySelectorAll(".slider__dot .dot");
+            document.querySelectorAll(".slider__dot .dot").forEach((dot, index)=&gt;{
+                dot.addEventListener("click", ()=&gt;{
+                    dotActive.forEach(el =&gt; el.classList.remove("active"));
+                    dotActive[index].classList.add("active");
+                    gotoSlider(index);
+                });
+            });
+        }
+        
+
+
+        // 슬라이드 함수
+        function gotoSlider(index){
+            sliderInner.classList.add("transition");
+            let posInitial = sliderInner.offsetLeft; // -800px
+
+            // if(direction == -1){
+            //     // sliderInner.style.left = "800px"; //왼쪽으로 800만큼 움직이기
+            //     //부모박스 offsetLeft값을 구하여 더하는 이유는? sliderWidth는 슬라이더 하나만의 가로값이기 때문에 이동시 늘어나거나 줄어드는 값을 구할 수 없다 때문에 그 슬라이더를 감싸는 부모박스의 가로값을 구하여 늘어나는 값 만큼 길이를 더하여 추가시킨 것 이다.
+            //     sliderInner.style.left = (posInital + sliderWidth) + "px"; //왼쪽으로 슬라이더 가로값만큼 움직이기. 슬라이더의 부모박스의 왼쪽값을 더한 이유는?
+            //     currentIndex --;
+
+            // }else if(direction == 1){
+
+            //     // sliderInner.style.left = "-800px";                
+            //     sliderInner.style.left = (posInital - sliderWidth) + "px";               
+            //     currentIndex ++;
+            // }
+            
+            // 위 식을 간편하게 작업
+            sliderInner.style.left = -sliderWidth * (index + 1) + "px";
+
+            currentIndex = index;
+        }
+
+        // 순간이동 함수
+        function checkIndex(){
+            //슬라이드가 끝나면 transition 클래스를 다시 지워서 transition효과가 나오지 않도록 하고 이미지 순간이동 시키기
+            sliderInner.classList.remove("transition"); 
+
+            if(currentIndex == sliderLength){
+                sliderInner.style.left = -(1 * sliderWidth) + "px";
+                currentIndex = 0;
+            }
+
+            if(currentIndex == -1){
+                sliderInner.style.left = -(sliderLength * sliderWidth) + "px";
+                currentIndex = sliderLength - 1;
+            }
+        }
+
+
+
+        // 실행문
+        sliderBtnPrev.addEventListener("click" ,() =&gt; {
+            let prevIndex = currentIndex - 1;
+            gotoSlider(prevIndex); //매개변수로 전달
+        });
+        sliderBtnNext.addEventListener("click" ,() =&gt; {
+            let nextIndex = currentIndex + 1;
+            gotoSlider(nextIndex); //매개변수로 전달
+        });
+        document.querySelector(".slider__dot .play").addEventListener("click", () =&gt; {
+            document.querySelector(".play").classList.remove("show");
+            document.querySelector(".stop").classList.add("show");
+            autoPlay(); 
+        });
+        document.querySelector(".slider__dot .stop").addEventListener("click", () =&gt; {
+            document.querySelector(".stop").classList.remove("show");
+            document.querySelector(".play").classList.add("show");
+            stopPlay(); 
+        });
+        // sliderInner.addEventListener("mouseenter", stopPlay);
+        // sliderInner.addEventListener("mouseleave", autoPlay);
+        sliderInner.addEventListener("transitionend", checkIndex);
