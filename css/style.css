@@ -101,6 +101,13 @@ body {
     background-color: var(--bgSub);
     padding: 80px;
     text-align: center;
+    display: none;
+}
+.subContents > div {
+    display: none;
+}
+.subContents > div.active {
+    display: block;
 }
 
 .main__title h1 {
@@ -137,6 +144,7 @@ body {
     position: relative;
     border-radius: 30px;
     overflow: hidden;
+    margin-top: 100px;
 }
 .main__desc .deco {
     width: 90%; /*89%*/
